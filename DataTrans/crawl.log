@@ -1,0 +1,1708 @@
+2026-03-13 13:52:09,683  INFO      ═══ Trang 1/2 ═══
+2026-03-13 13:52:10,330  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 13:52:10,629  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán căn hộ Scenic Valley 2, Phú Mỹ Hưng, 3PN sổ hồng riêng, 
+2026-03-13 13:52:13,078  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² PN=2 PL=Giấy tờ hợp lệ | Bán căn hộ Urban Hill, Nguyễn Văn Linh, Quận 7, diện tích 79
+2026-03-13 13:52:15,329  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² PN=1 PL=Giấy tờ hợp lệ | Bán căn hộ The Ascentia Phú Mỹ Hưng, 1PN 48,8m² Block A lầu 
+2026-03-13 13:52:17,292  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán căn hộ chung cư Sky Garden I, Quận 7, nội thất đầy đủ, 8
+2026-03-13 13:52:19,657  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán căn hộ chung cư Sky Garden II Quận 7, 91m2 đầy đủ nội th
+2026-03-13 13:52:22,120  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² PN=3 PL=Giấy tờ hợp lệ | BÁN CĂN HỘ CHUNG CƯ AN BÌNH, TRUNG TÂM QUẬN 5, VỊ TRÍ ĐẸP, 7
+2026-03-13 13:52:24,178  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán nhanh căn hộ Sky Garden 2, Phú Mỹ Hưng, Quận 7, dt 88m2 
+2026-03-13 13:52:26,029  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán nhanh căn hộ Sky garden 2, Phú Mỹ Hưng, Q7, dt 81m2, tk 
+2026-03-13 13:52:28,795  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² PN=2 PL=Giấy tờ hợp lệ | Bán căn hộ Sky Garden 1, lầu 9 71m² 2PN 1WC, giá 5.2 tỷ
+2026-03-13 13:52:31,167  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² PN=2 PL=Giấy tờ hợp lệ | Bán căn hộ Sky garden 3, Phú Mỹ Hưng, Quận 7, dt 57m2, tk 2p
+2026-03-13 13:52:31,171  INFO      Saved 10 rows → data/raw/raw_data.csv
+2026-03-13 13:52:33,248  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² PN=2 PL=Sổ đỏ/Sổ hồng | BÁN CĂN HỘ THE ORIGAMI, CĂN GÓC 2PN+ 2 VIEW, SỔ HỒNG CẦM TAY
+2026-03-13 13:52:35,540  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² PN=5 PL=Sổ đỏ/Sổ hồng | Bán căn hộ Duplex Sky Garden 1, Phú Mỹ Hưng, Quận 7, 141m2, 
+2026-03-13 13:52:37,528  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² PN=3 PL=Sổ đỏ/Sổ hồng | Bán nhanh căn góc Sky garden 2, Quận 7, 91m2, 3PN mới đẹp, g
+2026-03-13 13:52:39,567  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² PN=1 PL=Sổ đỏ/Sổ hồng | BÁN CĂN HỘ CHUNG CƯ PHAN VĂN TRỊ, QUẬN 5, NGAY LÊ HỒNG PHONG
+2026-03-13 13:52:41,413  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² PN=3 PL=Giấy tờ hợp lệ | Cần bán chung cư 73m2 - 3pn - 2wc- sát Lương Định Của - Quận
+2026-03-13 13:52:43,245  INFO      Saved 15 rows → data/raw/raw_data.csv
+2026-03-13 13:52:45,210  INFO      ═══ Trang 2/2 ═══
+2026-03-13 13:52:45,702  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 13:52:45,705  INFO      Saved 15 rows → data/raw/raw_data.csv
+2026-03-13 13:52:48,188  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 13:52:48,190  INFO      Saved 15 rows → data/raw/raw_data.csv
+2026-03-13 14:10:44,257  INFO      Load file cũ: 30 dòng đã có → sẽ bỏ qua, crawl tiếp phần mới.
+2026-03-13 14:10:44,258  INFO      ═══ Trang 1/2 ═══
+2026-03-13 14:10:44,887  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:10:44,889  INFO        → 0 link mới (bỏ qua 15 đã crawl)
+2026-03-13 14:10:44,891  INFO      Checkpoint: 30 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:10:47,166  INFO      ═══ Trang 2/2 ═══
+2026-03-13 14:10:47,616  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:10:47,618  INFO        → 0 link mới (bỏ qua 15 đã crawl)
+2026-03-13 14:10:47,630  INFO      Checkpoint: 30 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:10:49,971  INFO      Hoàn thành. Mới: +0 | Tổng tích lũy: 30 bản ghi
+2026-03-13 14:10:49,983  INFO      Checkpoint: 30 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:24:59,707  INFO      ═══ Trang 1/2 ═══
+2026-03-13 14:25:00,260  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:25:00,620  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:25:02,577  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:25:04,568  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:25:06,444  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:25:08,621  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:25:10,980  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:25:13,562  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:25:15,897  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:25:18,272  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:25:20,408  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:25:22,896  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:25:25,440  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:25:27,493  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:25:30,149  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:25:32,460  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:25:34,681  INFO      ═══ Trang 2/2 ═══
+2026-03-13 14:25:35,132  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:27:11,153  INFO      ═══ Trang 1/2 ═══
+2026-03-13 14:27:11,691  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:27:12,005  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:27:14,627  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:27:17,088  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:27:19,405  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:27:21,254  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:27:23,304  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:27:25,859  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:27:28,562  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:27:30,727  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:27:32,535  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:27:34,486  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:27:36,508  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:27:38,583  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:27:41,029  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:27:43,731  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:27:45,274  INFO      ═══ Trang 2/2 ═══
+2026-03-13 14:27:45,757  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:27:45,906  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:27:45,907  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 14:27:45,908  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:44:08,669  INFO      ═══ Trang 1/2 ═══
+2026-03-13 14:44:09,273  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:44:09,559  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:44:12,221  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:44:14,900  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:44:17,619  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:44:20,048  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:44:22,508  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:44:24,747  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:44:26,725  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:44:29,289  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:44:31,651  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:44:33,867  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:44:36,787  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:44:39,014  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:44:40,804  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:44:43,647  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:44:45,470  INFO      ═══ Trang 2/2 ═══
+2026-03-13 14:44:46,051  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:44:46,065  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:44:46,065  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 14:44:46,066  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:46:11,769  INFO      ═══ Trang 1/4 ═══
+2026-03-13 14:46:12,310  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:46:12,576  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:46:14,678  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:46:16,676  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:46:18,937  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:46:21,049  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:46:22,927  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:46:24,913  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:46:27,488  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:46:29,506  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:46:32,143  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:46:34,550  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:46:36,816  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:46:39,155  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:46:41,638  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:46:44,186  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:46:46,411  INFO      ═══ Trang 2/4 ═══
+2026-03-13 14:46:46,892  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:46:46,893  INFO      ═══ Trang 3/4 ═══
+2026-03-13 14:46:47,412  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 14:46:47,413  INFO      ═══ Trang 4/4 ═══
+2026-03-13 14:46:47,954  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 14:47:06,884  INFO      ═══ Trang 1/4 ═══
+2026-03-13 14:47:07,361  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:47:07,637  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:47:09,778  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:47:26,943  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:47:29,042  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:47:31,648  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:47:33,636  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:47:35,736  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:47:38,452  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:47:41,058  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:47:43,047  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:47:45,582  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:47:48,400  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:47:50,984  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:47:52,848  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:47:54,709  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:47:56,840  INFO      ═══ Trang 2/4 ═══
+2026-03-13 14:47:57,368  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:47:57,370  INFO      ═══ Trang 3/4 ═══
+2026-03-13 14:47:57,895  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 14:47:57,897  INFO      ═══ Trang 4/4 ═══
+2026-03-13 14:47:58,380  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 14:47:58,383  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:47:58,383  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 14:47:58,384  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:52:48,717  INFO      ═══ Trang 1/4 ═══
+2026-03-13 14:52:50,039  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 14:52:50,041  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 14:52:50,041  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 14:52:50,321  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 14:52:52,748  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 14:52:53,052  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 14:52:54,930  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 14:52:55,229  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 14:52:57,660  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 14:52:57,937  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 14:53:00,033  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 14:53:00,348  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 14:53:02,365  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 14:53:02,673  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 14:53:05,019  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-chung-cu-sky-garden-i-quan-7-noi-that-day-du-89m2-gia-69-ty-pst137671.html
+2026-03-13 14:53:05,372  INFO      ✔ [137671] giá=6.9tỷ dt=89.0m² ...
+2026-03-13 14:53:07,698  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 14:53:08,031  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 14:53:09,558  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-q7-dt-81m2-tk-3pn-nha-moi-dep-gia-chi-64-ty-pst127585.html
+2026-03-13 14:53:09,910  INFO      ✔ [127585] giá=6.4tỷ dt=81.0m² ...
+2026-03-13 14:53:12,002  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 14:53:12,401  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 14:53:14,361  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 14:53:14,678  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 14:53:17,163  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 14:53:17,632  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 14:53:19,756  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 14:53:20,062  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 14:53:22,223  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 14:53:22,538  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 14:53:24,808  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-goc-sky-garden-2-quan-7-91m2-3pn-moi-dep-gia-chi-81-ty-pst115667.html
+2026-03-13 14:53:25,184  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 14:53:27,174  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 14:53:27,174  INFO      ═══ Trang 2/4 ═══
+2026-03-13 14:53:27,693  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 14:53:27,695  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 14:53:27,695  INFO      Trang 2 parsed 0/15 tin thành công
+2026-03-13 14:53:27,695  INFO      ═══ Trang 3/4 ═══
+2026-03-13 14:53:28,241  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 14:53:28,244  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 14:53:28,244  INFO      Trang 3 parsed 0/15 tin thành công
+2026-03-13 14:53:28,244  INFO      ═══ Trang 4/4 ═══
+2026-03-13 14:53:28,742  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 14:53:28,744  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 14:53:28,744  INFO      Trang 4 parsed 0/15 tin thành công
+2026-03-13 14:53:28,747  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 14:53:28,748  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 14:53:28,749  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 15:18:13,266  INFO      ═══ Trang 1/10 ═══
+2026-03-13 15:18:13,809  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 15:18:13,810  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 15:18:13,810  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 15:18:14,103  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 15:18:15,794  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 15:18:16,093  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 15:18:17,760  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 15:18:18,065  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 15:18:19,803  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 15:18:20,133  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 15:18:21,763  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 15:18:22,113  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 15:18:24,548  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 15:18:24,855  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 15:18:26,405  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 15:18:26,742  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 15:18:28,641  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 15:18:28,922  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 15:18:31,206  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 15:18:31,474  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 15:18:32,995  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-goc-sky-garden-2-quan-7-91m2-3pn-moi-dep-gia-chi-81-ty-pst115667.html
+2026-03-13 15:18:33,281  INFO      ✔ [115667] giá=8.1tỷ dt=91.0m² ...
+2026-03-13 15:18:35,088  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 15:18:35,364  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 15:18:36,935  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-3pn-92m-so-hong-gia-tot-tai-vinhomes-grand-park-pst146029.html
+2026-03-13 15:18:37,255  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 15:18:39,171  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 15:18:39,445  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 15:18:41,466  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 15:18:41,765  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 15:18:44,120  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 15:18:44,410  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 15:18:46,553  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 15:18:46,553  INFO      ═══ Trang 2/10 ═══
+2026-03-13 15:18:46,999  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 15:18:47,000  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 15:18:47,001  INFO      Trang 2 parsed 0/15 tin thành công
+2026-03-13 15:18:47,001  INFO      ═══ Trang 3/10 ═══
+2026-03-13 15:18:47,482  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 15:18:47,483  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 15:18:47,483  INFO      Trang 3 parsed 0/15 tin thành công
+2026-03-13 15:18:47,483  INFO      ═══ Trang 4/10 ═══
+2026-03-13 15:18:47,955  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 15:18:47,957  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 15:18:47,957  INFO      Trang 4 parsed 0/15 tin thành công
+2026-03-13 15:18:47,957  INFO      ═══ Trang 5/10 ═══
+2026-03-13 15:18:48,409  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 15:18:48,410  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 15:18:48,410  INFO      Trang 5 parsed 0/15 tin thành công
+2026-03-13 15:18:48,411  INFO      ═══ Trang 6/10 ═══
+2026-03-13 15:18:48,892  INFO        Trang 6: 15 links, has_next=True
+2026-03-13 15:18:48,894  INFO      Trang 6: 15 links, has_next=True
+2026-03-13 15:18:48,894  INFO      Trang 6 parsed 0/15 tin thành công
+2026-03-13 15:18:48,894  INFO      ═══ Trang 7/10 ═══
+2026-03-13 15:18:49,340  INFO        Trang 7: 15 links, has_next=True
+2026-03-13 15:18:49,342  INFO      Trang 7: 15 links, has_next=True
+2026-03-13 15:18:49,342  INFO      Trang 7 parsed 0/15 tin thành công
+2026-03-13 15:18:49,342  INFO      ═══ Trang 8/10 ═══
+2026-03-13 15:18:49,807  INFO        Trang 8: 15 links, has_next=True
+2026-03-13 15:18:49,808  INFO      Trang 8: 15 links, has_next=True
+2026-03-13 15:18:49,808  INFO      Trang 8 parsed 0/15 tin thành công
+2026-03-13 15:18:49,809  INFO      ═══ Trang 9/10 ═══
+2026-03-13 15:18:50,288  INFO        Trang 9: 15 links, has_next=True
+2026-03-13 15:18:50,290  INFO      Trang 9: 15 links, has_next=True
+2026-03-13 15:18:50,290  INFO      Trang 9 parsed 0/15 tin thành công
+2026-03-13 15:18:50,290  INFO      ═══ Trang 10/10 ═══
+2026-03-13 15:18:50,849  INFO        Trang 10: 15 links, has_next=True
+2026-03-13 15:18:50,851  INFO      Trang 10: 15 links, has_next=True
+2026-03-13 15:18:50,851  INFO      Trang 10 parsed 0/15 tin thành công
+2026-03-13 15:30:24,626  INFO      ═══ Trang 1/10 ═══
+2026-03-13 15:30:25,202  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 15:30:25,203  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 15:30:25,203  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 15:30:25,491  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 15:30:27,601  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 15:30:27,892  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 15:30:29,540  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 15:30:29,875  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 15:30:31,883  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 15:30:32,184  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 15:30:34,366  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 15:30:34,634  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 15:30:36,450  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-3pn-92m-so-hong-gia-tot-tai-vinhomes-grand-park-pst146029.html
+2026-03-13 15:30:36,800  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 15:30:39,070  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 15:30:39,466  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 15:30:41,574  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 15:30:41,890  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 15:30:43,797  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 15:30:44,247  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 15:30:46,267  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 15:30:46,663  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 15:30:48,834  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 15:30:49,731  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 15:30:51,675  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 15:30:52,007  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 15:30:54,118  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 15:30:54,499  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 15:30:56,682  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 15:30:57,001  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 15:30:58,594  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 15:30:58,878  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 15:31:00,770  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 15:31:00,771  INFO      ═══ Trang 2/10 ═══
+2026-03-13 15:31:01,273  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 15:31:01,274  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 15:31:01,274  INFO      Trang 2 parsed 0/15 tin thành công
+2026-03-13 15:31:01,274  INFO      ═══ Trang 3/10 ═══
+2026-03-13 15:31:01,851  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 15:31:01,853  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 15:31:01,853  INFO      Trang 3 parsed 0/15 tin thành công
+2026-03-13 15:31:01,853  INFO      ═══ Trang 4/10 ═══
+2026-03-13 15:31:02,401  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 15:31:02,403  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 15:31:02,403  INFO      Trang 4 parsed 0/15 tin thành công
+2026-03-13 15:31:02,403  INFO      ═══ Trang 5/10 ═══
+2026-03-13 15:31:03,096  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 15:31:03,098  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 15:31:03,099  INFO      Trang 5 parsed 0/15 tin thành công
+2026-03-13 15:31:03,099  INFO      ═══ Trang 6/10 ═══
+2026-03-13 15:31:03,675  INFO        Trang 6: 15 links, has_next=True
+2026-03-13 15:31:03,677  INFO      Trang 6: 15 links, has_next=True
+2026-03-13 15:31:03,677  INFO      Trang 6 parsed 0/15 tin thành công
+2026-03-13 15:31:03,677  INFO      ═══ Trang 7/10 ═══
+2026-03-13 15:31:04,299  INFO        Trang 7: 15 links, has_next=True
+2026-03-13 15:31:04,300  INFO      Trang 7: 15 links, has_next=True
+2026-03-13 15:31:04,301  INFO      Trang 7 parsed 0/15 tin thành công
+2026-03-13 15:31:04,301  INFO      ═══ Trang 8/10 ═══
+2026-03-13 15:31:04,895  INFO        Trang 8: 15 links, has_next=True
+2026-03-13 15:31:04,896  INFO      Trang 8: 15 links, has_next=True
+2026-03-13 15:31:04,897  INFO      Trang 8 parsed 0/15 tin thành công
+2026-03-13 15:31:04,897  INFO      ═══ Trang 9/10 ═══
+2026-03-13 15:31:05,502  INFO        Trang 9: 15 links, has_next=True
+2026-03-13 15:31:05,504  INFO      Trang 9: 15 links, has_next=True
+2026-03-13 15:31:05,504  INFO      Trang 9 parsed 0/15 tin thành công
+2026-03-13 15:31:05,504  INFO      ═══ Trang 10/10 ═══
+2026-03-13 15:31:06,112  INFO        Trang 10: 15 links, has_next=True
+2026-03-13 15:31:06,113  INFO      Trang 10: 15 links, has_next=True
+2026-03-13 15:31:06,113  INFO      Trang 10 parsed 0/15 tin thành công
+2026-03-13 15:31:06,116  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 15:31:06,116  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 15:31:06,117  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 15:50:44,281  INFO      ═══ Trang 1/10 ═══
+2026-03-13 15:50:44,815  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 15:50:44,817  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 15:50:45,181  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 15:50:45,449  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 15:50:47,496  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 15:50:47,784  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 15:50:50,253  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-3pn-92m-so-hong-gia-tot-tai-vinhomes-grand-park-pst146029.html
+2026-03-13 15:50:50,537  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 15:50:53,041  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 15:50:53,352  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 15:50:55,811  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 15:50:56,077  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 15:50:58,429  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 15:50:58,734  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 15:51:00,716  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 15:51:00,964  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 15:51:02,996  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 15:51:03,272  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 15:51:05,295  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 15:51:05,579  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 15:51:08,086  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 15:51:08,344  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 15:51:10,783  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 15:51:11,067  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 15:51:13,774  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 15:51:14,045  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 15:51:16,014  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 15:51:16,279  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 15:51:18,615  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 15:51:18,966  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 15:51:21,111  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 15:51:21,411  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 15:51:23,818  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 15:51:23,819  INFO      ═══ Trang 2/10 ═══
+2026-03-13 15:51:24,295  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 15:51:24,297  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 15:51:28,510  INFO      Trang 2 parsed 0/15 tin thành công
+2026-03-13 15:51:28,511  INFO      ═══ Trang 3/10 ═══
+2026-03-13 15:51:28,971  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 15:51:28,973  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 15:51:33,113  INFO      Trang 3 parsed 0/15 tin thành công
+2026-03-13 15:51:33,114  INFO      ═══ Trang 4/10 ═══
+2026-03-13 15:51:33,584  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 15:51:33,586  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 15:51:37,737  INFO      Trang 4 parsed 0/15 tin thành công
+2026-03-13 15:51:37,737  INFO      ═══ Trang 5/10 ═══
+2026-03-13 15:51:38,196  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 15:51:38,198  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 15:51:42,352  INFO      Trang 5 parsed 0/15 tin thành công
+2026-03-13 15:51:42,352  INFO      ═══ Trang 6/10 ═══
+2026-03-13 15:51:42,820  INFO        Trang 6: 15 links, has_next=True
+2026-03-13 15:51:42,821  INFO      Trang 6: 15 links, has_next=True
+2026-03-13 15:51:47,076  INFO      Trang 6 parsed 0/15 tin thành công
+2026-03-13 15:51:47,076  INFO      ═══ Trang 7/10 ═══
+2026-03-13 15:51:47,566  INFO        Trang 7: 15 links, has_next=True
+2026-03-13 15:51:47,568  INFO      Trang 7: 15 links, has_next=True
+2026-03-13 15:51:51,715  INFO      Trang 7 parsed 0/15 tin thành công
+2026-03-13 15:51:51,715  INFO      ═══ Trang 8/10 ═══
+2026-03-13 15:51:52,173  INFO        Trang 8: 15 links, has_next=True
+2026-03-13 15:51:52,174  INFO      Trang 8: 15 links, has_next=True
+2026-03-13 15:51:56,262  INFO      Trang 8 parsed 0/15 tin thành công
+2026-03-13 15:51:56,263  INFO      ═══ Trang 9/10 ═══
+2026-03-13 15:51:56,727  INFO        Trang 9: 15 links, has_next=True
+2026-03-13 15:51:56,728  INFO      Trang 9: 15 links, has_next=True
+2026-03-13 15:52:00,929  INFO      Trang 9 parsed 0/15 tin thành công
+2026-03-13 15:52:00,930  INFO      ═══ Trang 10/10 ═══
+2026-03-13 15:52:01,410  INFO        Trang 10: 15 links, has_next=True
+2026-03-13 15:52:01,411  INFO      Trang 10: 15 links, has_next=True
+2026-03-13 15:52:05,635  INFO      Trang 10 parsed 0/15 tin thành công
+2026-03-13 15:52:05,649  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 15:52:05,649  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 16:06:43,095  INFO      ═══ Trang 1/10 ═══
+2026-03-13 16:06:43,651  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 16:06:43,653  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 16:06:43,653  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:06:43,927  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:06:46,806  INFO      Trang 1 parsed 1/15 tin thành công
+2026-03-13 16:06:46,806  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:06:47,122  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:06:51,317  INFO      Trang 1 parsed 2/15 tin thành công
+2026-03-13 16:06:51,317  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:06:51,636  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:06:55,831  INFO      Trang 1 parsed 3/15 tin thành công
+2026-03-13 16:06:55,831  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:06:56,150  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:07:00,074  INFO      Trang 1 parsed 4/15 tin thành công
+2026-03-13 16:07:00,075  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:07:00,413  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:07:03,247  INFO      Trang 1 parsed 5/15 tin thành công
+2026-03-13 16:07:03,248  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:07:03,586  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:07:07,518  INFO      Trang 1 parsed 6/15 tin thành công
+2026-03-13 16:07:07,527  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-3pn-92m-so-hong-gia-tot-tai-vinhomes-grand-park-pst146029.html
+2026-03-13 16:07:09,904  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:07:12,551  INFO      Trang 1 parsed 7/15 tin thành công
+2026-03-13 16:07:12,552  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:07:12,829  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:07:16,578  INFO      Trang 1 parsed 8/15 tin thành công
+2026-03-13 16:07:16,578  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:07:16,865  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:07:19,450  INFO      Trang 1 parsed 9/15 tin thành công
+2026-03-13 16:07:19,450  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:07:19,711  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:07:22,504  INFO      Trang 1 parsed 10/15 tin thành công
+2026-03-13 16:07:22,504  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:07:22,855  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:07:27,126  INFO      Trang 1 parsed 11/15 tin thành công
+2026-03-13 16:07:27,127  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:07:27,442  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:07:31,452  INFO      Trang 1 parsed 12/15 tin thành công
+2026-03-13 16:07:31,452  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:07:31,734  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:07:35,719  INFO      Trang 1 parsed 13/15 tin thành công
+2026-03-13 16:07:35,719  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:07:37,306  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:07:40,952  INFO      Trang 1 parsed 14/15 tin thành công
+2026-03-13 16:07:40,952  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:07:41,235  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:07:44,392  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 16:07:44,392  INFO      ═══ Trang 2/10 ═══
+2026-03-13 16:07:44,857  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 16:07:44,858  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 16:07:44,858  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:07:45,126  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:07:46,736  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:07:47,043  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:07:47,323  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:07:47,578  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:07:47,834  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:07:48,116  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:07:48,380  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:07:48,655  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:07:48,929  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:07:49,306  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:07:49,636  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:07:49,905  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:07:50,188  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:07:50,546  INFO      ═══ Trang 3/10 ═══
+2026-03-13 16:07:50,986  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 16:07:50,987  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 16:07:50,988  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:07:51,304  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:07:51,605  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:07:51,897  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:07:52,152  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:07:52,414  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:07:52,679  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:07:52,958  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:07:53,207  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:07:53,451  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:07:53,738  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:07:54,102  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:07:54,428  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:07:54,706  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:07:54,953  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:07:55,223  INFO      ═══ Trang 4/10 ═══
+2026-03-13 16:07:55,688  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 16:07:55,690  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 16:07:55,690  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:07:55,959  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:07:56,224  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:07:56,487  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:07:56,753  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:07:57,016  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:07:57,293  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:07:57,554  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:07:57,810  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:07:58,067  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:07:58,344  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:07:58,619  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:07:58,971  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:07:59,244  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:07:59,558  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:07:59,828  INFO      ═══ Trang 5/10 ═══
+2026-03-13 16:08:00,312  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 16:08:00,313  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 16:08:00,313  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:00,562  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:00,830  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:01,203  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:01,478  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:01,731  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:02,026  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:02,367  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:02,623  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:02,882  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:03,151  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:03,497  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:03,840  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:04,133  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:04,445  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:04,708  INFO      ═══ Trang 6/10 ═══
+2026-03-13 16:08:05,197  INFO        Trang 6: 15 links, has_next=True
+2026-03-13 16:08:05,198  INFO      Trang 6: 15 links, has_next=True
+2026-03-13 16:08:05,198  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:05,455  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:05,836  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:06,124  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:06,403  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:06,669  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:06,954  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:07,242  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:07,542  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:07,863  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:08,144  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:08,455  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:08,880  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:09,136  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:09,402  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:09,754  INFO      ═══ Trang 7/10 ═══
+2026-03-13 16:08:10,270  INFO        Trang 7: 15 links, has_next=True
+2026-03-13 16:08:10,271  INFO      Trang 7: 15 links, has_next=True
+2026-03-13 16:08:10,271  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:10,557  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:10,920  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:11,189  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:11,531  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:11,797  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:12,118  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:12,406  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:12,721  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:12,990  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:13,318  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:13,592  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:13,983  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:14,253  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:14,533  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:14,834  INFO      ═══ Trang 8/10 ═══
+2026-03-13 16:08:15,321  INFO        Trang 8: 15 links, has_next=True
+2026-03-13 16:08:15,322  INFO      Trang 8: 15 links, has_next=True
+2026-03-13 16:08:15,322  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:15,659  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:15,927  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:16,277  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:16,566  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:16,873  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:17,135  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:17,434  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:17,703  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:18,018  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:18,361  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:18,672  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:19,039  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:19,369  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:19,698  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:20,039  INFO      ═══ Trang 9/10 ═══
+2026-03-13 16:08:20,567  INFO        Trang 9: 15 links, has_next=True
+2026-03-13 16:08:20,568  INFO      Trang 9: 15 links, has_next=True
+2026-03-13 16:08:20,568  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:20,847  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:21,135  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:21,525  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:21,837  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:22,157  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:22,472  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:22,763  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:23,064  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:23,442  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:23,719  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:24,076  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:24,386  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:24,696  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:25,046  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:25,320  INFO      ═══ Trang 10/10 ═══
+2026-03-13 16:08:25,923  INFO        Trang 10: 15 links, has_next=True
+2026-03-13 16:08:25,924  INFO      Trang 10: 15 links, has_next=True
+2026-03-13 16:08:25,924  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:08:26,239  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:08:26,506  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:08:26,854  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:08:27,132  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:08:27,442  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:08:27,737  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:08:28,017  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:08:28,335  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:08:28,637  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:08:28,935  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:08:29,463  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:08:29,833  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:08:30,145  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:08:30,516  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:08:30,937  INFO      Saved 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 16:08:30,937  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 16:12:38,787  INFO      ═══ Trang 1/5 ═══
+2026-03-13 16:12:39,279  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 16:12:39,280  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 16:12:39,280  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:12:39,630  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:12:44,008  INFO      Trang 1 parsed 1/15 tin thành công
+2026-03-13 16:12:44,008  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:12:44,370  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:12:47,252  INFO      Trang 1 parsed 2/15 tin thành công
+2026-03-13 16:12:47,252  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:12:47,536  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:12:51,888  INFO      Trang 1 parsed 3/15 tin thành công
+2026-03-13 16:12:51,889  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:12:52,193  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:12:56,395  INFO      Trang 1 parsed 4/15 tin thành công
+2026-03-13 16:12:56,395  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:12:56,679  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:12:59,767  INFO      Trang 1 parsed 5/15 tin thành công
+2026-03-13 16:12:59,767  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:13:00,056  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:13:04,047  INFO      Trang 1 parsed 6/15 tin thành công
+2026-03-13 16:13:04,047  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:13:04,436  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:13:07,112  INFO      Trang 1 parsed 7/15 tin thành công
+2026-03-13 16:13:07,113  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:13:07,381  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:13:10,918  INFO      Trang 1 parsed 8/15 tin thành công
+2026-03-13 16:13:10,918  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:13:11,183  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:13:15,477  INFO      Trang 1 parsed 9/15 tin thành công
+2026-03-13 16:13:15,477  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:13:15,759  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:13:18,486  INFO      Trang 1 parsed 10/15 tin thành công
+2026-03-13 16:13:18,486  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:13:19,261  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:13:23,554  INFO      Trang 1 parsed 11/15 tin thành công
+2026-03-13 16:13:23,555  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:13:23,924  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:13:27,342  INFO      Trang 1 parsed 12/15 tin thành công
+2026-03-13 16:13:27,342  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:13:27,617  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:13:31,628  INFO      Trang 1 parsed 13/15 tin thành công
+2026-03-13 16:13:31,628  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:13:31,883  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:13:35,259  INFO      Trang 1 parsed 14/15 tin thành công
+2026-03-13 16:13:35,259  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:13:35,519  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:13:39,542  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 16:13:39,543  INFO      ═══ Trang 2/5 ═══
+2026-03-13 16:13:40,037  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 16:13:40,039  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 16:13:40,039  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:13:40,320  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:13:40,575  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:13:40,855  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:13:41,114  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:13:41,388  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:13:41,643  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:13:41,919  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:13:42,172  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:13:42,474  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:13:42,750  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:13:43,022  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:13:43,328  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:13:43,607  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:13:43,863  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:13:44,136  INFO      ═══ Trang 3/5 ═══
+2026-03-13 16:13:44,616  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 16:13:44,618  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 16:13:44,618  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:13:44,884  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:13:45,152  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:13:45,403  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:13:45,666  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:13:45,951  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:13:46,198  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:13:46,532  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:13:46,805  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:13:47,085  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:13:47,347  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:13:47,620  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:13:47,938  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:13:48,196  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:13:48,482  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:13:48,750  INFO      ═══ Trang 4/5 ═══
+2026-03-13 16:13:49,232  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 16:13:49,233  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 16:13:49,233  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:13:49,495  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:13:49,749  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:13:50,020  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:13:50,268  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:13:50,537  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:13:50,817  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:13:51,074  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:13:51,340  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:13:51,606  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:13:51,876  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:13:52,133  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:13:52,457  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:13:52,723  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:13:52,989  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:13:53,246  INFO      ═══ Trang 5/5 ═══
+2026-03-13 16:13:53,721  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 16:13:53,722  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 16:13:53,723  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:13:53,985  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:13:54,242  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:13:54,515  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:13:54,794  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:13:55,055  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:13:55,330  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong/ban-can-ho-mt-eastmark-city-sn-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:13:55,588  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:13:55,858  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:13:56,116  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:13:56,398  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:13:56,669  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:13:56,998  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:13:57,299  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:13:57,553  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:13:57,821  INFO      Appended 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 16:13:57,821  INFO      Hoàn thành. Tổng: 15 bản ghi
+2026-03-13 16:21:12,147  INFO      ═══ Trang 1/5 ═══
+2026-03-13 16:21:12,727  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 16:21:12,729  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 16:21:12,730  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:21:13,117  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:21:17,138  INFO      Trang 1 parsed 1/15 tin thành công
+2026-03-13 16:21:17,138  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:21:17,459  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:21:21,441  INFO      Trang 1 parsed 2/15 tin thành công
+2026-03-13 16:21:21,441  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:21:21,792  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:21:25,720  INFO      Trang 1 parsed 3/15 tin thành công
+2026-03-13 16:21:25,721  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:21:26,149  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:21:29,332  INFO      Trang 1 parsed 4/15 tin thành công
+2026-03-13 16:21:29,340  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong-pj-chung-cu-mt-eastmark-city/ban-can-ho-mt-eastmark-city-chi-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:21:30,226  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:21:33,358  INFO      Trang 1 parsed 5/15 tin thành công
+2026-03-13 16:21:33,359  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:21:33,687  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:21:36,719  INFO      Trang 1 parsed 6/15 tin thành công
+2026-03-13 16:21:36,719  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:21:37,072  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:21:41,169  INFO      Trang 1 parsed 7/15 tin thành công
+2026-03-13 16:21:41,170  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:21:41,536  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:21:45,060  INFO      Trang 1 parsed 8/15 tin thành công
+2026-03-13 16:21:45,061  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:21:45,430  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:21:49,853  INFO      Trang 1 parsed 9/15 tin thành công
+2026-03-13 16:21:49,861  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:21:50,153  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:21:53,840  INFO      Trang 1 parsed 10/15 tin thành công
+2026-03-13 16:21:53,840  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:21:54,221  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:21:58,598  INFO      Trang 1 parsed 11/15 tin thành công
+2026-03-13 16:21:58,599  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:21:58,983  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:22:01,578  INFO      Trang 1 parsed 12/15 tin thành công
+2026-03-13 16:22:01,581  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:22:01,888  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:22:04,830  INFO      Trang 1 parsed 13/15 tin thành công
+2026-03-13 16:22:04,832  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:22:05,247  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:22:09,656  INFO      Trang 1 parsed 14/15 tin thành công
+2026-03-13 16:22:09,657  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:22:09,993  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:22:14,270  INFO      Trang 1 parsed 15/15 tin thành công
+2026-03-13 16:22:14,271  INFO      ═══ Trang 2/5 ═══
+2026-03-13 16:22:14,999  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 16:22:15,002  INFO      Trang 2: 15 links, has_next=True
+2026-03-13 16:22:15,002  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:22:15,337  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:22:19,867  INFO      Trang 2 parsed 1/15 tin thành công
+2026-03-13 16:22:19,899  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:22:20,838  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:22:24,616  INFO      Trang 2 parsed 2/15 tin thành công
+2026-03-13 16:22:24,617  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:22:24,937  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:22:27,447  INFO      Trang 2 parsed 3/15 tin thành công
+2026-03-13 16:22:27,448  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:22:27,798  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:22:30,814  INFO      Trang 2 parsed 4/15 tin thành công
+2026-03-13 16:22:30,815  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong-pj-chung-cu-mt-eastmark-city/ban-can-ho-mt-eastmark-city-chi-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:22:31,136  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:22:35,199  INFO      Trang 2 parsed 5/15 tin thành công
+2026-03-13 16:22:35,200  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:22:35,633  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:22:38,225  INFO      Trang 2 parsed 6/15 tin thành công
+2026-03-13 16:22:38,226  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:22:38,531  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:22:42,071  INFO      Trang 2 parsed 7/15 tin thành công
+2026-03-13 16:22:42,071  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:22:42,428  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:22:45,402  INFO      Trang 2 parsed 8/15 tin thành công
+2026-03-13 16:22:45,402  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:22:45,697  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:22:48,670  INFO      Trang 2 parsed 9/15 tin thành công
+2026-03-13 16:22:48,670  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:22:49,018  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:22:52,732  INFO      Trang 2 parsed 10/15 tin thành công
+2026-03-13 16:22:52,733  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:22:53,093  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:22:55,674  INFO      Trang 2 parsed 11/15 tin thành công
+2026-03-13 16:22:55,675  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:22:55,971  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:22:59,256  INFO      Trang 2 parsed 12/15 tin thành công
+2026-03-13 16:22:59,256  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:22:59,566  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:23:03,386  INFO      Trang 2 parsed 13/15 tin thành công
+2026-03-13 16:23:03,387  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:23:03,660  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:23:07,000  INFO      Trang 2 parsed 14/15 tin thành công
+2026-03-13 16:23:07,001  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:23:07,275  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:23:11,291  INFO      Trang 2 parsed 15/15 tin thành công
+2026-03-13 16:23:11,292  INFO      ═══ Trang 3/5 ═══
+2026-03-13 16:23:11,811  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 16:23:11,813  INFO      Trang 3: 15 links, has_next=True
+2026-03-13 16:23:11,813  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:23:12,111  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:23:16,344  INFO      Trang 3 parsed 1/15 tin thành công
+2026-03-13 16:23:16,345  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:23:16,784  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:23:19,483  INFO      Trang 3 parsed 2/15 tin thành công
+2026-03-13 16:23:19,483  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:23:19,789  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:23:22,945  INFO      Trang 3 parsed 3/15 tin thành công
+2026-03-13 16:23:22,946  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:23:23,240  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:23:26,508  INFO      Trang 3 parsed 4/15 tin thành công
+2026-03-13 16:23:26,509  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong-pj-chung-cu-mt-eastmark-city/ban-can-ho-mt-eastmark-city-chi-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:23:26,830  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:23:30,129  INFO      Trang 3 parsed 5/15 tin thành công
+2026-03-13 16:23:30,130  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:23:30,483  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:23:33,891  INFO      Trang 3 parsed 6/15 tin thành công
+2026-03-13 16:23:33,892  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:23:34,324  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:23:37,704  INFO      Trang 3 parsed 7/15 tin thành công
+2026-03-13 16:23:37,705  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:23:38,040  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:23:42,448  INFO      Trang 3 parsed 8/15 tin thành công
+2026-03-13 16:23:42,448  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:23:42,841  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:23:45,476  INFO      Trang 3 parsed 9/15 tin thành công
+2026-03-13 16:23:45,477  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:23:45,772  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:23:49,341  INFO      Trang 3 parsed 10/15 tin thành công
+2026-03-13 16:23:49,341  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:23:49,716  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:23:53,270  INFO      Trang 3 parsed 11/15 tin thành công
+2026-03-13 16:23:53,271  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:23:53,573  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:23:57,270  INFO      Trang 3 parsed 12/15 tin thành công
+2026-03-13 16:23:57,271  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:23:57,581  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:24:01,067  INFO      Trang 3 parsed 13/15 tin thành công
+2026-03-13 16:24:01,068  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:24:01,365  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:24:04,393  INFO      Trang 3 parsed 14/15 tin thành công
+2026-03-13 16:24:04,393  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:24:04,681  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:24:08,467  INFO      Trang 3 parsed 15/15 tin thành công
+2026-03-13 16:24:08,467  INFO      ═══ Trang 4/5 ═══
+2026-03-13 16:24:08,979  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 16:24:08,981  INFO      Trang 4: 15 links, has_next=True
+2026-03-13 16:24:08,982  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:24:09,294  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:24:12,776  INFO      Trang 4 parsed 1/15 tin thành công
+2026-03-13 16:24:12,777  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:24:13,076  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:24:17,243  INFO      Trang 4 parsed 2/15 tin thành công
+2026-03-13 16:24:17,244  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:24:17,533  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:24:21,654  INFO      Trang 4 parsed 3/15 tin thành công
+2026-03-13 16:24:21,655  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:24:21,990  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:24:26,005  INFO      Trang 4 parsed 4/15 tin thành công
+2026-03-13 16:24:26,005  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong-pj-chung-cu-mt-eastmark-city/ban-can-ho-mt-eastmark-city-chi-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:24:26,312  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:24:29,213  INFO      Trang 4 parsed 5/15 tin thành công
+2026-03-13 16:24:29,214  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:24:29,514  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:24:33,846  INFO      Trang 4 parsed 6/15 tin thành công
+2026-03-13 16:24:33,847  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:24:34,179  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:24:38,349  INFO      Trang 4 parsed 7/15 tin thành công
+2026-03-13 16:24:38,349  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:24:38,763  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:24:42,190  INFO      Trang 4 parsed 8/15 tin thành công
+2026-03-13 16:24:42,190  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:24:42,499  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:24:45,022  INFO      Trang 4 parsed 9/15 tin thành công
+2026-03-13 16:24:45,023  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:24:45,410  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:24:49,308  INFO      Trang 4 parsed 10/15 tin thành công
+2026-03-13 16:24:49,309  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:24:49,694  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:24:52,222  INFO      Trang 4 parsed 11/15 tin thành công
+2026-03-13 16:24:52,222  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:24:52,506  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:24:55,281  INFO      Trang 4 parsed 12/15 tin thành công
+2026-03-13 16:24:55,282  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:24:55,596  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:24:58,634  INFO      Trang 4 parsed 13/15 tin thành công
+2026-03-13 16:24:58,635  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:24:59,022  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:25:03,388  INFO      Trang 4 parsed 14/15 tin thành công
+2026-03-13 16:25:03,388  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:25:03,651  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:25:07,048  INFO      Trang 4 parsed 15/15 tin thành công
+2026-03-13 16:25:07,049  INFO      ═══ Trang 5/5 ═══
+2026-03-13 16:25:07,557  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 16:25:07,559  INFO      Trang 5: 15 links, has_next=True
+2026-03-13 16:25:07,559  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-nhanh-can-ho-sky-garden-2-phu-my-hung-quan-7-dt-88m2-3pn-nha-moi-dep-gia-chi-67-ty-pst126109.html
+2026-03-13 16:25:07,848  INFO      ✔ [126109] giá=6.7tỷ dt=88.0m² ...
+2026-03-13 16:25:10,622  INFO      Trang 5 parsed 1/15 tin thành công
+2026-03-13 16:25:10,623  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-duplex-sky-garden-1-phu-my-hung-quan-7-141m2-tk-5pn-nha-moi-dep-gia-chi-89-ty-pst93891.html
+2026-03-13 16:25:10,910  INFO      ✔ [93891] giá=8.9tỷ dt=141.0m² ...
+2026-03-13 16:25:15,140  INFO      Trang 5 parsed 2/15 tin thành công
+2026-03-13 16:25:15,141  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-phu-my-pj-the-ascentia-phu-my-hung/ban-can-ho-the-ascentia-phu-my-hung-1pn-488m-block-a-lau-3-gia-61-ty-pst141366.html
+2026-03-13 16:25:15,444  INFO      ✔ [141366] giá=6.1tỷ dt=48.8m² ...
+2026-03-13 16:25:18,891  INFO      Trang 5 parsed 3/15 tin thành công
+2026-03-13 16:25:18,892  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-hung-vuong-3/ban-can-ho-cao-cap-hung-vuong-3-quan-7-khu-do-thi-cao-cap-phu-my-hung-gia-tot-pst142717.html
+2026-03-13 16:25:19,186  INFO      ✔ [142717] giá=4.67tỷ dt=56.0m² ...
+2026-03-13 16:25:23,145  INFO      Trang 5 parsed 4/15 tin thành công
+2026-03-13 16:25:23,146  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-truong-pj-chung-cu-mt-eastmark-city/ban-can-ho-mt-eastmark-city-chi-tu-31-ty-tang-full-noi-that-hang-cdt-tra-24-thang-chiet-khau-6-pst146053.html
+2026-03-13 16:25:23,467  INFO      ✔ [146053] giá=3.1tỷ dt=65.0m² ...
+2026-03-13 16:25:26,329  INFO      Trang 5 parsed 5/15 tin thành công
+2026-03-13 16:25:26,330  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-thanh-my-pj-the-origami---vinhomes-grand-park/ban-can-ho-the-origami-can-goc-2pn-2-view-so-hong-cam-tay-tang-9-phong-thuy-gia-3999-ty-pst136913.html
+2026-03-13 16:25:26,723  INFO      ✔ [136913] giá=4.0tỷ dt=69.0m² ...
+2026-03-13 16:25:29,404  INFO      Trang 5 parsed 6/15 tin thành công
+2026-03-13 16:25:29,404  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-an-phu/can-ban-chung-cu-luong-dinh-cua-quan-2-73m2-3pn-2wc-chi-32-ty-pst145939.html
+2026-03-13 16:25:29,693  INFO      ✔ [145939] giá=3.2tỷ dt=73.0m² ...
+2026-03-13 16:25:33,627  INFO      Trang 5 parsed 7/15 tin thành công
+2026-03-13 16:25:33,628  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-3/ban-can-ho-sky-garden-3-phu-my-hung-quan-7-dt-57m2-tk-2pn-nha-moi-dep-gia-chi-48-ty-pst116891.html
+2026-03-13 16:25:33,948  INFO      ✔ [116891] giá=4.8tỷ dt=57.0m² ...
+2026-03-13 16:25:37,097  INFO      Trang 5 parsed 8/15 tin thành công
+2026-03-13 16:25:37,097  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-long-binh-pj-the-origami---vinhomes-grand-park/hang-hiem-ban-can-ho-vinhomes-grand-park-3pn-92m-so-hong-rieng-gia-hap-dan-pst146029.html
+2026-03-13 16:25:37,479  INFO      ✔ [146029] giá=4.45tỷ dt=92.0m² ...
+2026-03-13 16:25:40,673  INFO      Trang 5 parsed 9/15 tin thành công
+2026-03-13 16:25:40,674  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-ii/ban-can-ho-chung-cu-sky-garden-ii-quan-7-91m2-day-du-noi-that-gia-tot-pst142626.html
+2026-03-13 16:25:40,983  INFO      ✔ [142626] giá=7.8tỷ dt=91.0m² ...
+2026-03-13 16:25:43,625  INFO      Trang 5 parsed 10/15 tin thành công
+2026-03-13 16:25:43,626  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-sky-garden-i/ban-can-ho-sky-garden-1-lau-9-71m-2pn-1wc-gia-52-ty-pst141370.html
+2026-03-13 16:25:44,056  INFO      ✔ [141370] giá=5.2tỷ dt=71.0m² ...
+2026-03-13 16:25:47,063  INFO      Trang 5 parsed 11/15 tin thành công
+2026-03-13 16:25:47,064  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-3pn-so-hong-rieng-dang-cho-thue-gia-9-ty-pst145607.html
+2026-03-13 16:25:47,373  INFO      ✔ [145607] giá=9.0tỷ dt=99.0m² ...
+2026-03-13 16:25:51,810  INFO      Trang 5 parsed 12/15 tin thành công
+2026-03-13 16:25:51,812  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-05/ban-can-ho-chung-cu-an-binh-trung-tam-quan-5-vi-tri-dep-72m2-3pn-gia-32-ty-pst144882.html
+2026-03-13 16:25:52,104  INFO      ✔ [144882] giá=3.2tỷ dt=72.0m² ...
+2026-03-13 16:25:56,432  INFO      Trang 5 parsed 13/15 tin thành công
+2026-03-13 16:25:56,433  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 16:25:56,759  INFO      ✔ [144887] giá=6.85tỷ dt=79.0m² ...
+2026-03-13 16:26:01,237  INFO      Trang 5 parsed 14/15 tin thành công
+2026-03-13 16:26:01,238  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-12/ban-can-ho-chung-cu-phan-van-tri-quan-5-ngay-le-hong-phong-56m2-chi-33-ty-tl-pst144884.html
+2026-03-13 16:26:01,571  INFO      ✔ [144884] giá=3.3tỷ dt=56.0m² ...
+2026-03-13 16:26:04,276  INFO      Trang 5 parsed 15/15 tin thành công
+2026-03-13 16:26:04,319  INFO      Appended 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 16:26:04,320  INFO      Hoàn thành. Tổng: 75 bản ghi
+2026-03-13 20:01:51,482  INFO        Đã có 75 bản ghi cũ → crawl tiếp phần mới
+2026-03-13 20:01:51,484  INFO      ═══ Trang 1/40 ═══
+2026-03-13 20:01:51,485  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 20:01:52,180  INFO        → 15 links | has_next=True
+2026-03-13 20:01:52,184  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 20:01:52,187  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:01:52,187  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 20:01:55,599  INFO      ═══ Trang 2/40 ═══
+2026-03-13 20:01:55,600  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=2
+2026-03-13 20:01:56,242  INFO        → 15 links | has_next=True
+2026-03-13 20:01:56,245  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:01:57,215  INFO        ✔ [129254] 4.2tỷ | 161.0m² | 3PN/4WC | None
+2026-03-13 20:02:01,321  INFO        ✔ [145605] Nonetỷ | 83.0m² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:02:05,035  INFO        ✔ [124684] 3.55tỷ | 65.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:02:09,313  INFO        ✔ [135590] Nonetỷ | 333.0m² | NonePN/NoneWC | None
+2026-03-13 20:02:12,322  INFO        ✔ [145613] Nonetỷ | 75.0m² | 2PN/1WC | None
+2026-03-13 20:02:16,344  INFO        ✔ [126357] 11.0tỷ | 368.0m² | 4PN/5WC | None
+2026-03-13 20:02:19,803  INFO        ✔ [138778] 3.75tỷ | 90.0m² | 3PN/2WC | None
+2026-03-13 20:02:24,178  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | None
+2026-03-13 20:02:27,728  INFO        ✔ [144005] Nonetỷ | 56.0m² | NonePN/NoneWC | None
+2026-03-13 20:02:31,965  INFO        ✔ [145413] 6.7tỷ | 71.0m² | 3PN/2WC | None
+2026-03-13 20:02:35,334  INFO        ✔ [145629] Nonetỷ | 78.0m² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:02:38,318  INFO        ✔ [115667] 8.1tỷ | 91.0m² | 3PN/2WC | None
+2026-03-13 20:02:41,277  INFO        ✔ [124511] 3.4tỷ | 97.0m² | 3PN/2WC | None
+2026-03-13 20:02:46,209  INFO        ✔ [127585] 6.4tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:02:49,782  INFO        ✔ [137671] 6.9tỷ | 89.0m² | NonePN/NoneWC | None
+2026-03-13 20:02:52,620  INFO        💾 90 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:02:52,620  INFO        Tổng tích lũy: 90 (+15 mới)
+2026-03-13 20:02:54,686  INFO      ═══ Trang 3/40 ═══
+2026-03-13 20:02:54,686  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=3
+2026-03-13 20:02:55,122  INFO        → 15 links | has_next=True
+2026-03-13 20:02:55,123  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:02:55,917  INFO        ✔ [129856] 3.02tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:02:59,605  INFO        ✔ [129873] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:02,467  INFO        ✔ [124837] 2.75tỷ | 60.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:03:06,353  INFO        ✔ [129862] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:09,451  INFO        ✔ [124818] 4.1tỷ | 73.0m² | NonePN/NoneWC | None
+2026-03-13 20:03:13,189  INFO        ✔ [129875] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:16,853  INFO        ✔ [129853] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:20,666  INFO        ✔ [129871] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:24,055  INFO        ✔ [145603] 6.7tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:03:27,632  INFO        ✔ [129860] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:32,022  INFO        ✔ [115254] 5.3tỷ | 131.5m² | NonePN/NoneWC | None
+2026-03-13 20:03:35,059  INFO        ✔ [129865] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:38,655  INFO        ✔ [145220] 3.0tỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:03:42,617  INFO        ✔ [124830] 3.1tỷ | 65.0m² | NonePN/NoneWC | None
+2026-03-13 20:03:46,653  INFO        ✔ [129868] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:03:49,103  INFO        💾 105 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:03:49,104  INFO        Tổng tích lũy: 105 (+30 mới)
+2026-03-13 20:03:51,494  INFO      ═══ Trang 4/40 ═══
+2026-03-13 20:03:51,494  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=4
+2026-03-13 20:03:51,943  INFO        → 15 links | has_next=True
+2026-03-13 20:03:51,944  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:03:52,750  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | None
+2026-03-13 20:03:55,176  INFO        ✔ [96066] 3.0tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:03:58,547  INFO        ✔ [142992] Nonetỷ | 39.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:00,921  INFO        ✔ [136630] Nonetỷ | Nonem² | 4PN/3WC | None
+2026-03-13 20:04:03,627  INFO        ✔ [25101] Nonetỷ | 38.1m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:04:07,040  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | None
+2026-03-13 20:04:10,969  INFO        ✔ [118715] Nonetỷ | Nonem² | 4PN/3WC | None
+2026-03-13 20:04:14,517  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | None
+2026-03-13 20:04:17,202  INFO        ✔ [98326] 1.95tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:04:20,120  INFO        ✔ [128487] 3.5tỷ | 54.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:22,966  INFO        ✔ [145058] 2.3tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:04:26,095  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:04:29,521  INFO        ✔ [98409] Nonetỷ | 45.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:31,877  INFO        ✔ [128244] 3.35tỷ | 44.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:34,731  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 1PN/1WC | None
+2026-03-13 20:04:37,517  INFO        💾 120 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:04:37,517  INFO        Tổng tích lũy: 120 (+45 mới)
+2026-03-13 20:04:40,691  INFO      ═══ Trang 5/40 ═══
+2026-03-13 20:04:40,692  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=5
+2026-03-13 20:04:41,229  INFO        → 15 links | has_next=True
+2026-03-13 20:04:41,231  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:04:42,116  INFO        ✔ [139072] 30.0tỷ | 440.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:46,080  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:04:48,964  INFO        ✔ [139036] 3.3tỷ | 59.0m² | NonePN/NoneWC | None
+2026-03-13 20:04:52,154  INFO        ✔ [144503] 3.7tỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:04:56,666  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:04:59,214  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:05:01,669  INFO        ✔ [142270] 5.85tỷ | Nonem² | NonePN/2WC | None
+2026-03-13 20:05:05,081  INFO        ✔ [132985] 12.0tỷ | 54.0m² | NonePN/NoneWC | None
+2026-03-13 20:05:08,581  INFO        ✔ [108197] 2.3tỷ | 50.0m² | NonePN/NoneWC | None
+2026-03-13 20:05:11,898  INFO        ✔ [142227] 6.5tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:05:16,135  INFO        ✔ [144390] 5.0tỷ | Nonem² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:05:19,477  INFO        ✔ [144523] 4.1tỷ | Nonem² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:05:23,850  INFO        ✔ [144855] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:05:26,970  INFO        ✔ [144475] 2.9tỷ | 54.0m² | NonePN/NoneWC | None
+2026-03-13 20:05:30,593  INFO        ✔ [139073] 8.2tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:05:32,689  INFO        💾 135 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:05:32,689  INFO        Tổng tích lũy: 135 (+60 mới)
+2026-03-13 20:05:35,071  INFO      ═══ Trang 6/40 ═══
+2026-03-13 20:05:35,072  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=6
+2026-03-13 20:05:35,547  INFO        → 15 links | has_next=True
+2026-03-13 20:05:35,548  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:05:36,246  INFO        ✔ [136102] 2.65tỷ | 40.0m² | NonePN/NoneWC | None
+2026-03-13 20:05:39,694  INFO        ✔ [140333] Nonetỷ | 163.0m² | NonePN/NoneWC | None
+2026-03-13 20:05:43,408  INFO        ✔ [144344] Nonetỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:05:48,184  INFO        ✔ [143899] 3.0tỷ | 55.0m² | 2PN/1WC | None
+2026-03-13 20:05:51,930  INFO        ✔ [142856] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:05:55,236  INFO        ✔ [144209] Nonetỷ | Nonem² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:05:58,025  INFO        ✔ [121804] Nonetỷ | 59.0m² | NonePN/NoneWC | None
+2026-03-13 20:06:00,778  INFO        ✔ [144335] 2.45tỷ | 26.0m² | NonePN/NoneWC | None
+2026-03-13 20:06:03,665  INFO        ✔ [139027] 0.15tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:06:07,179  INFO        ✔ [143995] Nonetỷ | 47.0m² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:10,892  INFO        ✔ [139626] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:06:13,539  INFO        ✔ [144230] Nonetỷ | 54.0m² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:16,693  INFO        ✔ [131847] Nonetỷ | Nonem² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:19,401  INFO        ✔ [140953] Nonetỷ | 88.0m² | NonePN/NoneWC | None
+2026-03-13 20:06:21,900  INFO        ✔ [134580] 3.0tỷ | 73.0m² | NonePN/NoneWC | None
+2026-03-13 20:06:24,649  INFO        💾 150 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:06:24,649  INFO        Tổng tích lũy: 150 (+75 mới)
+2026-03-13 20:06:27,227  INFO      ═══ Trang 7/40 ═══
+2026-03-13 20:06:27,227  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=7
+2026-03-13 20:06:27,784  INFO        → 15 links | has_next=True
+2026-03-13 20:06:27,786  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:06:28,584  INFO        ✔ [143255] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:06:31,679  INFO        ✔ [143583] 3.5tỷ | 65.0m² | NonePN/1WC | None
+2026-03-13 20:06:35,025  INFO        ✔ [143220] 2.45tỷ | Nonem² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:38,065  INFO        ✔ [136536] 3.25tỷ | 80.0m² | NonePN/NoneWC | None
+2026-03-13 20:06:41,688  INFO        ✔ [143596] Nonetỷ | 150.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:45,161  INFO        ✔ [129834] 6.8tỷ | 72.0m² | 3PN/2WC | None
+2026-03-13 20:06:48,776  INFO        ✔ [143892] Nonetỷ | 68.0m² | 2PN/2WC | None
+2026-03-13 20:06:51,724  INFO        ✔ [52798] Nonetỷ | 80.0m² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:06:55,224  INFO        ✔ [130857] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:06:59,292  INFO        ✔ [143225] 2.35tỷ | 64.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:07:02,666  INFO        ✔ [141564] 9.5tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:07:06,306  INFO        ✔ [143523] Nonetỷ | 50.0m² | 1PN/1WC | None
+2026-03-13 20:07:08,737  INFO        ✔ [128240] 4.5tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:11,686  INFO        ✔ [143759] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:15,412  INFO        ✔ [108196] 3.6tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:07:17,674  INFO        💾 165 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:07:17,675  INFO        Tổng tích lũy: 165 (+90 mới)
+2026-03-13 20:07:20,904  INFO      ═══ Trang 8/40 ═══
+2026-03-13 20:07:20,905  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=8
+2026-03-13 20:07:21,360  INFO        → 15 links | has_next=True
+2026-03-13 20:07:21,361  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:07:22,165  INFO        ✔ [79426] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:07:24,940  INFO        ✔ [134519] 2.1tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:28,352  INFO        ✔ [134523] 2.5tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:31,138  INFO        ✔ [96088] 9.0tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:35,024  INFO        ✔ [94363] Nonetỷ | 59.0m² | 2PN/1WC | None
+2026-03-13 20:07:37,927  INFO        ✔ [142369] 2.05tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:41,067  INFO        ✔ [141418] 8.1tỷ | 150.0m² | 3PN/2WC | None
+2026-03-13 20:07:44,734  INFO        ✔ [94982] 1.8tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:07:48,118  INFO        ✔ [142413] Nonetỷ | 58.0m² | NonePN/NoneWC | None
+2026-03-13 20:07:51,044  INFO        ✔ [120694] 3.5tỷ | 80.0m² | 2PN/2WC | None
+2026-03-13 20:07:54,823  INFO        ✔ [79564] 2.85tỷ | 51.0m² | 1PN/1WC | None
+2026-03-13 20:07:59,042  INFO        ✔ [95323] Nonetỷ | 59.0m² | 2PN/1WC | None
+2026-03-13 20:08:03,438  INFO        ✔ [88257] Nonetỷ | 350.0m² | 6PN/5WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:08:07,008  INFO        ✔ [136865] Nonetỷ | 73.0m² | 2PN/2WC | None
+2026-03-13 20:08:09,558  INFO        ✔ [142614] 9.4tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:08:11,987  INFO        💾 180 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:08:11,987  INFO        Tổng tích lũy: 180 (+105 mới)
+2026-03-13 20:08:15,068  INFO      ═══ Trang 9/40 ═══
+2026-03-13 20:08:15,068  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=9
+2026-03-13 20:08:15,504  INFO        → 15 links | has_next=True
+2026-03-13 20:08:15,505  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:08:15,898  INFO        ✔ [126738] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:08:20,065  INFO        ✔ [136875] Nonetỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:08:22,836  INFO        ✔ [119786] Nonetỷ | 91.0m² | 3PN/2WC | None
+2026-03-13 20:08:28,403  INFO        ✔ [119844] 3.0tỷ | 72.0m² | 2PN/1WC | None
+2026-03-13 20:08:31,674  INFO        ✔ [141953] 1.95tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:08:34,336  INFO        ✔ [94049] Nonetỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:08:36,720  INFO        ✔ [126128] Nonetỷ | 70.0m² | 2PN/2WC | None
+2026-03-13 20:08:39,713  INFO        ✔ [135026] 6.8tỷ | 72.0m² | NonePN/NoneWC | None
+2026-03-13 20:08:43,055  INFO        ✔ [137019] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:08:46,882  INFO        ✔ [141078] 2.9tỷ | 59.0m² | 2PN/1WC | None
+2026-03-13 20:08:50,857  INFO        ✔ [126882] Nonetỷ | 45.0m² | NonePN/NoneWC | None
+2026-03-13 20:08:54,524  INFO        ✔ [141983] Nonetỷ | 79.0m² | 2PN/1WC | None
+2026-03-13 20:08:57,714  INFO        ✔ [136753] Nonetỷ | 121.0m² | NonePN/NoneWC | None
+2026-03-13 20:09:01,261  INFO        ✔ [75651] 5.435tỷ | 555.0m² | NonePN/NoneWC | None
+2026-03-13 20:09:04,830  INFO        ✔ [141254] 6.4tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:09:06,919  INFO        💾 195 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:09:06,920  INFO        Tổng tích lũy: 195 (+120 mới)
+2026-03-13 20:09:09,147  INFO      ═══ Trang 10/40 ═══
+2026-03-13 20:09:09,147  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=10
+2026-03-13 20:09:09,602  INFO        → 15 links | has_next=True
+2026-03-13 20:09:09,604  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:09:10,306  INFO        ✔ [114078] Nonetỷ | 54.0m² | 2PN/1WC | None
+2026-03-13 20:09:14,579  INFO        ✔ [118825] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:09:17,725  INFO        ✔ [127998] 1.96tỷ | 26.7m² | NonePN/NoneWC | None
+2026-03-13 20:09:21,578  INFO        ✔ [117985] Nonetỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:09:24,990  INFO        ✔ [92268] Nonetỷ | 47.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:09:28,641  INFO        ✔ [93548] 1.99tỷ | 47.0m² | NonePN/NoneWC | None
+2026-03-13 20:09:31,319  INFO        ✔ [80541] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:09:34,287  INFO        ✔ [91228] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:09:37,734  INFO        ✔ [96895] Nonetỷ | 69.0m² | 2PN/1WC | None
+2026-03-13 20:09:41,520  INFO        ✔ [82365] 2.3tỷ | 47.0m² | 1PN/1WC | None
+2026-03-13 20:09:45,740  INFO        ✔ [119042] Nonetỷ | 69.0m² | 2PN/1WC | None
+2026-03-13 20:09:49,420  INFO        ✔ [117772] Nonetỷ | 47.0m² | 1PN/1WC | None
+2026-03-13 20:09:53,062  INFO        ✔ [79889] Nonetỷ | 69.0m² | 2PN/1WC | None
+2026-03-13 20:09:55,895  INFO        ✔ [117969] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:09:59,328  INFO        ✔ [79719] 2.0tỷ | 69.0m² | 2PN/1WC | None
+2026-03-13 20:10:02,777  INFO        💾 210 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:10:02,777  INFO        Tổng tích lũy: 210 (+135 mới)
+2026-03-13 20:10:05,154  INFO      ═══ Trang 11/40 ═══
+2026-03-13 20:10:05,155  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=11
+2026-03-13 20:10:05,599  INFO        → 15 links | has_next=True
+2026-03-13 20:10:05,600  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:10:06,483  INFO        ✔ [131625] Nonetỷ | 91.0m² | NonePN/NoneWC | None
+2026-03-13 20:10:09,254  INFO        ✔ [123254] 6.5tỷ | 71.0m² | 3PN/2WC | None
+2026-03-13 20:10:13,145  INFO        ✔ [86203] 6.6tỷ | 88.0m² | 3PN/2WC | None
+2026-03-13 20:10:16,873  INFO        ✔ [85239] 9.3tỷ | 89.0m² | 5PN/4WC | None
+2026-03-13 20:10:20,030  INFO        ✔ [123965] 6.9tỷ | 89.0m² | 3PN/2WC | None
+2026-03-13 20:10:22,758  INFO        ✔ [95739] 5.7tỷ | 72.0m² | 2PN/1WC | None
+2026-03-13 20:10:26,808  INFO        ✔ [96827] 6.7tỷ | 89.0m² | 3PN/2WC | None
+2026-03-13 20:10:30,646  INFO        ✔ [88238] 10.2tỷ | 112.0m² | 3PN/2WC | None
+2026-03-13 20:10:33,871  INFO        ✔ [87764] 5.7tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:10:36,739  INFO        ✔ [85941] 5.2tỷ | 68.86m² | 2PN/1WC | None
+2026-03-13 20:10:40,504  INFO        ✔ [79187] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:10:43,934  INFO        ✔ [111013] 5.7tỷ | 70.0m² | NonePN/NoneWC | None
+2026-03-13 20:10:47,943  INFO        ✔ [88943] 5.1tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:10:52,283  INFO        ✔ [87084] 4.7tỷ | 75.0m² | 2PN/1WC | None
+2026-03-13 20:10:55,702  INFO        ✔ [98825] 6.3tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:10:58,041  INFO        💾 225 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:10:58,042  INFO        Tổng tích lũy: 225 (+150 mới)
+2026-03-13 20:11:01,024  INFO      ═══ Trang 12/40 ═══
+2026-03-13 20:11:01,025  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=12
+2026-03-13 20:11:01,489  INFO        → 15 links | has_next=True
+2026-03-13 20:11:01,491  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:11:02,209  INFO        ✔ [93331] Nonetỷ | 81.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:05,568  INFO        ✔ [90049] 19.9tỷ | 124.0m² | 3PN/2WC | None
+2026-03-13 20:11:09,520  INFO        ✔ [89080] 6.1tỷ | 74.0m² | 3PN/2WC | None
+2026-03-13 20:11:12,515  INFO        ✔ [54533] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:11:17,002  INFO        ✔ [85430] 6.3tỷ | 72.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:20,178  INFO        ✔ [2772] 3.7tỷ | 80.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:24,458  INFO        ✔ [60546] 4.8tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:11:29,143  INFO        ✔ [137809] Nonetỷ | 80.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:32,560  INFO        ✔ [112808] 6.1tỷ | 81.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:36,071  INFO        ✔ [137801] 7.8tỷ | 128.0m² | 4PN/2WC | None
+2026-03-13 20:11:39,026  INFO        ✔ [19700] 4.0tỷ | 87.0m² | 2PN/1WC | None
+2026-03-13 20:11:43,824  INFO        ✔ [60529] 8.0tỷ | 117.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:47,071  INFO        ✔ [56015] Nonetỷ | 80.0m² | 2PN/1WC | None
+2026-03-13 20:11:50,917  INFO        ✔ [13460] 5.0tỷ | 115.0m² | 3PN/2WC | None
+2026-03-13 20:11:53,422  INFO        ✔ [137817] 8.0tỷ | 92.0m² | NonePN/NoneWC | None
+2026-03-13 20:11:55,927  INFO        💾 240 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:11:55,927  INFO        Tổng tích lũy: 240 (+165 mới)
+2026-03-13 20:11:59,284  INFO      ═══ Trang 13/40 ═══
+2026-03-13 20:11:59,284  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=13
+2026-03-13 20:11:59,856  INFO        → 15 links | has_next=True
+2026-03-13 20:11:59,857  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:12:00,533  INFO        ✔ [133484] 2.85tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:12:04,532  INFO        ✔ [99357] 6.4tỷ | 72.0m² | NonePN/NoneWC | None
+2026-03-13 20:12:07,896  INFO        ✔ [130385] Nonetỷ | 80.0m² | 2PN/1WC | None
+2026-03-13 20:12:11,289  INFO        ✔ [106146] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:12:14,751  INFO        ✔ [132928] Nonetỷ | 67.8m² | 2PN/1WC | None
+2026-03-13 20:12:18,161  INFO        ✔ [85378] 5.3tỷ | 71.0m² | 3PN/2WC | None
+2026-03-13 20:12:22,025  INFO        ✔ [132731] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:12:25,699  INFO        ✔ [131885] Nonetỷ | 47.0m² | 1PN/1WC | None
+2026-03-13 20:12:28,953  INFO        ✔ [133839] Nonetỷ | 72.0m² | NonePN/NoneWC | None
+2026-03-13 20:12:32,342  INFO        ✔ [133267] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:12:35,907  INFO        ✔ [140063] 2.95tỷ | 74.0m² | NonePN/NoneWC | None
+2026-03-13 20:20:20,444  INFO        ✔ [100635] 2.63tỷ | 39.0m² | NonePN/NoneWC | None
+2026-03-13 20:20:24,331  INFO        ✔ [85092] 6.9tỷ | Nonem² | 3PN/3WC | None
+2026-03-13 20:20:28,318  INFO        ✔ [112804] 4.4tỷ | 73.0m² | 2PN/1WC | None
+2026-03-13 20:20:31,959  INFO        ✔ [133635] Nonetỷ | Nonem² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:20:34,786  INFO        💾 255 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:20:34,787  INFO        Tổng tích lũy: 255 (+180 mới)
+2026-03-13 20:20:37,726  INFO      ═══ Trang 14/40 ═══
+2026-03-13 20:20:37,727  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=14
+2026-03-13 20:20:38,261  INFO        → 15 links | has_next=True
+2026-03-13 20:20:38,262  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:20:38,630  INFO        ✔ [143660] 5.0tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:20:41,327  INFO        ✔ [143920] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:20:45,309  INFO        ✔ [99119] 5.95tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:20:49,086  INFO        ✔ [143661] 6.4tỷ | Nonem² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:20:52,630  INFO        ✔ [143524] Nonetỷ | Nonem² | 2PN/2WC | None
+2026-03-13 20:20:56,179  INFO        ✔ [98975] 4.0tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:20:59,636  INFO        ✔ [143522] Nonetỷ | 115.0m² | 2PN/2WC | None
+2026-03-13 20:21:02,293  INFO        ✔ [143923] 5.7tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:21:04,114  INFO        ✔ [144202] 4.7tỷ | 121.0m² | 3PN/3WC | None
+2026-03-13 20:21:06,688  INFO        ✔ [143663] Nonetỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:21:09,466  INFO        ✔ [143659] Nonetỷ | 101.0m² | 3PN/2WC | None
+2026-03-13 20:21:12,300  INFO        ✔ [143916] 5.8tỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:21:15,686  INFO        ✔ [99135] 3.0tỷ | 55.0m² | 1PN/1WC | None
+2026-03-13 20:21:19,022  INFO        ✔ [143588] 4.5tỷ | 82.0m² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:21:22,455  INFO        ✔ [143913] 5.0tỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:21:25,324  INFO        💾 270 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:21:25,324  INFO        Tổng tích lũy: 270 (+195 mới)
+2026-03-13 20:21:28,629  INFO      ═══ Trang 15/40 ═══
+2026-03-13 20:21:28,629  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=15
+2026-03-13 20:21:29,122  INFO        → 15 links | has_next=True
+2026-03-13 20:21:29,123  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:21:29,438  INFO        ✔ [143520] 4.35tỷ | 82.0m² | 2PN/2WC | None
+2026-03-13 20:21:32,869  INFO        ✔ [143072] Nonetỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:21:39,015  INFO        ✔ [143314] Nonetỷ | Nonem² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:21:41,810  INFO        ✔ [143069] Nonetỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:21:45,372  INFO        ✔ [142982] 4.5tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:21:50,060  INFO        ✔ [143309] 6.3tỷ | 90.0m² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:21:55,918  INFO        ✔ [143303] Nonetỷ | 199.0m² | 4PN/3WC | None
+2026-03-13 20:21:59,915  INFO        ✔ [142896] 8.0tỷ | 72.0m² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:04,666  INFO        ✔ [142880] Nonetỷ | Nonem² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:07,365  INFO        ✔ [142990] Nonetỷ | Nonem² | 2PN/1WC | None
+2026-03-13 20:22:10,648  INFO        ✔ [142881] 8.6tỷ | 72.0m² | NonePN/NoneWC | None
+2026-03-13 20:22:13,464  INFO        ✔ [142988] 4.3tỷ | Nonem² | NonePN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:16,867  INFO        ✔ [143299] 2.58tỷ | Nonem² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:19,869  INFO        ✔ [143065] 5.3tỷ | 192.0m² | 4PN/3WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:24,632  INFO        ✔ [143294] Nonetỷ | 199.0m² | 4PN/3WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:27,563  INFO        💾 285 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:22:27,563  INFO        Tổng tích lũy: 285 (+210 mới)
+2026-03-13 20:22:30,140  INFO      ═══ Trang 16/40 ═══
+2026-03-13 20:22:30,141  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=16
+2026-03-13 20:22:30,662  INFO        → 15 links | has_next=True
+2026-03-13 20:22:30,663  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:22:30,969  INFO        ✔ [142701] 9.7tỷ | 110.0m² | NonePN/NoneWC | None
+2026-03-13 20:22:34,287  INFO        ✔ [142744] 8.5tỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:37,808  INFO        ✔ [142738] 2.27tỷ | Nonem² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:40,571  INFO        ✔ [142707] 5.9tỷ | 71.0m² | NonePN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:22:44,234  INFO        ✔ [142742] 7.5tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:22:47,291  INFO        ✔ [142859] 5.5tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:22:50,762  INFO        ✔ [142740] 3.0tỷ | 72.0m² | 2PN/1WC | None
+2026-03-13 20:22:54,571  INFO        ✔ [142702] 7.2tỷ | 100.0m² | 3PN/2WC | None
+2026-03-13 20:22:57,985  INFO        ✔ [142743] 8.5tỷ | Nonem² | 3PN/2WC | None
+2026-03-13 20:23:00,619  INFO        ✔ [142705] Nonetỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:23:14,215  INFO        Đã có 285 bản ghi cũ → crawl tiếp phần mới
+2026-03-13 20:23:14,215  INFO      ═══ Trang 1/3 ═══
+2026-03-13 20:23:14,216  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 20:23:14,695  INFO        → 15 links | has_next=True
+2026-03-13 20:23:14,696  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 20:23:14,699  INFO        💾 285 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:23:14,699  INFO        Tổng tích lũy: 285 (+0 mới)
+2026-03-13 20:23:16,847  INFO      ═══ Trang 2/3 ═══
+2026-03-13 20:23:16,854  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=2
+2026-03-13 20:23:17,364  INFO        → 15 links | has_next=True
+2026-03-13 20:23:17,365  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 20:23:17,368  INFO        💾 285 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:23:17,368  INFO        Tổng tích lũy: 285 (+0 mới)
+2026-03-13 20:23:20,072  INFO      ═══ Trang 3/3 ═══
+2026-03-13 20:23:20,073  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=3
+2026-03-13 20:23:20,618  INFO        → 15 links | has_next=True
+2026-03-13 20:23:20,619  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 20:23:20,622  INFO        💾 285 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:23:20,623  INFO        Tổng tích lũy: 285 (+0 mới)
+2026-03-13 20:23:23,592  INFO      Hoàn thành. +0 mới | Tổng: 285
+2026-03-13 20:23:23,595  INFO        💾 285 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:46:49,848  INFO      ═══ Trang 1/3 ═══
+2026-03-13 20:46:49,849  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 20:46:50,395  INFO        → 15 links | has_next=True
+2026-03-13 20:46:50,398  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:46:51,179  INFO        ✔ [126109] 6.7tỷ | 88.0m² | 3PN/2WC | None
+2026-03-13 20:46:54,421  INFO        ✔ [141370] 5.2tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:46:57,938  INFO        ✔ [142717] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:47:01,023  INFO        ✔ [145607] 9.0tỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:47:04,400  INFO        ✔ [146029] Nonetỷ | 92.0m² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:47:07,632  INFO        ✔ [116891] 4.8tỷ | 57.0m² | 2PN/1WC | None
+2026-03-13 20:47:11,101  INFO        ✔ [142626] Nonetỷ | 91.0m² | NonePN/NoneWC | None
+2026-03-13 20:47:13,892  INFO        ✔ [136913] 3.999tỷ | Nonem² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:47:16,623  INFO        ✔ [141366] 6.1tỷ | 48.8m² | 1PN/1WC | None
+2026-03-13 20:47:19,029  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/1WC | None
+2026-03-13 20:47:22,659  INFO        ✔ [146053] 3.1tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:47:25,554  INFO        ✔ [144882] 3.2tỷ | 72.0m² | 3PN/2WC | None
+2026-03-13 20:47:28,008  INFO        ✔ [144884] 3.3tỷ | 56.0m² | NonePN/NoneWC | None
+2026-03-13 20:47:31,132  INFO        ✔ [145939] 3.2tỷ | 73.0m² | 3PN/2WC | None
+2026-03-13 20:47:35,251  INFO        ✔ [93891] 8.9tỷ | 141.0m² | 5PN/4WC | None
+2026-03-13 20:47:38,102  INFO        💾 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:47:38,102  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-13 20:47:41,286  INFO      ═══ Trang 2/3 ═══
+2026-03-13 20:47:41,287  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=2
+2026-03-13 20:47:41,742  INFO        → 15 links | has_next=True
+2026-03-13 20:47:41,743  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:47:41,993  INFO        ✔ [144005] Nonetỷ | 56.0m² | NonePN/NoneWC | None
+2026-03-13 20:47:44,557  INFO        ✔ [124511] 3.4tỷ | 97.0m² | 3PN/2WC | None
+2026-03-13 20:47:46,999  INFO        ✔ [145613] Nonetỷ | 75.0m² | 2PN/1WC | None
+2026-03-13 20:47:50,317  INFO        ✔ [145605] Nonetỷ | 83.0m² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:47:53,225  INFO        ✔ [135590] Nonetỷ | 333.0m² | NonePN/NoneWC | None
+2026-03-13 20:47:56,027  INFO        ✔ [126357] 11.0tỷ | 368.0m² | 4PN/5WC | None
+2026-03-13 20:47:59,737  INFO        ✔ [145413] 6.7tỷ | 71.0m² | 3PN/2WC | None
+2026-03-13 20:48:02,162  INFO        ✔ [124684] 3.55tỷ | 65.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:48:05,665  INFO        ✔ [145629] Nonetỷ | 78.0m² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 20:48:08,641  INFO        ✔ [129254] 4.2tỷ | 161.0m² | 3PN/4WC | None
+2026-03-13 20:48:11,363  INFO        ✔ [138778] 3.75tỷ | 90.0m² | 3PN/2WC | None
+2026-03-13 20:48:14,738  INFO        ✔ [137671] 6.9tỷ | 89.0m² | NonePN/NoneWC | None
+2026-03-13 20:48:17,337  INFO        ✔ [115667] 8.1tỷ | 91.0m² | 3PN/2WC | None
+2026-03-13 20:48:19,646  INFO        ✔ [127585] 6.4tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 20:48:22,447  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | None
+2026-03-13 20:48:24,631  INFO        💾 30 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:48:24,631  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-13 20:48:28,039  INFO      ═══ Trang 3/3 ═══
+2026-03-13 20:48:28,039  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=3
+2026-03-13 20:48:28,484  INFO        → 15 links | has_next=True
+2026-03-13 20:48:28,485  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 20:48:28,772  INFO        ✔ [129875] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:31,136  INFO        ✔ [124830] 3.1tỷ | 65.0m² | NonePN/NoneWC | None
+2026-03-13 20:48:34,369  INFO        ✔ [124837] 2.75tỷ | 60.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 20:48:37,726  INFO        ✔ [124818] 4.1tỷ | 73.0m² | NonePN/NoneWC | None
+2026-03-13 20:48:40,575  INFO        ✔ [129873] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:43,944  INFO        ✔ [129862] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:46,695  INFO        ✔ [129860] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:49,800  INFO        ✔ [129853] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:52,517  INFO        ✔ [129865] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:48:55,156  INFO        ✔ [145220] 3.0tỷ | Nonem² | 1PN/1WC | None
+2026-03-13 20:48:57,806  INFO        ✔ [145603] 6.7tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 20:49:01,153  INFO        ✔ [129868] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:49:03,738  INFO        ✔ [115254] 5.3tỷ | 131.5m² | NonePN/NoneWC | None
+2026-03-13 20:49:07,079  INFO        ✔ [129871] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:49:10,642  INFO        ✔ [129856] 3.02tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 20:49:12,762  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:49:12,762  INFO        Tổng tích lũy: 45 (+45 mới)
+2026-03-13 20:49:15,258  INFO      Hoàn thành. +45 mới | Tổng: 45
+2026-03-13 20:49:15,260  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-13 20:55:01,012  INFO      ═══ Trang 1/5 ═══
+2026-03-13 20:55:01,567  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 20:55:01,569  INFO      Trang 1: 15 links, has_next=True
+2026-03-13 20:55:01,569  INFO      Parsing detail: https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phong-pj-urbann-hill/ban-can-ho-urban-hill-nguyen-van-linh-quan-7-dien-tich-79m2-2pn-gia-tot-chi-685-ty-pst144887.html
+2026-03-13 21:34:42,241  INFO        Load file cũ: 45 dòng → crawl tiếp phần mới.
+2026-03-13 21:34:42,242  INFO      ═══ Trang 1/5 ═══
+2026-03-13 21:34:43,008  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 21:34:43,051  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:35:01,355  INFO        Load file cũ: 45 dòng → crawl tiếp phần mới.
+2026-03-13 21:35:01,355  INFO      ═══ Trang 1/5 ═══
+2026-03-13 21:35:01,933  INFO        Trang 1: 15 links, has_next=True
+2026-03-13 21:35:01,936  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:35:01,938  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:35:01,939  INFO        Tổng tích lũy: 45 (+0 mới)
+2026-03-13 21:35:06,243  INFO      ═══ Trang 2/5 ═══
+2026-03-13 21:35:06,948  INFO        Trang 2: 15 links, has_next=True
+2026-03-13 21:35:06,950  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:35:06,951  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:35:06,952  INFO        Tổng tích lũy: 45 (+0 mới)
+2026-03-13 21:35:11,085  INFO      ═══ Trang 3/5 ═══
+2026-03-13 21:35:11,578  INFO        Trang 3: 15 links, has_next=True
+2026-03-13 21:35:11,581  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:35:11,583  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:35:11,584  INFO        Tổng tích lũy: 45 (+0 mới)
+2026-03-13 21:35:14,501  INFO      ═══ Trang 4/5 ═══
+2026-03-13 21:35:15,027  INFO        Trang 4: 15 links, has_next=True
+2026-03-13 21:35:15,030  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:35:15,319  INFO        ✔ [128487] 3.5tỷ | 54.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:35:19,068  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | NT=None | PL=None | T=None
+2026-03-13 21:35:23,131  INFO        ✔ [98326] 1.95tỷ | Nonem² | NonePN/NoneWC | NT=None | PL=None | T=3
+2026-03-13 21:35:25,998  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | NT=None | PL=None | T=None
+2026-03-13 21:35:30,006  INFO        ✔ [96066] 3.0tỷ | Nonem² | 2PN/1WC | NT=None | PL=None | T=None
+2026-03-13 21:35:34,348  INFO        ✔ [25101] Nonetỷ | 38.1m² | NonePN/NoneWC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:35:38,951  INFO        ✔ [142992] Nonetỷ | 39.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:35:42,090  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | NT=None | PL=None | T=None
+2026-03-13 21:35:46,425  INFO        ✔ [98409] Nonetỷ | 45.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:35:50,772  INFO        ✔ [136630] Nonetỷ | Nonem² | 4PN/3WC | NT=Cao Cấp | PL=None | T=None
+2026-03-13 21:35:55,779  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | NT=None | PL=None | T=None
+2026-03-13 21:35:59,671  INFO        ✔ [128244] 3.35tỷ | 44.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:03,114  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 1PN/1WC | NT=None | PL=None | T=None
+2026-03-13 21:36:07,805  INFO        ✔ [118715] Nonetỷ | Nonem² | 4PN/3WC | NT=Đầy đủ | PL=None | T=None
+2026-03-13 21:36:12,421  INFO        ✔ [145058] 2.3tỷ | Nonem² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:16,223  INFO        💾 60 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:36:16,224  INFO        Tổng tích lũy: 60 (+15 mới)
+2026-03-13 21:36:20,029  INFO      ═══ Trang 5/5 ═══
+2026-03-13 21:36:20,523  INFO        Trang 5: 15 links, has_next=True
+2026-03-13 21:36:20,526  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:36:20,835  INFO        ✔ [108197] 2.3tỷ | 50.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:24,804  INFO        ✔ [144855] Nonetỷ | Nonem² | 2PN/1WC | NT=None | PL=None | T=None
+2026-03-13 21:36:28,195  INFO        ✔ [139036] 3.3tỷ | 59.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:32,000  INFO        ✔ [144503] 3.7tỷ | Nonem² | 3PN/2WC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:36:36,032  INFO        ✔ [132985] 12.0tỷ | 54.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:39,500  INFO        ✔ [142227] 6.5tỷ | Nonem² | 2PN/1WC | NT=None | PL=None | T=None
+2026-03-13 21:36:42,393  INFO        ✔ [144475] 2.9tỷ | 54.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:36:47,240  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:36:51,834  INFO        ✔ [142270] 5.85tỷ | Nonem² | NonePN/2WC | NT=Đầy đủ | PL=None | T=None
+2026-03-13 21:36:55,859  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | NT=None | PL=None | T=None
+2026-03-13 21:36:58,816  INFO        ✔ [144390] 5.0tỷ | Nonem² | 1PN/1WC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:37:03,170  INFO        ✔ [144523] 4.1tỷ | Nonem² | 2PN/2WC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:37:07,876  INFO        ✔ [139073] 8.2tỷ | Nonem² | NonePN/NoneWC | NT=Đầy đủ | PL=None | T=None
+2026-03-13 21:37:11,367  INFO        ✔ [139072] 30.0tỷ | 440.0m² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-13 21:37:14,262  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/1WC | NT=None | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-13 21:37:18,421  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:37:18,422  INFO        Tổng tích lũy: 75 (+30 mới)
+2026-03-13 21:37:21,187  INFO      Hoàn thành. +30 mới | Tổng: 75
+2026-03-13 21:38:39,460  INFO        Đã có 75 bản ghi cũ → crawl tiếp phần mới
+2026-03-13 21:38:39,461  INFO      ═══ Trang 1/40 ═══
+2026-03-13 21:38:39,461  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 21:38:40,043  INFO        → 15 links | has_next=True
+2026-03-13 21:38:40,045  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:10,323  INFO        Đã có 75 bản ghi cũ → crawl tiếp phần mới
+2026-03-13 21:39:10,323  INFO      ═══ Trang 1/40 ═══
+2026-03-13 21:39:10,324  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 21:39:10,948  INFO        → 15 links | has_next=True
+2026-03-13 21:39:10,951  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:10,956  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:39:10,957  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 21:39:14,345  INFO      ═══ Trang 2/40 ═══
+2026-03-13 21:39:14,347  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=2
+2026-03-13 21:39:14,956  INFO        → 15 links | has_next=True
+2026-03-13 21:39:14,958  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:14,961  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:39:14,962  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 21:39:18,259  INFO      ═══ Trang 3/40 ═══
+2026-03-13 21:39:18,260  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=3
+2026-03-13 21:39:18,735  INFO        → 15 links | has_next=True
+2026-03-13 21:39:18,737  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:18,739  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:39:18,740  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 21:39:22,109  INFO      ═══ Trang 4/40 ═══
+2026-03-13 21:39:22,110  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=4
+2026-03-13 21:39:22,610  INFO        → 15 links | has_next=True
+2026-03-13 21:39:22,611  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:22,615  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:39:22,615  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 21:39:25,142  INFO      ═══ Trang 5/40 ═══
+2026-03-13 21:39:25,143  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=5
+2026-03-13 21:39:25,701  INFO        → 15 links | has_next=True
+2026-03-13 21:39:25,704  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-13 21:39:25,707  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:39:25,708  INFO        Tổng tích lũy: 75 (+0 mới)
+2026-03-13 21:39:28,415  INFO      ═══ Trang 6/40 ═══
+2026-03-13 21:39:28,416  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=6
+2026-03-13 21:39:28,987  INFO        → 15 links | has_next=True
+2026-03-13 21:39:28,989  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:39:29,659  INFO        ✔ [134580] 3.0tỷ | 73.0m² | NonePN/NoneWC | None
+2026-03-13 21:39:31,997  INFO        ✔ [144230] Nonetỷ | 54.0m² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:39:35,070  INFO        ✔ [136102] 2.65tỷ | 40.0m² | NonePN/NoneWC | None
+2026-03-13 21:39:38,303  INFO        ✔ [139626] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 21:39:40,907  INFO        ✔ [140953] Nonetỷ | 88.0m² | NonePN/NoneWC | None
+2026-03-13 21:39:44,553  INFO        ✔ [143995] Nonetỷ | 47.0m² | 1PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:39:47,127  INFO        ✔ [144344] Nonetỷ | Nonem² | 1PN/1WC | None
+2026-03-13 21:40:52,193  INFO      ═══ Trang 1/40 ═══
+2026-03-13 21:40:52,193  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=1
+2026-03-13 21:40:52,761  INFO        → 15 links | has_next=True
+2026-03-13 21:40:52,763  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:40:53,066  INFO        ✔ [146053] 3.1tỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 21:40:55,374  INFO        ✔ [142717] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-13 21:40:58,280  INFO        ✔ [136913] 3.999tỷ | Nonem² | 2PN/1WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:41:00,883  INFO        ✔ [145939] 3.2tỷ | 73.0m² | 3PN/2WC | None
+2026-03-13 21:41:03,529  INFO        ✔ [126109] 6.7tỷ | 88.0m² | 3PN/2WC | None
+2026-03-13 21:41:06,667  INFO        ✔ [145607] 9.0tỷ | Nonem² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:41:09,475  INFO        ✔ [141366] 6.1tỷ | 48.8m² | 1PN/1WC | None
+2026-03-13 21:41:12,136  INFO        ✔ [142626] Nonetỷ | 91.0m² | NonePN/NoneWC | None
+2026-03-13 21:41:15,554  INFO        ✔ [93891] 8.9tỷ | 141.0m² | 5PN/4WC | None
+2026-03-13 21:41:18,557  INFO        ✔ [141370] 5.2tỷ | 71.0m² | 2PN/1WC | None
+2026-03-13 21:41:22,216  INFO        ✔ [144884] 3.3tỷ | 56.0m² | NonePN/NoneWC | None
+2026-03-13 21:41:25,016  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/1WC | None
+2026-03-13 21:41:28,052  INFO        ✔ [144882] 3.2tỷ | 72.0m² | 3PN/2WC | None
+2026-03-13 21:41:30,404  INFO        ✔ [146029] Nonetỷ | 92.0m² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:41:33,302  INFO        ✔ [116891] 4.8tỷ | 57.0m² | 2PN/1WC | None
+2026-03-13 21:41:35,904  INFO        💾 15 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:41:35,905  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-13 21:41:39,216  INFO      ═══ Trang 2/40 ═══
+2026-03-13 21:41:39,217  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=2
+2026-03-13 21:41:39,749  INFO        → 15 links | has_next=True
+2026-03-13 21:41:39,751  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:41:40,105  INFO        ✔ [145613] Nonetỷ | 75.0m² | 2PN/1WC | None
+2026-03-13 21:41:42,742  INFO        ✔ [135590] Nonetỷ | 333.0m² | NonePN/NoneWC | None
+2026-03-13 21:41:46,379  INFO        ✔ [145629] Nonetỷ | 78.0m² | 3PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:41:49,434  INFO        ✔ [145413] 6.7tỷ | 71.0m² | 3PN/2WC | None
+2026-03-13 21:41:52,919  INFO        ✔ [124684] 3.55tỷ | 65.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 21:41:56,308  INFO        ✔ [144005] Nonetỷ | 56.0m² | NonePN/NoneWC | None
+2026-03-13 21:41:58,711  INFO        ✔ [145605] Nonetỷ | 83.0m² | 2PN/2WC | Sổ đỏ/Sổ hồng
+2026-03-13 21:42:01,799  INFO        ✔ [129254] 4.2tỷ | 161.0m² | 3PN/4WC | None
+2026-03-13 21:42:04,765  INFO        ✔ [137671] 6.9tỷ | 89.0m² | NonePN/NoneWC | None
+2026-03-13 21:42:07,079  INFO        ✔ [127585] 6.4tỷ | 81.0m² | 3PN/2WC | None
+2026-03-13 21:42:10,684  INFO        ✔ [124511] 3.4tỷ | 97.0m² | 3PN/2WC | None
+2026-03-13 21:42:14,427  INFO        ✔ [115667] 8.1tỷ | 91.0m² | 3PN/2WC | None
+2026-03-13 21:42:17,839  INFO        ✔ [138778] 3.75tỷ | 90.0m² | 3PN/2WC | None
+2026-03-13 21:42:20,246  INFO        ✔ [126357] 11.0tỷ | 368.0m² | 4PN/5WC | None
+2026-03-13 21:42:23,611  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | None
+2026-03-13 21:42:25,868  INFO        💾 30 rows → data-crawling/raw/raw_data.csv
+2026-03-13 21:42:25,869  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-13 21:42:27,995  INFO      ═══ Trang 3/40 ═══
+2026-03-13 21:42:27,996  INFO        Fetch list: https://thuviennhadat.vn/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang=3
+2026-03-13 21:42:28,505  INFO        → 15 links | has_next=True
+2026-03-13 21:42:28,526  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-13 21:42:28,868  INFO        ✔ [124837] 2.75tỷ | 60.0m² | NonePN/NoneWC | Sổ đỏ/Sổ hồng
+2026-03-13 21:42:31,676  INFO        ✔ [129873] Nonetỷ | Nonem² | NonePN/NoneWC | None
+2026-03-14 01:24:07,488  INFO        Load file cũ: 30 dòng → crawl tiếp phần mới.
+2026-03-14 01:24:07,489  INFO      ═══ Trang 1/40 ═══
+2026-03-14 01:24:08,382  INFO        Trang 1: 15 links, has_next=True
+2026-03-14 01:24:08,385  INFO        Mới: 1 | Bỏ qua (đã có): 14
+2026-03-14 01:24:08,652  INFO        ✔ [145612] 6.6tỷ | Nonem² | 2PN/1WC | NT=None | PL=None | T=None
+2026-03-14 01:24:13,133  INFO        💾 31 rows → data-crawling/raw/raw_data.csv
+2026-03-14 01:24:13,134  INFO        Tổng tích lũy: 31 (+1 mới)
+2026-03-14 01:24:17,344  INFO      ═══ Trang 2/40 ═══
+2026-03-14 01:24:17,797  INFO        Trang 2: 15 links, has_next=True
+2026-03-14 01:24:17,798  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-14 01:24:17,800  INFO        💾 31 rows → data-crawling/raw/raw_data.csv
+2026-03-14 01:24:17,800  INFO        Tổng tích lũy: 31 (+1 mới)
+2026-03-14 01:24:21,803  INFO      ═══ Trang 3/40 ═══
+2026-03-14 01:24:22,330  INFO        Trang 3: 15 links, has_next=True
+2026-03-14 01:24:22,331  INFO        Mới: 14 | Bỏ qua (đã có): 1
+2026-03-14 01:24:22,567  INFO        ✔ [129873] Nonetỷ | Nonem² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-14 01:24:25,600  INFO        ✔ [129875] Nonetỷ | Nonem² | NonePN/NoneWC | NT=None | PL=None | T=None
+2026-03-14 01:24:29,182  INFO        ✔ [145603] 6.7tỷ | 71.0m² | 2PN/1WC | NT=None | PL=None | T=None
+2026-03-14 11:29:01,479  INFO        Load file cũ: 31 dòng → crawl tiếp phần mới.
+2026-03-14 11:29:01,480  INFO      ═══ Trang 1/40 ═══
+2026-03-14 11:29:02,087  INFO        Trang 1: 15 links, has_next=True
+2026-03-14 11:29:02,090  INFO        Mới: 1 | Bỏ qua (đã có): 14
+2026-03-14 11:29:02,391  INFO        ✔ [136536] 3.25tỷ | 52.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-14 11:29:26,045  INFO        Chưa có file cũ — bắt đầu mới.
+2026-03-14 11:29:26,046  INFO      ═══ Trang 1/40 ═══
+2026-03-14 11:29:26,502  INFO        Trang 1: 15 links, has_next=True
+2026-03-14 11:29:26,503  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:29:27,634  INFO        ✔ [146029] 4.45tỷ | 92.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:29:31,492  INFO        ✔ [145612] 6.6tỷ | 71.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:29:39,748  INFO        ✔ [145607] 9.0tỷ | 99.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:29:42,836  INFO        ✔ [144882] 3.2tỷ | 72.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=2
+2026-03-14 11:29:45,811  INFO        ✔ [136536] 3.25tỷ | 52.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-14 11:29:50,569  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:29:56,683  INFO        ✔ [144884] 3.3tỷ | 56.0m² | 2PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:01,010  INFO        ✔ [126109] 6.7tỷ | 88.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:05,818  INFO        ✔ [141370] 5.2tỷ | 71.0m² | 2PN/1WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=9
+2026-03-14 11:30:08,627  INFO        ✔ [146053] 3.1tỷ | 65.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:12,287  INFO        ✔ [142717] 4.67tỷ | 56.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:18,991  INFO        ✔ [142626] 7.8tỷ | 91.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:21,854  INFO        ✔ [141366] 6.1tỷ | 48.8m² | 1PN/1WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=3
+2026-03-14 11:30:27,450  INFO        ✔ [136913] 4.0tỷ | 69.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=9
+2026-03-14 11:30:31,220  INFO        ✔ [145939] 3.2tỷ | 73.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:34,807  INFO        💾 15 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:30:34,816  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-14 11:30:38,348  INFO      ═══ Trang 2/40 ═══
+2026-03-14 11:30:38,827  INFO        Trang 2: 15 links, has_next=True
+2026-03-14 11:30:38,829  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:30:39,080  INFO        ✔ [145413] 6.7tỷ | 71.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:30:42,767  INFO        ✔ [124511] 3.4tỷ | 97.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:30:50,238  INFO        ✔ [116891] 4.8tỷ | 57.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:30:53,630  INFO        ✔ [138778] 3.75tỷ | 90.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:30:58,728  INFO        ✔ [137671] 6.9tỷ | 89.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:03,462  INFO        ✔ [135590] 18.32tỷ | 333.0m² | 5PN/5WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:31:08,955  INFO        ✔ [115667] 8.1tỷ | 91.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:14,757  INFO        ✔ [127585] 6.4tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:18,947  INFO        ✔ [93891] 8.9tỷ | 141.0m² | 5PN/4WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:23,422  INFO        ✔ [129254] 4.2tỷ | 161.0m² | 3PN/4WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:31:28,213  INFO        ✔ [144005] 6.7tỷ | 56.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:33,851  INFO        ✔ [124684] 3.55tỷ | 65.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:38,188  INFO        ✔ [145629] 3.85tỷ | 78.0m² | 3PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:41,906  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:31:48,989  INFO        ✔ [126357] 11.0tỷ | 368.0m² | 4PN/5WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:31:51,717  INFO        💾 30 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:31:51,718  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-14 11:31:54,296  INFO      ═══ Trang 3/40 ═══
+2026-03-14 11:31:54,756  INFO        Trang 3: 15 links, has_next=True
+2026-03-14 11:31:54,757  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:31:55,100  INFO        ✔ [145613] 9.4tỷ | 75.0m² | 2PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:31:59,324  INFO        ✔ [124830] 3.1tỷ | 65.0m² | 2PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:05,573  INFO        ✔ [129871] 4.1tỷ | 54.7m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=4
+2026-03-14 11:32:08,842  INFO        ✔ [129860] 4.1tỷ | 55.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:14,100  INFO        ✔ [115254] 5.3tỷ | 131.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:17,629  INFO        ✔ [129873] 3.02tỷ | 37.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:20,467  INFO        ✔ [145603] 6.7tỷ | 71.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-14 11:32:25,329  INFO        ✔ [129875] 4.44tỷ | 55.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:30,017  INFO        ✔ [129856] 3.02tỷ | 37.27m² | 0PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=4
+2026-03-14 11:32:33,850  INFO        ✔ [145605] 4.0tỷ | 83.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:32:37,751  INFO        ✔ [129853] 4.32tỷ | 54.7m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=4
+2026-03-14 11:32:43,492  INFO        ✔ [129862] 4.11tỷ | 53.35m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:48,019  INFO        ✔ [129865] 4.44tỷ | 55.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:32:51,692  INFO        ✔ [129868] 4.11tỷ | 53.35m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=6
+2026-03-14 11:32:54,789  INFO        ✔ [145220] 3.0tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:32:59,255  INFO        💾 45 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:32:59,256  INFO        Tổng tích lũy: 45 (+45 mới)
+2026-03-14 11:33:02,764  INFO      ═══ Trang 4/40 ═══
+2026-03-14 11:33:03,413  INFO        Trang 4: 15 links, has_next=True
+2026-03-14 11:33:03,418  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:33:03,740  INFO        ✔ [98409] 2.45tỷ | 45.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=2
+2026-03-14 11:33:07,619  INFO        ✔ [98326] 1.95tỷ | 45.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-14 11:33:11,854  INFO        ✔ [118715] 30.0tỷ | 150.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:15,457  INFO        ✔ [145058] 2.3tỷ | 36.0m² | 1PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:33:21,789  INFO        ✔ [124837] 2.75tỷ | 60.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:25,072  INFO        ✔ [124818] 4.1tỷ | 73.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:28,201  INFO        ✔ [128487] 3.5tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:32,881  INFO        ✔ [136630] 35.0tỷ | 145.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=26
+2026-03-14 11:33:36,636  INFO        ✔ [96066] 2.5tỷ | 44.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=4
+2026-03-14 11:33:42,136  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:46,119  INFO        ✔ [128244] 3.35tỷ | 44.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:51,286  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:54,615  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:33:58,782  INFO        ✔ [25101] 2.2tỷ | 38.1m² | 2PN/0WC | NT=Cơ Bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:02,819  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:05,488  INFO        💾 60 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:34:05,488  INFO        Tổng tích lũy: 60 (+60 mới)
+2026-03-14 11:34:08,542  INFO      ═══ Trang 5/40 ═══
+2026-03-14 11:34:09,276  INFO        Trang 5: 15 links, has_next=True
+2026-03-14 11:34:09,278  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:34:10,653  INFO        ✔ [144855] 3.8tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:34:14,142  INFO        ✔ [144475] 2.9tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-14 11:34:18,003  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:21,693  INFO        ✔ [142992] 2.15tỷ | 39.0m² | 1PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:34:25,918  INFO        ✔ [142227] 6.5tỷ | 79.7m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:34:33,860  INFO        ✔ [132985] 12.0tỷ | 54.0m² | 0PN/0WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-14 11:34:38,152  INFO        ✔ [139073] 8.2tỷ | 96.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=11
+2026-03-14 11:34:42,608  INFO        ✔ [144503] 3.7tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:45,428  INFO        ✔ [142270] 5.85tỷ | 82.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:50,232  INFO        ✔ [108197] 2.3tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:53,220  INFO        ✔ [144523] 4.1tỷ | 66.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:34:58,327  INFO        ✔ [139036] 3.3tỷ | 59.0m² | 2PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:02,235  INFO        ✔ [139072] 30.0tỷ | 440.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:35:11,702  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:21,125  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:25,211  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:35:25,211  INFO        Tổng tích lũy: 75 (+75 mới)
+2026-03-14 11:35:29,276  INFO      ═══ Trang 6/40 ═══
+2026-03-14 11:35:30,056  INFO        Trang 6: 15 links, has_next=True
+2026-03-14 11:35:30,057  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:35:30,386  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:34,730  INFO        ✔ [139626] 3.65tỷ | 60.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:40,814  INFO        ✔ [140953] 8.7tỷ | 88.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:35:43,699  INFO        ✔ [140333] 10.0tỷ | 163.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:35:49,023  INFO        ✔ [121804] 3.2tỷ | 59.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-14 11:35:52,642  INFO        ✔ [131847] 6.79tỷ | 48.5m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:35:57,329  INFO        ✔ [136102] 2.65tỷ | 40.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:01,666  INFO        ✔ [144209] 3.35tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:05,981  INFO        ✔ [142856] 4.1tỷ | 60.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:09,725  INFO        ✔ [144390] 5.0tỷ | 50.0m² | 0PN/0WC | NT=Đầy Đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:14,242  INFO        ✔ [144335] 2.45tỷ | 26.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=6
+2026-03-14 11:36:18,849  INFO        ✔ [144230] 3.1tỷ | 54.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:22,648  INFO        ✔ [139027] 2.8tỷ | 55.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=4
+2026-03-14 11:36:29,299  INFO        ✔ [144344] 3.78tỷ | 54.0m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:36:35,434  INFO        ✔ [134580] 3.0tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:39,296  INFO        💾 90 rows → data-crawling/raw/raw_data.csv
+2026-03-14 11:36:39,296  INFO        Tổng tích lũy: 90 (+90 mới)
+2026-03-14 11:36:42,885  INFO      ═══ Trang 7/40 ═══
+2026-03-14 11:36:43,509  INFO        Trang 7: 15 links, has_next=True
+2026-03-14 11:36:43,511  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-14 11:36:43,807  INFO        ✔ [143899] 3.3tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:36:47,819  INFO        ✔ [143995] 2.25tỷ | 47.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:53,386  INFO        ✔ [108196] 3.6tỷ | 83.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:36:58,006  INFO        ✔ [143759] 3.8tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:37:02,462  INFO        ✔ [143225] 2.35tỷ | 64.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-14 11:37:06,978  INFO        ✔ [143892] 9.8tỷ | 68.0m² | 2PN/2WC | NT=Cao Cấp | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:37:10,325  INFO        ✔ [143596] 16.0tỷ | 150.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:37:17,136  INFO        ✔ [129834] 6.8tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:37:24,307  INFO        ✔ [143583] 3.5tỷ | 65.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-14 11:37:27,309  INFO        ✔ [143523] 5.2tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:37:32,211  INFO        ✔ [52798] 2.74tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-14 11:37:41,491  INFO        ✔ [143255] 5.37tỷ | 74.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-14 11:37:50,393  INFO        ✔ [130857] 7.8tỷ | 78.0m² | 2PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=1

@@ -1,0 +1,52 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Packages
+*.egg
+*.egg-info/
+*.egg-info
+dist/
+build/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Test / coverage
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDEs / editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated data (adjust if you want to keep sample data in repo)
+data-crawling/raw/
+preprocessing/processed/

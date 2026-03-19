@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApartmentBroker — Hệ thống hỗ trợ ra quyết định chọn căn hộ</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style-index.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+            </div>
+            <span class="nav-brand">ApartmentBroker</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="ahp.html">Phân tích AHP</a>
+            <a href="ahp.html" class="btn nav-cta">Bắt đầu ngay →</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-tag">Hệ hỗ trợ ra quyết định · Nhóm 5</div>
+            <h1 class="hero-h1">Chọn căn hộ thông minh với <em>phương pháp AHP</em></h1>
+            <p class="hero-sub">Ứng dụng phương pháp Phân tích thứ bậc (AHP) để xác định trọng số tiêu chí theo sở thích
+                của bạn, sau đó xếp hạng căn hộ thực tế tại TP.HCM một cách khoa học và minh bạch.</p>
+            <div class="hero-actions">
+                <a href="ahp.html" class="btn btn-primary">Phân tích AHP ngay →</a>
+                <a href="#how" class="btn btn-outline">Tìm hiểu thêm</a>
+            </div>
+            <div class="hero-stats">
+                <div>
+                    <div class="stat-n">Vô số</div>
+                    <div class="stat-l">Căn hộ thực tế</div>
+                </div>
+                <div>
+                    <div class="stat-n">8</div>
+                    <div class="stat-l">Tiêu chí AHP</div>
+                </div>
+                <div>
+                    <div class="stat-n">2</div>
+                    <div class="stat-l">Chế độ đánh giá</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-card-stack">
+                <div class="hero-card back2">
+                    <div class="hc-rank">🥈 #2</div>
+                    <div class="hc-title">Scenic Valley Phú Mỹ Hưng</div>
+                    <div class="hc-loc">Tân Phú · Q.7</div>
+                </div>
+                <div class="hero-card back1">
+                    <div class="hc-rank">🥉 #3</div>
+                    <div class="hc-title">Sky Garden 2</div>
+                    <div class="hc-loc">Tân Phong · Q.7</div>
+                </div>
+                <div class="hero-card main">
+                    <div class="hc-rank">🥇 Phương án tối ưu</div>
+                    <div class="hc-title">Sky Garden 1 — Duplex 141m²</div>
+                    <div class="hc-loc">Phú Mỹ Hưng · Quận 7</div>
+                    <div class="hc-score-row">
+                        <span class="hc-score-label">Điểm AHP</span>
+                        <span class="hc-score-val">83.2</span>
+                    </div>
+                    <div class="hc-bars">
+                        <div class="hc-bar-row"><span style="width:50px">Tài chính</span>
+                            <div class="hc-bar-bg">
+                                <div class="hc-bar-fill" style="width:78%"></div>
+                            </div><span>0.78</span>
+                        </div>
+                        <div class="hc-bar-row"><span style="width:50px">Nội thất</span>
+                            <div class="hc-bar-bg">
+                                <div class="hc-bar-fill" style="width:85%"></div>
+                            </div><span>0.85</span>
+                        </div>
+                        <div class="hc-bar-row"><span style="width:50px">Pháp lý</span>
+                            <div class="hc-bar-bg">
+                                <div class="hc-bar-fill" style="width:100%"></div>
+                            </div><span>1.00</span>
+                        </div>
+                        <div class="hc-bar-row"><span style="width:50px">Hạ tầng</span>
+                            <div class="hc-bar-bg">
+                                <div class="hc-bar-fill" style="width:67%"></div>
+                            </div><span>0.67</span>
+                        </div>
+                    </div>
+                    <div class="hc-price">
+                        <span class="hc-price-val">8.9 tỷ</span>
+                        <span class="hc-price-m2">63.1 tr/m²</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2 MODES -->
+    <section class="section section-alt" id="how">
+        <div class="section-center fade-up">
+            <div class="section-tag">Hai chế độ phân tích</div>
+            <h2 class="section-h2">Chọn cách phù hợp với bạn</h2>
+            <p class="section-sub">Hệ thống cung cấp hai chế độ: sử dụng trọng số chuyên gia đã tính sẵn, hoặc tự nhập
+                ma trận so sánh cặp AHP theo ưu tiên riêng của bạn.</p>
+        </div>
+        <div class="modes-grid fade-up">
+            <a href="ahp.html?mode=expert" class="mode-card">
+                <span class="mode-badge badge-navy">Được đề xuất</span>
+                <div class="mode-icon icon-navy">🎓</div>
+                <div class="mode-title">Chế độ Chuyên gia</div>
+                <div class="mode-desc">Sử dụng bộ trọng số AHP đã được tính toán bởi chuyên gia bất động sản, dựa trên
+                    nghiên cứu thị trường TP.HCM. Phù hợp khi bạn không có nhiều thời gian.</div>
+                <div class="mode-points">
+                    <div class="mode-point">Trọng số đã được kiểm chứng (CR &lt; 10%)</div>
+                    <div class="mode-point">Kết quả ngay lập tức</div>
+                    <div class="mode-point">Phù hợp đại đa số người mua</div>
+                </div>
+                <div class="mode-arrow">Dùng ngay <span>→</span></div>
+            </a>
+            <a href="ahp.html?mode=custom" class="mode-card gold">
+                <span class="mode-badge badge-gold">Cá nhân hóa</span>
+                <div class="mode-icon icon-gold">⚖️</div>
+                <div class="mode-title">Tự nhập Ma trận AHP</div>
+                <div class="mode-desc">Nhập trực tiếp ma trận so sánh cặp 8×8 theo đánh giá của bạn. Hệ thống tính toán
+                    trọng số, kiểm tra CR và xếp hạng căn hộ theo đúng sở thích của bạn.</div>
+                <div class="mode-points">
+                    <div class="mode-point">Hoàn toàn cá nhân hóa theo nhu cầu</div>
+                    <div class="mode-point">Kiểm tra tỷ số nhất quán CR tự động</div>
+                    <div class="mode-point">Lưu và so sánh nhiều kịch bản</div>
+                </div>
+                <div class="mode-arrow" style="color:var(--gold)">Tùy chỉnh ngay <span>→</span></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- STEPS -->
+    <section class="section" id="steps">
+        <div class="section-center fade-up">
+            <div class="section-tag">Quy trình</div>
+            <h2 class="section-h2">4 bước đơn giản</h2>
+        </div>
+        <div class="steps fade-up">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-line"></div>
+                <div class="step-title">Chọn chế độ</div>
+                <div class="step-desc">Chọn dùng trọng số chuyên gia hoặc tự nhập ma trận AHP cá nhân.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-line"></div>
+                <div class="step-title">Nhập ma trận</div>
+                <div class="step-desc">So sánh mức độ quan trọng giữa 8 tiêu chí theo thang điểm Saaty 1–9.</div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-line"></div>
+                <div class="step-title">Kiểm tra CR</div>
+                <div class="step-desc">Hệ thống tính CR tự động. Nếu CR &lt; 10% ma trận nhất quán và được chấp nhận.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-line"></div>
+                <div class="step-title">Xem kết quả</div>
+                <div class="step-desc">Danh sách các căn hộ được xếp hạng cùng biểu đồ trực quan chi tiết.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRITERIA -->
+    <section class="section section-alt">
+        <div class="section-center fade-up">
+            <div class="section-tag">8 Tiêu chí AHP</div>
+            <h2 class="section-h2">Đánh giá toàn diện</h2>
+            <p class="section-sub">Mỗi căn hộ được chấm điểm trên 8 tiêu chí, sau đó tổng hợp theo trọng số AHP bạn đã
+                chọn.</p>
+        </div>
+        <div class="criteria-grid fade-up">
+            <div class="crit">
+                <div class="crit-dot" style="background:#2563eb"></div>
+                <div class="crit-id">C1 · Tài chính</div>
+                <div class="crit-name">Giá bán & giá/m²</div>
+                <div class="crit-desc">Mức giá phù hợp ngân sách, tỷ lệ giá trên diện tích</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#16a34a"></div>
+                <div class="crit-id">C2 · Nội thất</div>
+                <div class="crit-name">Chất lượng hoàn thiện</div>
+                <div class="crit-desc">Cao cấp / Đầy đủ / Cơ bản / Không có nội thất</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#9333ea"></div>
+                <div class="crit-id">C3 · Chủ đầu tư</div>
+                <div class="crit-name">Thương hiệu dự án</div>
+                <div class="crit-desc">Uy tín CĐT: Vinhomes, Masterise, Phú Mỹ Hưng...</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#c8922a"></div>
+                <div class="crit-id">C4 · Pháp lý</div>
+                <div class="crit-name">Loại giấy tờ</div>
+                <div class="crit-desc">Sổ đỏ/hồng · Giấy tờ hợp lệ · Hợp đồng mua bán</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#0891b2"></div>
+                <div class="crit-id">C5 · Hạ tầng XH</div>
+                <div class="crit-name">Tiện ích xung quanh</div>
+                <div class="crit-desc">Bệnh viện, trường học, chợ/siêu thị, metro</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#dc2626"></div>
+                <div class="crit-id">C6 · Tiện ích NK</div>
+                <div class="crit-name">Nội khu dự án</div>
+                <div class="crit-desc">Hồ bơi, gym, thang máy, bãi xe, bảo vệ 24/7</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#7c3aed"></div>
+                <div class="crit-id">C7 · Ngoại thất</div>
+                <div class="crit-name">Diện tích & không gian</div>
+                <div class="crit-desc">Diện tích sử dụng, số phòng ngủ, tầng cao</div>
+            </div>
+            <div class="crit">
+                <div class="crit-dot" style="background:#d97706"></div>
+                <div class="crit-id">C8 · Phong thủy</div>
+                <div class="crit-name">Hướng nhà & ban công</div>
+                <div class="crit-desc">Đông Nam, Đông Bắc, Nam... theo phong thủy học</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div style="position:relative;z-index:1">
+            <div class="section-tag" style="color:var(--gold2);margin-bottom:16px">Bắt đầu ngay hôm nay</div>
+            <h2 class="cta-h2">Tìm căn hộ phù hợp nhất với bạn</h2>
+            <p class="cta-sub">Phân tích các căn hộ thực tế tại TP.HCM chỉ trong vài phút</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+                <a href="ahp.html" class="btn btn-gold">Phân tích AHP ngay →</a>
+                <a href="ahp.html?mode=expert" class="btn btn-ghost-white">Dùng trọng số chuyên gia</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>
+            <div class="footer-brand">ApartmentBroker</div>
+            <div class="footer-text" style="margin-top:4px">Đồ án DSS · Nhóm 5 · ĐH Tài Nguyên Môi Trường TP.HCM</div>
+        </div>
+        <div class="footer-text">© 2026 ApartmentBroker. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Scroll animations
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
+        }, { threshold: .1 });
+        document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+    </script>
+</body>
+
+</html>
