@@ -118,7 +118,7 @@ python scripts/import_csv.py --default
 
 ## Cập nhật dữ liệu tự động khi gọi AHP
 
-Backend đã thiết kế để tự động chạy toàn bộ pipeline (crawl → clean → import) khi gọi `POST /ahp/score`, nếu dữ liệu hiện tại cũ hơn 1 tiếng.
+Backend đã thiết kế để tự động chạy toàn bộ pipeline (crawl → clean → import) khi gọi `POST /ahp/score`, nếu dữ liệu hiện tại cũ hơn 7 ngày ( 168 tiếng ), có thể tùy chỉnh.
 
 ---
 
