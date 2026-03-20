@@ -4,15 +4,15 @@ Dự án này là một **Data Engineering + Decision Support System (DSS)** cho
 
 Nó bao gồm:
 
-- 🔍 **Crawler**: tự động lấy dữ liệu từ thuviennhadat.vn (bất động sản) và lưu thành CSV.
-- 🧹 **Preprocessing**: làm sạch, chuẩn hóa dữ liệu (với Pandas).
-- 🗄️ **Database**: import dữ liệu đã làm sạch vào PostgreSQL.
-- 📊 **Backend API**: FastAPI cung cấp API để lọc/sort căn hộ và tính **AHP** (Analytic Hierarchy Process).
-- 🌐 **Frontend**: HTML/JS (triển khai nhanh so who need a framework !?) để tương tác với API và hiển thị kết quả xếp hạng.
+- **Crawler**: tự động lấy dữ liệu từ thuviennhadat.vn (bất động sản) và lưu thành CSV.
+- **Preprocessing**: làm sạch, chuẩn hóa dữ liệu (với Pandas).
+- **Database**: import dữ liệu đã làm sạch vào PostgreSQL.
+- **Backend API**: FastAPI cung cấp API để lọc/sort căn hộ và tính **AHP** (Analytic Hierarchy Process).
+- **Frontend**: HTML/JS (triển khai nhanh so who need a framework !?) để tương tác với API và hiển thị kết quả xếp hạng.
 
 ---
 
-## 📁 Cấu trúc thư mục chính
+## Cấu trúc thư mục chính
 
 ```
 DepartAHP/
@@ -28,7 +28,7 @@ DepartAHP/
 
 ---
 
-## 🚀 Bắt đầu (Quickstart)
+## Bắt đầu (Quickstart)
 
 ### 1) Cài Python + virtualenv (tùy chọn nếu bạn muốn môi trường ảo)
 
@@ -39,7 +39,7 @@ python -m venv venv
 ```
 
 ### 2) Cài dependencies
-
+cd DataTrans
 ```powershell
 pip install -r requirements.txt
 ```
@@ -55,8 +55,6 @@ Ví dụ `.env`:
 DATABASE_URL=postgresql://postgres:password@localhost:5432/DSS
 ```
 
-> ⚠️ **Lưu ý:** file `.env` hiện tại chỉ có dòng bật venv. Bạn nên cập nhật lại để `DATABASE_URL` đúng.
-
 ### 4) Chạy database + backend
 
 ```powershell
@@ -69,13 +67,12 @@ python -m uvicorn main:app --reload --port 8000
 
 ### 5) Mở frontend (giao diện AHP)
 
-Mở file `Page/ahp.html` bằng trình duyệt (double-click) rồi nhập các tham số AHP.
-
-> 🔎 Frontend kết nối tới `http://localhost:8000` nên cần chạy backend trước.
+> Frontend kết nối tới `http://localhost:8000` nên cần chạy backend trước.
+* Do đã gộp BE+FE chạy chung server port 8000, tránh lỗi CORS nên khi chạy uvicorn thì sẽ không cần chạy riêng FE
 
 ---
 
-## 🧱 Data pipeline (crawl → clean → import)
+## Data pipeline (crawl → clean → import)
 
 ### 1) Crawl dữ liệu (thu thập dữ liệu thô)
 
@@ -107,7 +104,7 @@ python scripts/import_csv.py --default
 
 ---
 
-## 🧠 API chính (FastAPI)
+## API chính (FastAPI)
 
 | Endpoint | Mô tả |
 |---------|-------|
@@ -119,13 +116,13 @@ python scripts/import_csv.py --default
 
 ---
 
-## 🔧 Cập nhật dữ liệu tự động khi gọi AHP
+## Cập nhật dữ liệu tự động khi gọi AHP
 
 Backend đã thiết kế để tự động chạy toàn bộ pipeline (crawl → clean → import) khi gọi `POST /ahp/score`, nếu dữ liệu hiện tại cũ hơn 1 tiếng.
 
 ---
 
-## 🧩 Gợi ý cải thiện
+## Gợi ý cải thiện
 
 - Tách cấu hình `DATABASE_URL` ra `.env` đúng chuẩn (hiện đang bị lẫn lệnh kích hoạt venv).
 - Triển khai scheduler (cron/task) để crawl định kỳ.

@@ -1,14 +1,21 @@
 # src/preprocessing/clean_and_enrich.py
+import pathlib
+
 import pandas as pd
 import re
 from datetime import datetime
 import os
+from pathlib import Path
 
 # Đường dẫn
-RAW_CSV = "data-crawling/raw/raw_data.csv"
-CLEANED_DIR = "preprocessing/processed"
+CURRENT_DIR = Path(__file__).resolve().parent
+RAW_CSV = CURRENT_DIR.parent / "data-crawling" / "raw" / "raw_data.csv"
+CLEANED_DIR = CURRENT_DIR / "processed"
 os.makedirs(CLEANED_DIR, exist_ok=True)
-CLEANED_CSV = os.path.join(CLEANED_DIR, "cleaned_data.csv")
+CLEANED_CSV = CLEANED_DIR / "cleaned_data.csv"
+
+print(f"Khởi động Pipeline làm sạch dữ liệu...")
+print(f"Đang tìm file gốc tại: {RAW_CSV}")
 
 # Các cột giữ lại (chọn lọc)
 KEEP_COLUMNS = [
@@ -50,6 +57,12 @@ df['huong_nha'] = df['huong_nha'].fillna('Không rõ')
 df['huong_ban_cong'] = df['huong_ban_cong'].fillna('Không rõ')
 df['phuong'] = df['phuong'].fillna('Không rõ')
 
+# Thêm cột trạng thái & timestamp
+df['trang_thai'] = True  # mặc định là True (có thể dùng để đánh dấu tin đã hết hạn sau này)
+now_str = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+df['updated_at'] = now_str
+df['created_at'] = now_str
+
 # 3. Làm sạch tên dự án (chuẩn hóa)
 df['du_an'] = df['du_an'].str.strip().str.title().replace({
     r'\s+': ' ',                        # nhiều khoảng trắng
@@ -59,6 +72,7 @@ df['du_an'] = df['du_an'].str.strip().str.title().replace({
 
 # 4. Loại outlier cơ bản (giá & diện tích)
 df = df[(df['gia_ty'].between(1.0, 50.0)) & (df['dien_tich'].between(25, 300))]
+df = df[(df['so_phong_ngu'].between(1, 10)) & (df['so_phong_wc'].between(1, 10))]
 
 # 5. Lưu file sạch
 df.to_csv(CLEANED_CSV, index=False, encoding='utf-8-sig')

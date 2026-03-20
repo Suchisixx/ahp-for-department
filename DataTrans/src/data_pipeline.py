@@ -15,14 +15,14 @@ IMPORT_SCRIPT = Path(__file__).parent / "scripts" / "import_csv.py"
 def is_data_fresh() -> bool:
     """
     Kiểm tra data có mới không (dựa trên updated_at của bản ghi mới nhất).
-    Nếu data cũ hơn 1 giờ, cần crawl lại.
+    Nếu data cũ hơn 1 tuần, cần crawl lại.
     """
     db: Session = SessionLocal()
     try:
         latest = db.query(CanHo.updated_at).order_by(CanHo.updated_at.desc()).first()
         if not latest:
             return False  # Chưa có data
-        return (datetime.now() - latest[0]) < timedelta(hours=1)
+        return (datetime.now() - latest[0]) < timedelta(hours=168)
     finally:
         db.close()
 

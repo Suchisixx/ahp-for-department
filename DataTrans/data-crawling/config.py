@@ -15,7 +15,7 @@ import logging
 # ── URL & paths ───────────────────────────────────────────────────────────────
 BASE_URL  = "https://thuviennhadat.vn"
 LIST_URL  = BASE_URL + "/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang={page}"
-OUTPUT    = "data-crawling/raw/raw_data.csv"
+OUTPUT    = "raw/raw_data.csv"
 
 # ── Crawl settings ────────────────────────────────────────────────────────────
 DELAY_MIN = 2.5   # giây, giữa mỗi request

@@ -14,6 +14,7 @@ import csv
 import sys
 from datetime import datetime
 from pathlib import Path
+import pandas as pd
 
 # Thêm thư mục cha vào sys.path để import database/models
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -50,6 +51,17 @@ def to_int(s):
 def clean_str(s: str, unknown=("Không rõ", "không rõ", "")):
     s = (s or "").strip()
     return None if s in unknown else s
+
+def to_bool(s):
+    if isinstance(s, bool):
+        return s
+    if isinstance(s, str):
+        s = s.strip().lower()
+        if s in ("true", "1", "yes"):
+            return True
+        elif s in ("false", "0", "no"):
+            return False
+    return None
 
 
 def import_csv(csv_path: str):
@@ -96,7 +108,7 @@ def import_csv(csv_path: str):
             "huong_nha":        clean_str(row.get("huong_nha")),
             "huong_ban_cong":   clean_str(row.get("huong_ban_cong")),
             "phuong":           clean_str(row.get("phuong")),
-            "trang_thai":      clean_str(row.get("trang_thai")),
+            "trang_thai":      to_bool(row.get("trang_thai")),
         }
 
         if existing:
@@ -127,7 +139,7 @@ def import_cleaned_data():
     Import dữ liệu từ file cleaned_data.csv mặc định vào database.
     Đường dẫn mặc định: D:\HHTRQD\DataTrans\preprocessing\processed\cleaned_data.csv
     """
-    default_csv_path = r"D:\HHTRQD\DataTrans\preprocessing\processed\cleaned_data.csv"
+    default_csv_path = r"D:\HHTRQD\DepartAHP\DataTrans\preprocessing\processed\cleaned_data.csv"
     import_csv(default_csv_path)
 
 
@@ -140,5 +152,5 @@ if __name__ == "__main__":
     if args.default:
         import_cleaned_data()
     else:
-        csv_path = args.csv or r"D:\HHTRQD\DataTrans\preprocessing\processed\cleaned_data.csv"
+        csv_path = args.csv or r"D:\HHTRQD\DepartAHP\DataTrans\preprocessing\processed\cleaned_data.csv"
         import_csv(csv_path)
