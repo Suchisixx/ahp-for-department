@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
 from sqlalchemy.orm import Session
 
 from database import get_db
+from media_resolver import attach_media_sources
 from models import CanHo, AhpSession, AhpResult
 from schema import AhpRequest, AhpResponse, CriterionWeight, RankedCanHo, CanHoOut, SessionSummary
 from services.ahp_engine import calc_weights, score_canho, CRITERIA
@@ -22,7 +23,7 @@ def ahp_score(payload: AhpRequest, background_tasks: BackgroundTasks, db: Sessio
     # Chạy pipeline trong background để cập nhật data nếu cần
     background_tasks.add_task(run_data_pipeline)
     
-    canhos = db.query(CanHo).filter(CanHo.trang_thai == True).all()
+    canhos = db.query(CanHo).filter(CanHo.trang_thai.is_(True)).all()
     if not canhos:
         raise HTTPException(status_code=404, detail="Không có căn hộ nào đang hoạt động để đánh giá. Vui lòng thử lại sau khi dữ liệu được cập nhật.")
     
@@ -55,7 +56,7 @@ def ahp_score(payload: AhpRequest, background_tasks: BackgroundTasks, db: Sessio
     db.flush()   # lấy session.id ngay, chưa commit
 
     # 3. Tính điểm toàn bộ căn hộ
-    canhos = db.query(CanHo).all()
+    canhos = db.query(CanHo).filter(CanHo.trang_thai.is_(True)).all()
 
     scored = []
     for ch in canhos:
@@ -92,7 +93,7 @@ def ahp_score(payload: AhpRequest, background_tasks: BackgroundTasks, db: Sessio
             rank=rank,
             ahp_score=round(total, 4),
             score_detail=detail,
-            canho=CanHoOut.model_validate(ch),
+            canho=CanHoOut.model_validate(attach_media_sources(ch)),
         )
         for rank, (ch, total, detail) in enumerate(scored, start=1)
     ]
@@ -150,7 +151,7 @@ def get_session(session_id: int, db: Session = Depends(get_db)):
             rank=r.rank,
             ahp_score=float(r.ahp_score),
             score_detail=r.score_detail or {},
-            canho=CanHoOut.model_validate(r.canho),
+            canho=CanHoOut.model_validate(attach_media_sources(r.canho)),
         )
         for r in results
     ]

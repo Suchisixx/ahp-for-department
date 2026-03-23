@@ -11,11 +11,15 @@ Toàn bộ hằng số cấu hình cho crawler thuviennhadat.vn:
 
 import re
 import logging
+from pathlib import Path
 
 # ── URL & paths ───────────────────────────────────────────────────────────────
+CURRENT_DIR = Path(__file__).resolve().parent
+RAW_DIR   = CURRENT_DIR / "raw"
 BASE_URL  = "https://thuviennhadat.vn"
 LIST_URL  = BASE_URL + "/ban-can-ho-chung-cu-thanh-pho-ho-chi-minh?trang={page}"
-OUTPUT    = "raw/raw_data.csv"
+OUTPUT    = str(RAW_DIR / "raw_data.csv")
+IMAGE_DIR = str(RAW_DIR / "images")
 
 # ── Crawl settings ────────────────────────────────────────────────────────────
 DELAY_MIN = 2.5   # giây, giữa mỗi request
@@ -60,6 +64,7 @@ FIELDNAMES = [
     # Meta
     "url", "ma_tin", "title", "crawl_time",
     "ngay_dang", "ngay_het_han", "sdt", "dia_chi", "phuong", "location",
+    "thumbnail_url", "thumbnail_path", "image_urls", "image_local_paths",
     # C1 — Tài chính
     "gia_ty", "gia_per_m2_trieu", "dien_tich",
     # C2 — Nội thất / Không gian
@@ -83,7 +88,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s  %(levelname)-8s  %(message)s",
     handlers=[
-        logging.FileHandler("crawl.log", encoding="utf-8"),
+        logging.FileHandler(CURRENT_DIR / "crawl.log", encoding="utf-8"),
         logging.StreamHandler(),
     ],
 )

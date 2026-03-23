@@ -26,6 +26,7 @@ Toàn bộ logic parse HTML cho thuviennhadat.vn:
 import json
 import re
 from datetime import datetime
+from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 
@@ -119,6 +120,57 @@ def parse_url_slug(url: str) -> dict:
         result["ma_tin"] = m.group(1)
 
     return result
+
+
+def _normalize_image_url(image_url: str | None) -> str | None:
+    if not image_url:
+        return None
+
+    normalized_url = urljoin(BASE_URL, image_url.strip())
+    lowered_url = normalized_url.lower()
+
+    if any(marker in lowered_url for marker in (
+        "defaulttvnd",
+        "/avatar/",
+        "/favicon",
+        "/upload/images/logo/",
+        "/assets/img/",
+        "/homepage/",
+    )):
+        return None
+
+    if not re.search(r"\.(jpg|jpeg|png|webp|gif|bmp|avif)(?:\?|$)", lowered_url):
+        return None
+
+    return normalized_url
+
+
+def _collect_gallery_images(soup) -> list[str]:
+    image_urls: list[str] = []
+
+    selectors = (
+        ("meta[property='og:image']", "content"),
+        ("a[data-fslightbox='featured-gallery']", "href"),
+        ("img.myImgSlide", "src"),
+        ("img.demo.cursor", "src"),
+    )
+
+    for selector, attr in selectors:
+        for tag in soup.select(selector):
+            normalized_url = _normalize_image_url(tag.get(attr))
+            if normalized_url:
+                image_urls.append(normalized_url)
+
+    deduped_urls: list[str] = []
+    seen_urls: set[str] = set()
+
+    for image_url in image_urls:
+        if image_url in seen_urls:
+            continue
+        seen_urls.add(image_url)
+        deduped_urls.append(image_url)
+
+    return deduped_urls
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -376,6 +428,9 @@ def _parse_current_data_js(soup) -> dict:
             if dist: result["quan_js"]   = dist
             pid = cd.get("Id")
             if pid: result["ma_tin_js"] = str(pid)
+            thumbnail_url = _normalize_image_url(cd.get("ThumbnailUrl"))
+            if thumbnail_url:
+                result["thumbnail_url"] = thumbnail_url
         except Exception:
             pass
         break
@@ -471,6 +526,7 @@ def parse_detail(url: str) -> dict | None:
     schema = _parse_schema_json(soup)     if page_ok else {}
     jsdata = _parse_current_data_js(soup) if page_ok else {}
     meta   = _parse_meta_dates(soup)      if page_ok else {}
+    gallery_images = _collect_gallery_images(soup) if page_ok else []
 
     def best(*keys):
         """Lấy giá trị đầu tiên khác None theo thứ tự: feat > schema > jsdata > title_data."""
@@ -485,6 +541,16 @@ def parse_detail(url: str) -> dict | None:
     gia_ty = best("gia_ty")
     m = re.search(r"~?([\d,\.]+)\s*triệu\s*/\s*m", text, re.I)
     gia_per_m2 = m.group(1).replace(",", ".") if m else None
+
+    # ── Ảnh ─────────────────────────────────────────────────────────────────
+    thumbnail_url = jsdata.get("thumbnail_url")
+    if not thumbnail_url and gallery_images:
+        thumbnail_url = gallery_images[0]
+
+    image_urls = []
+    for image_url in [thumbnail_url, *gallery_images]:
+        if image_url and image_url not in image_urls:
+            image_urls.append(image_url)
 
     # ── C1: Diện tích ────────────────────────────────────────────────────────
     dien_tich = best("dien_tich")
@@ -593,6 +659,10 @@ def parse_detail(url: str) -> dict | None:
         "dia_chi":          None,
         "phuong":           phuong,
         "location":         "TP.HCM",
+        "thumbnail_url":    thumbnail_url,
+        "thumbnail_path":   None,
+        "image_urls":       image_urls,
+        "image_local_paths": [],
         "gia_ty":           gia_ty,
         "gia_per_m2_trieu": gia_per_m2,
         "dien_tich":        dien_tich,

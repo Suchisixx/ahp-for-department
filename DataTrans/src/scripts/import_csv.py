@@ -10,17 +10,20 @@ Chạy:
 ════════════════════════════════════════════════════
 """
 import argparse
+import ast
 import csv
+import json
 import sys
 from datetime import datetime
 from pathlib import Path
-import pandas as pd
 
 # Thêm thư mục cha vào sys.path để import database/models
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from database import SessionLocal, engine, Base
+from database import SessionLocal, engine, Base, ensure_canho_schema
 from models import CanHo
+
+DEFAULT_CSV_PATH = Path(__file__).resolve().parents[2] / "preprocessing" / "processed" / "cleaned_data.csv"
 
 
 def parse_date(s: str):
@@ -52,6 +55,30 @@ def clean_str(s: str, unknown=("Không rõ", "không rõ", "")):
     s = (s or "").strip()
     return None if s in unknown else s
 
+
+def to_json_list(value):
+    if isinstance(value, list):
+        return value
+
+    if value is None:
+        return []
+
+    text = str(value).strip()
+    if not text:
+        return []
+
+    for parser in (json.loads, ast.literal_eval):
+        try:
+            parsed = parser(text)
+        except (ValueError, SyntaxError, json.JSONDecodeError):
+            continue
+
+        if isinstance(parsed, list):
+            return [str(item).strip() for item in parsed if str(item).strip()]
+
+    return []
+
+
 def to_bool(s):
     if isinstance(s, bool):
         return s
@@ -64,9 +91,14 @@ def to_bool(s):
     return None
 
 
+def is_listing_active(ngay_het_han):
+    return ngay_het_han is None or ngay_het_han >= datetime.now()
+
+
 def import_csv(csv_path: str):
     # Tạo bảng nếu chưa có
     Base.metadata.create_all(bind=engine)
+    ensure_canho_schema()
 
     path = Path(csv_path)
     if not path.exists():
@@ -95,6 +127,11 @@ def import_csv(csv_path: str):
             "url":              clean_str(row.get("url")),
             "title":            clean_str(row.get("title")),
             "ngay_dang":        parse_date(row.get("ngay_dang")),
+            "ngay_het_han":     parse_date(row.get("ngay_het_han")),
+            "thumbnail_url":    clean_str(row.get("thumbnail_url"), unknown=("",)),
+            "thumbnail_path":   clean_str(row.get("thumbnail_path"), unknown=("",)),
+            "image_urls":       to_json_list(row.get("image_urls")),
+            "image_local_paths": to_json_list(row.get("image_local_paths")),
             "gia_ty":           to_float(row.get("gia_ty")),
             "gia_per_m2":       to_float(row.get("gia_per_m2_trieu")),
             "dien_tich":        to_float(row.get("dien_tich")),
@@ -108,8 +145,8 @@ def import_csv(csv_path: str):
             "huong_nha":        clean_str(row.get("huong_nha")),
             "huong_ban_cong":   clean_str(row.get("huong_ban_cong")),
             "phuong":           clean_str(row.get("phuong")),
-            "trang_thai":      to_bool(row.get("trang_thai")),
         }
+        data["trang_thai"] = is_listing_active(data["ngay_het_han"])
 
         if existing:
             for k, v in data.items():
@@ -137,10 +174,9 @@ def import_csv(csv_path: str):
 def import_cleaned_data():
     """
     Import dữ liệu từ file cleaned_data.csv mặc định vào database.
-    Đường dẫn mặc định: D:\HHTRQD\DataTrans\preprocessing\processed\cleaned_data.csv
+    Đường dẫn mặc định: DataTrans/preprocessing/processed/cleaned_data.csv
     """
-    default_csv_path = r"D:\HHTRQD\DepartAHP\DataTrans\preprocessing\processed\cleaned_data.csv"
-    import_csv(default_csv_path)
+    import_csv(str(DEFAULT_CSV_PATH))
 
 
 if __name__ == "__main__":
@@ -152,5 +188,5 @@ if __name__ == "__main__":
     if args.default:
         import_cleaned_data()
     else:
-        csv_path = args.csv or r"D:\HHTRQD\DepartAHP\DataTrans\preprocessing\processed\cleaned_data.csv"
+        csv_path = args.csv or str(DEFAULT_CSV_PATH)
         import_csv(csv_path)

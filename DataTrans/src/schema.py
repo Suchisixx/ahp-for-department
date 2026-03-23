@@ -3,7 +3,7 @@ schemas.py — Pydantic schemas: validate input/output API
 """
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, Field, field_validator
 
 
 # ─── CanHo ────────────────────────────────────────────────────────────────────
@@ -13,6 +13,13 @@ class CanHoBase(BaseModel):
     url:              Optional[str]  = None
     title:            Optional[str]  = None
     ngay_dang:        Optional[datetime] = None
+    ngay_het_han:     Optional[datetime] = None
+    thumbnail_url:    Optional[str] = None
+    thumbnail_path:   Optional[str] = None
+    image_urls:       Optional[list[str]] = None
+    image_local_paths: Optional[list[str]] = None
+    thumbnail_src:    Optional[str] = None
+    image_srcs:       list[str] = Field(default_factory=list)
     gia_ty:           Optional[float] = None
     gia_per_m2:       Optional[float] = None
     dien_tich:        Optional[float] = None
@@ -26,7 +33,7 @@ class CanHoBase(BaseModel):
     huong_nha:        Optional[str]  = None
     huong_ban_cong:   Optional[str]  = None
     phuong:           Optional[str]  = None
-    trang_thai:      Optional[bool]  = 1
+    trang_thai:       Optional[bool]  = 1
 
 
 class CanHoOut(CanHoBase):

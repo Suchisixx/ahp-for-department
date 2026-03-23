@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_
 
 from database import get_db
+from media_resolver import attach_media_sources
 from models import CanHo
 from schema import CanHoOut
 
@@ -30,7 +31,7 @@ def get_list(
     q:         str   = Query(None, description="Tìm theo tên dự án hoặc tiêu đề"),
     db: Session = Depends(get_db),
 ):
-    qs = db.query(CanHo)
+    qs = db.query(CanHo).filter(CanHo.trang_thai.is_(True))
 
     if gia_min is not None:
         qs = qs.filter(CanHo.gia_ty >= gia_min)
@@ -57,12 +58,16 @@ def get_list(
             or_(CanHo.title.ilike(f"%{q}%"), CanHo.du_an.ilike(f"%{q}%"))
         )
 
-    return qs.offset(skip).limit(limit).all()
+    return [attach_media_sources(ch) for ch in qs.offset(skip).limit(limit).all()]
 
 
 @router.get("/{canho_id}", response_model=CanHoOut)
 def get_one(canho_id: int, db: Session = Depends(get_db)):
-    ch = db.query(CanHo).filter(CanHo.id == canho_id).first()
+    ch = (
+        db.query(CanHo)
+        .filter(CanHo.id == canho_id, CanHo.trang_thai.is_(True))
+        .first()
+    )
     if not ch:
         raise HTTPException(status_code=404, detail="Không tìm thấy căn hộ")
-    return ch
+    return attach_media_sources(ch)

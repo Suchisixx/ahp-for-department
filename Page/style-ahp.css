@@ -717,6 +717,18 @@ nav {
     min-width: 860px;
 }
 
+.criteria-input-table thead th {
+    min-width: 126px;
+}
+
+.criteria-input-table thead th .criteria-col-head {
+    display: inline-block;
+    max-width: 118px;
+    white-space: normal;
+    line-height: 1.35;
+    text-wrap: balance;
+}
+
 .criteria-input-table .alt-row-head {
     min-width: 170px;
 }
@@ -1604,6 +1616,83 @@ table.mat td.recip input {
     color: var(--text2)
 }
 
+.detail-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.detail-gallery-hero-media,
+.detail-gallery-thumb-media {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(15, 39, 68, .1);
+    background: linear-gradient(145deg, rgba(15, 39, 68, .08) 0%, rgba(240, 237, 232, .95) 100%);
+}
+
+.detail-gallery-hero-media {
+    aspect-ratio: 16 / 9;
+    border-radius: 18px;
+}
+
+.detail-gallery-thumb-media {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+}
+
+.detail-gallery-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    gap: 10px;
+}
+
+.detail-gallery-thumb {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.detail-gallery-thumb:hover {
+    transform: translateY(-1px);
+}
+
+.detail-gallery-thumb.is-active {
+    box-shadow: 0 0 0 2px rgba(15, 39, 68, .22);
+}
+
+.detail-gallery-thumb:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(26, 58, 92, .14);
+}
+
+.detail-gallery-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 22px;
+    border-radius: var(--r2);
+    border: 1px dashed rgba(15, 39, 68, .18);
+    background:
+        radial-gradient(circle at top right, rgba(200, 146, 42, .12), transparent 38%),
+        linear-gradient(145deg, rgba(15, 39, 68, .03) 0%, rgba(255, 255, 255, .98) 100%);
+}
+
+.detail-gallery-empty-title {
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detail-gallery-empty-copy {
+    color: var(--text2);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
 .detail-section-label {
     margin-bottom: 10px
 }
@@ -1833,6 +1922,59 @@ table.mat td.recip input {
     border-color: #b87333;
 }
 
+.listing-thumb {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(15, 39, 68, .08);
+    background: linear-gradient(135deg, rgba(15, 39, 68, .08) 0%, rgba(240, 237, 232, .92) 100%);
+    flex: 0 0 auto;
+}
+
+.listing-thumb img,
+.detail-gallery-hero-media img,
+.detail-gallery-thumb-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.listing-thumb-fallback {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    text-align: center;
+    color: var(--text2);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    background:
+        radial-gradient(circle at top right, rgba(200, 146, 42, .14), transparent 38%),
+        linear-gradient(160deg, rgba(15, 39, 68, .08) 0%, rgba(240, 237, 232, .95) 100%);
+}
+
+.listing-thumb.is-empty .listing-thumb-fallback,
+.detail-gallery-hero-media.is-empty .listing-thumb-fallback,
+.detail-gallery-thumb-media.is-empty .listing-thumb-fallback {
+    display: flex;
+}
+
+.listing-thumb--rank {
+    width: 122px;
+    min-width: 122px;
+    aspect-ratio: 4 / 5;
+}
+
+.listing-thumb--refer {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-bottom: 10px;
+}
+
 .rc-num {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
@@ -2016,6 +2158,10 @@ table.mat td.recip input {
     border-color: var(--navy);
     background: var(--bg2);
     box-shadow: 0 0 0 4px rgba(26, 58, 92, .12), var(--shadow)
+}
+
+.refer-card .listing-thumb-fallback {
+    font-size: 10px;
 }
 
 .refer-rank {
@@ -2688,6 +2834,15 @@ table.mat td.recip input {
         min-width: 820px;
     }
 
+    .criteria-input-table thead th {
+        min-width: 118px;
+    }
+
+    .criteria-input-table thead th .criteria-col-head {
+        max-width: 108px;
+        font-size: 12px;
+    }
+
     .criteria-input-table .criteria-cell {
         min-width: 84px;
         height: 54px;
@@ -2715,6 +2870,11 @@ table.mat td.recip input {
         min-width: 0;
     }
 
+    .listing-thumb--rank {
+        width: 108px;
+        min-width: 108px;
+    }
+
     .refer-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2735,5 +2895,14 @@ table.mat td.recip input {
 
     .weights-math-line {
         min-height: 0;
+    }
+
+    .listing-thumb--rank {
+        width: 92px;
+        min-width: 92px;
+    }
+
+    .detail-gallery-strip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }

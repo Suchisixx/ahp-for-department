@@ -142,3 +142,337 @@
 2026-03-23 15:53:59,419  INFO        💾 30 rows → raw/raw_data.csv
 2026-03-23 15:53:59,419  INFO        Tổng tích lũy: 30 (+30 mới)
 2026-03-23 15:54:03,776  INFO      Hoàn thành. +30 mới | Tổng: 30 | Output: raw/raw_data.csv
+2026-03-23 22:30:20,651  INFO        [--fresh] Bỏ qua data cũ — bắt đầu lại từ trang 1.
+2026-03-23 22:30:20,651  INFO      ═══ Trang 1/10 ═══
+2026-03-23 22:30:21,567  INFO        Trang 1: 15 links, has_next=True
+2026-03-23 22:30:21,567  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:30:24,908  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:30:33,984  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:30:40,063  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:30:44,504  INFO        ✔ [150525] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:30:50,025  INFO        ✔ [150400] 3.15tỷ | 63.0m² | 2PN/2WC | NT=Đầy Đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:30:57,400  INFO        ✔ [109138] 3.5tỷ | 83.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:31:06,017  INFO        ✔ [144523] 4.1tỷ | 66.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:31:12,646  INFO        ✔ [150415] 14.0tỷ | 83.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=18
+2026-03-23 22:31:17,573  INFO        ✔ [143512] 7.0tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:31:24,871  INFO        ✔ [148333] 3.7tỷ | 65.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:31:32,670  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:31:38,711  INFO        ✔ [145220] 3.0tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:31:46,178  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:31:53,231  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:31:59,577  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:32:03,343  INFO        💾 15 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:32:03,343  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-23 22:32:07,696  INFO      ═══ Trang 2/10 ═══
+2026-03-23 22:32:08,357  INFO        Trang 2: 15 links, has_next=True
+2026-03-23 22:32:08,357  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:32:10,397  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:32:15,406  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:32:25,539  INFO        ✔ [143899] 3.3tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:32:32,997  INFO        ✔ [112804] 4.4tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:32:41,655  INFO        ✔ [121804] 3.2tỷ | 59.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-23 22:32:49,257  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:32:56,529  INFO        ✔ [133839] 6.7tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:03,122  INFO        ✔ [108197] 2.3tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:11,473  INFO        ✔ [99357] 6.4tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:19,679  INFO        ✔ [85092] 6.9tỷ | 115.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:26,111  INFO        ✔ [150352] 12.7tỷ | 117.0m² | 4PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:38,660  INFO        ✔ [150245] 13.0tỷ | 178.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:45,098  INFO        ✔ [148679] 7.5tỷ | 84.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:33:51,959  INFO        ✔ [139073] 8.2tỷ | 96.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=11
+2026-03-23 22:33:57,767  INFO        ✔ [150255] 5.0tỷ | 74.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:34:00,766  INFO        💾 30 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:34:00,766  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-23 22:34:04,551  INFO      ═══ Trang 3/10 ═══
+2026-03-23 22:34:05,212  INFO        Trang 3: 15 links, has_next=True
+2026-03-23 22:34:05,213  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:34:14,111  INFO        ✔ [60529] 8.0tỷ | 117.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:34:24,612  INFO        ✔ [2772] 3.7tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-23 22:34:30,729  INFO        ✔ [112808] 6.1tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:34:41,910  INFO        ✔ [137809] 5.5tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:34:50,048  INFO        ✔ [85430] 6.3tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:34:58,243  INFO        ✔ [19700] 4.3tỷ | 87.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:35:09,102  INFO        ✔ [54533] 5.2tỷ | 115.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:35:14,409  INFO        ✔ [150127] 4.16tỷ | 81.0m² | 3PN/3WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:35:20,838  INFO        ✔ [136536] 3.25tỷ | 52.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-23 22:35:31,714  INFO        ✔ [130385] 5.4tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:35:43,351  INFO        ✔ [137817] 8.5tỷ | 92.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:35:52,797  INFO        ✔ [56015] 7.5tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:36:00,567  INFO        ✔ [60546] 4.8tỷ | 70.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:36:11,254  INFO        ✔ [137801] 7.8tỷ | 128.0m² | 4PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:36:18,408  INFO        ✔ [85378] 5.3tỷ | 71.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:36:22,545  INFO        💾 45 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:36:22,545  INFO        Tổng tích lũy: 45 (+45 mới)
+2026-03-23 22:36:26,584  INFO      ═══ Trang 4/10 ═══
+2026-03-23 22:36:27,247  INFO        Trang 4: 15 links, has_next=True
+2026-03-23 22:36:27,247  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:36:31,167  INFO        ✔ [149753] 3.7tỷ | 59.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:36:38,586  INFO        ✔ [124837] 2.75tỷ | 60.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:36:44,843  INFO        ✔ [149996] 4.16tỷ | 81.2m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:36:56,447  INFO        ✔ [146053] 3.1tỷ | 65.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:37:04,593  INFO        ✔ [145653] 9.0tỷ | 97.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:37:10,808  INFO        ✔ [136865] 3.3tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:37:17,183  INFO        ✔ [149888] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:37:22,760  INFO        ✔ [144344] 3.78tỷ | 54.0m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:37:31,669  INFO        ✔ [13460] 5.2tỷ | 115.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:37:37,506  INFO        ✔ [142717] 4.67tỷ | 56.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:37:45,217  INFO        ✔ [124830] 3.1tỷ | 65.0m² | 2PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:37:52,008  INFO        ✔ [145605] 4.0tỷ | 83.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:37:59,397  INFO        ✔ [136753] 9.0tỷ | 121.0m² | 3PN/3WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:38:09,799  INFO        ✔ [124818] 4.1tỷ | 73.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:38:18,521  INFO        ✔ [93331] 7.2tỷ | 81.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:38:21,828  INFO        💾 60 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:38:21,828  INFO        Tổng tích lũy: 60 (+60 mới)
+2026-03-23 22:38:25,153  INFO      ═══ Trang 5/10 ═══
+2026-03-23 22:38:25,904  INFO        Trang 5: 15 links, has_next=True
+2026-03-23 22:38:25,904  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:38:30,001  INFO        ✔ [149738] 3.2tỷ | 69.0m² | 0PN/0WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:38:37,875  INFO        ✔ [149747] 3.7tỷ | 59.0m² | 2PN/2WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:38:42,944  INFO        ✔ [149597] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:38:50,776  INFO        ✔ [122839] 8.6tỷ | 86.0m² | 2PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:38:56,429  INFO        ✔ [139595] 12.0tỷ | 45.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:39:02,195  INFO        ✔ [145650] 13.0tỷ | 133.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:39:09,220  INFO        ✔ [149735] 3.9tỷ | 69.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:39:16,666  INFO        ✔ [122844] 5.6tỷ | 56.0m² | 1PN/1WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:39:22,040  INFO        ✔ [122831] 7.5tỷ | 75.0m² | 2PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:39:28,999  INFO        ✔ [122827] 5.6tỷ | 56.0m² | 1PN/1WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:39:34,932  INFO        ✔ [149592] 11.0tỷ | 124.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:39:42,276  INFO        ✔ [122838] 5.6tỷ | 56.0m² | 1PN/1WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:39:49,999  INFO        ✔ [122842] 9.5tỷ | 95.0m² | 3PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:39:57,415  INFO        ✔ [143182] 1.45tỷ | 50.0m² | 2PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:40:08,144  INFO        ✔ [149726] 9.9tỷ | 75.0m² | 2PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:40:12,089  INFO        💾 75 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:40:12,089  INFO        Tổng tích lũy: 75 (+75 mới)
+2026-03-23 22:40:14,974  INFO      ═══ Trang 6/10 ═══
+2026-03-23 22:40:15,630  INFO        Trang 6: 15 links, has_next=True
+2026-03-23 22:40:15,633  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:40:17,845  INFO        ✔ [149148] 7.6tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:40:23,004  INFO        ✔ [132581] -0.0tỷ | 4600.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:40:29,803  INFO        ✔ [149177] 3.2tỷ | 69.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:40:35,390  INFO        ✔ [149276] 4.2tỷ | 81.2m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:40:41,617  INFO        ✔ [76169] 2.0tỷ | 54.0m² | 0PN/0WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-23 22:40:48,879  INFO        ✔ [149270] 2.45tỷ | 47.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:40:58,059  INFO        ✔ [149298] 2.45tỷ | 47.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:06,636  INFO        ✔ [133635] 2.95tỷ | 67.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:11,885  INFO        ✔ [149289] 4.2tỷ | 81.2m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:18,524  INFO        ✔ [145644] 6.98tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:41:26,857  INFO        ✔ [149517] 3.9tỷ | 69.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:35,697  INFO        ✔ [149442] 3.1tỷ | 54.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-23 22:41:42,059  INFO        ✔ [73456] 0.432tỷ | 434.0m² | 0PN/0WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-23 22:41:49,315  INFO        ✔ [149167] 8.9tỷ | 104.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:55,114  INFO        ✔ [149383] 13.3tỷ | 122.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:41:58,259  INFO        💾 90 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:41:58,259  INFO        Tổng tích lũy: 90 (+90 mới)
+2026-03-23 22:42:02,085  INFO      ═══ Trang 7/10 ═══
+2026-03-23 22:42:02,724  INFO        Trang 7: 15 links, has_next=True
+2026-03-23 22:42:02,724  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:42:04,648  INFO        ✔ [149085] 3.6tỷ | 69.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:42:11,518  INFO        ✔ [106735] 9.5tỷ | 103.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:42:18,766  INFO        ✔ [106643] 4.5tỷ | 82.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:42:24,344  INFO        ✔ [149074] 3.2tỷ | 69.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:42:29,119  INFO        ✔ [106679] 4.1tỷ | 55.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:42:36,884  INFO        ✔ [106729] 7.5tỷ | 75.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:42:44,085  INFO        ✔ [106646] 6.3tỷ | 115.0m² | 2PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:42:48,799  INFO        ✔ [106682] 3.02tỷ | 55.0m² | 2PN/2WC | NT=Không có | PL=Hợp đồng mua bán | T=4
+2026-03-23 22:42:56,056  INFO        ✔ [106680] 3.0tỷ | 55.0m² | 0PN/0WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-23 22:43:02,480  INFO        ✔ [106770] 8.0tỷ | 80.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:43:08,691  INFO        ✔ [143220] 2.45tỷ | 26.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=6
+2026-03-23 22:43:15,049  INFO        ✔ [106676] 4.07tỷ | 53.35m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:43:20,987  INFO        ✔ [149097] 3.25tỷ | 69.0m² | 2PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:43:27,989  INFO        ✔ [106637] 5.78tỷ | 105.0m² | 3PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:43:33,107  INFO        ✔ [106677] 4.44tỷ | 55.0m² | 0PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:43:35,721  INFO        💾 105 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:43:35,721  INFO        Tổng tích lũy: 105 (+105 mới)
+2026-03-23 22:43:38,313  INFO      ═══ Trang 8/10 ═══
+2026-03-23 22:43:38,972  INFO        Trang 8: 15 links, has_next=True
+2026-03-23 22:43:38,972  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:43:43,506  INFO        ✔ [136913] 4.0tỷ | 69.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=9
+2026-03-23 22:43:49,061  INFO        ✔ [142270] 5.85tỷ | 82.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:43:55,770  INFO        ✔ [145641] 6.55tỷ | 71.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:01,270  INFO        ✔ [148852] 3.6tỷ | 69.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:08,436  INFO        ✔ [106732] 5.6tỷ | 56.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:15,728  INFO        ✔ [144005] 6.7tỷ | 56.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:25,172  INFO        ✔ [137671] 6.9tỷ | 89.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:31,296  INFO        ✔ [106731] 8.0tỷ | 80.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:36,978  INFO        ✔ [148980] 35.0tỷ | 900.0m² | 6PN/6WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=5
+2026-03-23 22:44:46,471  INFO        ✔ [133267] 4.0tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:44:55,144  INFO        ✔ [148884] 5.2tỷ | 70.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:45:01,970  INFO        ✔ [106684] 4.1tỷ | 55.0m² | 1PN/1WC | NT=Không có | PL=Hợp đồng mua bán | T=4
+2026-03-23 22:45:08,029  INFO        ✔ [148784] 9.5tỷ | 160.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:45:15,193  INFO        ✔ [135590] 18.32tỷ | 333.0m² | 5PN/5WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:45:22,629  INFO        ✔ [145413] 6.7tỷ | 71.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:45:26,858  INFO        💾 120 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:45:26,858  INFO        Tổng tích lũy: 120 (+120 mới)
+2026-03-23 22:45:29,577  INFO      ═══ Trang 9/10 ═══
+2026-03-23 22:45:30,232  INFO        Trang 9: 15 links, has_next=True
+2026-03-23 22:45:30,234  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:45:32,747  INFO        ✔ [145636] 7.1tỷ | 81.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:45:40,643  INFO        ✔ [148247] 3.45tỷ | 755.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=4
+2026-03-23 22:45:51,226  INFO        ✔ [148167] 5.8tỷ | 70.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=9
+2026-03-23 22:46:04,566  INFO        ✔ [141370] 5.2tỷ | 71.0m² | 2PN/1WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=9
+2026-03-23 22:46:10,420  INFO        ✔ [148580] 7.8tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:46:21,385  INFO        ✔ [141366] 6.1tỷ | 48.8m² | 1PN/1WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=3
+2026-03-23 22:46:27,247  INFO        ✔ [148509] 7.8tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:46:33,600  INFO        ✔ [143515] 4.66tỷ | 68.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:46:40,538  INFO        ✔ [144209] 3.35tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:46:47,846  INFO        ✔ [148177] 7.2tỷ | 74.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:46:55,099  INFO        ✔ [148619] 4.1tỷ | 111.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:47:02,155  INFO        ✔ [144230] 3.1tỷ | 54.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:47:11,474  INFO        ✔ [143517] 9.2tỷ | 94.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:47:19,216  INFO        ✔ [132928] 3.1tỷ | 67.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:47:25,820  INFO        ✔ [148727] 7.8tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:47:30,001  INFO        💾 135 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:47:30,001  INFO        Tổng tích lũy: 135 (+135 mới)
+2026-03-23 22:47:33,401  INFO      ═══ Trang 10/10 ═══
+2026-03-23 22:47:34,079  INFO        Trang 10: 15 links, has_next=True
+2026-03-23 22:47:34,079  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:47:36,591  INFO        ✔ [131847] 6.79tỷ | 48.5m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:47:45,591  INFO        ✔ [147836] 6.4tỷ | 74.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:47:53,611  INFO        ✔ [142626] 7.8tỷ | 91.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:48:01,730  INFO        ✔ [126109] 6.7tỷ | 88.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:48:08,597  INFO        ✔ [145615] 12.9tỷ | 122.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:48:17,222  INFO        ✔ [145619] 9.0tỷ | 94.0m² | 3PN/2WC | NT=Không có | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:48:23,867  INFO        ✔ [147695] 4.52tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:48:29,870  INFO        ✔ [131885] 2.6tỷ | 47.0m² | 1PN/1WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:48:37,861  INFO        ✔ [145607] 9.0tỷ | 99.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:48:44,958  INFO        ✔ [132731] 2.8tỷ | 33.0m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:48:52,215  INFO        ✔ [145612] 6.6tỷ | 71.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:48:59,138  INFO        ✔ [145939] 3.2tỷ | 73.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:49:05,593  INFO        ✔ [145628] 7.3tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:49:10,687  INFO        ✔ [147376] 1.67tỷ | 56.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:49:17,555  INFO        ✔ [146029] 4.45tỷ | 92.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:49:21,644  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:21,644  INFO        Tổng tích lũy: 150 (+150 mới)
+2026-03-23 22:49:24,515  INFO      Hoàn thành. +150 mới | Tổng: 150 | Output: D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:39,552  INFO        Load file cũ: 150 dòng → crawl tiếp phần mới.
+2026-03-23 22:49:39,553  INFO      ═══ Trang 1/14 ═══
+2026-03-23 22:49:40,249  INFO        Trang 1: 15 links, has_next=True
+2026-03-23 22:49:40,255  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:49:40,262  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:40,262  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:49:44,546  INFO      ═══ Trang 2/14 ═══
+2026-03-23 22:49:45,220  INFO        Trang 2: 15 links, has_next=True
+2026-03-23 22:49:45,221  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:49:45,229  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:45,229  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:49:47,867  INFO      ═══ Trang 3/14 ═══
+2026-03-23 22:49:48,491  INFO        Trang 3: 15 links, has_next=True
+2026-03-23 22:49:48,491  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:49:48,499  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:48,499  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:49:51,533  INFO      ═══ Trang 4/14 ═══
+2026-03-23 22:49:52,192  INFO        Trang 4: 15 links, has_next=True
+2026-03-23 22:49:52,192  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:49:52,199  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:52,199  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:49:55,002  INFO      ═══ Trang 5/14 ═══
+2026-03-23 22:49:55,671  INFO        Trang 5: 15 links, has_next=True
+2026-03-23 22:49:55,671  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:49:55,691  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:49:55,691  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:49:59,655  INFO      ═══ Trang 6/14 ═══
+2026-03-23 22:50:00,393  INFO        Trang 6: 15 links, has_next=True
+2026-03-23 22:50:00,393  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:50:00,400  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:50:00,400  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:50:04,173  INFO      ═══ Trang 7/14 ═══
+2026-03-23 22:50:04,817  INFO        Trang 7: 15 links, has_next=True
+2026-03-23 22:50:04,817  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:50:04,823  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:50:04,823  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:50:08,092  INFO      ═══ Trang 8/14 ═══
+2026-03-23 22:50:08,740  INFO        Trang 8: 15 links, has_next=True
+2026-03-23 22:50:08,741  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:50:08,748  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:50:08,748  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:50:13,123  INFO      ═══ Trang 9/14 ═══
+2026-03-23 22:50:13,812  INFO        Trang 9: 15 links, has_next=True
+2026-03-23 22:50:13,813  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:50:13,821  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:50:13,821  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:50:17,435  INFO      ═══ Trang 10/14 ═══
+2026-03-23 22:50:18,127  INFO        Trang 10: 15 links, has_next=True
+2026-03-23 22:50:18,129  INFO        Mới: 0 | Bỏ qua (đã có): 15
+2026-03-23 22:50:18,136  INFO        💾 150 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:50:18,136  INFO        Tổng tích lũy: 150 (+0 mới)
+2026-03-23 22:50:21,723  INFO      ═══ Trang 11/14 ═══
+2026-03-23 22:50:22,372  INFO        Trang 11: 15 links, has_next=True
+2026-03-23 22:50:22,373  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:50:26,706  INFO        ✔ [127585] 6.4tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:50:34,325  INFO        ✔ [145629] 3.85tỷ | 78.0m² | 3PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:50:39,904  INFO        ✔ [98326] 1.95tỷ | 45.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-23 22:50:45,407  INFO        ✔ [25101] 2.2tỷ | 38.1m² | 2PN/0WC | NT=Cơ Bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:50:51,322  INFO        ✔ [128244] 3.35tỷ | 44.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:50:58,718  INFO        ✔ [93891] 8.9tỷ | 141.0m² | 5PN/4WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:51:09,607  INFO        ✔ [126357] 11.0tỷ | 368.0m² | 4PN/5WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:51:15,732  INFO        ✔ [128487] 3.5tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:51:21,695  INFO        ✔ [145603] 6.7tỷ | 71.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:51:28,380  INFO        ✔ [124511] 3.4tỷ | 97.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:51:40,887  INFO        ✔ [138778] 3.75tỷ | 90.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:51:53,368  INFO        ✔ [124684] 3.55tỷ | 65.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:52:02,828  INFO        ✔ [116891] 4.8tỷ | 57.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:52:11,973  INFO        ✔ [115667] 8.1tỷ | 91.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:52:20,341  INFO        ✔ [129254] 4.2tỷ | 161.0m² | 3PN/4WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:52:24,827  INFO        💾 165 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:52:24,827  INFO        Tổng tích lũy: 165 (+15 mới)
+2026-03-23 22:52:28,340  INFO      ═══ Trang 12/14 ═══
+2026-03-23 22:52:29,056  INFO        Trang 12: 15 links, has_next=True
+2026-03-23 22:52:29,058  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:52:35,905  INFO        ✔ [139036] 3.3tỷ | 59.0m² | 2PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:52:41,751  INFO        ✔ [142227] 6.5tỷ | 79.7m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:52:49,632  INFO        ✔ [144503] 3.7tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:52:57,396  INFO        ✔ [139072] 30.0tỷ | 440.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:53:03,686  INFO        ✔ [136102] 2.65tỷ | 40.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:53:13,763  INFO        ✔ [118715] 30.0tỷ | 150.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:53:20,398  INFO        ✔ [134580] 3.0tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:53:26,750  INFO        ✔ [144855] 3.8tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:53:35,437  INFO        ✔ [98409] 2.45tỷ | 45.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=2
+2026-03-23 22:53:46,250  INFO        ✔ [96066] 2.5tỷ | 44.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=4
+2026-03-23 22:53:54,171  INFO        ✔ [145058] 2.3tỷ | 36.0m² | 1PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:54:00,089  INFO        ✔ [132985] 12.0tỷ | 54.0m² | 0PN/0WC | NT=Đầy đủ | PL=Giấy tờ hợp lệ | T=None
+2026-03-23 22:54:10,387  INFO        ✔ [144390] 5.0tỷ | 50.0m² | 0PN/0WC | NT=Đầy Đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:54:16,459  INFO        ✔ [144475] 2.9tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-23 22:54:26,637  INFO        ✔ [136630] 35.0tỷ | 145.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=26
+2026-03-23 22:54:29,872  INFO        💾 180 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:54:29,872  INFO        Tổng tích lũy: 180 (+30 mới)
+2026-03-23 22:54:32,550  INFO      ═══ Trang 13/14 ═══
+2026-03-23 22:54:33,275  INFO        Trang 13: 15 links, has_next=True
+2026-03-23 22:54:33,275  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:54:39,671  INFO        ✔ [139027] 2.8tỷ | 55.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=4
+2026-03-23 22:54:53,428  INFO        ✔ [140953] 8.7tỷ | 88.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:54:59,516  INFO        ✔ [143583] 3.5tỷ | 65.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:55:06,887  INFO        ✔ [143995] 2.25tỷ | 47.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:55:16,331  INFO        ✔ [108196] 3.6tỷ | 83.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:55:23,045  INFO        ✔ [143892] 9.8tỷ | 68.0m² | 2PN/2WC | NT=Cao Cấp | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:55:30,836  INFO        ✔ [128240] 4.5tỷ | 68.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=4
+2026-03-23 22:55:37,122  INFO        ✔ [144335] 2.45tỷ | 26.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=6
+2026-03-23 22:55:46,439  INFO        ✔ [143523] 5.2tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:55:54,584  INFO        ✔ [141564] 9.5tỷ | 115.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:02,120  INFO        ✔ [140333] 10.0tỷ | 163.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:56:08,753  INFO        ✔ [143759] 3.8tỷ | 54.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:18,607  INFO        ✔ [143596] 16.0tỷ | 150.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:25,717  INFO        ✔ [142856] 4.1tỷ | 60.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:33,250  INFO        ✔ [139626] 3.65tỷ | 60.0m² | 2PN/2WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:36,050  INFO        💾 195 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:56:36,050  INFO        Tổng tích lũy: 195 (+45 mới)
+2026-03-23 22:56:40,233  INFO      ═══ Trang 14/14 ═══
+2026-03-23 22:56:40,911  INFO        Trang 14: 15 links, has_next=True
+2026-03-23 22:56:40,911  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 22:56:44,425  INFO        ✔ [94363] 2.6tỷ | 59.0m² | 2PN/1WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:51,682  INFO        ✔ [120694] 3.5tỷ | 76.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:56:58,474  INFO        ✔ [142369] 2.05tỷ | 21.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=5
+2026-03-23 22:57:10,058  INFO        ✔ [88257] 25.5tỷ | 182.0m² | 6PN/5WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:57:19,314  INFO        ✔ [94982] 1.8tỷ | 31.0m² | 0PN/0WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:57:27,757  INFO        ✔ [141953] 1.95tỷ | 19.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:57:36,396  INFO        ✔ [142413] 3.2tỷ | 58.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:57:45,590  INFO        ✔ [143255] 5.37tỷ | 74.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:57:51,868  INFO        ✔ [142614] 9.4tỷ | 100.0m² | 3PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-23 22:58:00,088  INFO        ✔ [141418] 8.1tỷ | 150.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:58:06,506  INFO        ✔ [95323] 2.68tỷ | 59.0m² | 2PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:58:12,750  INFO        ✔ [96088] 9.0tỷ | 71.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 22:58:24,504  INFO        ✔ [141983] 5.25tỷ | 79.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-23 22:58:31,541  INFO        ✔ [79564] 2.85tỷ | 51.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 22:58:40,616  INFO        ✔ [79426] 6.9tỷ | 106.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-23 22:58:44,353  INFO        💾 210 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-23 22:58:44,353  INFO        Tổng tích lũy: 210 (+60 mới)
+2026-03-23 22:58:47,858  INFO      Hoàn thành. +60 mới | Tổng: 210 | Output: D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv

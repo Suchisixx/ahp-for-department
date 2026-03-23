@@ -3,6 +3,7 @@ import pathlib
 
 import pandas as pd
 import re
+import unicodedata
 from datetime import datetime
 import os
 from pathlib import Path
@@ -19,11 +20,46 @@ print(f"Đang tìm file gốc tại: {RAW_CSV}")
 
 # Các cột giữ lại (chọn lọc)
 KEEP_COLUMNS = [
-    'ma_tin', 'url', 'title', 'ngay_dang', 'gia_ty', 'gia_per_m2_trieu',
+    'ma_tin', 'url', 'title', 'ngay_dang', 'ngay_het_han', 'thumbnail_url', 'thumbnail_path',
+    'image_urls', 'image_local_paths', 'gia_ty', 'gia_per_m2_trieu',
     'dien_tich', 'so_phong_ngu', 'so_phong_wc', 'noi_that', 'phap_ly',
     'du_an', 'tien_ich_noi_khu', 'tien_ich_ha_tang', 'huong_nha',
     'huong_ban_cong', 'phuong'
 ]
+
+TITLE_PREFIXES = [
+    'chinh chu gui ban',
+    'chinh chu ban',
+    'can ban',
+    'ban nhanh',
+    'gui ban',
+    'ban',
+]
+
+
+def normalize_title_prefix(value):
+    normalized_value = unicodedata.normalize('NFKD', value)
+    return ''.join(char for char in normalized_value if not unicodedata.combining(char)).lower()
+
+
+def clean_listing_title(title):
+    if pd.isna(title):
+        return title
+
+    original_title = str(title).strip()
+    if not original_title:
+        return original_title
+
+    comparable_title = normalize_title_prefix(original_title)
+    cleaned_title = original_title
+
+    for prefix in TITLE_PREFIXES:
+        if comparable_title.startswith(prefix):
+            cleaned_title = original_title[len(prefix):]
+            break
+
+    cleaned_title = re.sub(r'^[\s,:\-–—]+', '', cleaned_title).strip()
+    return cleaned_title or original_title
 
 # Trọng số AHP (lưu tạm, sau này có thể đưa vào DB riêng)
 EXPERT_WEIGHTS = {
@@ -35,8 +71,13 @@ EXPERT_WEIGHTS = {
 # Đọc raw
 df = pd.read_csv(RAW_CSV)
 
+for column in KEEP_COLUMNS:
+    if column not in df.columns:
+        df[column] = None
+
 # 1. Lọc cột
 df = df[KEEP_COLUMNS].copy()
+df['title'] = df['title'].apply(clean_listing_title)
 
 # 2. Xử lý missing & kiểu dữ liệu
 df['gia_ty'] = pd.to_numeric(df['gia_ty'], errors='coerce')
@@ -51,6 +92,10 @@ df = df.dropna(subset=['gia_ty', 'dien_tich'])
 df['noi_that'] = df['noi_that'].fillna('Không rõ')
 df['phap_ly'] = df['phap_ly'].fillna('Không rõ')
 df['du_an'] = df['du_an'].fillna('Không thuộc dự án')
+df['thumbnail_url'] = df['thumbnail_url'].fillna('')
+df['thumbnail_path'] = df['thumbnail_path'].fillna('')
+df['image_urls'] = df['image_urls'].fillna('[]')
+df['image_local_paths'] = df['image_local_paths'].fillna('[]')
 df['tien_ich_noi_khu'] = df['tien_ich_noi_khu'].fillna('')
 df['tien_ich_ha_tang'] = df['tien_ich_ha_tang'].fillna('')
 df['huong_nha'] = df['huong_nha'].fillna('Không rõ')

@@ -11,13 +11,16 @@ Các hàm tiện ích chung:
 """
 
 import csv
+import json
 import re
 import time
+from mimetypes import guess_extension
 from pathlib import Path
+from urllib.parse import urlparse
 
 import requests
 
-from config import HEADERS, MAX_RETRY, OUTPUT, FIELDNAMES, log
+from config import HEADERS, IMAGE_DIR, MAX_RETRY, OUTPUT, FIELDNAMES, log
 
 
 # ── HTTP ──────────────────────────────────────────────────────────────────────
@@ -52,6 +55,56 @@ def first_match(pattern: str, text: str, flags=re.IGNORECASE) -> str | None:
     return m.group(1).strip() if m else None
 
 
+def _serialize_cell(value):
+    if isinstance(value, (list, dict)):
+        return json.dumps(value, ensure_ascii=False)
+    return value
+
+
+def _guess_image_extension(image_url: str, content_type: str | None = None) -> str:
+    suffix = Path(urlparse(image_url).path).suffix.lower()
+    if suffix in {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif"}:
+        return suffix
+
+    if content_type:
+        guessed = guess_extension(content_type.split(";")[0].strip())
+        if guessed:
+            return ".jpg" if guessed == ".jpe" else guessed
+
+    return ".jpg"
+
+
+def download_listing_images(ma_tin: str | None, image_urls: list[str] | None) -> dict[str, str]:
+    if not ma_tin or not image_urls:
+        return {}
+
+    listing_dir = Path(IMAGE_DIR) / str(ma_tin)
+    listing_dir.mkdir(parents=True, exist_ok=True)
+
+    saved_paths: dict[str, str] = {}
+
+    for index, image_url in enumerate(image_urls, start=1):
+        if not image_url:
+            continue
+
+        try:
+            response = requests.get(image_url, headers=HEADERS, timeout=20)
+            response.raise_for_status()
+        except Exception as exc:
+            log.warning(f"Không tải được ảnh {image_url}: {exc}")
+            continue
+
+        extension = _guess_image_extension(
+            image_url,
+            response.headers.get("Content-Type"),
+        )
+        file_path = listing_dir / f"{index:02d}{extension}"
+        file_path.write_bytes(response.content)
+        saved_paths[image_url] = file_path.as_posix()
+
+    return saved_paths
+
+
 # ── CSV I/O ───────────────────────────────────────────────────────────────────
 
 def save_csv(dataset: list[dict], path: str = OUTPUT):
@@ -62,7 +115,13 @@ def save_csv(dataset: list[dict], path: str = OUTPUT):
     with open(path, "w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDNAMES, extrasaction="ignore")
         writer.writeheader()
-        writer.writerows(dataset)
+        writer.writerows(
+            {
+                key: _serialize_cell(value)
+                for key, value in row.items()
+            }
+            for row in dataset
+        )
     log.info(f"  💾 {len(dataset)} rows → {path}")
 
 

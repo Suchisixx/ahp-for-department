@@ -19,6 +19,11 @@ class CanHo(Base):
     url              = Column(Text)
     title            = Column(Text)
     ngay_dang        = Column(DateTime)
+    ngay_het_han     = Column(DateTime)
+    thumbnail_url    = Column(Text)
+    thumbnail_path   = Column(Text)
+    image_urls       = Column(JSONB)
+    image_local_paths = Column(JSONB)
 
     # C1
     gia_ty           = Column(Numeric(10, 3))
@@ -50,7 +55,7 @@ class CanHo(Base):
     phuong           = Column(String(100))
     created_at       = Column(DateTime, default=datetime.now)
     updated_at       = Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    trang_thai      = Column(Boolean, default=1)  # 1: active, 0: inactive (bán rồi, rút tin,...)
+    trang_thai       = Column(Boolean, default=1)  # 1: active, 0: inactive (bán rồi, rút tin,...)
 
     # Relationship
     results = relationship("AhpResult", back_populates="canho", cascade="all, delete")

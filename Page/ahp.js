@@ -95,6 +95,8 @@ let lastRes = null;
 let chW = null;
 let chTop10 = null;
 let lastFocusedTrigger = null;
+let modalGalleryImages = [];
+let activeModalImageIndex = 0;
 let activeCriterionMatrixId = null;
 const PAIRWISE_EPS = 0.001;
 
@@ -205,7 +207,7 @@ function buildMat() {
         <thead>
           <tr>
             <th class="alt-sticky-col alt-row-head">TiÃªu chÃ­</th>
-            ${CRIT.map((c) => `<th title="${escapeHtml(`${c.id} · ${c.name}`)}"><span>${c.id}</span></th>`).join("")}
+            ${CRIT.map((c) => `<th title="${escapeHtml(`${c.id} · ${c.name}`)}"><span class="criteria-col-head">${escapeHtml(`${c.id} · ${c.name}`)}</span></th>`).join("")}
           </tr>
         </thead>
         <tbody>`;
@@ -871,6 +873,145 @@ function getApartmentLocation(ch) {
     .join(" · ");
 }
 
+function getApartmentThumbnail(ch) {
+  if (typeof ch?.thumbnail_src !== "string") return null;
+  const src = ch.thumbnail_src.trim();
+  return src || null;
+}
+
+function getApartmentImageSources(ch) {
+  if (!Array.isArray(ch?.image_srcs)) return [];
+
+  const unique = [];
+  const seen = new Set();
+
+  ch.image_srcs.forEach((value) => {
+    if (typeof value !== "string") return;
+    const src = value.trim();
+    if (!src || seen.has(src)) return;
+    seen.add(src);
+    unique.push(src);
+  });
+
+  return unique;
+}
+
+function getApartmentGallery(ch) {
+  const gallery = [];
+  const seen = new Set();
+  const thumbnail = getApartmentThumbnail(ch);
+
+  if (thumbnail) {
+    seen.add(thumbnail);
+    gallery.push(thumbnail);
+  }
+
+  getApartmentImageSources(ch).forEach((src) => {
+    if (seen.has(src)) return;
+    seen.add(src);
+    gallery.push(src);
+  });
+
+  return gallery;
+}
+
+function renderListingThumb(ch, title, variant = "rank") {
+  const src = getApartmentThumbnail(ch);
+  const alt = escapeHtml(title || "Căn hộ");
+  const className =
+    variant === "refer"
+      ? "listing-thumb listing-thumb--refer"
+      : "listing-thumb listing-thumb--rank";
+
+  return `
+    <div class="${className}${src ? "" : " is-empty"}">
+      ${
+        src
+          ? `<img src="${escapeHtml(src)}" alt="Ảnh ${alt}" loading="lazy" onerror="this.parentElement.classList.add('is-empty'); this.remove()">`
+          : ""
+      }
+      <span class="listing-thumb-fallback">Chưa có ảnh</span>
+    </div>`;
+}
+
+function renderGalleryFrame(src, title, className) {
+  return `
+    <div class="${className}">
+      <img src="${escapeHtml(src)}" alt="Ảnh ${escapeHtml(title || "căn hộ")}" onerror="this.parentElement.classList.add('is-empty'); this.remove()">
+      <span class="listing-thumb-fallback">Chưa tải được ảnh</span>
+    </div>`;
+}
+
+function renderDetailGallery(ch) {
+  const gallery = getApartmentGallery(ch);
+  modalGalleryImages = gallery;
+  activeModalImageIndex = 0;
+
+  if (!gallery.length) {
+    return `
+      <div class="detail-gallery detail-gallery--empty">
+        <div class="detail-gallery-empty">
+          <span class="detail-gallery-empty-title">Chưa có ảnh cho tin này</span>
+          <span class="detail-gallery-empty-copy">Hệ thống sẽ hiển thị gallery ngay khi crawler lấy được ảnh hoặc có đường dẫn nguồn hợp lệ.</span>
+        </div>
+      </div>`;
+  }
+
+  return `
+    <div class="detail-gallery">
+      <div class="detail-gallery-hero" id="detail-gallery-hero">
+        ${renderGalleryFrame(gallery[0], ch.title, "detail-gallery-hero-media")}
+      </div>
+      ${
+        gallery.length > 1
+          ? `<div class="detail-gallery-strip" aria-label="Danh sách ảnh căn hộ">
+              ${gallery
+                .map(
+                  (src, index) => `
+                    <button
+                      type="button"
+                      class="detail-gallery-thumb${index === 0 ? " is-active" : ""}"
+                      data-gallery-index="${index}"
+                      aria-label="Xem ảnh ${index + 1}"
+                      aria-pressed="${index === 0 ? "true" : "false"}"
+                    >
+                      ${renderGalleryFrame(src, `${ch.title || "Căn hộ"} ${index + 1}`, "detail-gallery-thumb-media")}
+                    </button>`,
+                )
+                .join("")}
+            </div>`
+          : ""
+      }
+    </div>`;
+}
+
+function setActiveModalImage(index) {
+  if (!modalGalleryImages.length) return;
+
+  activeModalImageIndex = Math.max(
+    0,
+    Math.min(index, modalGalleryImages.length - 1),
+  );
+
+  const modalBody = document.getElementById("modal-body");
+  const hero = modalBody?.querySelector("#detail-gallery-hero");
+  const title = document.getElementById("modal-ttl")?.textContent || "Căn hộ";
+  if (hero) {
+    hero.innerHTML = renderGalleryFrame(
+      modalGalleryImages[activeModalImageIndex],
+      title,
+      "detail-gallery-hero-media",
+    );
+  }
+
+  modalBody?.querySelectorAll(".detail-gallery-thumb").forEach((button) => {
+    const buttonIndex = Number(button.dataset.galleryIndex);
+    const isActive = buttonIndex === activeModalImageIndex;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
+}
+
 function getCriterionMeta(criterionId) {
   return CRIT.find((criterion) => criterion.id === criterionId) || {
     id: criterionId,
@@ -1149,6 +1290,7 @@ function renderTop10(top10) {
       return `
         <div class="rank-card ${isTop3 ? "top3 " : ""}${cc}" onclick="openModal(${r - 1}, this)" tabindex="0" role="button" aria-label="${ariaLabel}">
             <div class="rc-num ${nc}">${label}</div>
+            ${renderListingThumb(ch, ch.title, "rank")}
             <div class="rc-body">
                 <div class="rc-title">${ch.title || "—"}</div>
                 <div class="rc-meta">
@@ -1193,6 +1335,7 @@ function renderRefer(refer) {
       const pct = Math.round(item.ahp_score * 100);
       return `
         <div class="refer-card" onclick="openModal(${item.rank - 1}, this)">
+            ${renderListingThumb(ch, ch.title, "refer")}
             <div class="refer-rank">#${item.rank}</div>
             <div class="refer-score">${pct}</div>
             <div class="refer-name">${ch.title || "—"}</div>
@@ -1679,6 +1822,8 @@ function openModal(idx, triggerEl) {
   } else {
     modalBody.prepend(summary);
   }
+  modalBody.querySelector(".detail-gallery")?.remove();
+  summary.insertAdjacentHTML("afterend", renderDetailGallery(ch));
 
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
@@ -1691,6 +1836,8 @@ function closeModal() {
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  modalGalleryImages = [];
+  activeModalImageIndex = 0;
   if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === "function") {
     lastFocusedTrigger.focus();
   }
@@ -1795,6 +1942,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   document.getElementById("modal").addEventListener("click", (e) => {
     if (e.target === e.currentTarget) closeModal();
+  });
+  document.getElementById("modal-body")?.addEventListener("click", (e) => {
+    const button = e.target.closest(".detail-gallery-thumb");
+    if (!button) return;
+    setActiveModalImage(Number(button.dataset.galleryIndex));
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && document.getElementById("modal").classList.contains("open")) {

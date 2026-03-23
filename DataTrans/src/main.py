@@ -9,15 +9,17 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
 
-
-from database import engine, Base
+from database import engine, Base, ensure_canho_schema
 from routers import canho, ahp
 
 BASE_DIR = Path(__file__).resolve().parent
 PAGE_DIR = BASE_DIR.parent.parent / "Page"
+MEDIA_DIR = BASE_DIR.parent / "data-crawling" / "raw" / "images"
+MEDIA_DIR.mkdir(parents=True, exist_ok=True)
 print(f"--- Kiểm tra đường dẫn Page: {PAGE_DIR} ---")
 # Tạo bảng tự động nếu chưa có
 Base.metadata.create_all(bind=engine)
+ensure_canho_schema()
 
 app = FastAPI(
     title="DSS Căn Hộ TP.HCM",
@@ -41,6 +43,7 @@ app.add_middleware(
 # Dựa theo hình của bạn, Page nằm cùng cấp với thư mục src/ hoặc ngay trong src/
 # Nếu bạn chạy lệnh từ thư mục 'src', hãy để directory="../Page" hoặc "Page" tùy vị trí thực tế
 app.mount("/static", StaticFiles(directory=str(PAGE_DIR)), name="static")
+app.mount("/media", StaticFiles(directory=str(MEDIA_DIR)), name="media")
 
 @app.get("/", tags=["Frontend"])
 def serve_home():

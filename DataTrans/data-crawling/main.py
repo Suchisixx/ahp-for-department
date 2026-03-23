@@ -21,7 +21,7 @@ import random
 import time
 
 from config import OUTPUT, DELAY_MIN, DELAY_MAX, log
-from utils import save_csv, load_existing
+from utils import download_listing_images, save_csv, load_existing
 from parsers import get_listing_links, parse_detail
 
 
@@ -63,6 +63,17 @@ def crawl(max_pages: int = 5, fresh: bool = False) -> list[dict]:
             seen_urls.add(link)
             data = parse_detail(link)
             if data:
+                saved_images = download_listing_images(
+                    data.get("ma_tin"),
+                    data.get("image_urls"),
+                )
+                if saved_images:
+                    data["image_local_paths"] = list(saved_images.values())
+                    data["thumbnail_path"] = (
+                        saved_images.get(data.get("thumbnail_url"))
+                        or data["image_local_paths"][0]
+                    )
+
                 dataset.append(data)
                 log.info(
                     f"  ✔ [{data.get('ma_tin', '?')}] "
