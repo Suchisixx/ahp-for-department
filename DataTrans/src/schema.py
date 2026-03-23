@@ -83,6 +83,7 @@ class AhpResponse(BaseModel):
     ci:           float
     lambda_max:   float
     cr_ok:        bool
+    criteria_matrix: list[list[float]]
     weights:      list[CriterionWeight]
     total_canho:  int
     ranked:       list[RankedCanHo]

@@ -64,8 +64,8 @@ app.include_router(canho.router)
 app.include_router(ahp.router)
 
 
-@app.get("/", tags=["Health"])
-def root():
+@app.get("/api-info", tags=["Health"])
+def api_info():
     return {
         "status": "ok",
         "docs":   "/docs",

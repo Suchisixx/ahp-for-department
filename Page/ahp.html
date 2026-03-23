@@ -8,8 +8,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/static/style-ahp.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <link rel="stylesheet" href="/static/style-ahp.css?v=20260323-latex">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
 
     <!-- Navigation
     <nav>
-        <a href="home" class="nav-logo">
+        <a href="/home" class="nav-logo">
             <div class="nav-logo-icon">
                 <svg viewBox="0 0 24 24">
                     <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -32,10 +34,10 @@
             <span class="nav-brand">ApartmentBroker</span>
         </a>
         <div class="nav-links">
-            <a href="home">Trang chủ</a>
-            <a href="guide">Hướng dẫn AHP</a>
-            <a href="ahp">Phân tích AHP</a>
-            <a href="ahp" class="btn nav-cta">Bắt đầu ngay →</a>
+            <a href="/home">Trang chủ</a>
+            <a href="/guide">Hướng dẫn AHP</a>
+            <a href="/ahp">Phân tích AHP</a>
+            <a href="/ahp" class="btn nav-cta">Bắt đầu ngay →</a>
         </div>
 
         <div class="nav-right">
@@ -46,7 +48,7 @@
 
     <!-- NAV -->
     <nav>
-        <a href="home" class="nav-logo">ApartmentBroker</a>
+        <a href="/home" class="nav-logo">ApartmentBroker</a>
         <span class="nav-sep">›</span>
         <span class="nav-page">Phân tích AHP</span>
         <div style="margin-left:12px">
@@ -63,7 +65,7 @@
     <div class="layout">
 
         <!-- API STATUS -->
-        <div class="api-banner checking" id="api-banner">
+        <div class="api-banner checking" id="api-banner" style="display:none">
             Đang kiểm tra kết nối backend <code>http://localhost:8000</code>...
         </div>
         <div id="retry-bar" style="display:none;text-align:right;margin-top:-14px">
@@ -79,24 +81,37 @@
             <span class="mode-lbl">Chế độ:</span>
             <div class="mode-tabs">
                 <button class="mode-tab active" id="tab-expert" onclick="setMode('expert')">
-                    🎓 Trọng số chuyên gia
+                    🎓 Dùng bộ gợi ý sẵn
                 </button>
                 <button class="mode-tab" id="tab-custom" onclick="setMode('custom')">
-                    ⚖️ Tự nhập ma trận AHP
+                    ⚖️ Tự chọn mức ưu tiên
                 </button>
             </div>
-            <span class="mode-hint" id="mode-hint">Bộ trọng số đã tính sẵn — CR = 1.1% ✓</span>
+            <div class="mode-help">
+                Mới bắt đầu? Chọn <strong>bộ gợi ý sẵn</strong> để xem kết quả nhanh. Chọn <strong>tự chọn mức ưu
+                tiên</strong> khi bạn muốn hệ thống phản ánh đúng nhu cầu riêng của mình.
+            </div>
         </div>
 
         <!-- ═══ EXPERT PANEL ═══ -->
         <div id="panel-expert">
             <div class="card">
-                <div class="card-head">
+                <div class="card-head card-head-expert">
                     <div>
-                        <div class="card-title">Trọng số chuyên gia — Đã kiểm chứng</div>
-                        <div class="card-sub">CR = 1.1% &lt; 10% ✓ · λmax = 8.09 · Phân tích thị trường TP.HCM</div>
+                        <div class="card-title">Bộ gợi ý đã kiểm chứng</div>
+                        <div class="card-sub ahp-meta">
+                            <span class="tag success">CR 1.1%</span>
+                            <span class="meta-sep">|</span>
+                            <span>λmax 8.09</span>
+                            <span class="meta-sep">|</span>
+                            <span>Thị trường TP.HCM</span>
+                        </div>
+                        <div class="expert-note">
+                            Phù hợp khi bạn muốn xem gợi ý nhanh theo mặt bằng ưu tiên phổ biến của người mua căn hộ
+                            tại TP.HCM.
+                        </div>
                     </div>
-                    <button class="btn btn-primary" id="btn-expert" onclick="runExpert()">
+                    <button class="btn btn-expert-cta" id="btn-expert" onclick="runExpert()">
                         Xếp hạng căn hộ →
                     </button>
                 </div>
@@ -111,13 +126,12 @@
             <div class="card">
                 <div class="card-head">
                     <div>
-                        <div class="card-title">Ma trận so sánh cặp 8×8</div>
-                        <div class="card-sub">Nhập giá trị Saaty 1–9 · Ô in nghiêng tự điền nghịch đảo · CR &lt; 10%
-                        </div>
+                        <div class="card-title">Tự thiết lập mức ưu tiên</div>
+                        <div class="card-sub">So sánh từng cặp tiêu chí theo thang 1–9. Hệ thống sẽ tự tính trọng số và
+                            báo nếu các lựa chọn của bạn chưa nhất quán.</div>
                     </div>
                     <div style="display:flex;gap:8px">
                         <button class="btn btn-ghost btn-sm" onclick="resetMatrix()">↺ Đặt lại</button>
-                        <button class="btn btn-outline btn-sm" onclick="checkCR()">Kiểm tra CR</button>
                     </div>
                 </div>
 
@@ -144,7 +158,7 @@
 
                 <!-- Matrix table -->
                 <div class="mat-scroll">
-                    <table class="mat" id="mat-tbl"></table>
+                    <div id="mat-tbl" class="criteria-matrix-host"></div>
                 </div>
 
                 <!-- CR result + weights -->
@@ -153,24 +167,25 @@
                         <div class="cr-box" id="cr-box">
                             <div class="cr-lbl">Tỷ số nhất quán (CR)</div>
                             <div class="cr-num" id="cr-num">—</div>
-                            <div class="cr-msg" id="cr-msg">Bấm "Kiểm tra CR"</div>
+                            <div class="cr-msg" id="cr-msg">H&#7879; th&#7889;ng s&#7869; t&#7921; ki&#7875;m tra khi b&#7841;n thay &#273;&#7893;i m&#7913;c &#432;u ti&#234;n</div>
                         </div>
-                        <div class="cr-box" style="flex:3;min-width:260px">
+                        <div class="cr-box cr-box--weights">
                             <div class="cr-lbl">Trọng số tính được</div>
-                            <div class="wchips" id="wchips">
+                            <div class="weights-summary">
+                                <div class="wchips" id="wchips">
                                 <span style="font-size:12px;color:var(--text3)">Chưa tính</span>
+                                </div>
+                                <div class="weights-math-line" id="lmax-line"></div>
                             </div>
-                            <div id="lmax-line" style="font-size:11px;color:var(--text3);margin-top:8px"></div>
                         </div>
                     </div>
                     <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
                         <button class="btn btn-primary" id="btn-custom" onclick="runCustom()" disabled>
-                            Gửi lên backend &amp; Xếp hạng →
+                            Xem k&#7871;t qu&#7843; ph&#249; h&#7907;p &rarr;
                         </button>
-                        <button class="btn btn-outline" onclick="checkCR()">Kiểm tra CR trước</button>
                     </div>
                     <div style="font-size:11px;color:var(--text3);margin-top:8px">
-                        Backend nhận ma trận → tính AHP + scoring → trả kết quả từ DB
+                        H&#7879; th&#7889;ng s&#7869; d&#7921;a tr&#234;n m&#7913;c &#432;u ti&#234;n b&#7841;n ch&#7885;n &#273;&#7875; &#273;&#432;a ra g&#7907;i &#253; ph&#249; h&#7907;p nh&#7845;t.
                     </div>
                 </div>
             </div>
@@ -181,6 +196,17 @@
 
             <!-- Session info -->
             <div id="session-info"></div>
+
+            <!-- Decision dossier -->
+            <div class="card" id="decision-dossier-section" style="display:none">
+                <div class="card-head">
+                    <div>
+                        <div class="card-title">Hồ sơ quyết định AHP</div>
+                        <div class="card-sub">Xem lại ma trận tiêu chí, 8 ma trận phương án theo từng tiêu chí và kết luận đề xuất trước khi chốt căn hộ.</div>
+                    </div>
+                </div>
+                <div class="card-body dossier-body" id="decision-dossier-body"></div>
+            </div>
 
             <!-- 2 biểu đồ -->
             <div class="charts-grid">
@@ -220,22 +246,26 @@
             <div class="card" id="alt-matrix-section" style="display:none">
                 <div class="card-head">
                     <div>
-                        <div class="card-title">Ma trận so sánh cặp giữa các phương án (Top 10)</div>
-                        <div class="card-sub">Giá trị = Điểm AHP(hàng) ÷ Điểm AHP(cột) · Căn hàng vượt trội căn cột bao
-                            nhiêu lần · Trọng số PA = xếp hạng cuối cùng</div>
+                        <div class="card-title">Ma trận phương án tổng hợp cuối cùng (Top 10)</div>
+                        <div class="card-sub">Lớp kết luận cuối: tổng hợp toàn bộ trọng số và điểm AHP để ra thứ hạng phương án.</div>
                     </div>
-                    <button class="btn btn-outline btn-sm" onclick="toggleAltMatrix()">Thu gọn ▲</button>
+                    <button
+                        class="btn btn-outline btn-sm"
+                        id="alt-matrix-toggle"
+                        type="button"
+                        aria-controls="alt-matrix-body"
+                        aria-expanded="true"
+                        onclick="toggleAltMatrix()">
+                        Thu gọn ma trận ▲
+                    </button>
                 </div>
-                <div class="card-body" id="alt-matrix-body">
-                    <div id="alt-matrix-wrap" style="overflow-x:auto"></div>
-                    <div
-                        style="margin-top:16px;padding:14px 16px;background:var(--bg3);border-radius:var(--r);font-size:12px;color:var(--text2);line-height:1.7">
-                        <b style="color:var(--navy)">Cách đọc bảng:</b>
-                        Mỗi ô [hàng i, cột j] = Điểm AHP(căn i) ÷ Điểm AHP(căn j).
-                        Ví dụ: giá trị <b>1.38</b> nghĩa là căn hàng tốt hơn căn cột <b>1.38 lần</b> theo bộ tiêu chí
-                        bạn đã chọn.
-                        Cột <b>Trọng số PA</b> = tổng hợp cuối cùng (trung bình hàng đã chuẩn hóa), càng cao càng tốt.
-                        Cột <b>Xếp hạng</b> = thứ tự từ 1–10 theo trọng số PA.
+                <div class="card-body alt-matrix-body" id="alt-matrix-body">
+                    <div id="alt-matrix-wrap" class="alt-matrix-shell"></div>
+                    <div class="alt-matrix-note">
+                        <b>Cách đọc nhanh:</b>
+                        Ô [hàng i, cột j] = Điểm AHP(căn i) ÷ Điểm AHP(căn j). Giá trị gần <b>1.00</b> là tương đương,
+                        lớn hơn <b>1.05</b> là căn ở hàng nhỉnh hơn rõ, còn nhỏ hơn <b>0.95</b> là yếu hơn rõ.
+                        Cột <b>Trọng số PA</b> là ưu tiên cuối cùng sau chuẩn hóa; cột <b>Hạng</b> cho biết thứ tự của từng phương án trong Top 10.
                     </div>
                 </div>
             </div>
@@ -245,7 +275,7 @@
     </div><!-- /layout -->
 
     <!-- MODAL CHI TIẾT -->
-    <div class="modal-bg" id="modal">
+    <div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-ttl" aria-hidden="true">
         <div class="modal">
             <div class="modal-head">
                 <div class="modal-ttl" id="modal-ttl"></div>
@@ -256,8 +286,64 @@
     </div>
 
     <!-- JS tách riêng -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function setTooltip(item, html, ariaText) {
+                const labelText = item.textContent.trim();
+                item.classList.add('has-tooltip');
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('aria-label', ariaText || labelText);
+                item.removeAttribute('data-tooltip');
+                item.textContent = '';
+
+                const label = document.createElement('span');
+                label.className = 'ahp-meta-label';
+                label.textContent = labelText;
+                item.appendChild(label);
+
+                const hint = document.createElement('span');
+                hint.className = 'ahp-meta-info';
+                hint.setAttribute('aria-hidden', 'true');
+                hint.textContent = 'i';
+                item.appendChild(hint);
+
+                const tooltip = document.createElement('span');
+                tooltip.className = 'ahp-tooltip';
+                tooltip.setAttribute('aria-hidden', 'true');
+                tooltip.innerHTML = html;
+                item.appendChild(tooltip);
+            }
+
+            const metaItems = document.querySelectorAll('.ahp-meta > span:not(.meta-sep)');
+            if (metaItems.length >= 3) {
+                metaItems[0].textContent = '\u0110\u00e1nh gi\u00e1 r\u1ea5t nh\u1ea5t qu\u00e1n';
+                setTooltip(
+                    metaItems[0],
+                    'Ch\u1ec9 s\u1ed1 nh\u1ea5t qu\u00e1n <span class="math-latex" data-latex="\\mathrm{CR} = 1.1\\%" aria-label="CR bằng 1.1 phần trăm">CR = 1.1%</span>. Ch\u1ec9 s\u1ed1 n\u00e0y c\u00e0ng th\u1ea5p th\u00ec b\u1ed9 tr\u1ecdng s\u1ed1 c\u00e0ng \u0111\u00e1ng tin c\u1eady.',
+                    'Ch\u1ec9 s\u1ed1 nh\u1ea5t qu\u00e1n CR b\u1eb1ng 1.1%'
+                );
+
+                metaItems[1].textContent = 'K\u1ebft qu\u1ea3 so s\u00e1nh \u1ed5n \u0111\u1ecbnh';
+                setTooltip(
+                    metaItems[1],
+                    'Gi\u00e1 tr\u1ecb <span class="math-latex" data-latex="\\lambda_{\\max} = 8.09" aria-label="lambda max bằng 8.09">lambda max = 8.09</span>. \u0110\u00e2y l\u00e0 th\u00f4ng s\u1ed1 k\u1ef9 thu\u1eadt d\u00f9ng \u0111\u1ec3 ki\u1ec3m tra m\u1ee9c \u0111\u1ed9 \u1ed5n \u0111\u1ecbnh c\u1ee7a ma tr\u1eadn so s\u00e1nh. Ch\u1ec9 s\u1ed1 n\u00e0y c\u00e0ng g\u1ea7n 8 th\u00ec c\u00e0ng t\u1ed1t. N\u1ebfu cao h\u01a1n nhi\u1ec1u so v\u1edbi 8, c\u00f3 th\u1ec3 cho th\u1ea5y c\u00e1c \u0111\u00e1nh gi\u00e1 ch\u01b0a th\u1eadt s\u1ef1 nh\u1ea5t qu\u00e1n. N\u1ebfu r\u1ea5t g\u1ea7n 8, k\u1ebft qu\u1ea3 so s\u00e1nh th\u01b0\u1eddng \u1ed5n \u0111\u1ecbnh v\u00e0 \u0111\u00e1ng tin c\u1eady h\u01a1n.',
+                    'Gi\u00e1 tr\u1ecb lambda max b\u1eb1ng 8.09'
+                );
+
+                metaItems[2].textContent = 'D\u1eef li\u1ec7u tham chi\u1ebfu: TP.HCM';
+                setTooltip(
+                    metaItems[2],
+                    'B\u1ed9 tr\u1ecdng s\u1ed1 n\u00e0y \u0111\u01b0\u1ee3c hi\u1ec7u ch\u1ec9nh theo b\u1ed1i c\u1ea3nh th\u1ecb tr\u01b0\u1eddng c\u0103n h\u1ed9 t\u1ea1i TP.HCM.',
+                    'D\u1eef li\u1ec7u tham chi\u1ebfu TP.HCM'
+                );
+            }
+
+            window.renderMathInScope?.(document);
+        });
+    </script>
     <script src="/static/ahp.js"></script>
 
 </body>
 
 </html>
+

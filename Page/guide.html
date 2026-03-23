@@ -8,14 +8,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
     <link rel="stylesheet" href="/static/style-guide.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 </head>
 
 <body>
 
     <!-- Navigation -->
     <nav>
-        <a href="home" class="nav-logo">
+        <a href="/home" class="nav-logo">
             <div class="nav-logo-icon">
                 <svg viewBox="0 0 24 24">
                     <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
@@ -25,45 +27,73 @@
             <span class="nav-brand">ApartmentBroker</span>
         </a>
         <div class="nav-links">
-            <a href="home">Trang chủ</a>
-            <a href="guide">Hướng dẫn AHP</a>
-            <a href="ahp">Phân tích AHP</a>
-            <a href="ahp" class="btn nav-cta">Bắt đầu ngay →</a>
+            <a href="/home">Trang chủ</a>
+            <a href="/guide">Hướng dẫn AHP</a>
+            <a href="/ahp">Phân tích AHP</a>
+            <a href="/ahp" class="btn nav-cta">Bắt đầu ngay →</a>
         </div>
     </nav>
 
     <!-- HERO -->
     <section class="guide-hero">
         <div class="guide-hero-inner">
-            <div class="guide-tag">Tài liệu học thuật</div>
-            <h1 class="guide-h1">Phương pháp Phân tích<br><em>Thứ bậc AHP</em> là gì?</h1>
-            <p class="guide-sub">Hiểu rõ AHP trong 5 phút — từ khái niệm, các bước tính toán, đến cách hệ thống dùng nó
-                để xếp hạng căn hộ phù hợp với bạn nhất.</p>
+            <div class="guide-tag">Bản giải thích dễ hiểu</div>
+            <h1 class="guide-h1">
+                <span>Hiểu AHP đủ dùng để</span>
+                <em>đọc kết quả mà không bị rối</em>
+            </h1>
+            <p class="guide-sub">Bạn không cần giỏi toán để dùng hệ thống này. Trang này giúp bạn hiểu AHP đang làm gì,
+                vì sao hệ thống biết lựa chọn của bạn có hợp lý không, và cách đọc kết quả gợi ý căn hộ một cách tự tin.</p>
             <div class="guide-hero-btns">
-                <a href="#step1" class="btn btn-primary">Bắt đầu học →</a>
-                <a href="/ahp" class="btn btn-outline">Thử ngay</a>
+                <a href="#step1" class="btn btn-primary">Xem bản ngắn gọn →</a>
+                <a href="/ahp" class="btn btn-hero-secondary">Mở công cụ</a>
+            </div>
+            <div class="guide-hero-points">
+                <div class="guide-hero-point">
+                    <span class="gh-point-label">Cách đọc</span>
+                    <strong>3 bước ngắn gọn</strong>
+                </div>
+                <div class="guide-hero-point">
+                    <span class="gh-point-label">Hệ thống kiểm tra</span>
+                    <strong>Ưu tiên của bạn có nhất quán không</strong>
+                </div>
+                <div class="guide-hero-point">
+                    <span class="gh-point-label">Kết quả cuối</span>
+                    <strong>Biết vì sao được gợi ý</strong>
+                </div>
             </div>
         </div>
         <div class="guide-hero-visual">
-            <div class="ahp-tree">
-                <div class="tree-goal">🎯 Mục tiêu<br><small>Chọn căn hộ tốt nhất</small></div>
-                <div class="tree-connectors">
-                    <div class="tree-line"></div>
-                    <div class="tree-line"></div>
-                    <div class="tree-line"></div>
-                    <div class="tree-line"></div>
+            <div class="guide-hero-card">
+                <div class="guide-hero-card-head">
+                    <span class="guide-hero-card-kicker">AHP trong 1 góc nhìn</span>
+                    <div class="guide-hero-card-note">Từ ưu tiên cá nhân đến xếp hạng cuối cùng</div>
                 </div>
-                <div class="tree-criteria">
-                    <div class="tree-crit c1">C1<br><small>Tài chính</small></div>
-                    <div class="tree-crit c2">C2<br><small>Nội thất</small></div>
-                    <div class="tree-crit c3">C4<br><small>Pháp lý</small></div>
-                    <div class="tree-crit c4">C5<br><small>Hạ tầng</small></div>
+                <div class="ahp-tree">
+                    <div class="tree-goal">Mục tiêu<br><small>Chọn căn hộ phù hợp nhất</small></div>
+                    <div class="tree-connector tree-connector-top" aria-hidden="true"></div>
+                    <div class="tree-criteria">
+                        <div class="tree-crit c1">Giá<br><small>Tài chính</small></div>
+                        <div class="tree-crit c2">Nhà đẹp<br><small>Nội thất</small></div>
+                        <div class="tree-crit c3">Giấy tờ<br><small>Pháp lý</small></div>
+                        <div class="tree-crit c4">Khu vực<br><small>Hạ tầng</small></div>
+                    </div>
+                    <div class="tree-connector tree-connector-bottom" aria-hidden="true"></div>
+                    <div class="tree-alts">
+                        <div class="tree-alt a1">Căn A</div>
+                        <div class="tree-alt a2">Căn B</div>
+                        <div class="tree-alt a3">Căn C</div>
+                    </div>
                 </div>
-                <div class="tree-arrow">↓</div>
-                <div class="tree-alts">
-                    <div class="tree-alt a1">🏠 PA1</div>
-                    <div class="tree-alt a2">🏠 PA2</div>
-                    <div class="tree-alt a3">🏠 PA3</div>
+                <div class="guide-hero-card-footer">
+                    <div class="guide-hero-mini">
+                        <span class="guide-hero-mini-label">Đầu vào</span>
+                        <strong>So sánh mức ưu tiên</strong>
+                    </div>
+                    <div class="guide-hero-mini">
+                        <span class="guide-hero-mini-label">Đầu ra</span>
+                        <strong>Xếp hạng dễ hiểu</strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,43 +104,41 @@
         <div class="section-inner">
             <div class="intro-grid">
                 <div class="intro-text">
-                    <div class="section-tag">Tổng quan</div>
-                    <h2 class="section-h2">AHP là gì?</h2>
-                    <p>AHP (Analytic Hierarchy Process — Phân tích thứ bậc) là phương pháp ra quyết định đa tiêu chí do
-                        <strong>Thomas L. Saaty</strong> đề xuất năm 1980.
-                    </p>
-                    <p style="margin-top:12px">Thay vì chọn cảm tính, AHP giúp bạn <strong>định lượng hóa</strong> các
-                        ưu tiên cá nhân: "Với tôi, giá quan trọng hơn diện tích bao nhiêu lần?" rồi dùng toán học để
-                        tính ra phương án tốt nhất.</p>
+                    <div class="section-tag">Bạn cần biết gì</div>
+                    <h2 class="section-h2">AHP giúp bạn chọn nhà theo ưu tiên thật của mình</h2>
+                    <p>AHP là một cách ra quyết định có cấu trúc: thay vì chọn theo cảm giác chung chung, bạn cho hệ
+                        thống biết điều gì quan trọng hơn với mình, rồi hệ thống tính ra căn hộ phù hợp hơn.</p>
+                    <p style="margin-top:12px">Nói đơn giản, AHP biến câu hỏi như “với tôi, pháp lý quan trọng hơn nội
+                        thất bao nhiêu?” thành một bộ trọng số có thể dùng để xếp hạng căn hộ rõ ràng và minh bạch.</p>
                     <div class="ahp-quote">
                         <span class="q-mark">"</span>
-                        AHP trả lời câu hỏi <em>Phương án nào tốt nhất?</em> dựa trên những gì <em>thực sự quan trọng
-                            với bạn.</em>
+                        AHP trả lời câu hỏi <em>Căn nào hợp với tôi hơn?</em> dựa trên những gì <em>bạn ưu tiên thật
+                            sự.</em>
                     </div>
                 </div>
-                <div class="intro-cards">
-                    <div class="intro-card">
-                        <div class="ic-icon">🎯</div>
-                        <div class="ic-title">Cá nhân hóa</div>
-                        <div class="ic-desc">Mỗi người có bộ trọng số riêng — không ai giống ai</div>
-                    </div>
-                    <div class="intro-card">
-                        <div class="ic-icon">🔢</div>
-                        <div class="ic-title">Định lượng</div>
-                        <div class="ic-desc">Chuyển đánh giá chủ quan thành con số khoa học</div>
-                    </div>
-                    <div class="intro-card">
-                        <div class="ic-icon">✅</div>
-                        <div class="ic-title">Kiểm tra tính nhất quán</div>
-                        <div class="ic-desc">Phát hiện mâu thuẫn trong đánh giá qua chỉ số CR</div>
-                    </div>
-                    <div class="intro-card">
-                        <div class="ic-icon">📊</div>
-                        <div class="ic-title">Minh bạch</div>
-                        <div class="ic-desc">Giải thích rõ TẠI SAO phương án này tốt hơn</div>
+                    <div class="intro-cards">
+                        <div class="intro-card">
+                            <div class="ic-icon">🎯</div>
+                        <div class="ic-title">Gợi ý đúng điều bạn cần</div>
+                        <div class="ic-desc">Nếu bạn coi trọng giá, kết quả sẽ khác người ưu tiên giấy tờ hay khu vực.</div>
+                        </div>
+                        <div class="intro-card">
+                            <div class="ic-icon">🔢</div>
+                        <div class="ic-title">Đổi ưu tiên thành điểm rõ ràng</div>
+                        <div class="ic-desc">Những điều bạn chọn sẽ được chuyển thành điểm để các căn hộ được so sánh công bằng hơn.</div>
+                        </div>
+                        <div class="intro-card">
+                            <div class="ic-icon">✅</div>
+                        <div class="ic-title">Nhắc bạn khi chọn chưa khớp</div>
+                        <div class="ic-desc">Hệ thống sẽ báo khi các lựa chọn trước sau chưa ăn khớp để bạn xem lại.</div>
+                        </div>
+                        <div class="intro-card">
+                            <div class="ic-icon">📊</div>
+                        <div class="ic-title">Biết vì sao căn này được gợi ý</div>
+                        <div class="ic-desc">Bạn không chỉ thấy kết quả cuối, mà còn biết mỗi căn mạnh hơn ở điểm nào.</div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
@@ -126,10 +154,9 @@
             <!-- STEP 1 -->
             <div class="step-block" id="step1">
                 <div class="step-badge">Bước 1</div>
-                <h3 class="step-title">Xây dựng cấu trúc thứ bậc</h3>
-                <p class="step-desc">Xác định rõ <strong>Mục tiêu</strong>, <strong>Tiêu chí đánh giá</strong> và
-                    <strong>Phương án lựa chọn</strong>.
-                </p>
+                <h3 class="step-title">Xác định mình đang chọn theo điều gì</h3>
+                <p class="step-desc">Trước tiên, hệ thống cần biết <strong>bạn muốn chọn căn hộ nào</strong>, sẽ so
+                    sánh dựa trên <strong>những tiêu chí nào</strong>, và trong <strong>danh sách phương án nào</strong>.</p>
                 <div class="step-example-box">
                     <div class="seb-title">Ví dụ trong hệ thống của chúng tôi:</div>
                     <div class="hierarchy-demo">
@@ -140,14 +167,14 @@
                             <span>↙</span><span>↓</span><span>↓</span><span>↓</span><span>↓</span><span>↓</span><span>↓</span><span>↓</span><span>↘</span>
                         </div>
                         <div class="hd-level crit-level">
-                            <div class="hd-node c1-node">C1<br>Tài chính</div>
-                            <div class="hd-node c2-node">C2<br>Nội thất</div>
-                            <div class="hd-node c3-node">C3<br>Chủ ĐT</div>
-                            <div class="hd-node c4-node">C4<br>Pháp lý</div>
-                            <div class="hd-node c5-node">C5<br>Hạ tầng</div>
-                            <div class="hd-node c6-node">C6<br>Tiện ích</div>
-                            <div class="hd-node c7-node">C7<br>Ngoại thất</div>
-                            <div class="hd-node c8-node">C8<br>Phong thủy</div>
+                            <div class="hd-node c1-node">Tài chính</div>
+                            <div class="hd-node c2-node">Nội thất</div>
+                            <div class="hd-node c3-node">Chủ ĐT</div>
+                            <div class="hd-node c4-node">Pháp lý</div>
+                            <div class="hd-node c5-node">Hạ tầng</div>
+                            <div class="hd-node c6-node">Tiện ích</div>
+                            <div class="hd-node c7-node">Không gian</div>
+                            <div class="hd-node c8-node">Phong thủy</div>
                         </div>
                         <div class="hd-arrows">
                             <span>↓</span><span>↓</span><span>↓</span>
@@ -164,9 +191,9 @@
             <!-- STEP 2 -->
             <div class="step-block" id="step2">
                 <div class="step-badge">Bước 2</div>
-                <h3 class="step-title">Tính trọng số tiêu chí</h3>
-                <p class="step-desc">So sánh từng cặp tiêu chí theo <strong>thang điểm Saaty 1–9</strong>, rồi dùng toán
-                    học tính ra trọng số và kiểm tra tính nhất quán (CR).</p>
+                <h3 class="step-title">Cho hệ thống biết điều gì quan trọng hơn</h3>
+                <p class="step-desc">Bạn so sánh từng cặp tiêu chí theo <strong>thang điểm 1–9</strong>. Sau đó hệ
+                    thống tự tính trọng số và kiểm tra xem các đánh giá của bạn có nhất quán không.</p>
 
                 <!-- Saaty scale visual -->
                 <div class="saaty-visual">
@@ -269,7 +296,10 @@
                         <p>CR kiểm tra xem bạn có <strong>mâu thuẫn</strong> trong đánh giá không. Ví dụ: bạn nói A > B,
                             B > C, nhưng lại nói C > A — đó là mâu thuẫn.</p>
                         <p style="margin-top:8px">CR được tính theo công thức: <code>CR = CI / RI</code></p>
-                        <p style="margin-top:4px">Trong đó CI = (λmax − n) / (n − 1)</p>
+                        <p style="margin-top:4px">Trong đó
+                            <span class="math-latex" data-latex="\mathrm{CI} = \frac{\lambda_{\max} - n}{n - 1}"
+                                aria-label="CI = (lambda max - n) / (n - 1)">CI = (λmax − n) / (n − 1)</span>
+                        </p>
                     </div>
                     <div class="cre-right">
                         <div class="cr-gauge">
@@ -329,8 +359,16 @@
                     <div class="cf-arrow">→</div>
                     <div class="cf-step">
                         <div class="cf-num">④</div>
-                        <div class="cf-text">Tính λmax, CI, CR</div>
-                        <div class="cf-formula">CR = CI / RI</div>
+                        <div class="cf-text">
+                            Tính
+                            <span class="math-latex" data-latex="\lambda_{\max}" aria-label="lambda max">λmax</span>,
+                            <span class="math-latex" data-latex="\mathrm{CI}" aria-label="CI">CI</span>,
+                            <span class="math-latex" data-latex="\mathrm{CR}" aria-label="CR">CR</span>
+                        </div>
+                        <div class="cf-formula">
+                            <span class="math-latex" data-latex="\mathrm{CR} = \frac{\mathrm{CI}}{\mathrm{RI}}"
+                                aria-label="CR = CI / RI">CR = CI / RI</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -516,8 +554,8 @@
                     </div>
                 </div>
             </div>
-            <div class="criteria-note">* C3 (Chủ đầu tư), C6 (Tiện ích nội khu), C7 (Ngoại thất/Diện tích), C8 (Phong
-                thủy/Hướng nhà) cũng được chấm điểm tương tự.</div>
+            <div class="criteria-note">* Các nhóm như chủ đầu tư, tiện ích nội khu, không gian sống và hướng nhà cũng
+                được chấm theo cùng nguyên tắc.</div>
         </div>
     </section>
 
@@ -550,9 +588,10 @@
                         giá trị 1.38 nghĩa là căn A đạt 1.38 lần tốt hơn căn B theo bộ tiêu chí của bạn.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-q">Chế độ chuyên gia khác chế độ tự nhập thế nào?</div>
-                    <div class="faq-a">Chế độ chuyên gia dùng bộ trọng số được nghiên cứu sẵn cho thị trường TP.HCM (CR
-                        = 1.1%). Chế độ tự nhập cho phép bạn tùy chỉnh theo ưu tiên cá nhân.</div>
+                <div class="faq-q">Dùng bộ gợi ý sẵn khác gì tự chọn mức ưu tiên?</div>
+                <div class="faq-a">Bộ gợi ý sẵn phù hợp khi bạn muốn xem kết quả nhanh theo mặt bằng ưu tiên phổ biến
+                    của người mua căn hộ tại TP.HCM. Tự chọn mức ưu tiên phù hợp khi bạn muốn kết quả phản ánh đúng nhu
+                    cầu riêng của mình.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-q">Dữ liệu căn hộ được cập nhật thế nào?</div>
@@ -565,11 +604,11 @@
 
     <!-- CTA -->
     <section class="guide-cta">
-        <h2>Sẵn sàng thử AHP?</h2>
-        <p>Bắt đầu với bộ trọng số chuyên gia — kết quả ngay trong 30 giây</p>
+        <h2>Sẵn sàng xem gợi ý phù hợp với bạn?</h2>
+        <p>Bắt đầu với bộ gợi ý sẵn để làm quen nhanh, rồi chuyển sang tùy chỉnh khi bạn muốn đi sâu hơn.</p>
         <div class="guide-cta-btns">
-            <a href="/ahp?mode=expert" class="btn btn-gold">Dùng trọng số chuyên gia →</a>
-            <a href="/ahp?mode=custom" class="btn btn-outline-white">Tự nhập ma trận</a>
+            <a href="/ahp?mode=expert" class="btn btn-gold">Bắt đầu với bộ gợi ý sẵn →</a>
+            <a href="/ahp?mode=custom" class="btn btn-outline-white">Tự chọn mức ưu tiên</a>
         </div>
     </section>
 
@@ -595,6 +634,32 @@
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.08 });
         document.querySelectorAll('.step-block, .intro-card, .faq-item, .cd-item').forEach(el => obs.observe(el));
+
+        const renderGuideLatex = () => {
+            document.querySelectorAll('[data-latex]').forEach(node => {
+                const tex = node.getAttribute('data-latex') || '';
+                const fallbackText = node.getAttribute('aria-label') || node.textContent || tex;
+                if (!window.katex?.render) {
+                    node.textContent = fallbackText;
+                    return;
+                }
+                try {
+                    window.katex.render(tex, node, {
+                        throwOnError: false,
+                        strict: 'ignore',
+                        displayMode: false
+                    });
+                } catch (_) {
+                    node.textContent = fallbackText;
+                }
+            });
+        };
+
+        if (window.katex?.render) {
+            renderGuideLatex();
+        } else {
+            window.addEventListener('load', renderGuideLatex, { once: true });
+        }
     </script>
 </body>
 

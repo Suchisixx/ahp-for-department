@@ -618,7 +618,7 @@ nav {
 .step-desc {
     font-size: 13px;
     color: var(--text2);
-    line-height: 1.6
+    line-height: 1.68
 }
 
 /* ── CRITERIA ── */
@@ -803,8 +803,28 @@ footer {
         font-size: 38px
     }
 
+    .hero-sub {
+        max-width: none;
+        margin-bottom: 28px
+    }
+
+    .hero-stats {
+        gap: 24px;
+        margin-top: 32px;
+        padding-top: 28px;
+        flex-wrap: wrap
+    }
+
+    .hero-card-stack {
+        transform: scale(.92)
+    }
+
     .section {
         padding: 60px 32px
+    }
+
+    .mode-card {
+        padding: 28px 24px
     }
 
     .modes-grid,

@@ -100,3 +100,45 @@
 2026-03-19 20:45:08,134  INFO        💾 75 rows → data-crawling/raw/raw_data.csv
 2026-03-19 20:45:08,134  INFO        Tổng tích lũy: 75 (+75 mới)
 2026-03-19 20:45:10,817  INFO      Hoàn thành. +75 mới | Tổng: 75 | Output: data-crawling/raw/raw_data.csv
+2026-03-23 15:51:51,056  INFO        Chưa có file cũ — bắt đầu mới.
+2026-03-23 15:51:51,056  INFO      ═══ Trang 1/2 ═══
+2026-03-23 15:51:52,142  INFO        Trang 1: 15 links, has_next=True
+2026-03-23 15:51:52,144  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 15:51:52,697  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:51:56,271  INFO        ✔ [143512] 7.0tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 15:52:01,279  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:06,132  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 15:52:10,829  INFO        ✔ [144523] 4.1tỷ | 66.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:14,771  INFO        ✔ [150415] 14.0tỷ | 83.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=18
+2026-03-23 15:52:19,714  INFO        ✔ [145220] 3.0tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:24,315  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:29,283  INFO        ✔ [150400] 3.15tỷ | 63.0m² | 2PN/2WC | NT=Đầy Đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:34,196  INFO        ✔ [148051] 1.25tỷ | 65.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:37,590  INFO        ✔ [109138] 3.5tỷ | 83.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:40,622  INFO        ✔ [148333] 3.7tỷ | 65.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 15:52:44,518  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:48,784  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:53,081  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:52:56,703  INFO        💾 15 rows → raw/raw_data.csv
+2026-03-23 15:52:56,704  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-23 15:53:00,774  INFO      ═══ Trang 2/2 ═══
+2026-03-23 15:53:01,434  INFO        Trang 2: 15 links, has_next=True
+2026-03-23 15:53:01,434  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-23 15:53:01,935  INFO        ✔ [150245] 13.0tỷ | 178.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:05,002  INFO        ✔ [108197] 2.3tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:09,645  INFO        ✔ [99357] 6.4tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:13,628  INFO        ✔ [148679] 7.5tỷ | 84.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:16,702  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:20,232  INFO        ✔ [150255] 5.0tỷ | 74.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:23,963  INFO        ✔ [112804] 4.4tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:28,184  INFO        ✔ [121804] 3.2tỷ | 59.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-23 15:53:31,503  INFO        ✔ [133839] 6.7tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:34,960  INFO        ✔ [85092] 6.9tỷ | 115.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:39,210  INFO        ✔ [143899] 3.3tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-23 15:53:43,168  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:46,483  INFO        ✔ [150352] 12.7tỷ | 117.0m² | 4PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:52,778  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-23 15:53:56,044  INFO        ✔ [139073] 8.2tỷ | 96.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=11
+2026-03-23 15:53:59,419  INFO        💾 30 rows → raw/raw_data.csv
+2026-03-23 15:53:59,419  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-23 15:54:03,776  INFO      Hoàn thành. +30 mới | Tổng: 30 | Output: raw/raw_data.csv
