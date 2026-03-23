@@ -20,11 +20,40 @@
         <div class="loading-txt" id="loading-txt">gọi backend</div>
     </div>
 
+    <!-- Navigation
+    <nav>
+        <a href="home" class="nav-logo">
+            <div class="nav-logo-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+            </div>
+            <span class="nav-brand">ApartmentBroker</span>
+        </a>
+        <div class="nav-links">
+            <a href="home">Trang chủ</a>
+            <a href="guide">Hướng dẫn AHP</a>
+            <a href="ahp">Phân tích AHP</a>
+            <a href="ahp" class="btn nav-cta">Bắt đầu ngay →</a>
+        </div>
+
+        <div class="nav-right">
+            <span class="api-dot" id="api-dot"></span>
+            <span class="api-lbl" id="api-lbl">Kiểm tra kết nối</span>
+        </div>
+    </nav> -->
+
     <!-- NAV -->
     <nav>
         <a href="home" class="nav-logo">ApartmentBroker</a>
         <span class="nav-sep">›</span>
         <span class="nav-page">Phân tích AHP</span>
+        <div style="margin-left:12px">
+            <a href="/guide"
+                style="padding:6px 12px;border-radius:8px;font-size:12px;font-weight:500;color:var(--text2);text-decoration:none;background:var(--bg3)">📖
+                Hướng dẫn AHP</a>
+        </div>
         <div class="nav-right">
             <span class="api-dot" id="api-dot"></span>
             <span class="api-lbl" id="api-lbl">Kiểm tra kết nối</span>
@@ -183,6 +212,30 @@
                     <div class="refer-section" id="refer-section" style="display:none">
                         <div class="refer-title">5 căn hộ tham khảo thêm (hạng 11–15)</div>
                         <div class="refer-grid" id="refer-grid"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ma trận so sánh cặp giữa các phương án -->
+            <div class="card" id="alt-matrix-section" style="display:none">
+                <div class="card-head">
+                    <div>
+                        <div class="card-title">Ma trận so sánh cặp giữa các phương án (Top 10)</div>
+                        <div class="card-sub">Giá trị = Điểm AHP(hàng) ÷ Điểm AHP(cột) · Căn hàng vượt trội căn cột bao
+                            nhiêu lần · Trọng số PA = xếp hạng cuối cùng</div>
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="toggleAltMatrix()">Thu gọn ▲</button>
+                </div>
+                <div class="card-body" id="alt-matrix-body">
+                    <div id="alt-matrix-wrap" style="overflow-x:auto"></div>
+                    <div
+                        style="margin-top:16px;padding:14px 16px;background:var(--bg3);border-radius:var(--r);font-size:12px;color:var(--text2);line-height:1.7">
+                        <b style="color:var(--navy)">Cách đọc bảng:</b>
+                        Mỗi ô [hàng i, cột j] = Điểm AHP(căn i) ÷ Điểm AHP(căn j).
+                        Ví dụ: giá trị <b>1.38</b> nghĩa là căn hàng tốt hơn căn cột <b>1.38 lần</b> theo bộ tiêu chí
+                        bạn đã chọn.
+                        Cột <b>Trọng số PA</b> = tổng hợp cuối cùng (trung bình hàng đã chuẩn hóa), càng cao càng tốt.
+                        Cột <b>Xếp hạng</b> = thứ tự từ 1–10 theo trọng số PA.
                     </div>
                 </div>
             </div>

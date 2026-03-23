@@ -55,6 +55,11 @@ def serve_index():
 def serve_ahp():
     return FileResponse(str(PAGE_DIR / "ahp.html"))
 
+@app.get("/guide", tags=["Frontend"])
+def serve_guide():
+    return FileResponse(str(PAGE_DIR / "guide.html"))
+
+
 app.include_router(canho.router)
 app.include_router(ahp.router)
 

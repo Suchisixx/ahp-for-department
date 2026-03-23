@@ -111,7 +111,7 @@ async function pingAPI() {
         lbl.textContent = 'Backend OK ✓';
         banner.className = 'api-banner ok';
         document.getElementById('retry-bar').style.display = 'none';
-        banner.innerHTML = '✓ Kết nối thành công <code>localhost:8000</code> — dữ liệu lấy từ PostgreSQL';
+        banner.innerHTML = '✓ Kết nối thành công';
 
     } catch (err) {
         // Nếu thất bại (network, CORS, timeout...), hiển thị lỗi lên UI + console
@@ -134,7 +134,7 @@ async function pingAPI() {
 async function retryPing() {
     const banner = document.getElementById('api-banner');
     banner.className = 'api-banner checking';
-    banner.innerHTML = '⏳ Đang kiểm tra lại kết nối <code>localhost:8000</code>...';
+    banner.innerHTML = 'Đang kiểm tra lại kết nối <code>localhost:8000</code>...';
     await pingAPI();
 }
 
@@ -306,6 +306,7 @@ function renderAll(data) {
     renderTop10(top10);
     renderRefer(refer);
     renderCharts(weights, top10);
+    renderAltMatrix(top10);   // Ma trận so sánh cặp giữa các phương án
 
     document.getElementById('results-wrap').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -440,6 +441,105 @@ function renderCharts(weights, top10) {
             },
         },
     });
+}
+
+// ════════════════════════════════════════════════════════════════
+// MA TRẬN SO SÁNH CẶP GIỮA CÁC PHƯƠNG ÁN
+// Theo lý thuyết AHP (tài liệu Saaty): sau khi có trọng số tiêu chí,
+// ta tính ma trận so sánh cặp phương án cho từng tiêu chí rồi tổng hợp.
+// Ở đây dùng điểm AHP tổng hợp: a[i][j] = score[i] / score[j]
+// ════════════════════════════════════════════════════════════════
+function renderAltMatrix(top10) {
+    const section = document.getElementById('alt-matrix-section');
+    const wrap = document.getElementById('alt-matrix-wrap');
+    if (!top10 || top10.length < 2) { section.style.display = 'none'; return; }
+    section.style.display = '';
+
+    const n = top10.length;
+    const scores = top10.map(item => item.ahp_score);  // điểm tổng hợp từ backend
+    const names = top10.map(item => {
+        const t = item.canho.title || '';
+        // Rút gọn tên: lấy tên dự án hoặc 25 ký tự đầu
+        const du_an = item.canho.du_an;
+        if (du_an && !du_an.toLowerCase().includes('không thuộc')) {
+            return `#${item.rank} ${du_an.substring(0, 20)}`;
+        }
+        return `#${item.rank} ${t.substring(0, 22)}${t.length > 22 ? '…' : ''}`;
+    });
+
+    // Tính ma trận a[i][j] = score[i] / score[j]
+    const mat = Array.from({ length: n }, (_, i) =>
+        Array.from({ length: n }, (_, j) => scores[i] / scores[j])
+    );
+
+    // Tính trọng số phương án (cột priority vector)
+    // Chuẩn hóa: tổng cột → chia → trung bình hàng (giống bước 2 AHP)
+    const colSum = Array(n).fill(0);
+    for (let j = 0; j < n; j++)
+        for (let i = 0; i < n; i++) colSum[j] += mat[i][j];
+    const norm = mat.map(row => row.map((v, j) => v / colSum[j]));
+    const weights_pa = norm.map(row => row.reduce((s, v) => s + v, 0) / n);
+
+    // Tính CR của ma trận phương án
+    const Aw = mat.map(row => row.reduce((s, v, j) => s + v * weights_pa[j], 0));
+    const cv = Aw.map((v, i) => v / weights_pa[i]);
+    const lmax_pa = cv.reduce((s, v) => s + v, 0) / n;
+    const RI_PA = { 1: 0, 2: 0, 3: .58, 4: .9, 5: 1.12, 6: 1.24, 7: 1.32, 8: 1.41, 9: 1.45, 10: 1.49 };
+    const ci_pa = (lmax_pa - n) / (n - 1);
+    const cr_pa = ci_pa / (RI_PA[n] || 1.49);
+
+    // Xếp hạng theo weights_pa
+    const rankOrder = weights_pa.map((w, i) => ({ idx: i, w }))
+        .sort((a, b) => b.w - a.w)
+        .map((o, r) => ({ ...o, rank: r + 1 }));
+    const rankMap = {};
+    rankOrder.forEach(o => { rankMap[o.idx] = o.rank; });
+
+    // Render bảng HTML
+    let h = `<table class="alt-tbl"><thead><tr>
+        <th class="row-h">Phương án</th>
+        ${names.map(nm => `<th title="${nm}">${nm.substring(0, 16)}…</th>`).join('')}
+        <th class="weight-h">Trọng số PA</th>
+        <th class="rank-h">Hạng</th>
+    </tr></thead><tbody>`;
+
+    for (let i = 0; i < n; i++) {
+        h += `<tr><th class="row-h">${names[i]}</th>`;
+        for (let j = 0; j < n; j++) {
+            const v = mat[i][j];
+            if (i === j) {
+                h += `<td class="diag-cell">1.000</td>`;
+            } else {
+                const cls = v > 1 ? 'above1' : 'below1';
+                h += `<td class="${cls}">${v.toFixed(3)}</td>`;
+            }
+        }
+        const rk = rankMap[i];
+        const rkCls = rk === 1 ? 'r1' : rk === 2 ? 'r2' : rk === 3 ? 'r3' : '';
+        h += `<td class="weight-pa">${weights_pa[i].toFixed(4)}</td>`;
+        h += `<td class="rank-pa ${rkCls}">${rk === 1 ? '🥇' : rk === 2 ? '🥈' : rk === 3 ? '🥉' : '#' + rk}</td>`;
+        h += '</tr>';
+    }
+
+    // Thêm hàng λmax và CR ở cuối
+    h += `<tr style="background:var(--bg3)">
+        <th class="row-h" style="color:var(--text3);font-size:10px">λmax = ${lmax_pa.toFixed(4)} · CR = ${(cr_pa * 100).toFixed(2)}%</th>
+        ${Array(n).fill('<td style="background:var(--bg3)"></td>').join('')}
+        <td colspan="2" style="background:var(--bg3);font-size:11px;color:var(--text3);text-align:left;padding:6px 10px">
+            ${cr_pa < 0.1 ? '✅ Ma trận nhất quán (CR < 10%)' : '⚠ CR > 10% — do điểm liên tục, chấp nhận được'}
+        </td>
+    </tr>`;
+
+    h += '</tbody></table>';
+    wrap.innerHTML = h;
+}
+
+function toggleAltMatrix() {
+    const body = document.getElementById('alt-matrix-body');
+    const btn = document.querySelector('#alt-matrix-section .btn');
+    const hidden = body.style.display === 'none';
+    body.style.display = hidden ? '' : 'none';
+    btn.textContent = hidden ? 'Thu gọn ▲' : 'Mở rộng ▼';
 }
 
 // ════════════════════════════════════════════════════════════════

@@ -22,6 +22,10 @@ def ahp_score(payload: AhpRequest, background_tasks: BackgroundTasks, db: Sessio
     # Chạy pipeline trong background để cập nhật data nếu cần
     background_tasks.add_task(run_data_pipeline)
     
+    canhos = db.query(CanHo).filter(CanHo.trang_thai == True).all()
+    if not canhos:
+        raise HTTPException(status_code=404, detail="Không có căn hộ nào đang hoạt động để đánh giá. Vui lòng thử lại sau khi dữ liệu được cập nhật.")
+    
     # 1. Tính AHP
     ahp = calc_weights(payload.matrix)
 
