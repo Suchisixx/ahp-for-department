@@ -1,347 +1,164 @@
-DepartAHP - Hệ thống hỗ trợ ra quyết định chọn căn hộ tại TP.HCM
-1. Giới thiệu dự án
+# DepartAHP - Hệ thống hỗ trợ ra quyết định chọn căn hộ tại TP.HCM
 
-DepartAHP là một dự án kết hợp giữa Data Engineering và Decision Support System (DSS) cho bài toán lựa chọn căn hộ tại TP.HCM.
+**DepartAHP** là một hệ thống **Decision Support System (DSS)** sử dụng phương pháp **AHP (Analytic Hierarchy Process)** kết hợp với **Data Engineering**, giúp người dùng đánh giá và xếp hạng các căn hộ, nhà phố, biệt thự tại TP.HCM dựa trên nhiều tiêu chí quan trọng.
 
-Hệ thống này thực hiện các chức năng chính sau:
+### Các chức năng chính
+- Thu thập (crawl) dữ liệu bất động sản từ các website uy tín
+- Làm sạch, chuẩn hóa và làm giàu dữ liệu (enrich)
+- Lưu trữ dữ liệu vào **PostgreSQL**
+- Cung cấp **REST API** bằng **FastAPI** để truy vấn và tính điểm AHP
+- Giao diện web đơn giản (HTML/CSS/JS) cho phép:
+  - Nhập trọng số các tiêu chí (hoặc sử dụng trọng số mặc định của chuyên gia)
+  - Xem kết quả xếp hạng căn hộ theo thứ tự ưu tiên
 
-Thu thập dữ liệu căn hộ từ website bất động sản
-Làm sạch và chuẩn hóa dữ liệu
-Lưu dữ liệu vào PostgreSQL
-Cung cấp API bằng FastAPI để truy vấn và tính điểm AHP
-Cung cấp giao diện web để người dùng thao tác và xem kết quả xếp hạng căn hộ
+**Tiêu chí đánh giá mẫu**:  
+Tài chính · Vị trí · Tiện ích · Nội thất · Pháp lý · Phong thủy · Giao thông · Tiềm năng tăng giá · An ninh · Cộng đồng cư dân · ...
 
-Mục tiêu của dự án là hỗ trợ người dùng đánh giá và xếp hạng căn hộ dựa trên nhiều tiêu chí như tài chính, nội thất, pháp lý, tiện ích, vị trí, phong thủy và các yếu tố khác.
+---
 
-2. Kiến trúc tổng quát
+## Kiến trúc tổng quan
+Crawler → Raw CSV ──► Preprocessing ──► Cleaned CSV ──► PostgreSQL
+│
+FastAPI Backend
+│
+Web Frontend (HTML-CSS-JS)
 
-Dự án gồm 4 phần chính:
 
-2.1. Data Crawling
+---
 
-Thu thập dữ liệu thô từ nguồn web bất động sản và lưu thành file CSV.
-
-2.2. Data Preprocessing
-
-Làm sạch dữ liệu đã crawl, chuẩn hóa các cột cần thiết, bổ sung thông tin phục vụ xếp hạng.
-
-2.3. Database
-
-Lưu dữ liệu đã xử lý vào PostgreSQL để phục vụ backend API.
-
-2.4. Backend + Frontend
-Backend dùng FastAPI để cung cấp API
-Frontend dùng HTML/CSS/JavaScript để hiển thị giao diện
-Người dùng tương tác với giao diện, nhập trọng số AHP hoặc dùng trọng số chuyên gia, sau đó hệ thống tính toán và trả về kết quả xếp hạng
-3. Cấu trúc thư mục
+## Cấu trúc thư mục dự án
 DepartAHP/
 ├── DataTrans/
-│   ├── data-crawling/          # Crawl dữ liệu thô
-│   ├── preprocessing/          # Làm sạch và chuẩn hóa dữ liệu
-│   ├── src/                    # FastAPI, database, logic AHP, scripts
+│   ├── data-crawling/          # Scripts thu thập dữ liệu thô
+│   ├── preprocessing/          # Làm sạch, chuẩn hóa, làm giàu dữ liệu
+│   ├── src/                    # FastAPI app, logic AHP, kết nối DB, scripts import
 │   ├── requirements.txt        # Danh sách thư viện Python
-│   └── setup.txt               # Ghi chú cài đặt nhanh
-├── Page/                       # Frontend HTML/CSS/JS
-├── crawl-data-sample.csv       # File dữ liệu mẫu (nếu có)
-├── Dockerfile                  # Cấu hình build app bằng Docker
-├── docker-compose.yml          # Chạy app + database bằng Docker
+│   └── setup.txt               # Ghi chú cài đặt nhanh (tùy chọn)
+├── Page/                       # Frontend: HTML, CSS, JavaScript
+├── crawl-data-sample.csv       # Dữ liệu mẫu (nếu có commit)
+├── Dockerfile
+├── docker-compose.yml
 └── README.md
-4. Công nghệ sử dụng
-Python
-FastAPI
-PostgreSQL
-SQLAlchemy
-Pandas
-Uvicorn
-HTML / CSS / JavaScript
-Docker / Docker Compose
-5. Điều kiện cần trước khi chạy
 
-Trước khi bắt đầu, cần cài:
+---
 
-5.1. Nếu chạy theo cách thông thường
-Python 3.10 hoặc 3.11
-pip
-PostgreSQL
-VS Code hoặc IDE bất kỳ
-5.2. Nếu chạy bằng Docker
-Docker Desktop
-Docker Compose
+## Công nghệ sử dụng
 
-Khuyến nghị với người mới: nên chạy bằng Docker vì dễ đồng bộ môi trường hơn.
+| Phần              | Công nghệ chính                              |
+|-------------------|----------------------------------------------|
+| Backend           | Python 3.10+ · FastAPI · Uvicorn             |
+| Database          | PostgreSQL · SQLAlchemy                      |
+| Data Processing   | Pandas · NumPy                               |
+| Crawling          | Requests · BeautifulSoup4 · Selenium         |
+| Frontend          | HTML5 · CSS3 · Vanilla JavaScript            |
+| Container         | Docker · Docker Compose                      |
+| Khác              | python-dotenv · loguru · pydantic-settings   |
 
-6. Cách chạy dự án bằng Docker
+---
 
-Phần này dành cho người mới. Đây là cách dễ nhất để chạy hệ thống.
+## Yêu cầu hệ thống
 
-6.1. Bước 1: Clone project
+### Cách 1 – Khuyến nghị (dễ nhất cho người mới): Dùng Docker
 
-Mở terminal hoặc Git Bash:
+- Docker Desktop (đã tích hợp Docker Compose)
+- Git
 
+### Cách 2 – Chạy thủ công (local)
+
+- Python 3.10 hoặc 3.11
+- PostgreSQL (local hoặc cloud)
+- pip + virtualenv
+- IDE (khuyên dùng VS Code)
+
+---
+
+## Cách chạy nhanh nhất bằng Docker (khuyến nghị)
+
+1. Clone repository
+
+```bash
 git clone https://github.com/Suchisixx/ahp-for-department.git
 cd ahp-for-department
-6.2. Bước 2: Kiểm tra file docker-compose.yml
+```
+(Tùy chọn) Kiểm tra/sửa thông tin đăng nhập DB trong docker-compose.yml
 
-File này dùng để chạy đồng thời:
+YAMLenvironment:
+  POSTGRES_DB: DSS
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: 123
 
-PostgreSQL
-FastAPI app
+Build và chạy toàn bộ hệ thống
 
-Ví dụ cấu hình:
+Bashdocker compose up --build
 
-version: "3.9"
+Truy cập
 
-services:
-  db:
-    image: postgres:15
-    container_name: departahp-db
-    environment:
-      POSTGRES_DB: DSS
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
-  app:
-    build: .
-    container_name: departahp-app
-    depends_on:
-      - db
-    environment:
-      DATABASE_URL: postgresql://postgres:123@db:5432/DSS
-    ports:
-      - "8000:8000"
+Giao diện web: http://localhost:8000
+Tài liệu API (Swagger): http://localhost:8000/docs
+Health check: http://localhost:8000/health
 
-volumes:
-  postgres_data:
+Dừng hệ thống:
+Bashdocker compose down
 
-Lưu ý:
+Cách chạy thủ công (không dùng Docker)
 
-db là tên service PostgreSQL trong Docker
-app là backend FastAPI
-DATABASE_URL phải dùng hostname db, không dùng localhost
-6.3. Bước 3: Kiểm tra file Dockerfile
+Tạo và kích hoạt môi trường ảo
 
-Ví dụ:
-
-FROM python:3.11-slim
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-WORKDIR /app
-
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY DataTrans/requirements.txt /app/DataTrans/requirements.txt
-RUN pip install --no-cache-dir -r /app/DataTrans/requirements.txt
-
-COPY . /app
-
-WORKDIR /app/DataTrans/src
-
-EXPOSE 8000
-
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-
-Giải thích ngắn:
-
-Dùng Python 3.11
-Cài thư viện từ requirements.txt
-Copy toàn bộ source code vào container
-Chạy FastAPI bằng Uvicorn ở cổng 8000
-6.4. Bước 4: Kiểm tra requirements.txt
-
-Trong file DataTrans/requirements.txt, cần có đầy đủ các package cần thiết, ví dụ:
-
-pandas
-numpy
-sqlalchemy
-psycopg2-binary
-requests
-beautifulsoup4
-selenium
-schedule
-python-dotenv
-loguru
-fastapi
-uvicorn[standard]
-pytest
-jupyter
-ipykernel
-flask
-flask-cors
-lxml
-webdriver-manager
-pydantic-settings
-
-Nếu thiếu pydantic-settings, app có thể báo lỗi:
-
-ModuleNotFoundError: No module named 'pydantic_settings'
-6.5. Bước 5: Build và chạy Docker
-
-Tại thư mục gốc project, chạy:
-
-docker compose up --build
-
-Ý nghĩa:
-
-up: chạy container
---build: build lại image từ đầu
-
-Nếu muốn dừng:
-
-docker compose down
-
-Nếu muốn chạy lại sau khi sửa code:
-
-docker compose down
-docker compose up --build
-6.6. Bước 6: Mở ứng dụng
-
-Sau khi chạy thành công, mở trình duyệt:
-
-http://localhost:8000
-
-Tài liệu API:
-
-http://localhost:8000/docs
-
-Health check:
-
-http://localhost:8000/health
-
-Lưu ý:
-
-Trong log có thể hiện 0.0.0.0:8000
-Nhưng khi mở trình duyệt trên máy cá nhân, bạn vẫn dùng localhost:8000
-7. Cách chạy dự án không dùng Docker
-
-Phần này dành cho trường hợp muốn chạy thủ công.
-
-7.1. Bước 1: Tạo môi trường ảo
-
-Đi tới thư mục DataTrans:
-
-cd DataTrans
+Bashcd DataTrans
 python -m venv venv
 
-Kích hoạt môi trường ảo trên Windows PowerShell:
-
+# Windows PowerShell
 .\venv\Scripts\Activate.ps1
 
-Nếu dùng Command Prompt:
-
+# Windows CMD
 venv\Scripts\activate
-7.2. Bước 2: Cài thư viện
-pip install -r requirements.txt
-7.3. Bước 3: Cấu hình PostgreSQL
 
-Tạo database tên DSS.
+# Linux / macOS
+source venv/bin/activate
 
-Ví dụ trong PostgreSQL:
+Cài đặt dependencies
 
-Username: postgres
-Password: 123
-Database: DSS
+Bashpip install -r requirements.txt
 
-Thiết lập biến môi trường hoặc file .env:
+Chuẩn bị PostgreSQL
 
-DATABASE_URL=postgresql://postgres:123@localhost:5432/DSS
+Tạo database tên DSS (user: postgres, password: 123 hoặc tùy chỉnh)
+Tạo file .env trong thư mục DataTrans/src (hoặc set biến môi trường):
+textDATABASE_URL=postgresql://postgres:123@localhost:5432/DSS
 
-Lưu ý:
+Chạy backend
 
-Nếu chạy local, có thể dùng localhost
-Nếu chạy Docker Compose, phải dùng db
-7.4. Bước 4: Chạy backend
+Bashcd src
+uvicorn main:app --reload --port 8000
+→ Mở trình duyệt: http://localhost:8000/docs
 
-Di chuyển vào thư mục:
-
-cd src
-python -m uvicorn main:app --reload --port 8000
-
-Sau đó mở:
-
-http://localhost:8000
-http://localhost:8000/docs
-8. Quy trình dữ liệu
-
-Đây là phần quan trọng nhất của dự án.
-
-Dữ liệu đi qua 3 bước chính:
-
-Crawl dữ liệu thô
-Làm sạch dữ liệu
-Import dữ liệu vào PostgreSQL
-
-Sau đó backend dùng dữ liệu trong database để xếp hạng căn hộ.
-
-8.1. Bước 1: Crawl dữ liệu thô
-
-Di chuyển vào thư mục:
-
-cd DataTrans/data-crawling
-
-Chạy crawl 10 trang:
-
-python main.py --pages 10
-
-Nếu muốn crawl lại từ đầu:
-
-python main.py --pages 20 --fresh
-
-Kết quả thường được lưu tại:
-
-DataTrans/data-crawling/raw/raw_data.csv
-
-Mục đích của bước này:
-
-lấy dữ liệu bài đăng căn hộ
-lưu thông tin ban đầu vào file CSV thô
-8.2. Bước 2: Làm sạch và chuẩn hóa dữ liệu
-
-Di chuyển vào thư mục:
-
-cd DataTrans/preprocessing
-
-Chạy script làm sạch:
-
+### Quy trình xử lý dữ liệu (bắt buộc trước khi dùng tính năng xếp hạng)
+Bước 1: Crawl dữ liệu thô
+Bashcd DataTrans/data-crawling
+python main.py --pages 10               # crawl 10 trang
+# Hoặc crawl lại từ đầu:
+python main.py --pages 15 --fresh
+→ Kết quả lưu tại: DataTrans/data-crawling/raw/raw_data.csv
+Bước 2: Làm sạch & chuẩn hóa dữ liệu
+Bashcd DataTrans/preprocessing
 python clean_and_enrich.py
-
-Kết quả sẽ được lưu tại:
-
-DataTrans/preprocessing/processed/cleaned_data.csv
-
-Bước này có thể bao gồm:
-
-loại bỏ dữ liệu trùng lặp
-loại bỏ dòng thiếu giá hoặc diện tích
-chuẩn hóa giá tiền
-chuẩn hóa diện tích
-suy luận hoặc làm giàu dữ liệu bổ sung
-
-Nếu file cleaned_data.csv rỗng hoặc chỉ có header, cần kiểm tra lại bước crawl hoặc logic lọc dữ liệu trong bước clean.
-
-8.3. Bước 3: Import dữ liệu vào PostgreSQL
-
-Di chuyển vào thư mục:
-
-cd DataTrans/src
-
-Chạy import:
-
+→ Kết quả lưu tại: DataTrans/preprocessing/processed/cleaned_data.csv
+Lưu ý: Nếu file cleaned rỗng → kiểm tra lại bước crawl hoặc logic lọc trong script clean.
+Bước 3: Import dữ liệu vào PostgreSQL
+Bashcd DataTrans/src
 python scripts/import_csv.py --default
-
-Nếu muốn chỉ rõ đường dẫn CSV:
-
+# Hoặc chỉ định file cụ thể:
 python scripts/import_csv.py --csv ../preprocessing/processed/cleaned_data.csv
+Sau bước này, dữ liệu đã sẵn sàng để backend truy vấn và tính AHP.
 
-Mục đích:
+Đóng góp & hướng phát triển
 
-đọc file CSV đã clean
-đưa dữ liệu vào bảng can_ho trong PostgreSQL
+Cải thiện crawler (chống block, thêm nguồn dữ liệu mới)
+Mở rộng bộ tiêu chí AHP + hỗ trợ trọng số động
+Nâng cấp frontend (React / Vue / Tailwind nếu muốn giao diện đẹp hơn)
+Thêm tính năng lưu lịch sử xếp hạng cá nhân
+Tích hợp bản đồ (Google Maps / OpenStreetMap)
+Thêm bộ lọc nâng cao (giá, diện tích, số phòng ngủ, ...)
+
+text
