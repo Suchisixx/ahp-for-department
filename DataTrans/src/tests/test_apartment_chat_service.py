@@ -57,7 +57,7 @@ class FakeResponse:
 
 def test_chat_about_apartment_timeout_returns_failed(monkeypatch):
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
 
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
@@ -81,7 +81,7 @@ def test_chat_about_apartment_timeout_returns_failed(monkeypatch):
 
 def test_chat_about_apartment_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
         apartment_chat_openrouter_service.requests,
         "post",
@@ -106,7 +106,7 @@ def test_chat_about_apartment_invalid_json_returns_failed(monkeypatch):
 
 def test_chat_about_apartment_refuses_obvious_out_of_scope_question(monkeypatch):
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
 
     response = apartment_chat_openrouter_service.chat_about_apartment(
         session_id=7,
@@ -125,7 +125,7 @@ def test_chat_about_apartment_refuses_obvious_out_of_scope_question(monkeypatch)
 
 def test_chat_about_apartment_trims_history_before_call(monkeypatch):
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
 
     captured = {}
 

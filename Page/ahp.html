@@ -119,24 +119,22 @@
                     </button>
                 </div>
             </section>
-            <label class="assistant-toggle">
-                <input type="checkbox" id="llm-enabled" checked>
-                <span>Bật góc nhìn LLM</span>
-            </label>
-            <label class="assistant-model">
-                <span>Model OpenRouter</span>
-                <input id="llm-model" type="text" autocomplete="off" placeholder="Đang lấy model mặc định từ backend...">
-            </label>
-            <div class="assistant-result" id="assistant-intake-result">
-                <div class="assistant-result-empty">
-                    <div class="assistant-result-title">AI sẽ giúp bạn làm gì?</div>
-                    <p class="assistant-result-copy">
-                        AI sẽ đọc nhu cầu ở thực của bạn, gợi ý một preset phù hợp, đề xuất trọng số ban đầu cho 8 tiêu chí và để bạn chỉnh tay trước khi chạy AHP.
-                    </p>
+            <div class="assistant-side">
+                <label class="assistant-toggle assistant-toggle-card">
+                    <input type="checkbox" id="llm-enabled" checked>
+                    <span>Bật góc nhìn AI</span>
+                </label>
+                <div class="assistant-result" id="assistant-intake-result">
+                    <div class="assistant-result-empty">
+                        <div class="assistant-result-title">AI sẽ giúp bạn làm gì?</div>
+                        <p class="assistant-result-copy">
+                            AI sẽ đọc nhu cầu ở thực của bạn, gợi ý một preset phù hợp, đề xuất trọng số ban đầu cho 8 tiêu chí và để bạn chỉnh tay trước khi chạy AHP.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="assistant-note" id="llm-note">
-                Phân tích LLM là lớp hỗ trợ diễn giải thêm, không thay thế xếp hạng AHP.
+                <div class="assistant-note" id="llm-note">
+                    Phân tích AI là lớp hỗ trợ diễn giải thêm, không thay thế xếp hạng AHP.
+                </div>
             </div>
         </div>
 
@@ -258,8 +256,8 @@
             <div class="card" id="llm-insight-section" style="display:none">
                 <div class="card-head">
                     <div>
-                        <div class="card-title">Góc nhìn LLM</div>
-                        <div class="card-sub">Nhận xét hỗ trợ từ OpenRouter để diễn giải thêm cho nhóm căn hộ đang dẫn đầu.</div>
+                        <div class="card-title">Góc nhìn AI</div>
+                        <div class="card-sub">Nhận xét hỗ trợ từ AI để diễn giải thêm cho nhóm căn hộ đang dẫn đầu.</div>
                     </div>
                 </div>
                 <div class="card-body llm-body" id="llm-insight-body"></div>
@@ -273,17 +271,6 @@
                 <div class="chart-box">
                     <div class="chart-lbl">Điểm AHP — Top 10 căn hộ</div>
                     <canvas id="chart-top10" height="200"></canvas>
-                </div>
-            </div>
-
-            <div class="charts-grid llm-charts-grid" id="llm-charts-grid" style="display:none">
-                <div class="chart-box">
-                    <div class="chart-lbl">Điểm hỗ trợ từ LLM cho Top căn hộ</div>
-                    <canvas id="chart-llm-top10" height="200"></canvas>
-                </div>
-                <div class="chart-box">
-                    <div class="chart-lbl">Radar 8 tiêu chí của căn dẫn đầu theo LLM</div>
-                    <canvas id="chart-llm-radar" height="200"></canvas>
                 </div>
             </div>
 

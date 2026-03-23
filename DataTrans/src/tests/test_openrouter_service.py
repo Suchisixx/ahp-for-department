@@ -56,7 +56,7 @@ class FakeResponse:
 
 def test_analyze_compared_apartments_timeout_returns_failed(monkeypatch):
     monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
 
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
@@ -78,7 +78,7 @@ def test_analyze_compared_apartments_timeout_returns_failed(monkeypatch):
 
 def test_analyze_compared_apartments_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
         compare_openrouter_service.requests,
         "post",

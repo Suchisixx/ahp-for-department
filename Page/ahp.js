@@ -102,6 +102,12 @@ let modalGalleryImages = [];
 let activeModalImageIndex = 0;
 let activeCriterionMatrixId = null;
 let apiInfoCache = null;
+let llmInsightsExpanded = false;
+let llmExpandedTextKeys = new Set();
+let llmChartsExpanded = null;
+let llmChartsManual = false;
+let llmChartsRenderFrame = 0;
+let llmChartSignature = "";
 let compareSelection = [];
 let compareResult = null;
 let compareSupportChart = null;
@@ -142,24 +148,18 @@ async function init() {
 // ── Kiểm tra kết nối backend ─────────────────────────────────────
 // HÃ m nÃ y gá»i endpoint /health Ä‘á»ƒ kiá»ƒm tra FastAPI cÃ³ Ä‘ang cháº¡y khÃ´ng.
 async function loadApiInfo() {
-  const llmModelInput = document.getElementById("llm-model");
   const llmNote = document.getElementById("llm-note");
-  if (!llmModelInput) return;
-
-  llmModelInput.value = DEFAULT_LLM_MODEL_FALLBACK;
 
   try {
     const response = await fetch(API + "/api-info");
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     apiInfoCache = await response.json();
-    llmModelInput.value =
-      apiInfoCache?.llm_default_model?.trim() || DEFAULT_LLM_MODEL_FALLBACK;
 
     if (llmNote) {
       llmNote.textContent = apiInfoCache?.llm_enabled
-        ? "Phan tich LLM chi chay khi ban chon 2-4 can trong Top 10 va bam so sanh."
-        : "Backend chua co OPENROUTER_API_KEY. Ban van xem duoc AHP, con phan so sanh LLM se bao chua san sang.";
+        ? "AI dang ho tro 3 viec: goi y cau hinh ban dau, dien giai shortlist va tra loi theo tung can ho."
+        : "Backend chua co OPENROUTER_API_KEY. Ban van xem duoc AHP, nhung cac tinh nang AI se tam chua san sang.";
     }
     renderAiIntakeResult();
     renderApartmentChatShell();
@@ -167,7 +167,7 @@ async function loadApiInfo() {
     console.warn("loadApiInfo failed:", error);
     if (llmNote) {
       llmNote.textContent =
-        "Khong lay duoc cau hinh OpenRouter tu backend. He thong se dung model ban nhap khi ban bam so sanh.";
+        "Khong lay duoc cau hinh OpenRouter tu backend. He thong se dung model ban nhap neu backend co ho tro AI.";
     }
     renderAiIntakeResult();
     renderApartmentChatShell();
@@ -176,20 +176,23 @@ async function loadApiInfo() {
 
 function syncLlmControls() {
   const enabledInput = document.getElementById("llm-enabled");
-  const modelInput = document.getElementById("llm-model");
-  if (!enabledInput || !modelInput) return;
-
-  modelInput.disabled = !enabledInput.checked;
-  modelInput.setAttribute("aria-disabled", String(!enabledInput.checked));
+  if (!enabledInput) return;
   renderAiIntakeResult();
   renderCompareToolbar();
   renderApartmentChatShell();
 }
 
+function getCurrentLlmModel() {
+  return (
+    apiInfoCache?.llm_default_model?.trim() ||
+    DEFAULT_LLM_MODEL_FALLBACK
+  );
+}
+
 function getAiRuntimeState() {
   const userEnabled = document.getElementById("llm-enabled")?.checked ?? true;
   const backendEnabled = apiInfoCache?.llm_enabled ?? true;
-  const model = document.getElementById("llm-model")?.value?.trim() || null;
+  const model = getCurrentLlmModel();
   return { userEnabled, backendEnabled, model };
 }
 
@@ -271,7 +274,7 @@ function renderAiIntakeResult() {
     host.innerHTML = `
       <div class="assistant-result-empty">
         <div class="assistant-result-title">Bật AI để dùng co-pilot</div>
-        <p class="assistant-result-copy">Bật góc nhìn LLM ở bên dưới để AI có thể đọc nhu cầu và đề xuất cấu hình AHP ban đầu cho bạn.</p>
+            <p class="assistant-result-copy">Bật góc nhìn AI ở bên dưới để AI có thể đọc nhu cầu và đề xuất cấu hình AHP ban đầu cho bạn.</p>
       </div>`;
     return;
   }
@@ -717,7 +720,7 @@ async function callAPI(matrix, tenPhien) {
   showLoad("Dang tinh ket qua phu hop...");
   showErr("");
   try {
-    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const llmModel = getCurrentLlmModel();
     const llmEnabled = document.getElementById("llm-enabled")?.checked ?? true;
     const res = await fetch(API + "/ahp/score", {
       method: "POST",
@@ -763,11 +766,174 @@ async function runCustom() {
   if (d) renderAll(d);
 }
 
+function prefersCompactLlmLayout() {
+  return window.matchMedia("(max-width: 900px)").matches;
+}
+
+function destroyLlmCharts() {
+  if (chLlmTop10) {
+    chLlmTop10.destroy();
+    chLlmTop10 = null;
+  }
+  if (chLlmRadar) {
+    chLlmRadar.destroy();
+    chLlmRadar = null;
+  }
+  llmChartSignature = "";
+}
+
+function cancelScheduledLlmCharts() {
+  if (!llmChartsRenderFrame) return;
+  cancelAnimationFrame(llmChartsRenderFrame);
+  llmChartsRenderFrame = 0;
+}
+
+function resetLlmSectionState() {
+  llmInsightsExpanded = false;
+  llmExpandedTextKeys = new Set();
+  llmChartsManual = false;
+  llmChartsExpanded = !prefersCompactLlmLayout();
+  cancelScheduledLlmCharts();
+  destroyLlmCharts();
+}
+
+function getLlmChartSignature(top10 = getTopRankedItems(), analysis = lastRes?.llm_analysis) {
+  const insightEntries = getLlmInsightEntries(top10, analysis);
+  if (!insightEntries.length) return "";
+
+  const leadInsight = insightEntries[0]?.insight;
+  return JSON.stringify({
+    ids: insightEntries.map(({ insight }) => insight.canho_id ?? insight.rank),
+    scores: insightEntries.map(({ insight }) => insight.llm_support_score),
+    leadScores: CRIT.map((criterion) => leadInsight?.criterion_scores?.[criterion.id] ?? 0),
+  });
+}
+
+function scheduleLlmChartsRender(data, top10, options = {}) {
+  cancelScheduledLlmCharts();
+  if (!llmChartsExpanded) {
+    destroyLlmCharts();
+    return;
+  }
+
+  const signature = options.signature || getLlmChartSignature(top10, data?.llm_analysis);
+  if (!signature) {
+    destroyLlmCharts();
+    return;
+  }
+
+  llmChartsRenderFrame = requestAnimationFrame(() => {
+    llmChartsRenderFrame = 0;
+    renderLlmCharts(data, top10, { signature });
+  });
+}
+
+function syncLlmChartShell() {
+  const toggle = document.querySelector("[data-llm-charts-toggle]");
+  const shell = document.getElementById("llm-dashboard-charts");
+  if (!toggle || !shell) return;
+
+  const chartShell = shell.closest(".llm-chart-shell");
+  if (chartShell) {
+    chartShell.classList.toggle("is-open", !!llmChartsExpanded);
+    chartShell.classList.toggle("is-collapsed", !llmChartsExpanded);
+  }
+
+  shell.hidden = !llmChartsExpanded;
+  shell.classList.toggle("is-hidden", !llmChartsExpanded);
+  shell.style.display = llmChartsExpanded ? "" : "none";
+  toggle.textContent = llmChartsExpanded ? "Ẩn biểu đồ AI" : "Hiện biểu đồ AI";
+  toggle.setAttribute("aria-expanded", llmChartsExpanded ? "true" : "false");
+}
+
+function handleLlmViewportChange() {
+  if (!lastRes?.llm_analysis || llmChartsManual) return;
+
+  const shouldExpand = !prefersCompactLlmLayout();
+  if (llmChartsExpanded === shouldExpand) return;
+
+  llmChartsExpanded = shouldExpand;
+  syncLlmChartShell();
+
+  if (llmChartsExpanded) {
+    scheduleLlmChartsRender(lastRes, getTopRankedItems(lastRes));
+    return;
+  }
+
+  cancelScheduledLlmCharts();
+  destroyLlmCharts();
+}
+
+function toggleLlmCopy(key) {
+  if (!key) return;
+
+  if (llmExpandedTextKeys.has(key)) {
+    llmExpandedTextKeys.delete(key);
+  } else {
+    llmExpandedTextKeys.add(key);
+  }
+
+  const wrapper = document.querySelector(`[data-llm-copy-key="${CSS.escape(key)}"]`);
+  if (!wrapper) return;
+
+  const isExpanded = llmExpandedTextKeys.has(key);
+  wrapper.classList.toggle("is-expanded", isExpanded);
+  wrapper.classList.toggle("is-clamped", !isExpanded);
+
+  const button = wrapper.querySelector("[data-llm-toggle]");
+  if (!button) return;
+  button.textContent = isExpanded ? "Thu gọn" : "Xem thêm";
+  button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+}
+
+function toggleLlmChartsExpanded() {
+  if (!lastRes?.llm_analysis) return;
+
+  llmChartsManual = true;
+  llmChartsExpanded = !llmChartsExpanded;
+  syncLlmChartShell();
+
+  if (llmChartsExpanded) {
+    scheduleLlmChartsRender(lastRes, getTopRankedItems(lastRes));
+    return;
+  }
+
+  cancelScheduledLlmCharts();
+  destroyLlmCharts();
+}
+
+function renderExpandableLlmCopy(text, options = {}) {
+  const fallback = options.fallback || "";
+  const finalText = String(text || "").trim() || fallback;
+  const variant = options.variant || "summary";
+  const limit = options.limit ?? 280;
+  const key = options.key || `${variant}-${finalText.slice(0, 32)}`;
+  const isExpandable = finalText.length > limit;
+  const isExpanded = !isExpandable || llmExpandedTextKeys.has(key);
+
+  return `
+    <div
+      class="llm-copy-block llm-copy-block--${variant} ${isExpanded ? "is-expanded" : "is-clamped"}"
+      data-llm-copy-key="${escapeHtml(key)}">
+      <p class="${escapeHtml(options.className || "llm-summary-copy")}">${escapeHtml(finalText)}</p>
+      ${isExpandable
+        ? `<button
+            class="llm-inline-toggle"
+            type="button"
+            data-llm-toggle="${escapeHtml(key)}"
+            aria-expanded="${isExpanded ? "true" : "false"}">
+            ${isExpanded ? "Thu gọn" : "Xem thêm"}
+          </button>`
+        : ""}
+    </div>`;
+}
+
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // RENDER KẾT QUẢ
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function renderAll(data) {
   lastRes = data;
+  resetLlmSectionState();
   compareSelection = [];
   compareResult = null;
   closeCompareModal(true);
@@ -799,7 +965,7 @@ function renderAll(data) {
   renderCompareToolbar(top10);
   renderRefer(refer);
   renderLlmInsights(data, top10);
-  renderLlmCharts(data, top10);
+  scheduleLlmChartsRender(data, top10);
   renderCharts(weights, top10);
   hydrateStaticMathCopy();
   renderMathInScope(document);
@@ -824,8 +990,9 @@ function renderDecisionDossier(data, top10) {
     ...weight,
     criterion: getCriterionMeta(weight.id),
   }));
-  const recommendation = getRecommendationCopy(top10, weights);
-  const dominantCriterion = recommendation.dominantCriterion;
+  const dominantCriterion = [...weights].sort(
+    (left, right) => right.weight - left.weight,
+  )[0];
   const criteriaMatrix = getCriteriaMatrixFallback(data);
   const criteriaNames = CRIT.map((criterion) => ({
     full: `${criterion.id} · ${criterion.name}`,
@@ -844,11 +1011,6 @@ function renderDecisionDossier(data, top10) {
       ? activeCriterionMatrixId
       : dominantCriterion.id;
   activeCriterionMatrixId = preferredCriterionId;
-
-  const winner = top10[0];
-  const winnerLabel = getComparisonNames([winner])[0]?.short || `#${winner.rank}`;
-  const runnerUp = top10[1];
-  const topAdvantage = recommendation.strongestAdvantage;
 
   const criteriaTableRows = criteriaMatrix
     .map((row, rowIndex) => {
@@ -984,38 +1146,6 @@ function renderDecisionDossier(data, top10) {
 
   body.innerHTML = `
     <div class="dossier-stack">
-      <section class="dossier-summary">
-        <div class="dossier-summary-grid">
-          <article class="dossier-hero-card">
-            <span class="dossier-card-label">Khuyến nghị hệ thống</span>
-            <h3 class="dossier-hero-title">${escapeHtml(recommendation.headline)}</h3>
-            <p class="dossier-hero-copy">${escapeHtml(recommendation.detail)}</p>
-            <div class="dossier-hero-chips">
-              <span class="dossier-chip dossier-chip--winner">Top 1: ${escapeHtml(winnerLabel)}</span>
-              <span class="dossier-chip">${recommendation.gapPct.toFixed(2)}% so với #2</span>
-              <span class="dossier-chip dossier-chip--${recommendation.gapPct >= 2 ? "strong" : "soft"}">${recommendation.verdictVerb}</span>
-            </div>
-          </article>
-          <article class="dossier-mini-card">
-            <span class="dossier-card-label">Tiêu chí chi phối</span>
-            <div class="dossier-mini-value">${escapeHtml(dominantCriterion.name)}</div>
-            <p class="dossier-mini-copy">Đang nặng nhất với ${dominantCriterion.pct.toFixed(1)}% tổng trọng số.</p>
-          </article>
-          <article class="dossier-mini-card">
-            <span class="dossier-card-label">Lợi thế rõ nhất</span>
-            <div class="dossier-mini-value">${escapeHtml(topAdvantage.name)}</div>
-            <p class="dossier-mini-copy">${escapeHtml(winnerLabel)} nhỉnh hơn rõ nhất trên tiêu chí này khi so với ${escapeHtml(
-              runnerUp ? getComparisonNames([runnerUp])[0].short : "nhóm còn lại",
-            )}.</p>
-          </article>
-          <article class="dossier-mini-card">
-            <span class="dossier-card-label">Độ nhất quán đầu vào</span>
-            <div class="dossier-mini-value">CR ${(data.cr * 100).toFixed(2)}%</div>
-            <p class="dossier-mini-copy">λmax ${Number(data.lambda_max).toFixed(4)} · ${data.cr < 0.1 ? "đủ ổn định để đọc quyết định" : "nên kiểm tra lại ma trận tiêu chí"}.</p>
-          </article>
-        </div>
-      </section>
-
       <section class="dossier-section">
         <div class="dossier-section-head">
           <div>
@@ -1763,7 +1893,7 @@ async function runCompareSelection() {
   showLoad("Đang so sánh các căn hộ đã chọn...");
   showErr("");
   try {
-    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const llmModel = getCurrentLlmModel();
     const response = await fetch(API + "/ahp/compare", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -2408,6 +2538,112 @@ function getLlmApartmentInsight(item, analysis = lastRes?.llm_analysis) {
   );
 }
 
+function getTopRankedItems(data = lastRes, limit = 10) {
+  if (!Array.isArray(data?.ranked)) return [];
+  return data.ranked.slice(0, limit);
+}
+
+function getLlmInsightEntries(top10 = getTopRankedItems(), analysis = lastRes?.llm_analysis) {
+  return top10
+    .map((item) => ({ item, insight: getLlmApartmentInsight(item, analysis) }))
+    .filter((entry) => entry.insight);
+}
+
+function renderLlmListItems(items, emptyMessage) {
+  const safeItems = Array.isArray(items) ? items.filter(Boolean) : [];
+  const finalItems = safeItems.length ? safeItems : [emptyMessage];
+  return finalItems.map((entry) => `<li>${escapeHtml(cleanAiCopy(entry))}</li>`).join("");
+}
+
+function cleanAiCopy(text) {
+  const source = String(text || "").trim();
+  if (!source) return "";
+
+  return source
+    .replace(/\(\s*canho[_\s-]*id\s*:?\s*\d+\s*\)/gi, "")
+    .replace(/\bcanho[_\s-]*id\s*:?\s*\d+\b/gi, "")
+    .replace(/\(\s*\)/g, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .trim();
+}
+
+function renderLlmApartmentCard(entry, variant = "compact") {
+  if (!entry?.item || !entry?.insight) return "";
+
+  const { item, insight } = entry;
+  const title =
+    item?.canho?.title ||
+    item?.canho?.du_an ||
+    `Căn hộ #${insight.rank}`;
+  const metaBits = [
+    item?.canho?.gia_ty ? `${item.canho.gia_ty} tỷ` : "",
+    item?.canho?.dien_tich ? `${item.canho.dien_tich} m²` : "",
+    item?.canho?.so_phong_ngu ? `${item.canho.so_phong_ngu}PN` : "",
+    getApartmentProjectName(item?.canho) || item?.canho?.phuong || "",
+  ].filter(Boolean);
+
+  return `
+    <article class="llm-apartment-card ${variant === "spotlight" ? "is-spotlight" : "is-compact"}">
+      <div class="llm-apartment-head">
+        <span class="llm-rank-chip">#${insight.rank}</span>
+        <div class="llm-support-score">
+          <strong>${Math.round(insight.llm_support_score)}</strong>
+          <span>điểm hỗ trợ</span>
+        </div>
+      </div>
+      <div class="llm-card-title">${escapeHtml(title)}</div>
+      ${metaBits.length ? `<div class="llm-apartment-facts">${metaBits.map((bit) => `<span class="llm-fact-chip">${escapeHtml(bit)}</span>`).join("")}</div>` : ""}
+      ${renderExpandableLlmCopy(cleanAiCopy(insight.verdict), {
+        className: "llm-summary-note",
+        variant: variant === "spotlight" ? "spotlight" : "compact",
+        limit: variant === "spotlight" ? 260 : 180,
+        key: `apartment-${insight.canho_id || insight.rank}-${variant}`,
+        fallback: "AI chưa trả kết luận ngắn cho căn này.",
+      })}
+      <div class="llm-apartment-meta">
+        <div>
+          <div class="llm-section-title">Điểm mạnh</div>
+          <ul class="llm-list">
+            ${renderLlmListItems(insight.strengths, "Chưa có ghi chú nổi bật.")}
+          </ul>
+        </div>
+        <div>
+          <div class="llm-section-title">Rủi ro / cần kiểm tra</div>
+          <ul class="llm-list">
+            ${renderLlmListItems(insight.risks, "Không có cảnh báo bổ sung từ AI.")}
+          </ul>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderLlmEmptyState(title, copy) {
+  return `
+    <article class="llm-placeholder-card">
+      <div class="llm-card-title">${escapeHtml(title)}</div>
+      <p class="llm-summary-copy">${escapeHtml(copy)}</p>
+    </article>`;
+}
+
+function refreshLlmInsightsView() {
+  if (!lastRes?.llm_analysis) return;
+
+  const top10 = getTopRankedItems(lastRes);
+  cancelScheduledLlmCharts();
+  destroyLlmCharts();
+  renderLlmInsights(lastRes, top10);
+
+  if (!llmChartsExpanded) return;
+  scheduleLlmChartsRender(lastRes, top10);
+}
+
+function toggleLlmInsightsExpanded() {
+  if (!lastRes?.llm_analysis) return;
+  llmInsightsExpanded = !llmInsightsExpanded;
+  refreshLlmInsightsView();
+}
+
 function renderLlmInsights(data, top10) {
   const section = document.getElementById("llm-insight-section");
   const body = document.getElementById("llm-insight-body");
@@ -2422,132 +2658,173 @@ function renderLlmInsights(data, top10) {
 
   section.style.display = "";
 
-  const modelLabel = escapeHtml(analysis.model || DEFAULT_LLM_MODEL_FALLBACK);
   if (analysis.status !== "success") {
     body.innerHTML = `
       <div class="llm-status-card is-warning">
         <div class="llm-status-row">
-          <span class="llm-badge llm-badge--warn">${analysis.status === "skipped" ? "LLM tạm bỏ qua" : "LLM chưa sẵn sàng"}</span>
-          <span class="llm-model-chip">${modelLabel}</span>
+          <span class="llm-badge llm-badge--warn">${analysis.status === "skipped" ? "AI tạm bỏ qua" : "AI chưa sẵn sàng"}</span>
         </div>
         <p class="llm-error-copy">${escapeHtml(
-          analysis.error || "Không có dữ liệu phân tích từ LLM cho phiên này.",
+          cleanAiCopy(analysis.error || "Không có dữ liệu phân tích từ AI cho phiên này."),
         )}</p>
       </div>`;
     return;
   }
 
-  const apartmentCards = top10
-    .map((item) => {
-      const insight = getLlmApartmentInsight(item, analysis);
-      if (!insight) return "";
+  if (!llmChartsManual || llmChartsExpanded === null) {
+    llmChartsExpanded = !prefersCompactLlmLayout();
+  }
 
-      return `
-        <article class="llm-apartment-card">
-          <div class="llm-apartment-head">
-            <span class="llm-rank-chip">#${insight.rank}</span>
-            <div class="llm-support-score">
-              <strong>${Math.round(insight.llm_support_score)}</strong>
-              <span>điểm hỗ trợ</span>
-            </div>
-          </div>
-          <div class="llm-card-title">${escapeHtml(item?.canho?.title || item?.canho?.du_an || `Căn hộ #${insight.rank}`)}</div>
-          <p class="llm-summary-note">${escapeHtml(insight.verdict)}</p>
-          <div class="llm-apartment-meta">
-            <div>
-              <div class="llm-section-title">Điểm mạnh</div>
-              <ul class="llm-list">
-                ${(insight.strengths.length ? insight.strengths : ["Chưa có ghi chú nổi bật."])
-                  .map((entry) => `<li>${escapeHtml(entry)}</li>`)
-                  .join("")}
-              </ul>
-            </div>
-            <div>
-              <div class="llm-section-title">Rủi ro / cần kiểm tra</div>
-              <ul class="llm-list">
-                ${(insight.risks.length ? insight.risks : ["Không có cảnh báo bổ sung từ LLM."])
-                  .map((entry) => `<li>${escapeHtml(entry)}</li>`)
-                  .join("")}
-              </ul>
-            </div>
-          </div>
-        </article>`;
-    })
-    .filter(Boolean)
-    .join("");
+  const insightEntries = getLlmInsightEntries(top10, analysis);
+  const spotlightEntry = insightEntries[0] || null;
+  const compactEntries = insightEntries.slice(1, 3);
+  const extraEntries = insightEntries.slice(3);
+  const hasExtraEntries = extraEntries.length > 0;
+  const tradeoffs = Array.isArray(analysis.tradeoffs) ? analysis.tradeoffs.map((entry) => cleanAiCopy(entry)) : [];
+  const extraLabel = llmInsightsExpanded ? "Thu gọn góc nhìn AI" : `Xem thêm góc nhìn AI (${extraEntries.length})`;
 
   body.innerHTML = `
     <div class="llm-status-card is-success">
       <div class="llm-status-row">
-        <span class="llm-badge">LLM hỗ trợ đang hoạt động</span>
-        <span class="llm-model-chip">${modelLabel}</span>
+        <span class="llm-badge">AI hỗ trợ đang hoạt động</span>
       </div>
       <div class="llm-summary-grid">
         <article class="llm-summary-card">
           <div class="llm-summary-title">Tóm tắt chung</div>
-          <p class="llm-summary-copy">${escapeHtml(analysis.summary || "LLM chưa trả tóm tắt tổng quan.")}</p>
+          ${renderExpandableLlmCopy(cleanAiCopy(analysis.summary), {
+            key: "summary",
+            limit: 320,
+            fallback: "AI chưa trả tóm tắt tổng quan.",
+          })}
         </article>
         <article class="llm-summary-card">
           <div class="llm-summary-title">Vì sao căn đứng đầu đang dẫn trước</div>
-          <p class="llm-summary-copy">${escapeHtml(analysis.winner_reason || "LLM chưa trả lời giải thích cụ thể.")}</p>
+          ${renderExpandableLlmCopy(cleanAiCopy(analysis.winner_reason), {
+            key: "winner-reason",
+            limit: 320,
+            fallback: "AI chưa trả lời giải thích cụ thể.",
+          })}
         </article>
       </div>
       <article class="llm-tradeoff-card">
         <div class="llm-card-title">Trade-off cần lưu ý</div>
         <ul class="llm-tradeoff-list">
-          ${(analysis.tradeoffs.length
-            ? analysis.tradeoffs
-            : ["Phân tích LLM chưa trả trade-off cụ thể cho phiên này."])
+          ${(tradeoffs.length
+            ? tradeoffs
+            : ["Phân tích AI chưa trả trade-off cụ thể cho phiên này."])
             .map((entry) => `<li>${escapeHtml(entry)}</li>`)
             .join("")}
         </ul>
       </article>
       <span class="llm-badge llm-badge--support">Đánh giá hỗ trợ, không thay thế AHP</span>
     </div>
-    <div class="llm-apartment-grid">${apartmentCards}</div>`;
+    ${insightEntries.length
+      ? `
+        <div class="llm-chart-shell ${llmChartsExpanded ? "is-open" : "is-collapsed"}">
+          <div class="llm-chart-shell-head">
+            <div class="llm-card-title">Biểu đồ hỗ trợ từ AI</div>
+            <button
+              class="llm-chart-toggle"
+              type="button"
+              aria-controls="llm-dashboard-charts"
+              data-llm-charts-toggle
+              aria-expanded="${llmChartsExpanded ? "true" : "false"}">
+              ${llmChartsExpanded ? "Ẩn biểu đồ AI" : "Hiện biểu đồ AI"}
+            </button>
+          </div>
+          <div class="llm-dashboard-charts" id="llm-dashboard-charts" ${llmChartsExpanded ? "" : "hidden"}>
+            <div class="chart-box llm-chart-box">
+              <div class="chart-lbl">Điểm hỗ trợ từ AI cho nhóm căn đang dẫn đầu</div>
+              <div class="llm-chart-stage">
+                <canvas id="chart-llm-top10"></canvas>
+              </div>
+            </div>
+            <div class="chart-box llm-chart-box">
+              <div class="chart-lbl">Radar 8 tiêu chí của căn dẫn đầu theo AI</div>
+              <div class="llm-chart-stage llm-chart-stage--radar">
+                <canvas id="chart-llm-radar"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="llm-spotlight-row">
+          <div class="llm-spotlight-copy">
+            <div class="llm-section-kicker">Spotlight căn đang dẫn đầu</div>
+            <div class="llm-spotlight-title">Căn đứng đầu đang được AI ủng hộ vì sao?</div>
+            <p class="llm-summary-copy">Tập trung vào căn #1 trước để hiểu nhanh lý do nó đang dẫn trước, rồi nhìn hai căn bám đuổi ngay bên dưới để so sánh độ chênh.</p>
+          </div>
+          ${spotlightEntry ? renderLlmApartmentCard(spotlightEntry, "spotlight") : renderLlmEmptyState("Chưa có spotlight", "AI chưa trả insight theo từng căn hộ cho phiên này.")}
+        </div>
+        <div class="llm-compact-grid">
+          ${compactEntries.length
+            ? compactEntries.map((entry) => renderLlmApartmentCard(entry, "compact")).join("")
+            : renderLlmEmptyState("Chưa có căn bám đuổi", "Hiện chưa có đủ insight để hiển thị thêm căn #2 và #3.")}
+        </div>
+        ${hasExtraEntries
+          ? `
+            <div class="llm-more-shell ${llmInsightsExpanded ? "is-open" : ""}">
+              <button
+                class="llm-more-toggle"
+                type="button"
+                data-llm-more-toggle
+                aria-expanded="${llmInsightsExpanded ? "true" : "false"}"
+                aria-controls="llm-more-grid">
+                ${escapeHtml(extraLabel)}
+              </button>
+              <div class="llm-more-grid" id="llm-more-grid" ${llmInsightsExpanded ? "" : "hidden"}>
+                ${extraEntries.map((entry) => renderLlmApartmentCard(entry, "compact")).join("")}
+              </div>
+            </div>`
+          : ""}
+      `
+      : renderLlmEmptyState("AI chưa có insight theo từng căn", "Phiên này có tóm tắt chung nhưng chưa đủ dữ liệu để tạo góc nhìn chi tiết theo từng căn hộ.")}
+    `;
+
+  syncLlmChartShell();
 }
 
-function renderLlmCharts(data, top10) {
-  const chartGrid = document.getElementById("llm-charts-grid");
+function renderLlmCharts(data, top10, options = {}) {
   const analysis = data?.llm_analysis;
-
-  if (chLlmTop10) {
-    chLlmTop10.destroy();
-    chLlmTop10 = null;
-  }
-  if (chLlmRadar) {
-    chLlmRadar.destroy();
-    chLlmRadar = null;
-  }
-
-  if (!chartGrid) return;
+  if (!llmChartsExpanded) return;
 
   if (analysis?.status !== "success" || !analysis.apartments?.length) {
-    chartGrid.style.display = "none";
+    destroyLlmCharts();
     return;
   }
 
-  chartGrid.style.display = "";
+  const topChartCanvas = document.getElementById("chart-llm-top10");
+  const radarChartCanvas = document.getElementById("chart-llm-radar");
+  if (!topChartCanvas || !radarChartCanvas) {
+    return;
+  }
 
-  const apartmentLabels = top10.map((item, index) => {
-    const apartmentTitle = item?.canho?.title?.trim();
-    const projectName = item?.canho?.du_an?.trim();
-    return apartmentTitle || projectName || `#${item?.rank ?? index + 1}`;
-  });
-  const insightSeries = top10
-    .map((item) => getLlmApartmentInsight(item, analysis))
-    .filter(Boolean);
-  const leadInsight = insightSeries[0];
+  const insightEntries = getLlmInsightEntries(top10, analysis);
+  if (!insightEntries.length) {
+    destroyLlmCharts();
+    return;
+  }
 
-  chLlmTop10 = new Chart(document.getElementById("chart-llm-top10").getContext("2d"), {
+  const signature = options.signature || getLlmChartSignature(top10, analysis);
+  if (chLlmTop10 && chLlmRadar && llmChartSignature === signature) {
+    return;
+  }
+
+  destroyLlmCharts();
+
+  const leadInsight = insightEntries[0].insight;
+  const compactLabels = insightEntries.map(({ item, insight }, index) =>
+    getCompareCompactName(item, 26) || `#${insight?.rank ?? index + 1}`,
+  );
+
+  chLlmTop10 = new Chart(topChartCanvas.getContext("2d"), {
     type: "bar",
     data: {
-      labels: apartmentLabels.slice(0, insightSeries.length),
+      labels: compactLabels,
       datasets: [
         {
-          label: "Điểm hỗ trợ LLM",
-          data: insightSeries.map((entry) => entry.llm_support_score),
-          backgroundColor: insightSeries.map((_, index) =>
+          label: "Điểm hỗ trợ AI",
+          data: insightEntries.map(({ insight }) => insight.llm_support_score),
+          backgroundColor: insightEntries.map((_, index) =>
             index === 0 ? "#c8922a" : index < 3 ? "#1a3a5c" : "#4f7d57",
           ),
           borderRadius: 5,
@@ -2557,6 +2834,8 @@ function renderLlmCharts(data, top10) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      animation: prefersCompactLlmLayout() ? false : { duration: 220 },
       plugins: {
         legend: { display: false },
       },
@@ -2575,13 +2854,13 @@ function renderLlmCharts(data, top10) {
     },
   });
 
-  chLlmRadar = new Chart(document.getElementById("chart-llm-radar").getContext("2d"), {
+  chLlmRadar = new Chart(radarChartCanvas.getContext("2d"), {
     type: "radar",
     data: {
       labels: CRIT.map((criterion) => criterion.name),
       datasets: [
         {
-          label: `LLM · #${leadInsight?.rank ?? 1}`,
+          label: `AI · #${leadInsight?.rank ?? 1}`,
           data: CRIT.map((criterion) => leadInsight?.criterion_scores?.[criterion.id] ?? 0),
           fill: true,
           backgroundColor: "rgba(200, 146, 42, 0.18)",
@@ -2594,6 +2873,8 @@ function renderLlmCharts(data, top10) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
+      animation: prefersCompactLlmLayout() ? false : { duration: 220 },
       plugins: {
         legend: {
           labels: { color: "#4a5568" },
@@ -2615,6 +2896,8 @@ function renderLlmCharts(data, top10) {
       },
     },
   });
+
+  llmChartSignature = signature;
 }
 
 function renderCharts(weights, top10) {
@@ -3060,7 +3343,7 @@ function openModal(idx, triggerEl) {
         </div>
         ${
           llmInsight
-            ? `<div class="detail-section-label">${modalLabel("sparkles", "Góc nhìn LLM")}</div>
+                        ? `<div class="detail-section-label">${modalLabel("sparkles", "Góc nhìn AI")}</div>
         <div class="llm-apartment-card">
             <div class="llm-apartment-head">
                 <span class="llm-rank-chip">#${llmInsight.rank}</span>
@@ -3082,7 +3365,7 @@ function openModal(idx, triggerEl) {
                 <div>
                     <div class="llm-section-title">Rủi ro / cần kiểm tra</div>
                     <ul class="llm-list">
-                        ${(llmInsight.risks.length ? llmInsight.risks : ["Không có cảnh báo bổ sung từ LLM."])
+                                ${(llmInsight.risks.length ? llmInsight.risks : ["Không có cảnh báo bổ sung từ AI."])
                           .map((entry) => `<li>${escapeHtml(entry)}</li>`)
                           .join("")}
                     </ul>
@@ -3330,7 +3613,7 @@ async function submitApartmentChatQuestion(prefilledQuestion) {
   renderApartmentChatShell();
 
   try {
-    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const llmModel = getCurrentLlmModel();
     const response = await fetch(API + "/ahp/chat-apartment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -3507,8 +3790,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.getElementById("llm-enabled")?.addEventListener("change", syncLlmControls);
+  document.getElementById("llm-insight-body")?.addEventListener("click", (e) => {
+    const copyToggle = e.target.closest("[data-llm-toggle]");
+    if (copyToggle) {
+      toggleLlmCopy(copyToggle.getAttribute("data-llm-toggle"));
+      return;
+    }
+
+    const chartToggle = e.target.closest("[data-llm-charts-toggle]");
+    if (chartToggle) {
+      toggleLlmChartsExpanded();
+      return;
+    }
+
+    const moreToggle = e.target.closest("[data-llm-more-toggle]");
+    if (moreToggle) {
+      toggleLlmInsightsExpanded();
+    }
+  });
   document.getElementById("compare-clear-btn")?.addEventListener("click", clearCompareSelection);
   document.getElementById("compare-run-btn")?.addEventListener("click", runCompareSelection);
+  window.addEventListener("resize", handleLlmViewportChange);
 
   document.getElementById("modal")?.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) closeModal();

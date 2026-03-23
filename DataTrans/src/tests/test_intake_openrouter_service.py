@@ -20,7 +20,7 @@ class FakeResponse:
 
 def test_generate_ahp_intake_guidance_timeout_returns_failed(monkeypatch):
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
 
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
@@ -38,7 +38,7 @@ def test_generate_ahp_intake_guidance_timeout_returns_failed(monkeypatch):
 
 def test_generate_ahp_intake_guidance_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
         intake_openrouter_service.requests,
         "post",
@@ -56,7 +56,7 @@ def test_generate_ahp_intake_guidance_invalid_json_returns_failed(monkeypatch):
 
 def test_generate_ahp_intake_guidance_normalizes_priority_scores(monkeypatch):
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
-    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "openai/gpt-4o-mini")
+    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
         intake_openrouter_service.requests,
         "post",
