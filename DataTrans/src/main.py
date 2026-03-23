@@ -1,62 +1,60 @@
-"""
-main.py — Entry point FastAPI
-Chạy: uvicorn main:app --reload --port 8000
+﻿"""
+FastAPI entry point.
+Run with: uvicorn main:app --reload --port 8000
 Docs: http://localhost:8000/docs
 """
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles  
-from fastapi.responses import FileResponse
+
 from pathlib import Path
 
-from database import engine, Base, ensure_canho_schema
-from routers import canho, ahp
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+from database import Base, engine, ensure_canho_schema, settings
+from routers import ahp, canho
 
 BASE_DIR = Path(__file__).resolve().parent
 PAGE_DIR = BASE_DIR.parent.parent / "Page"
 MEDIA_DIR = BASE_DIR.parent / "data-crawling" / "raw" / "images"
 MEDIA_DIR.mkdir(parents=True, exist_ok=True)
-print(f"--- Kiểm tra đường dẫn Page: {PAGE_DIR} ---")
-# Tạo bảng tự động nếu chưa có
+
 Base.metadata.create_all(bind=engine)
 ensure_canho_schema()
 
 app = FastAPI(
-    title="DSS Căn Hộ TP.HCM",
-    description="Hệ hỗ trợ ra quyết định chọn căn hộ — AHP + PostgreSQL",
+    title="DSS Can Ho TP.HCM",
+    description="He ho tro ra quyet dinh chon can ho - AHP + PostgreSQL",
     version="1.0.0",
 )
 
-# CORS: cho phép mọi origin bao gồm file:// (origin = "null") và localhost
-# Khi mở file HTML trực tiếp, browser gửi Origin: null
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*", "null"],   # "null" = mở file:// trực tiếp trên trình duyệt
-    allow_origin_regex=r".*",      # fallback regex cho mọi origin
+    allow_origins=["*", "null"],
+    allow_origin_regex=r".*",
     allow_methods=["*"],
     allow_headers=["*"],
     allow_credentials=False,
 )
 
-# 1. Mount thư mục 'Page' để FastAPI hiểu các file .js, .css bên trong
-# 'directory' phải đúng đường dẫn tới thư mục Page (tính từ file main.py)
-# Dựa theo hình của bạn, Page nằm cùng cấp với thư mục src/ hoặc ngay trong src/
-# Nếu bạn chạy lệnh từ thư mục 'src', hãy để directory="../Page" hoặc "Page" tùy vị trí thực tế
 app.mount("/static", StaticFiles(directory=str(PAGE_DIR)), name="static")
 app.mount("/media", StaticFiles(directory=str(MEDIA_DIR)), name="media")
 
+
 @app.get("/", tags=["Frontend"])
 def serve_home():
-    html_path = PAGE_DIR / "index.html"
-    return FileResponse(str(html_path))
+    return FileResponse(str(PAGE_DIR / "index.html"))
+
 
 @app.get("/home", tags=["Frontend"])
 def serve_index():
     return FileResponse(str(PAGE_DIR / "index.html"))
 
+
 @app.get("/ahp", tags=["Frontend"])
 def serve_ahp():
     return FileResponse(str(PAGE_DIR / "ahp.html"))
+
 
 @app.get("/guide", tags=["Frontend"])
 def serve_guide():
@@ -71,11 +69,8 @@ app.include_router(ahp.router)
 def api_info():
     return {
         "status": "ok",
-        "docs":   "/docs",
-        "routes": ["/canho/list", "/canho/{id}", "/ahp/score", "/ahp/sessions"],
+        "docs": "/docs",
+        "routes": ["/canho/list", "/canho/{id}", "/ahp/intake", "/ahp/score", "/ahp/sessions"],
+        "llm_default_model": settings.OPENROUTER_DEFAULT_MODEL,
+        "llm_enabled": bool(settings.OPENROUTER_API_KEY),
     }
-
-
-@app.get("/health", tags=["Health"])
-def health():
-    return {"status": "ok"}

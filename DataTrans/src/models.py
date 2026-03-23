@@ -72,6 +72,11 @@ class AhpSession(Base):
     ci          = Column(Numeric(10, 6))
     cr          = Column(Numeric(10, 6))
     cr_ok       = Column(Boolean, nullable=False)
+    llm_model   = Column(Text)
+    llm_status  = Column(String(20))
+    llm_output  = Column(JSONB)
+    llm_error   = Column(Text)
+    llm_generated_at = Column(DateTime)
     created_at  = Column(DateTime, default=datetime.now)
 
     results = relationship("AhpResult", back_populates="session", cascade="all, delete")

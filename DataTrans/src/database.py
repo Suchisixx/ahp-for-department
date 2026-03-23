@@ -12,6 +12,11 @@ ENV_FILE = Path(__file__).with_name(".env")
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://postgres:123@db:5432/DSS"
+    OPENROUTER_API_KEY: str = ""
+    OPENROUTER_DEFAULT_MODEL: str = "openai/gpt-4o-mini"
+    OPENROUTER_TIMEOUT_SECONDS: int = 45
+    OPENROUTER_SITE_URL: str = ""
+    OPENROUTER_APP_NAME: str = "ApartmentBroker DSS"
 
     class Config:
         env_file = str(ENV_FILE)
@@ -35,32 +40,47 @@ class Base(DeclarativeBase):
 
 def ensure_canho_schema():
     inspector = inspect(engine)
-    if "can_ho" not in inspector.get_table_names():
-        return
+    table_names = set(inspector.get_table_names())
 
-    columns = {column["name"] for column in inspector.get_columns("can_ho")}
-    required_columns = {
-        "ngay_het_han": "TIMESTAMP",
-        "thumbnail_url": "TEXT",
-        "thumbnail_path": "TEXT",
-        "image_urls": "JSONB",
-        "image_local_paths": "JSONB",
+    table_requirements = {
+        "can_ho": {
+            "ngay_het_han": "TIMESTAMP",
+            "thumbnail_url": "TEXT",
+            "thumbnail_path": "TEXT",
+            "image_urls": "JSONB",
+            "image_local_paths": "JSONB",
+        },
+        "ahp_session": {
+            "llm_model": "TEXT",
+            "llm_status": "VARCHAR(20)",
+            "llm_output": "JSONB",
+            "llm_error": "TEXT",
+            "llm_generated_at": "TIMESTAMP",
+        },
     }
 
-    missing_columns = {
-        name: ddl
-        for name, ddl in required_columns.items()
-        if name not in columns
-    }
+    for table_name, required_columns in table_requirements.items():
+        if table_name not in table_names:
+            continue
 
-    if not missing_columns:
-        return
+        columns = {column["name"] for column in inspector.get_columns(table_name)}
+        missing_columns = {
+            name: ddl
+            for name, ddl in required_columns.items()
+            if name not in columns
+        }
 
-    with engine.begin() as connection:
-        for column_name, column_type in missing_columns.items():
-            connection.execute(
-                text(f"ALTER TABLE can_ho ADD COLUMN IF NOT EXISTS {column_name} {column_type}")
-            )
+        if not missing_columns:
+            continue
+
+        with engine.begin() as connection:
+            for column_name, column_type in missing_columns.items():
+                connection.execute(
+                    text(
+                        f"ALTER TABLE {table_name} "
+                        f"ADD COLUMN IF NOT EXISTS {column_name} {column_type}"
+                    )
+                )
 
 
 # Dependency dùng trong FastAPI route

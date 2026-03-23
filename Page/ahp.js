@@ -1,9 +1,10 @@
-// ═══════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // ahp.js — Logic phân tích AHP cho ApartmentBroker DSS
 // Kết nối backend FastAPI: http://localhost:8000
-// ═══════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 const API = "http://localhost:8000";
+const DEFAULT_LLM_MODEL_FALLBACK = "openai/gpt-4o-mini";
 
 // ── Tiêu chí AHP ────────────────────────────────────────────────
 const CRIT = [
@@ -94,35 +95,327 @@ let curMat = Array.from({ length: N }, () => Array(N).fill(1));
 let lastRes = null;
 let chW = null;
 let chTop10 = null;
+let chLlmTop10 = null;
+let chLlmRadar = null;
 let lastFocusedTrigger = null;
 let modalGalleryImages = [];
 let activeModalImageIndex = 0;
 let activeCriterionMatrixId = null;
+let apiInfoCache = null;
+let compareSelection = [];
+let compareResult = null;
+let compareSupportChart = null;
+let compareRadarChart = null;
+let lastCompareTrigger = null;
+let activeApartmentChatContext = null;
+let apartmentChatHistory = [];
+let apartmentChatOpen = false;
+let apartmentChatLoading = false;
+let apartmentChatSuggestions = [];
+let aiIntakeResult = null;
+let aiIntakeLoading = false;
 const PAIRWISE_EPS = 0.001;
 
-// ════════════════════════════════════════════════════════════════
-// KHỞI ĐỘNG
-// ════════════════════════════════════════════════════════════════
-// Đây là hàm gọi khi trang load xong. Nó chuẩn bị giao diện và kiểm tra
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// KHá»žI Äá»˜NG
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ÄÃ¢y lÃ  hÃ m gá»i khi trang load xong. NÃ³ chuáº©n bá»‹ giao diá»‡n vÃ  kiá»ƒm tra
 // xem backend (FastAPI) đã chạy chưa.
 async function init() {
-  // Vẽ giao diện: bảng trọng số, ma trận, v.v.
+  // Váº½ giao diá»‡n: báº£ng trá»ng sá»‘, ma tráº­n, v.v.
   buildEW();
   buildMat();
 
-  // Mặc định chọn preset "price" (ưu tiên giá)
+  // Máº·c Ä‘á»‹nh chá»n preset "price" (Æ°u tiÃªn giÃ¡)
   applyPreset("price");
 
   // Nếu URL là ahp.html?mode=custom thì kích chế độ custom, còn không thì expert.
   const m = new URLSearchParams(location.search).get("mode");
   setMode(m === "custom" ? "custom" : "expert");
 
-  // Gọi backend để kiểm tra kết nối (và hiển thị trạng thái trên trang)
+  // Gá»i backend Ä‘á»ƒ kiá»ƒm tra káº¿t ná»‘i (vÃ  hiá»ƒn thá»‹ tráº¡ng thÃ¡i trÃªn trang)
+  await loadApiInfo();
+  syncLlmControls();
   await pingAPI();
 }
 
 // ── Kiểm tra kết nối backend ─────────────────────────────────────
-// Hàm này gọi endpoint /health để kiểm tra FastAPI có đang chạy không.
+// HÃ m nÃ y gá»i endpoint /health Ä‘á»ƒ kiá»ƒm tra FastAPI cÃ³ Ä‘ang cháº¡y khÃ´ng.
+async function loadApiInfo() {
+  const llmModelInput = document.getElementById("llm-model");
+  const llmNote = document.getElementById("llm-note");
+  if (!llmModelInput) return;
+
+  llmModelInput.value = DEFAULT_LLM_MODEL_FALLBACK;
+
+  try {
+    const response = await fetch(API + "/api-info");
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    apiInfoCache = await response.json();
+    llmModelInput.value =
+      apiInfoCache?.llm_default_model?.trim() || DEFAULT_LLM_MODEL_FALLBACK;
+
+    if (llmNote) {
+      llmNote.textContent = apiInfoCache?.llm_enabled
+        ? "Phan tich LLM chi chay khi ban chon 2-4 can trong Top 10 va bam so sanh."
+        : "Backend chua co OPENROUTER_API_KEY. Ban van xem duoc AHP, con phan so sanh LLM se bao chua san sang.";
+    }
+    renderAiIntakeResult();
+    renderApartmentChatShell();
+  } catch (error) {
+    console.warn("loadApiInfo failed:", error);
+    if (llmNote) {
+      llmNote.textContent =
+        "Khong lay duoc cau hinh OpenRouter tu backend. He thong se dung model ban nhap khi ban bam so sanh.";
+    }
+    renderAiIntakeResult();
+    renderApartmentChatShell();
+  }
+}
+
+function syncLlmControls() {
+  const enabledInput = document.getElementById("llm-enabled");
+  const modelInput = document.getElementById("llm-model");
+  if (!enabledInput || !modelInput) return;
+
+  modelInput.disabled = !enabledInput.checked;
+  modelInput.setAttribute("aria-disabled", String(!enabledInput.checked));
+  renderAiIntakeResult();
+  renderCompareToolbar();
+  renderApartmentChatShell();
+}
+
+function getAiRuntimeState() {
+  const userEnabled = document.getElementById("llm-enabled")?.checked ?? true;
+  const backendEnabled = apiInfoCache?.llm_enabled ?? true;
+  const model = document.getElementById("llm-model")?.value?.trim() || null;
+  return { userEnabled, backendEnabled, model };
+}
+
+function fillAiIntakePrompt(text) {
+  const input = document.getElementById("assistant-intake-input");
+  if (!input) return;
+  input.value = text;
+  input.focus();
+}
+
+function getPresetLabel(presetId) {
+  const labels = {
+    balanced: "Cân bằng",
+    price: "Ưu tiên giá",
+    quality: "Chất lượng sống",
+    legal: "Pháp lý",
+    location: "Vị trí",
+  };
+  return labels[presetId] || "Cân bằng";
+}
+
+function buildMatrixFromWeights(weightList) {
+  const weights = CRIT.map((criterion) => {
+    const match = weightList.find((item) => item.id === criterion.id);
+    return Math.max(Number(match?.weight) || 0, 0.0001);
+  });
+  return weights.map((rowWeight) =>
+    weights.map((colWeight) => Number((rowWeight / colWeight).toFixed(4))),
+  );
+}
+
+function applyMatrixProfile(matrix) {
+  if (!Array.isArray(matrix) || matrix.length !== N) return;
+
+  for (let i = 0; i < N; i += 1) {
+    for (let j = 0; j < N; j += 1) {
+      curMat[i][j] = Number(matrix[i][j]) || 1;
+    }
+  }
+
+  document.querySelectorAll(".pbtn").forEach((button) => button.classList.remove("active"));
+
+  for (let i = 0; i < N; i += 1) {
+    for (let j = i + 1; j < N; j += 1) {
+      const editable = document.getElementById(`m_${i}_${j}`);
+      const reciprocal = document.getElementById(`r_${i}_${j}`);
+      if (editable) editable.value = formatCriteriaInputValue(curMat[i][j]);
+      if (reciprocal) reciprocal.value = curMat[j][i].toFixed(3);
+    }
+  }
+
+  previewCR();
+}
+
+function renderAiIntakeResult() {
+  const host = document.getElementById("assistant-intake-result");
+  const runButton = document.getElementById("assistant-intake-run");
+  const applyButton = document.getElementById("assistant-intake-apply");
+  const input = document.getElementById("assistant-intake-input");
+  if (!host || !runButton || !applyButton || !input) return;
+
+  const { backendEnabled, userEnabled } = getAiRuntimeState();
+  const disabled = !backendEnabled || !userEnabled;
+
+  runButton.disabled = disabled || aiIntakeLoading;
+  applyButton.disabled = aiIntakeLoading || !(aiIntakeResult?.status === "success");
+  input.disabled = aiIntakeLoading;
+
+  if (!backendEnabled) {
+    host.innerHTML = `
+      <div class="assistant-result-empty is-warning">
+        <div class="assistant-result-title">AI co-pilot chưa sẵn sàng</div>
+        <p class="assistant-result-copy">Backend chưa bật OpenRouter nên hiện tại bạn vẫn dùng được AHP, nhưng chưa thể nhờ AI gợi ý cấu hình ban đầu.</p>
+      </div>`;
+    return;
+  }
+
+  if (!userEnabled) {
+    host.innerHTML = `
+      <div class="assistant-result-empty">
+        <div class="assistant-result-title">Bật AI để dùng co-pilot</div>
+        <p class="assistant-result-copy">Bật góc nhìn LLM ở bên dưới để AI có thể đọc nhu cầu và đề xuất cấu hình AHP ban đầu cho bạn.</p>
+      </div>`;
+    return;
+  }
+
+  if (aiIntakeLoading) {
+    host.innerHTML = `
+      <div class="assistant-result-empty">
+        <div class="assistant-result-title">AI đang đọc nhu cầu của bạn</div>
+        <p class="assistant-result-copy">Hệ thống đang tóm ý định mua để ở, gợi ý preset phù hợp và quy đổi sang trọng số ban đầu cho 8 tiêu chí.</p>
+      </div>`;
+    return;
+  }
+
+  if (!aiIntakeResult) {
+    host.innerHTML = `
+      <div class="assistant-result-empty">
+        <div class="assistant-result-title">AI sẽ giúp bạn làm gì?</div>
+        <p class="assistant-result-copy">AI sẽ đọc nhu cầu ở thực của bạn, gợi ý một preset phù hợp, đề xuất trọng số ban đầu cho 8 tiêu chí và để bạn chỉnh tay trước khi chạy AHP.</p>
+      </div>`;
+    return;
+  }
+
+  if (aiIntakeResult.status !== "success") {
+    host.innerHTML = `
+      <div class="assistant-result-empty is-warning">
+        <div class="assistant-result-title">AI chưa gợi ý được cấu hình</div>
+        <p class="assistant-result-copy">${escapeHtml(
+          aiIntakeResult.error || "Hiện AI chưa đủ dữ liệu để đề xuất cấu hình ban đầu cho nhu cầu này.",
+        )}</p>
+      </div>`;
+    return;
+  }
+
+  const profile = aiIntakeResult.intent_profile || {};
+  const topWeights = [...(aiIntakeResult.suggested_weights || [])]
+    .sort((left, right) => right.weight - left.weight)
+    .slice(0, 4);
+  const metaChips = [profile.budget, profile.preferred_area, profile.bedroom_need]
+    .filter(Boolean)
+    .map((value) => `<span class="assistant-result-chip">${escapeHtml(value)}</span>`)
+    .join("");
+
+  host.innerHTML = `
+    <div class="assistant-result-card">
+      <div class="assistant-result-topline">
+        <div class="assistant-result-title">AI đã hiểu nhu cầu ban đầu của bạn</div>
+        <span class="assistant-result-chip assistant-result-chip--accent">Preset: ${escapeHtml(
+          getPresetLabel(aiIntakeResult.recommended_preset),
+        )}</span>
+      </div>
+      <p class="assistant-result-copy">${escapeHtml(profile.goal || "AI đã tóm tắt nhu cầu ở thực của bạn.")}</p>
+      ${metaChips ? `<div class="assistant-result-chip-row">${metaChips}</div>` : ""}
+      <div class="assistant-result-section">
+        <div class="assistant-result-label">Ưu tiên nổi bật</div>
+        <div class="assistant-result-list">
+          ${(profile.top_priorities?.length
+            ? profile.top_priorities
+            : ["Đang ưu tiên một cấu hình cân bằng để bắt đầu."])
+            .map((item) => `<span class="assistant-result-pill">${escapeHtml(item)}</span>`)
+            .join("")}
+        </div>
+      </div>
+      <div class="assistant-result-section">
+        <div class="assistant-result-label">Trọng số AI đang gợi ý</div>
+        <div class="assistant-weight-grid">
+          ${topWeights
+            .map(
+              (item) => `
+                <div class="assistant-weight-card">
+                  <div class="assistant-weight-name">${escapeHtml(item.name)}</div>
+                  <div class="assistant-weight-value">${item.pct.toFixed(1)}%</div>
+                </div>`,
+            )
+            .join("")}
+        </div>
+      </div>
+      <div class="assistant-result-section">
+        <div class="assistant-result-label">Cách AI quy đổi</div>
+        <p class="assistant-result-copy">${escapeHtml(aiIntakeResult.explanation || "")}</p>
+      </div>
+    </div>`;
+}
+
+async function runAiIntake() {
+  const input = document.getElementById("assistant-intake-input");
+  if (!input || aiIntakeLoading) return;
+
+  const userInput = input.value.trim();
+  if (!userInput) {
+    showErr("Hãy mô tả ngắn nhu cầu của bạn để AI có thể gợi ý cấu hình ban đầu.");
+    input.focus();
+    return;
+  }
+
+  const { backendEnabled, userEnabled, model } = getAiRuntimeState();
+  if (!backendEnabled || !userEnabled) {
+    renderAiIntakeResult();
+    return;
+  }
+
+  aiIntakeLoading = true;
+  aiIntakeResult = null;
+  renderAiIntakeResult();
+  showLoad("AI dang quy doi nhu cau thanh cau hinh AHP...");
+  showErr("");
+
+  try {
+    const response = await fetch(API + "/ahp/intake", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_input: userInput,
+        llm_model: model,
+      }),
+    });
+
+    if (!response.ok) {
+      const errorPayload = await response
+        .json()
+        .catch(() => ({ detail: "Khong the doc loi tu backend" }));
+      throw new Error(errorPayload?.detail || `HTTP ${response.status}`);
+    }
+
+    aiIntakeResult = await response.json();
+  } catch (error) {
+    aiIntakeResult = {
+      status: "failed",
+      error: error.message || "Khong the tao cau hinh AI intake luc nay.",
+    };
+  } finally {
+    aiIntakeLoading = false;
+    hideLoad();
+    renderAiIntakeResult();
+  }
+}
+
+function applyAiIntakeSuggestion() {
+  if (aiIntakeResult?.status !== "success" || !aiIntakeResult.suggested_weights?.length) return;
+
+  applyMatrixProfile(buildMatrixFromWeights(aiIntakeResult.suggested_weights));
+  setMode("custom");
+  document.getElementById("panel-custom")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 async function pingAPI() {
   const dot = document.getElementById("api-dot");
   const lbl = document.getElementById("api-lbl");
@@ -206,14 +499,14 @@ function buildMat() {
       <table class="alt-matrix-table criteria-input-table">
         <thead>
           <tr>
-            <th class="alt-sticky-col alt-row-head">TiÃªu chÃ­</th>
+            <th class="alt-sticky-col alt-row-head">Tiêu chí</th>
             ${CRIT.map((c) => `<th title="${escapeHtml(`${c.id} · ${c.name}`)}"><span class="criteria-col-head">${escapeHtml(`${c.id} · ${c.name}`)}</span></th>`).join("")}
           </tr>
         </thead>
         <tbody>`;
 
   for (let i = 0; i < N; i += 1) {
-    h += `<tr><th class="alt-sticky-col alt-row-head criteria-row-head">${escapeHtml(`${CRIT[i].id} Â· ${CRIT[i].name}`)}</th>`;
+    h += `<tr><th class="alt-sticky-col alt-row-head criteria-row-head">${escapeHtml(`${CRIT[i].id} · ${CRIT[i].name}`)}</th>`;
     for (let j = 0; j < N; j += 1) {
       if (i === j) {
         h += `
@@ -417,33 +710,37 @@ function showCR({ w, lmax, ci, cr, ok }) {
     `λmax = ${lmax.toFixed(4)} · CI = ${ci.toFixed(4)}`;
 }
 
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // GỌI BACKEND
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 async function callAPI(matrix, tenPhien) {
-  showLoad("\u0110ang t\u00ednh k\u1ebft qu\u1ea3 ph\u00f9 h\u1ee3p...");
+  showLoad("Dang tinh ket qua phu hop...");
   showErr("");
   try {
+    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const llmEnabled = document.getElementById("llm-enabled")?.checked ?? true;
     const res = await fetch(API + "/ahp/score", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ten_phien: tenPhien, matrix }),
+      body: JSON.stringify({
+        ten_phien: tenPhien,
+        matrix,
+        llm_model: llmModel,
+        llm_enabled: llmEnabled,
+      }),
     });
     if (!res.ok) {
       const e = await res
         .json()
-        .catch(() => ({ detail: "Lỗi không xác định" }));
+        .catch(() => ({ detail: "Loi khong xac dinh" }));
       throw new Error(e?.detail?.msg || e?.detail || `HTTP ${res.status}`);
     }
     const data = await res.json();
-    // Response: { session_id, ten_phien, cr, ci, lambda_max, cr_ok,
-    //             criteria_matrix:[[...]], weights:[{id,name,weight,pct}], total_canho,
-    //             ranked:[{rank, ahp_score, score_detail:{C1..C8}, canho:{...}}] }
     hideLoad();
     return data;
   } catch (e) {
     hideLoad();
-    showErr("Lỗi: " + e.message);
+    showErr("Loi: " + e.message);
     return null;
   }
 }
@@ -466,15 +763,17 @@ async function runCustom() {
   if (d) renderAll(d);
 }
 
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // RENDER KẾT QUẢ
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function renderAll(data) {
   lastRes = data;
+  compareSelection = [];
+  compareResult = null;
+  closeCompareModal(true);
 
   document.getElementById("results-wrap").classList.add("show");
 
-  // Session badge
   document.getElementById("session-info").innerHTML =
     `<div class="session-badge">
             Session <b>#${data.session_id}</b> &nbsp;·&nbsp;
@@ -491,18 +790,21 @@ function renderAll(data) {
       <b>${data.total_canho}</b> căn hộ phân tích &nbsp;·&nbsp;
       Chế độ: <b>${escapeHtml(data.ten_phien)}</b>`;
   }
-  const top10 = data.ranked.slice(0, 10); // ← CHỈ LẤY TOP 10
-  const refer = data.ranked.slice(10, 15); // ← 5 CĂN THAM KHẢO (hạng 11-15)
+
+  const top10 = data.ranked.slice(0, 10);
+  const refer = data.ranked.slice(10, 15);
 
   renderDecisionDossier(data, top10);
   renderTop10(top10);
+  renderCompareToolbar(top10);
   renderRefer(refer);
+  renderLlmInsights(data, top10);
+  renderLlmCharts(data, top10);
   renderCharts(weights, top10);
   hydrateStaticMathCopy();
   renderMathInScope(document);
-  renderAltMatrix(top10); // Ma trận so sánh cặp giữa các phương án
+  renderAltMatrix(top10);
 
-  renderMathInScope(document);
   document
     .getElementById("results-wrap")
     .scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1240,9 +1542,9 @@ function decorateResultCards(containerId, items, actionClassName) {
       action.className = actionClassName;
       action.setAttribute("aria-hidden", "true");
       action.innerHTML = '<span>Xem chi tiết</span><span class="rc-action-icon">→</span>';
-      const body = card.querySelector(".rc-body");
-      if (body) {
-        body.appendChild(action);
+      const actions = card.querySelector(".rc-actions");
+      if (actions) {
+        actions.appendChild(action);
       }
     }
   });
@@ -1264,17 +1566,16 @@ function renderTop10(top10) {
   }
   function tPL(v) {
     const s = (v || "").toLowerCase();
-    if (s.includes("sổ đỏ") || s.includes("sổ hồng"))
-      return `<span class="tag tag-g">Sổ đỏ/Hồng</span>`;
+    if (s.includes("sổ đỏ") || s.includes("sổ hồng")) return `<span class="tag tag-g">Sổ đỏ/Hồng</span>`;
     if (s.includes("giấy tờ")) return `<span class="tag tag-a">Giấy tờ</span>`;
-    if (s.includes("hợp đồng"))
-      return `<span class="tag tag-gray">HĐ mua bán</span>`;
+    if (s.includes("hợp đồng")) return `<span class="tag tag-gray">HĐ mua bán</span>`;
     return "";
   }
 
   const medals = ["🥇", "🥈", "🥉"];
   const numCls = ["n1", "n2", "n3"];
   const cardCls = { 1: "rank1", 2: "rank2", 3: "rank3" };
+  const selectedIds = new Set(compareSelection);
 
   const html = top10
     .map((item) => {
@@ -1286,9 +1587,10 @@ function renderTop10(top10) {
       const label = medals[r - 1] || r;
       const pct = Math.round(item.ahp_score * 100);
       const ariaLabel = escapeHtml(getResultCardAriaLabel(item));
+      const isSelected = selectedIds.has(ch.id);
 
       return `
-        <div class="rank-card ${isTop3 ? "top3 " : ""}${cc}" onclick="openModal(${r - 1}, this)" tabindex="0" role="button" aria-label="${ariaLabel}">
+        <div class="rank-card ${isTop3 ? "top3 " : ""}${cc} ${isSelected ? "compare-selected" : ""}" onclick="openModal(${r - 1}, this)" tabindex="0" role="button" aria-label="${ariaLabel}" data-canho-id="${ch.id}">
             <div class="rc-num ${nc}">${label}</div>
             ${renderListingThumb(ch, ch.title, "rank")}
             <div class="rc-body">
@@ -1310,6 +1612,12 @@ function renderTop10(top10) {
                         <div class="rc-score-bar"><div class="rc-score-fill" style="width:${pct}%"></div></div>
                     </div>
                 </div>
+                <div class="rc-actions">
+                    <button class="compare-toggle ${isSelected ? "is-active" : ""}" type="button" aria-pressed="${isSelected}" onclick="event.stopPropagation(); toggleCompareSelection(${ch.id}, this)">
+                        <span>${isSelected ? "Đã chọn so sánh" : "Chọn so sánh"}</span>
+                        <span class="compare-toggle-count">${isSelected ? compareSelection.indexOf(ch.id) + 1 : "+"}</span>
+                    </button>
+                </div>
             </div>
         </div>`;
     })
@@ -1317,8 +1625,7 @@ function renderTop10(top10) {
 
   document.getElementById("top10-grid").innerHTML = html;
   decorateResultCards("top10-grid", top10, "rc-action");
-  document.getElementById("rank-title").textContent =
-    `Top 10 phương án phù hợp nhất`;
+  document.getElementById("rank-title").textContent = `Top 10 phương án phù hợp nhất`;
 }
 
 // ── 5 căn hộ tham khảo (hạng 11-15) ──────────────────────────────
@@ -1333,14 +1640,43 @@ function renderRefer(refer) {
     .map((item) => {
       const ch = item.canho;
       const pct = Math.round(item.ahp_score * 100);
+      const fullName = ch.title || "—";
+      const shortName = getCompareCompactName(item, 34) || fullName;
+      const priceText = ch.gia_ty ? `${ch.gia_ty} tỷ` : "Chưa có giá";
+      const priceMeta = ch.gia_per_m2 ? `${ch.gia_per_m2} tr/m²` : "";
+      const projectName = getApartmentProjectName(ch);
+      const locationText =
+        [ch.phuong, projectName].filter(Boolean).join(" · ") || "Vị trí đang cập nhật";
+      const featureBits = [
+        `${ch.dien_tich || "?"}m²`,
+        `${ch.so_phong_ngu || 0}PN`,
+        ch.so_phong_wc ? `${ch.so_phong_wc}WC` : "",
+      ].filter(Boolean);
       return `
         <div class="refer-card" onclick="openModal(${item.rank - 1}, this)">
             ${renderListingThumb(ch, ch.title, "refer")}
-            <div class="refer-rank">#${item.rank}</div>
-            <div class="refer-score">${pct}</div>
-            <div class="refer-name">${ch.title || "—"}</div>
-            <div class="refer-price">${ch.gia_ty ? ch.gia_ty + " tỷ" : "—"}</div>
-            <div class="refer-meta">${ch.dien_tich || "?"}m² · ${ch.so_phong_ngu || 0}PN · ${ch.phuong || ""}</div>
+            <div class="refer-body">
+              <div class="refer-topline">
+                <div class="refer-rank">Hạng #${item.rank}</div>
+                <div class="refer-scorebox">
+                  <div class="refer-score">${pct}</div>
+                  <div class="refer-score-label">điểm</div>
+                </div>
+              </div>
+              <div class="refer-main">
+                <div class="refer-name" title="${escapeHtml(fullName)}">${escapeHtml(shortName)}</div>
+                <div class="refer-price-row">
+                  <div class="refer-price">${escapeHtml(priceText)}</div>
+                  ${priceMeta ? `<div class="refer-price-note">${escapeHtml(priceMeta)}</div>` : ""}
+                </div>
+                <div class="refer-meta">${escapeHtml(locationText)}</div>
+              </div>
+              <div class="refer-chip-row">
+                ${featureBits
+                  .map((bit) => `<span class="refer-chip">${escapeHtml(bit)}</span>`)
+                  .join("")}
+              </div>
+            </div>
         </div>`;
     })
     .join("");
@@ -1348,6 +1684,939 @@ function renderRefer(refer) {
 }
 
 // ── Biểu đồ ────────────────────────────────────────────────────────
+function renderCompareToolbar(top10 = getTop10ComparePool()) {
+  const toolbar = document.getElementById("compare-toolbar");
+  const copy = document.getElementById("compare-toolbar-copy");
+  const clearBtn = document.getElementById("compare-clear-btn");
+  const runBtn = document.getElementById("compare-run-btn");
+  const llmEnabled = document.getElementById("llm-enabled")?.checked ?? true;
+  if (!toolbar || !copy || !clearBtn || !runBtn) return;
+
+  if (!top10?.length) {
+    toolbar.style.display = "none";
+    clearBtn.disabled = true;
+    runBtn.disabled = true;
+    return;
+  }
+
+  toolbar.style.display = "";
+  clearBtn.disabled = compareSelection.length === 0;
+  runBtn.disabled =
+    !llmEnabled || compareSelection.length < 2 || compareSelection.length > 4;
+
+  if (!llmEnabled) {
+    copy.textContent = "Bật góc nhìn AI để dùng chế độ so sánh này.";
+  } else if (compareSelection.length === 0) {
+    copy.textContent = "Chọn 2-4 căn trong Top 10 để so sánh bằng AI.";
+  } else if (compareSelection.length === 1) {
+    copy.textContent = "Đã chọn 1/4 căn. Chọn thêm ít nhất 1 căn nữa để bắt đầu so sánh.";
+  } else {
+    copy.textContent = `Đã chọn ${compareSelection.length}/4 căn. Có thể mở modal so sánh ngay.`;
+  }
+}
+
+function getTop10ComparePool() {
+  return lastRes?.ranked?.slice(0, 10) || [];
+}
+
+function getCompareItems() {
+  const selectedIds = new Set(compareSelection);
+  return getTop10ComparePool().filter((item) => selectedIds.has(item.canho.id));
+}
+
+function toggleCompareSelection(canhoId) {
+  const existingIndex = compareSelection.indexOf(canhoId);
+  if (existingIndex >= 0) {
+    compareSelection.splice(existingIndex, 1);
+  } else {
+    if (compareSelection.length >= 4) {
+      showErr("Bạn chỉ có thể so sánh tối đa 4 căn trong một lần.");
+      return;
+    }
+    compareSelection.push(canhoId);
+  }
+
+  compareResult = null;
+  renderTop10(getTop10ComparePool());
+  renderCompareToolbar();
+}
+
+function clearCompareSelection() {
+  compareSelection = [];
+  compareResult = null;
+  renderTop10(getTop10ComparePool());
+  renderCompareToolbar();
+}
+
+async function runCompareSelection() {
+  if (!(document.getElementById("llm-enabled")?.checked ?? true)) {
+    showErr("Hãy bật góc nhìn AI trước khi so sánh.");
+    return;
+  }
+
+  const selectedItems = getCompareItems();
+  if (selectedItems.length < 2 || selectedItems.length > 4) {
+    showErr("Hãy chọn từ 2 đến 4 căn trong Top 10 để so sánh.");
+    return;
+  }
+
+  showLoad("Đang so sánh các căn hộ đã chọn...");
+  showErr("");
+  try {
+    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const response = await fetch(API + "/ahp/compare", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        session_id: lastRes.session_id,
+        canho_ids: selectedItems.map((item) => item.canho.id),
+        llm_model: llmModel,
+      }),
+    });
+
+    if (!response.ok) {
+      const payload = await response
+        .json()
+        .catch(() => ({ detail: "Lỗi không xác định" }));
+      throw new Error(payload?.detail?.msg || payload?.detail || `HTTP ${response.status}`);
+    }
+
+    compareResult = await response.json();
+    hideLoad();
+    openCompareModal(document.getElementById("compare-run-btn"));
+  } catch (error) {
+    hideLoad();
+    showErr("Lỗi: " + error.message);
+  }
+}
+
+function destroyCompareCharts() {
+  if (compareSupportChart) {
+    compareSupportChart.destroy();
+    compareSupportChart = null;
+  }
+  if (compareRadarChart) {
+    compareRadarChart.destroy();
+    compareRadarChart = null;
+  }
+}
+
+function getCompareInsight(canhoId) {
+  return compareResult?.apartments?.find((item) => item.canho_id === canhoId) || null;
+}
+
+function getCompareDisplayName(item) {
+  return (
+    item?.canho?.title?.trim() ||
+    getApartmentProjectName(item?.canho) ||
+    `Căn #${item?.rank ?? "?"}`
+  );
+}
+
+function truncateCompareText(text, maxLength = 72) {
+  const value = String(text || "").trim();
+  if (!value) return "";
+  if (value.length <= maxLength) return value;
+
+  const sliced = value.slice(0, maxLength);
+  const cutAt = Math.max(sliced.lastIndexOf(" "), sliced.lastIndexOf(","));
+  return `${(cutAt > maxLength * 0.55 ? sliced.slice(0, cutAt) : sliced).trim()}...`;
+}
+
+function getCompareShortName(item, maxLength = 58) {
+  return truncateCompareText(getCompareDisplayName(item), maxLength);
+}
+
+function getCompareCompactName(item, maxLength = 42) {
+  const ch = item?.canho || {};
+  const projectName = (
+    getApartmentProjectName(ch) ||
+    ch?.du_an ||
+    ""
+  )
+    .replace(/^chung cư\s*/i, "")
+    .replace(/^căn hộ\s*/i, "")
+    .trim();
+
+  const bedrooms = ch?.so_phong_ngu ? `${ch.so_phong_ngu}PN` : "";
+  const compactLabel = [bedrooms, projectName].filter(Boolean).join(" ");
+  if (compactLabel) {
+    return truncateCompareText(`Căn ${compactLabel}`, maxLength);
+  }
+
+  const cleanedTitle = getCompareDisplayName(item)
+    .replace(/^duy nhất,\s*/i, "")
+    .replace(/^bán\s*/i, "")
+    .replace(/^căn hộ\s*/i, "")
+    .replace(/^căn\s*/i, "Căn ")
+    .trim();
+
+  return truncateCompareText(cleanedTitle || getCompareDisplayName(item), maxLength);
+}
+
+function getCompareLivingHeadline(items, analysis) {
+  const llmWinnerEntry = getCompareLlmWinnerEntry(items, analysis);
+  const ahpWinner = getCompareAhpWinner(items);
+  const target = llmWinnerEntry?.item || ahpWinner;
+  if (!target) return "Nhận định cho nhu cầu ở thực";
+  return `${getCompareCompactName(target, 34)} phù hợp để ở hơn`;
+}
+
+function getCompareLivingBrief(items, analysis) {
+  const baseText =
+    analysis?.winner_reason ||
+    analysis?.summary ||
+    analysis?.error ||
+    "Tạm thời chưa đủ dữ liệu AI. Hãy ưu tiên nhìn vào pháp lý, không gian sống và tiện ích phục vụ ở thực.";
+
+  return truncateCompareText(baseText, 190);
+}
+
+function getComparePriceText(ch) {
+  return ch?.gia_ty ? `${ch.gia_ty} tỷ` : "Chưa có giá";
+}
+
+function getComparePriceMeta(ch) {
+  return ch?.gia_per_m2 ? `${ch.gia_per_m2} tr/m²` : "Chưa có giá/m²";
+}
+
+function getCompareAhpWinner(items) {
+  return [...items].sort((left, right) => left.rank - right.rank)[0] || null;
+}
+
+function getCompareAhpRunnerUp(items) {
+  return [...items].sort((left, right) => left.rank - right.rank)[1] || null;
+}
+
+function getCompareLlmWinnerEntry(items, analysis) {
+  if (analysis?.status !== "success") return null;
+
+  const entries = items
+    .map((item) => ({
+      item,
+      insight:
+        analysis?.apartments?.find((entry) => entry.canho_id === item.canho.id) || null,
+    }))
+    .filter((entry) => entry.insight);
+
+  if (!entries.length) return null;
+
+  return (
+    entries.find((entry) => entry.item.canho.id === analysis.winner_id) ||
+    [...entries].sort(
+      (left, right) =>
+        (right.insight?.llm_support_score ?? 0) -
+        (left.insight?.llm_support_score ?? 0),
+    )[0]
+  );
+}
+
+function getCompareAgreementState(items, analysis) {
+  const ahpWinner = getCompareAhpWinner(items);
+  const llmWinnerEntry = getCompareLlmWinnerEntry(items, analysis);
+
+  if (!ahpWinner || analysis?.status !== "success" || !llmWinnerEntry) {
+    return {
+      tone: "limited",
+      label: "AI chưa sẵn sàng để đối chiếu",
+      body: "Bạn vẫn có thể dựa vào xếp hạng AHP và thông tin thương mại bên dưới để chốt shortlist trước.",
+    };
+  }
+
+  if (ahpWinner.canho.id === llmWinnerEntry.item.canho.id) {
+    return {
+      tone: "aligned",
+      label: `AHP + AI cùng nghiêng về ${getCompareDisplayName(ahpWinner)}`,
+      body: "Hai góc nhìn đang đồng thuận. Đây là căn nên ưu tiên kiểm tra thực địa trước.",
+    };
+  }
+
+  return {
+    tone: "diverged",
+    label: "AHP và AI đang khác góc nhìn",
+    body: `AHP nghiêng về ${getCompareDisplayName(ahpWinner)}, trong khi AI đánh giá cao ${getCompareDisplayName(llmWinnerEntry.item)}.`,
+  };
+}
+
+function getCompareSnapshotHighlights(item, insight) {
+  const highlights = [];
+
+  if (insight?.verdict) highlights.push(insight.verdict);
+  if (highlights.length < 2 && insight?.strengths?.[0]) {
+    highlights.push(insight.strengths[0]);
+  }
+  if (highlights.length < 2 && insight?.risks?.[0]) {
+    highlights.push(`Lưu ý: ${insight.risks[0]}`);
+  }
+  if (highlights.length < 2 && item?.canho?.phap_ly) {
+    highlights.push(`Pháp lý: ${item.canho.phap_ly}`);
+  }
+  if (highlights.length < 2 && item?.canho?.noi_that) {
+    highlights.push(`Nội thất: ${item.canho.noi_that}`);
+  }
+  if (!highlights.length) {
+    highlights.push("Chưa có thêm ghi chú nổi bật cho căn này.");
+  }
+
+  return highlights.slice(0, 2);
+}
+
+function toggleCompareDetail(canhoId) {
+  const body = document.getElementById("compare-modal-body");
+  const detail = body?.querySelector(`[data-compare-detail="${canhoId}"]`);
+  const button = body?.querySelector(`[data-compare-expand="${canhoId}"]`);
+  if (!detail || !button) return;
+
+  const isHidden = detail.hasAttribute("hidden");
+  if (isHidden) {
+    detail.removeAttribute("hidden");
+  } else {
+    detail.setAttribute("hidden", "");
+  }
+
+  button.setAttribute("aria-expanded", String(isHidden));
+  button.classList.toggle("is-open", isHidden);
+  const label = button.querySelector("[data-expand-label]");
+  if (label) {
+    label.textContent = isHidden
+      ? "Thu gọn phân tích"
+      : "Xem phân tích chi tiết";
+  }
+  const icon = button.querySelector("[data-expand-icon]");
+  if (icon) {
+    icon.textContent = isHidden ? "−" : "+";
+  }
+}
+
+function openCompareModal(triggerEl) {
+  const modal = document.getElementById("compare-modal");
+  const body = document.getElementById("compare-modal-body");
+  const title = document.getElementById("compare-modal-ttl");
+  const items = getCompareItems();
+  if (!modal || !body || !title || !items.length || !compareResult) return;
+
+  lastCompareTrigger = triggerEl || document.activeElement;
+  title.textContent = `So sánh ${items.length} căn hộ`;
+  body.innerHTML = buildCompareModalMarkup(items, compareResult);
+  modal.classList.add("open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  modal.querySelector(".modal")?.scrollTo({ top: 0, behavior: "auto" });
+  renderCompareModalCharts(items, compareResult);
+}
+
+function closeCompareModal(skipFocus = false) {
+  const modal = document.getElementById("compare-modal");
+  if (!modal) return;
+
+  modal.classList.remove("open");
+  modal.setAttribute("aria-hidden", "true");
+  destroyCompareCharts();
+  if (!document.getElementById("modal")?.classList.contains("open")) {
+    document.body.style.overflow = "";
+  }
+  if (!skipFocus && lastCompareTrigger && typeof lastCompareTrigger.focus === "function") {
+    lastCompareTrigger.focus();
+  }
+}
+
+function buildCompareModalMarkup(items, analysis) {
+  const ahpWinner = getCompareAhpWinner(items);
+  const ahpRunnerUp = getCompareAhpRunnerUp(items);
+  const llmWinnerEntry = getCompareLlmWinnerEntry(items, analysis);
+  const gapPct =
+    ahpWinner && ahpRunnerUp
+      ? ((Number(ahpWinner.ahp_score) - Number(ahpRunnerUp.ahp_score)) * 100).toFixed(2)
+      : "0.00";
+  const insights = items.map((item) => ({
+    item,
+    insight: analysis?.apartments?.find((entry) => entry.canho_id === item.canho.id) || null,
+  }));
+  const tradeoffs =
+    analysis.status === "success" && analysis.tradeoffs?.length
+      ? analysis.tradeoffs
+      : [
+          analysis.status === "success"
+            ? "AI chưa trả trade-off cụ thể cho nhóm căn này."
+            : "AI tạm thời chưa sẵn sàng. Hãy ưu tiên đối chiếu AHP, giá, vị trí và pháp lý trước.",
+        ];
+  const compactTradeoffs = tradeoffs
+    .slice(0, 3)
+    .map((entry) => truncateCompareText(entry, 120));
+  const ahpWinnerShort = ahpWinner ? getCompareShortName(ahpWinner, 42) : "Chưa xác định";
+  const llmWinnerShort = llmWinnerEntry
+    ? getCompareShortName(llmWinnerEntry.item, 42)
+    : "AI chưa kết luận";
+  const livingHeadline = getCompareLivingHeadline(items, analysis);
+  const livingBrief = getCompareLivingBrief(items, analysis);
+  const tradeoffLead =
+    compactTradeoffs.length > 0
+      ? "Đây là những điểm nên cân nhắc kỹ trước khi chốt căn để ở lâu dài."
+      : "Hiện chưa có thêm lưu ý nổi bật cho nhu cầu ở thực.";
+
+  const apartmentCards = insights
+    .map(({ item, insight }) => {
+      const isAhpWinner = ahpWinner?.canho?.id === item.canho.id;
+      const isLlmWinner = llmWinnerEntry?.item?.canho?.id === item.canho.id;
+      const isAgreedWinner = isAhpWinner && isLlmWinner;
+      const detailId = `compare-detail-${item.canho.id}`;
+      const location = getApartmentLocation(item.canho) || item.canho.du_an || "Chưa có vị trí";
+      const highlights = getCompareSnapshotHighlights(item, insight);
+      const badgeText = isAgreedWinner
+        ? "AHP + AI đồng thuận"
+        : isAhpWinner
+          ? "AHP dẫn đầu"
+          : isLlmWinner
+            ? "AI chọn"
+            : "";
+      const fullName = getCompareDisplayName(item);
+      const shortName = getCompareShortName(item);
+      const aiScore = insight ? Math.round(insight.llm_support_score) : "—";
+      const ahpScore = (Number(item.ahp_score || 0) * 100).toFixed(1);
+
+      return `
+        <article class="compare-apartment-card ${isAgreedWinner ? "is-agreed-winner" : isLlmWinner ? "is-winner" : ""}">
+          <div class="compare-apartment-topline">
+            <div class="compare-apartment-badges">
+              ${badgeText ? `<span class="compare-inline-chip ${isAgreedWinner ? "compare-inline-chip--strong" : isLlmWinner ? "compare-inline-chip--accent" : ""}">${badgeText}</span>` : ""}
+            </div>
+            <button
+              type="button"
+              class="compare-expand-toggle"
+              data-compare-expand="${item.canho.id}"
+              aria-expanded="false"
+              aria-controls="${detailId}">
+              <span data-expand-label>Xem phân tích chi tiết</span>
+              <span class="compare-expand-icon" data-expand-icon aria-hidden="true">+</span>
+            </button>
+          </div>
+          <div class="compare-apartment-head">
+            <div>
+              <h3 class="compare-apartment-title compare-name-clamp" title="${escapeHtml(fullName)}">${escapeHtml(shortName)}</h3>
+              <p class="compare-apartment-sub">${escapeHtml(location)}</p>
+            </div>
+          </div>
+          <div class="compare-winner-strip">
+            <div class="compare-winner-metric">
+              <span class="compare-winner-label">AHP</span>
+              <strong>#${item.rank}</strong>
+              <span>${ahpScore}/100</span>
+            </div>
+            <div class="compare-winner-metric">
+              <span class="compare-winner-label">AI</span>
+              <strong>${aiScore}</strong>
+              <span>${insight ? "điểm hỗ trợ" : "chưa sẵn sàng"}</span>
+            </div>
+          </div>
+          <div class="compare-snapshot-meta">
+            <span class="compare-meta-chip">${escapeHtml(getComparePriceText(item.canho))}</span>
+            <span class="compare-meta-chip">${escapeHtml(getComparePriceMeta(item.canho))}</span>
+            <span class="compare-meta-chip compare-meta-chip--muted">${escapeHtml(location)}</span>
+          </div>
+          <ul class="compare-snapshot-list">
+            ${highlights.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}
+          </ul>
+          <div class="compare-apartment-detail" id="${detailId}" data-compare-detail="${item.canho.id}" hidden>
+            ${
+              insight
+                ? `
+                  <div class="compare-detail-grid">
+                    <div class="compare-detail-card">
+                      <div class="compare-section-title">Điểm cộng để ở</div>
+                      <ul class="compare-meta-list">
+                        ${(insight.strengths.length ? insight.strengths : ["Chưa có ghi chú nổi bật."])
+                          .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                          .join("")}
+                      </ul>
+                    </div>
+                    <div class="compare-detail-card">
+                      <div class="compare-section-title">Điểm yếu / rủi ro</div>
+                      <ul class="compare-meta-list">
+                        ${(insight.risks.length ? insight.risks : ["Chưa có cảnh báo bổ sung."])
+                          .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                          .join("")}
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="compare-section-title compare-section-title--detail">8 tiêu chí AI</div>
+                  <div class="compare-criteria-grid">
+                    ${CRIT.map((criterion) => {
+                      const score = Math.round(insight.criterion_scores?.[criterion.id] ?? 0);
+                      const tone = getCompareCriterionTone(
+                        insights.filter((entry) => entry.insight),
+                        criterion.id,
+                        score,
+                      );
+                      const toneLabel =
+                        tone === "high" ? "Nổi trội" : tone === "low" ? "Yếu hơn" : "Trung tính";
+
+                      return `
+                        <div class="compare-criterion-pill ${tone === "high" ? "is-high" : tone === "low" ? "is-low" : ""}">
+                          <div class="compare-criterion-label">
+                            <span>${escapeHtml(criterion.name)}</span>
+                            <span class="compare-criterion-note">${toneLabel}</span>
+                          </div>
+                          <div class="compare-criterion-score">${score}/100</div>
+                        </div>`;
+                    }).join("")}
+                  </div>
+                `
+                : `
+                  <div class="compare-detail-empty">
+                    <div class="compare-section-title">AI chưa sẵn sàng</div>
+                    <p class="compare-warning-copy">
+                      Hãy tạm ưu tiên pháp lý, không gian sống và tiện ích phục vụ sinh hoạt hằng ngày của căn này trong khi chờ phản hồi từ AI.
+                    </p>
+                  </div>
+                `
+            }
+          </div>
+        </article>`;
+    })
+    .join("");
+
+  return `
+    <section class="compare-living-brief ${analysis.status !== "success" ? "is-warning" : ""}">
+      <div class="compare-living-label">Nhận định cho nhu cầu ở thực</div>
+      <h2 class="compare-living-title">${escapeHtml(livingHeadline)}</h2>
+      <p class="compare-living-copy">${escapeHtml(livingBrief)}</p>
+    </section>
+
+    <article class="compare-summary-card compare-summary-card--tradeoff compare-summary-card--priority">
+      <div class="compare-summary-title">Điểm cần cân nhắc khi chọn để ở</div>
+      <p class="compare-tradeoff-lead">${escapeHtml(tradeoffLead)}</p>
+      <ul class="compare-tradeoff-list">
+        ${compactTradeoffs.map((entry) => `<li>${escapeHtml(entry)}</li>`).join("")}
+      </ul>
+    </article>
+
+    <div class="compare-decision-grid compare-decision-grid--after-brief">
+      <article class="compare-decision-card compare-decision-card--ahp">
+        <div class="compare-summary-title">Kết luận AHP</div>
+        <div class="compare-decision-name compare-name-clamp" title="${escapeHtml(getCompareDisplayName(ahpWinner))}">${escapeHtml(ahpWinnerShort)}</div>
+        <div class="compare-decision-metrics">
+          <span class="compare-decision-metric">Hạng #${ahpWinner?.rank ?? "?"}</span>
+          <span class="compare-decision-metric">${((Number(ahpWinner?.ahp_score || 0)) * 100).toFixed(1)}/100</span>
+        </div>
+        <p class="compare-summary-copy">
+          ${
+            ahpRunnerUp
+              ? `Đang dẫn đầu với chênh lệch ${gapPct}% so với lựa chọn kế tiếp.`
+              : "AHP đang chỉ ra một lựa chọn dẫn đầu trong nhóm căn đang xem."
+          }
+        </p>
+      </article>
+      <article class="compare-decision-card compare-decision-card--llm ${analysis.status !== "success" ? "is-muted" : ""}">
+        <div class="compare-summary-title">Kết luận AI</div>
+        <div class="compare-decision-name compare-name-clamp" ${llmWinnerEntry ? `title="${escapeHtml(getCompareDisplayName(llmWinnerEntry.item))}"` : ""}>
+          ${
+            llmWinnerEntry
+              ? escapeHtml(llmWinnerShort)
+              : "AI cần thêm dữ liệu để đánh giá rõ hơn"
+          }
+        </div>
+        <div class="compare-decision-metrics">
+          <span class="compare-decision-metric">
+            ${
+              llmWinnerEntry
+                ? `Phù hợp để ở ${Math.round(llmWinnerEntry.insight.llm_support_score)}/100`
+                : "Cần thêm dữ liệu"
+            }
+          </span>
+        </div>
+        <p class="compare-summary-copy">
+          ${escapeHtml(
+            truncateCompareText(
+            analysis.status === "success"
+              ? analysis.winner_reason || analysis.summary || "AI chưa có đủ dữ liệu để giải thích rõ hơn ở bước này."
+              : analysis.error || "Bạn vẫn có thể dựa vào kết quả AHP để tiếp tục shortlist.",
+            150,
+            ),
+          )}
+        </p>
+      </article>
+    </div>
+
+    <section class="compare-deep-dive">
+      <div class="compare-deep-head">
+        <div>
+          <div class="compare-summary-title">Snapshot từng căn</div>
+          <p class="compare-warning-copy">Mỗi card ưu tiên phần quyết định trước, phần chi tiết có thể mở khi cần.</p>
+        </div>
+      </div>
+      <div class="compare-apartment-grid">${apartmentCards}</div>
+    </section>
+
+    <section class="compare-deep-dive">
+      <div class="compare-deep-head">
+        <div>
+          <div class="compare-summary-title">Dữ liệu chi tiết</div>
+          <p class="compare-warning-copy">
+            ${
+              analysis.status === "success"
+                ? "Xem biểu đồ để kiểm tra nhanh độ chênh giữa các căn sau khi đã đọc kết luận."
+                : "AI chưa trả dữ liệu biểu đồ. Hãy dùng phần snapshot phía trên để đọc nhanh theo AHP."
+            }
+          </p>
+        </div>
+      </div>
+      ${
+        analysis.status === "success"
+          ? `
+            <div class="compare-chart-grid">
+              <article class="compare-chart-card">
+                <div class="compare-section-title">So sánh lực hỗ trợ của AI</div>
+                <canvas id="compare-support-chart" height="220"></canvas>
+              </article>
+              <article class="compare-chart-card">
+                <div class="compare-section-title">Chân dung 8 tiêu chí theo AI</div>
+                <p class="compare-chart-hint">Nhấn vào tên căn trong chú thích bên dưới để ẩn hoặc hiện trên biểu đồ.</p>
+                <canvas id="compare-radar-chart" height="220"></canvas>
+              </article>
+            </div>
+          `
+          : `
+            <article class="compare-chart-card compare-chart-card--placeholder">
+              <div class="compare-section-title">Biểu đồ chưa khả dụng</div>
+              <p class="compare-warning-copy">
+                Phản hồi AI chưa hoàn tất nên chưa thể dựng chart. AHP vẫn là trục quyết định chính cho lần so sánh này.
+              </p>
+            </article>
+          `
+      }
+    </section>`;
+}
+
+function getCompareCriterionTone(entries, criterionId, targetScore) {
+  const values = entries.map((entry) => Math.round(entry.insight.criterion_scores?.[criterionId] ?? 0));
+  if (!values.length) return "neutral";
+
+  const max = Math.max(...values);
+  const min = Math.min(...values);
+  if (max === min) return "neutral";
+  if (targetScore === max) return "high";
+  if (targetScore === min) return "low";
+  return "neutral";
+}
+
+function renderCompareModalCharts(items, analysis) {
+  destroyCompareCharts();
+  if (analysis.status !== "success") return;
+
+  const insights = items
+    .map((item) => ({ item, insight: getCompareInsight(item.canho.id) }))
+    .filter((entry) => entry.insight);
+  if (!insights.length) return;
+
+  const labels = insights.map(({ item }) => getCompareShortName(item, 26));
+  const winnerId = analysis.winner_id;
+  const supportCanvas = document.getElementById("compare-support-chart");
+  const radarCanvas = document.getElementById("compare-radar-chart");
+  if (!supportCanvas || !radarCanvas) return;
+
+  compareSupportChart = new Chart(supportCanvas.getContext("2d"), {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Điểm hỗ trợ AI",
+          data: insights.map(({ insight }) => insight.llm_support_score),
+          backgroundColor: insights.map(({ item }) =>
+            item.canho.id === winnerId ? "#c8922a" : "#1a3a5c",
+          ),
+          borderRadius: 8,
+          borderWidth: 0,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: { callback: (value) => `${value}` },
+        },
+        x: {
+          ticks: {
+            maxRotation: 0,
+            minRotation: 0,
+            autoSkip: false,
+            font: { size: 11 },
+          },
+          grid: { display: false },
+        },
+      },
+    },
+  });
+
+  const palette = [
+    { border: "#1a3a5c", fill: "rgba(26, 58, 92, .12)" },
+    { border: "#4f7d57", fill: "rgba(79, 125, 87, .12)" },
+    { border: "#c8922a", fill: "rgba(200, 146, 42, .12)" },
+    { border: "#b34d32", fill: "rgba(179, 77, 50, .12)" },
+  ];
+
+  compareRadarChart = new Chart(radarCanvas.getContext("2d"), {
+    type: "radar",
+    data: {
+      labels: CRIT.map((criterion) => criterion.name),
+      datasets: insights.map(({ item, insight }, index) => ({
+        label: getCompareShortName(item, 28),
+        data: CRIT.map((criterion) => insight.criterion_scores?.[criterion.id] ?? 0),
+        borderColor: palette[index % palette.length].border,
+        backgroundColor: palette[index % palette.length].fill,
+        pointBackgroundColor: palette[index % palette.length].border,
+        pointRadius: 3,
+        fill: true,
+      })),
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: {
+            usePointStyle: true,
+            boxWidth: 12,
+            padding: 12,
+            font: { size: 11 },
+          },
+        },
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: 100,
+          ticks: { stepSize: 20 },
+        },
+      },
+    },
+  });
+}
+function getLlmApartmentInsight(item, analysis = lastRes?.llm_analysis) {
+  if (!analysis?.apartments?.length || !item?.canho?.id) {
+    return null;
+  }
+
+  return (
+    analysis.apartments.find((entry) => entry.canho_id === item.canho.id) ||
+    analysis.apartments.find((entry) => entry.rank === item.rank) ||
+    null
+  );
+}
+
+function renderLlmInsights(data, top10) {
+  const section = document.getElementById("llm-insight-section");
+  const body = document.getElementById("llm-insight-body");
+  if (!section || !body) return;
+
+  const analysis = data?.llm_analysis;
+  if (!analysis) {
+    section.style.display = "none";
+    body.innerHTML = "";
+    return;
+  }
+
+  section.style.display = "";
+
+  const modelLabel = escapeHtml(analysis.model || DEFAULT_LLM_MODEL_FALLBACK);
+  if (analysis.status !== "success") {
+    body.innerHTML = `
+      <div class="llm-status-card is-warning">
+        <div class="llm-status-row">
+          <span class="llm-badge llm-badge--warn">${analysis.status === "skipped" ? "LLM tạm bỏ qua" : "LLM chưa sẵn sàng"}</span>
+          <span class="llm-model-chip">${modelLabel}</span>
+        </div>
+        <p class="llm-error-copy">${escapeHtml(
+          analysis.error || "Không có dữ liệu phân tích từ LLM cho phiên này.",
+        )}</p>
+      </div>`;
+    return;
+  }
+
+  const apartmentCards = top10
+    .map((item) => {
+      const insight = getLlmApartmentInsight(item, analysis);
+      if (!insight) return "";
+
+      return `
+        <article class="llm-apartment-card">
+          <div class="llm-apartment-head">
+            <span class="llm-rank-chip">#${insight.rank}</span>
+            <div class="llm-support-score">
+              <strong>${Math.round(insight.llm_support_score)}</strong>
+              <span>điểm hỗ trợ</span>
+            </div>
+          </div>
+          <div class="llm-card-title">${escapeHtml(item?.canho?.title || item?.canho?.du_an || `Căn hộ #${insight.rank}`)}</div>
+          <p class="llm-summary-note">${escapeHtml(insight.verdict)}</p>
+          <div class="llm-apartment-meta">
+            <div>
+              <div class="llm-section-title">Điểm mạnh</div>
+              <ul class="llm-list">
+                ${(insight.strengths.length ? insight.strengths : ["Chưa có ghi chú nổi bật."])
+                  .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                  .join("")}
+              </ul>
+            </div>
+            <div>
+              <div class="llm-section-title">Rủi ro / cần kiểm tra</div>
+              <ul class="llm-list">
+                ${(insight.risks.length ? insight.risks : ["Không có cảnh báo bổ sung từ LLM."])
+                  .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                  .join("")}
+              </ul>
+            </div>
+          </div>
+        </article>`;
+    })
+    .filter(Boolean)
+    .join("");
+
+  body.innerHTML = `
+    <div class="llm-status-card is-success">
+      <div class="llm-status-row">
+        <span class="llm-badge">LLM hỗ trợ đang hoạt động</span>
+        <span class="llm-model-chip">${modelLabel}</span>
+      </div>
+      <div class="llm-summary-grid">
+        <article class="llm-summary-card">
+          <div class="llm-summary-title">Tóm tắt chung</div>
+          <p class="llm-summary-copy">${escapeHtml(analysis.summary || "LLM chưa trả tóm tắt tổng quan.")}</p>
+        </article>
+        <article class="llm-summary-card">
+          <div class="llm-summary-title">Vì sao căn đứng đầu đang dẫn trước</div>
+          <p class="llm-summary-copy">${escapeHtml(analysis.winner_reason || "LLM chưa trả lời giải thích cụ thể.")}</p>
+        </article>
+      </div>
+      <article class="llm-tradeoff-card">
+        <div class="llm-card-title">Trade-off cần lưu ý</div>
+        <ul class="llm-tradeoff-list">
+          ${(analysis.tradeoffs.length
+            ? analysis.tradeoffs
+            : ["Phân tích LLM chưa trả trade-off cụ thể cho phiên này."])
+            .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+            .join("")}
+        </ul>
+      </article>
+      <span class="llm-badge llm-badge--support">Đánh giá hỗ trợ, không thay thế AHP</span>
+    </div>
+    <div class="llm-apartment-grid">${apartmentCards}</div>`;
+}
+
+function renderLlmCharts(data, top10) {
+  const chartGrid = document.getElementById("llm-charts-grid");
+  const analysis = data?.llm_analysis;
+
+  if (chLlmTop10) {
+    chLlmTop10.destroy();
+    chLlmTop10 = null;
+  }
+  if (chLlmRadar) {
+    chLlmRadar.destroy();
+    chLlmRadar = null;
+  }
+
+  if (!chartGrid) return;
+
+  if (analysis?.status !== "success" || !analysis.apartments?.length) {
+    chartGrid.style.display = "none";
+    return;
+  }
+
+  chartGrid.style.display = "";
+
+  const apartmentLabels = top10.map((item, index) => {
+    const apartmentTitle = item?.canho?.title?.trim();
+    const projectName = item?.canho?.du_an?.trim();
+    return apartmentTitle || projectName || `#${item?.rank ?? index + 1}`;
+  });
+  const insightSeries = top10
+    .map((item) => getLlmApartmentInsight(item, analysis))
+    .filter(Boolean);
+  const leadInsight = insightSeries[0];
+
+  chLlmTop10 = new Chart(document.getElementById("chart-llm-top10").getContext("2d"), {
+    type: "bar",
+    data: {
+      labels: apartmentLabels.slice(0, insightSeries.length),
+      datasets: [
+        {
+          label: "Điểm hỗ trợ LLM",
+          data: insightSeries.map((entry) => entry.llm_support_score),
+          backgroundColor: insightSeries.map((_, index) =>
+            index === 0 ? "#c8922a" : index < 3 ? "#1a3a5c" : "#4f7d57",
+          ),
+          borderRadius: 5,
+          borderWidth: 0,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          ticks: { callback: (value) => `${value}`, color: "#718096" },
+          grid: { color: "#f0ede8" },
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: "#718096", maxRotation: 0, minRotation: 0 },
+        },
+      },
+    },
+  });
+
+  chLlmRadar = new Chart(document.getElementById("chart-llm-radar").getContext("2d"), {
+    type: "radar",
+    data: {
+      labels: CRIT.map((criterion) => criterion.name),
+      datasets: [
+        {
+          label: `LLM · #${leadInsight?.rank ?? 1}`,
+          data: CRIT.map((criterion) => leadInsight?.criterion_scores?.[criterion.id] ?? 0),
+          fill: true,
+          backgroundColor: "rgba(200, 146, 42, 0.18)",
+          borderColor: "#c8922a",
+          pointBackgroundColor: "#1a3a5c",
+          pointBorderColor: "#fff",
+          pointRadius: 3,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          labels: { color: "#4a5568" },
+        },
+      },
+      scales: {
+        r: {
+          min: 0,
+          max: 100,
+          ticks: {
+            showLabelBackdrop: false,
+            color: "#718096",
+            backdropColor: "transparent",
+          },
+          grid: { color: "rgba(15, 39, 68, .1)" },
+          angleLines: { color: "rgba(15, 39, 68, .08)" },
+          pointLabels: { color: "#4a5568", font: { size: 11 } },
+        },
+      },
+    },
+  });
+}
+
 function renderCharts(weights, top10) {
   const criterionLabels = CRIT.map((c) => c.name.split(" "));
   const getTop10TooltipTitle = (index) => {
@@ -1367,7 +2636,7 @@ function renderCharts(weights, top10) {
     chTop10 = null;
   }
 
-  // Chart 1: Trọng số tiêu chí
+  // Chart 1: Trá»ng sá»‘ tiÃªu chÃ­
   chW = new Chart(document.getElementById("chart-w").getContext("2d"), {
     type: "bar",
     data: {
@@ -1409,7 +2678,7 @@ function renderCharts(weights, top10) {
     },
   });
 
-  // Chart 2: Điểm Top 10 (nằm ngang, dễ đọc)
+  // Chart 2: Äiá»ƒm Top 10 (náº±m ngang, dá»… Ä‘á»c)
   chTop10 = new Chart(document.getElementById("chart-top10").getContext("2d"), {
     type: "bar",
     data: {
@@ -1454,12 +2723,12 @@ function renderCharts(weights, top10) {
   });
 }
 
-// ════════════════════════════════════════════════════════════════
-// MA TRẬN SO SÁNH CẶP GIỮA CÁC PHƯƠNG ÁN
-// Theo lý thuyết AHP (tài liệu Saaty): sau khi có trọng số tiêu chí,
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// MA TRáº¬N SO SÃNH Cáº¶P GIá»®A CÃC PHÆ¯Æ NG ÃN
+// Theo lÃ½ thuyáº¿t AHP (tÃ i liá»‡u Saaty): sau khi cÃ³ trá»ng sá»‘ tiÃªu chÃ­,
 // ta tính ma trận so sánh cặp phương án cho từng tiêu chí rồi tổng hợp.
 // Ở đây dùng điểm AHP tổng hợp: a[i][j] = score[i] / score[j]
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function renderAltMatrix(top10) {
   const section = document.getElementById("alt-matrix-section");
   const wrap = document.getElementById("alt-matrix-wrap");
@@ -1485,7 +2754,7 @@ function renderAltMatrix(top10) {
   const scores = top10.map((item) => item.ahp_score); // điểm tổng hợp từ backend
   const names = top10.map((item) => {
     const t = item.canho.title || "";
-    // Rút gọn tên: lấy tên dự án hoặc 25 ký tự đầu
+    // RÃºt gá»n tÃªn: láº¥y tÃªn dá»± Ã¡n hoáº·c 25 kÃ½ tá»± Ä‘áº§u
     const du_an = getApartmentProjectName(item.canho);
     if (du_an && !du_an.toLowerCase().includes("không thuộc")) {
       return {
@@ -1504,7 +2773,7 @@ function renderAltMatrix(top10) {
     Array.from({ length: n }, (_, j) => scores[i] / scores[j]),
   );
 
-  // Tính trọng số phương án (cột priority vector)
+  // TÃ­nh trá»ng sá»‘ phÆ°Æ¡ng Ã¡n (cá»™t priority vector)
   // Chuẩn hóa: tổng cột → chia → trung bình hàng (giống bước 2 AHP)
   const colSum = Array(n).fill(0);
   for (let j = 0; j < n; j++)
@@ -1692,9 +2961,9 @@ function toggleAltMatrix() {
   btn.setAttribute("aria-expanded", hidden ? "true" : "false");
 }
 
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // MODAL CHI TIẾT
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function openModal(idx, triggerEl) {
   if (!lastRes) return;
   const item = lastRes.ranked[idx];
@@ -1706,6 +2975,7 @@ function openModal(idx, triggerEl) {
   const priceValue = ch.gia_ty ? `${ch.gia_ty} tỷ` : "—";
   const priceMeta = ch.gia_per_m2 ? `${ch.gia_per_m2} tr/m²` : "Chưa có giá/m²";
   const wMap = {};
+  const llmInsight = getLlmApartmentInsight(item);
   lastFocusedTrigger = triggerEl || document.activeElement;
   lastRes.weights.forEach((w) => {
     wMap[w.id] = w;
@@ -1789,6 +3059,48 @@ function openModal(idx, triggerEl) {
             }).join("")}
         </div>
         ${
+          llmInsight
+            ? `<div class="detail-section-label">${modalLabel("sparkles", "Góc nhìn LLM")}</div>
+        <div class="llm-apartment-card">
+            <div class="llm-apartment-head">
+                <span class="llm-rank-chip">#${llmInsight.rank}</span>
+                <div class="llm-support-score">
+                    <strong>${Math.round(llmInsight.llm_support_score)}</strong>
+                    <span>điểm hỗ trợ</span>
+                </div>
+            </div>
+            <p class="llm-summary-note">${escapeHtml(llmInsight.verdict)}</p>
+            <div class="llm-apartment-meta">
+                <div>
+                    <div class="llm-section-title">Điểm mạnh</div>
+                    <ul class="llm-list">
+                        ${(llmInsight.strengths.length ? llmInsight.strengths : ["Chưa có ghi chú nổi bật."])
+                          .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                          .join("")}
+                    </ul>
+                </div>
+                <div>
+                    <div class="llm-section-title">Rủi ro / cần kiểm tra</div>
+                    <ul class="llm-list">
+                        ${(llmInsight.risks.length ? llmInsight.risks : ["Không có cảnh báo bổ sung từ LLM."])
+                          .map((entry) => `<li>${escapeHtml(entry)}</li>`)
+                          .join("")}
+                    </ul>
+                </div>
+                <div>
+                    <div class="llm-section-title">Điểm 8 tiêu chí</div>
+                    <ul class="llm-list">
+                        ${CRIT.map(
+                          (criterion) =>
+                            `<li>${escapeHtml(criterion.name)}: ${Math.round(llmInsight.criterion_scores?.[criterion.id] ?? 0)}/100</li>`,
+                        ).join("")}
+                    </ul>
+                </div>
+            </div>
+        </div>`
+            : ""
+        }
+        ${
           ch.url
             ? `<div style="margin-top:18px">
             <a href="${ch.url}" target="_blank" class="detail-source-link">
@@ -1824,10 +3136,12 @@ function openModal(idx, triggerEl) {
   }
   modalBody.querySelector(".detail-gallery")?.remove();
   summary.insertAdjacentHTML("afterend", renderDetailGallery(ch));
+  setApartmentChatContext(item);
 
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  renderApartmentChatShell();
   closeButton?.focus();
 }
 
@@ -1838,14 +3152,263 @@ function closeModal() {
   document.body.style.overflow = "";
   modalGalleryImages = [];
   activeModalImageIndex = 0;
+  resetApartmentChatState();
   if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === "function") {
     lastFocusedTrigger.focus();
   }
 }
 
-// ════════════════════════════════════════════════════════════════
+function getApartmentChatDefaultPrompts(item) {
+  const shortName = getCompareCompactName(item, 28) || "Căn này";
+  return [
+    `${shortName} phù hợp để ở ở điểm nào?`,
+    "Đi xem thực tế nên kiểm tra gì trước?",
+    "Điểm cần cân nhắc của căn này là gì?",
+  ];
+}
+
+function getApartmentChatAvailability() {
+  return {
+    backendEnabled: Boolean(apiInfoCache?.llm_enabled),
+    userEnabled: document.getElementById("llm-enabled")?.checked ?? true,
+  };
+}
+
+function getActiveApartmentChatKey() {
+  if (!activeApartmentChatContext) return "";
+  return `${activeApartmentChatContext.sessionId}:${activeApartmentChatContext.canhoId}`;
+}
+
+function setApartmentChatContext(item) {
+  activeApartmentChatContext = {
+    item,
+    sessionId: lastRes?.session_id || null,
+    canhoId: item?.canho?.id || null,
+    shortName: getCompareCompactName(item, 34) || item?.canho?.title || "Căn hộ đang xem",
+    fullName: item?.canho?.title || "Căn hộ đang xem",
+  };
+  apartmentChatHistory = [];
+  apartmentChatOpen = false;
+  apartmentChatLoading = false;
+  apartmentChatSuggestions = getApartmentChatDefaultPrompts(item);
+  renderApartmentChatShell();
+}
+
+function resetApartmentChatState() {
+  activeApartmentChatContext = null;
+  apartmentChatHistory = [];
+  apartmentChatOpen = false;
+  apartmentChatLoading = false;
+  apartmentChatSuggestions = [];
+  renderApartmentChatShell();
+}
+
+function toggleApartmentChat(forceOpen) {
+  if (!activeApartmentChatContext) return;
+  apartmentChatOpen =
+    typeof forceOpen === "boolean" ? forceOpen : !apartmentChatOpen;
+  renderApartmentChatShell();
+  if (apartmentChatOpen) {
+    document.getElementById("detail-chatbot-input")?.focus();
+  }
+}
+
+function renderApartmentChatMessage(message) {
+  const roleClass =
+    message.role === "user"
+      ? "is-user"
+      : message.tone === "error"
+        ? "is-error"
+        : message.tone === "refusal"
+          ? "is-refusal"
+          : "is-assistant";
+  return `
+    <article class="detail-chatbot-message ${roleClass}">
+      <div class="detail-chatbot-message-role">${message.role === "user" ? "Bạn" : "Trợ lý căn hộ"}</div>
+      <div class="detail-chatbot-message-copy">${escapeHtml(message.content || "").replace(/\n/g, "<br>")}</div>
+    </article>`;
+}
+
+function renderApartmentChatShell() {
+  const modal = document.getElementById("modal");
+  const shell = document.getElementById("detail-chatbot-shell");
+  const launcher = document.getElementById("detail-chatbot-launcher");
+  const panel = document.getElementById("detail-chatbot-panel");
+  const title = document.getElementById("detail-chatbot-title");
+  const prompts = document.getElementById("detail-chatbot-prompts");
+  const status = document.getElementById("detail-chatbot-status");
+  const messages = document.getElementById("detail-chatbot-messages");
+  const input = document.getElementById("detail-chatbot-input");
+  const submit = document.getElementById("detail-chatbot-submit");
+  const intro = document.getElementById("detail-chatbot-intro");
+  if (!modal || !shell || !launcher || !panel || !title || !prompts || !status || !messages || !input || !submit || !intro) {
+    return;
+  }
+
+  const modalOpen = modal.classList.contains("open");
+  if (!modalOpen || !activeApartmentChatContext) {
+    shell.hidden = true;
+    launcher.setAttribute("aria-expanded", "false");
+    panel.setAttribute("aria-hidden", "true");
+    panel.classList.remove("is-open");
+    return;
+  }
+
+  const { backendEnabled, userEnabled } = getApartmentChatAvailability();
+  const disabled = !backendEnabled || !userEnabled;
+  shell.hidden = false;
+  title.textContent = activeApartmentChatContext.shortName;
+  intro.textContent =
+    "Mình chỉ giải đáp các câu hỏi liên quan trực tiếp đến căn hộ này, nhu cầu ở thực và những điểm nên kiểm tra khi đi xem nhà.";
+
+  launcher.setAttribute("aria-expanded", apartmentChatOpen ? "true" : "false");
+  launcher.classList.toggle("is-active", apartmentChatOpen);
+  launcher.classList.toggle("has-history", apartmentChatHistory.length > 0);
+  panel.classList.toggle("is-open", apartmentChatOpen);
+  panel.setAttribute("aria-hidden", apartmentChatOpen ? "false" : "true");
+
+  prompts.innerHTML = apartmentChatSuggestions
+    .slice(0, 3)
+    .map(
+      (prompt) => `
+        <button class="detail-chatbot-prompt" type="button" data-chat-prompt="${escapeHtml(prompt)}">
+          ${escapeHtml(prompt)}
+        </button>`,
+    )
+    .join("");
+
+  if (!backendEnabled) {
+    status.innerHTML =
+      '<div class="detail-chatbot-note is-warning">Trợ lý căn hộ đang tạm unavailable vì backend chưa bật OpenRouter.</div>';
+  } else if (!userEnabled) {
+    status.innerHTML =
+      '<div class="detail-chatbot-note">Bật góc nhìn AI ở phần cấu hình để sử dụng trợ lý căn hộ.</div>';
+  } else if (apartmentChatLoading) {
+    status.innerHTML =
+      '<div class="detail-chatbot-note is-loading">Đang soạn câu trả lời dựa trên dữ liệu căn hộ hiện có...</div>';
+  } else {
+    status.innerHTML = "";
+  }
+
+  messages.innerHTML = apartmentChatHistory.length
+    ? apartmentChatHistory.map(renderApartmentChatMessage).join("")
+    : '<article class="detail-chatbot-message is-assistant is-welcome"><div class="detail-chatbot-message-role">Trợ lý căn hộ</div><div class="detail-chatbot-message-copy">Mình có thể giúp bạn đọc nhanh điểm phù hợp để ở, những điều cần kiểm tra thêm và các lưu ý thực tế của căn này.</div></article>';
+
+  input.disabled = disabled || apartmentChatLoading;
+  submit.disabled = disabled || apartmentChatLoading;
+  input.setAttribute("aria-disabled", String(disabled || apartmentChatLoading));
+  messages.scrollTop = messages.scrollHeight;
+}
+
+async function submitApartmentChatQuestion(prefilledQuestion) {
+  if (!activeApartmentChatContext || apartmentChatLoading) return;
+
+  const input = document.getElementById("detail-chatbot-input");
+  const text = String(prefilledQuestion ?? input?.value ?? "").trim();
+  if (!text) return;
+
+  const { backendEnabled, userEnabled } = getApartmentChatAvailability();
+  if (!backendEnabled || !userEnabled) {
+    apartmentChatOpen = true;
+    renderApartmentChatShell();
+    return;
+  }
+
+  const requestHistory = apartmentChatHistory
+    .filter((entry) => entry.role === "user" || entry.role === "assistant")
+    .slice(-6)
+    .map(({ role, content }) => ({ role, content }));
+  const contextKey = getActiveApartmentChatKey();
+
+  apartmentChatHistory = [
+    ...apartmentChatHistory,
+    { role: "user", content: text },
+  ];
+  apartmentChatLoading = true;
+  apartmentChatOpen = true;
+  if (input) input.value = "";
+  renderApartmentChatShell();
+
+  try {
+    const llmModel = document.getElementById("llm-model")?.value?.trim() || null;
+    const response = await fetch(API + "/ahp/chat-apartment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        session_id: activeApartmentChatContext.sessionId,
+        canho_id: activeApartmentChatContext.canhoId,
+        question: text,
+        llm_model: llmModel,
+        history: requestHistory,
+      }),
+    });
+
+    const payload = await response.json().catch(() => ({}));
+    if (getActiveApartmentChatKey() !== contextKey) return;
+
+    if (!response.ok) {
+      throw new Error(payload?.detail || payload?.error || `HTTP ${response.status}`);
+    }
+
+    if (Array.isArray(payload?.suggested_questions) && payload.suggested_questions.length) {
+      apartmentChatSuggestions = payload.suggested_questions.slice(0, 3);
+    }
+
+    if (payload.status === "success") {
+      apartmentChatHistory = [
+        ...apartmentChatHistory,
+        {
+          role: "assistant",
+          content:
+            payload.answer ||
+            "Mình chưa có đủ dữ liệu trong hệ thống để trả lời rõ hơn về căn hộ này.",
+        },
+      ];
+    } else if (payload.status === "refused") {
+      apartmentChatHistory = [
+        ...apartmentChatHistory,
+        {
+          role: "assistant",
+          content:
+            payload.refusal_reason ||
+            "Mình chỉ hỗ trợ các câu hỏi liên quan trực tiếp đến căn hộ này.",
+          tone: "refusal",
+        },
+      ];
+    } else {
+      apartmentChatHistory = [
+        ...apartmentChatHistory,
+        {
+          role: "assistant",
+          content:
+            payload.error ||
+            "Hiện trợ lý căn hộ chưa thể trả lời. Bạn có thể thử lại sau ít phút.",
+          tone: "error",
+        },
+      ];
+    }
+  } catch (error) {
+    if (getActiveApartmentChatKey() !== contextKey) return;
+    apartmentChatHistory = [
+      ...apartmentChatHistory,
+      {
+        role: "assistant",
+        content:
+          error?.message ||
+          "Hiện trợ lý căn hộ chưa thể trả lời. Bạn có thể thử lại sau ít phút.",
+        tone: "error",
+      },
+    ];
+  } finally {
+    if (getActiveApartmentChatKey() !== contextKey) return;
+    apartmentChatLoading = false;
+    renderApartmentChatShell();
+  }
+}
+
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // MODE + PRESET + RESET
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function setMode(m) {
   curMode = m;
   document
@@ -1860,8 +3423,8 @@ function setMode(m) {
     m === "custom" ? "" : "none";
 }
 
-// Áp preset (một bộ ma trận AHP có sẵn) lên ma trận hiện tại.
-// Hàm này được gọi khi nhấn nút “Cân bằng / Ưu tiên giá / …”.
+// Ãp preset (má»™t bá»™ ma tráº­n AHP cÃ³ sáºµn) lÃªn ma tráº­n hiá»‡n táº¡i.
+// HÃ m nÃ y Ä‘Æ°á»£c gá»i khi nháº¥n nÃºt â€œCÃ¢n báº±ng / Æ¯u tiÃªn giÃ¡ / â€¦â€.
 function applyPreset(name) {
   // Xóa trạng thái active của tất cả nút preset
   document
@@ -1915,9 +3478,9 @@ function resetMatrix() {
   previewCR();
 }
 
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // HELPERS
-// ════════════════════════════════════════════════════════════════
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function showLoad(msg) {
   document.getElementById("loading-txt").textContent = msg;
   document.getElementById("loading").classList.add("show");
@@ -1935,23 +3498,69 @@ function showErr(msg) {
 document.addEventListener("DOMContentLoaded", () => {
   hydrateStaticMathCopy();
   renderMathInScope(document);
-  document.querySelector(".modal-x")?.setAttribute("aria-label", "Đóng chi tiết căn hộ");
+  document.querySelectorAll(".modal-x").forEach((button) => {
+    button.setAttribute("aria-label", "Đóng modal");
+  });
   const resultHint = document.querySelector("#rank-title")?.nextElementSibling;
   if (resultHint && resultHint.classList.contains("card-sub")) {
     resultHint.textContent = "Click hoặc nhấn Enter trên từng căn hộ để xem chi tiết và điểm thành phần";
   }
-  document.getElementById("modal").addEventListener("click", (e) => {
+
+  document.getElementById("llm-enabled")?.addEventListener("change", syncLlmControls);
+  document.getElementById("compare-clear-btn")?.addEventListener("click", clearCompareSelection);
+  document.getElementById("compare-run-btn")?.addEventListener("click", runCompareSelection);
+
+  document.getElementById("modal")?.addEventListener("click", (e) => {
     if (e.target === e.currentTarget) closeModal();
+  });
+  document.getElementById("compare-modal")?.addEventListener("click", (e) => {
+    if (e.target === e.currentTarget) closeCompareModal();
+  });
+  document.getElementById("compare-modal-body")?.addEventListener("click", (e) => {
+    const button = e.target.closest("[data-compare-expand]");
+    if (!button) return;
+    toggleCompareDetail(button.getAttribute("data-compare-expand"));
   });
   document.getElementById("modal-body")?.addEventListener("click", (e) => {
     const button = e.target.closest(".detail-gallery-thumb");
     if (!button) return;
     setActiveModalImage(Number(button.dataset.galleryIndex));
   });
+  document.getElementById("detail-chatbot-launcher")?.addEventListener("click", () => {
+    toggleApartmentChat();
+  });
+  document.getElementById("detail-chatbot-close")?.addEventListener("click", () => {
+    toggleApartmentChat(false);
+  });
+  document.getElementById("detail-chatbot-prompts")?.addEventListener("click", (e) => {
+    const button = e.target.closest("[data-chat-prompt]");
+    if (!button) return;
+    submitApartmentChatQuestion(button.getAttribute("data-chat-prompt"));
+  });
+  document.getElementById("detail-chatbot-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    submitApartmentChatQuestion();
+  });
+  document.getElementById("detail-chatbot-input")?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      submitApartmentChatQuestion();
+    }
+  });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && document.getElementById("modal").classList.contains("open")) {
+    if (e.key !== "Escape") return;
+    if (document.getElementById("compare-modal")?.classList.contains("open")) {
+      closeCompareModal();
+      return;
+    }
+    if (apartmentChatOpen) {
+      toggleApartmentChat(false);
+      return;
+    }
+    if (document.getElementById("modal")?.classList.contains("open")) {
       closeModal();
     }
   });
   init();
 });
+

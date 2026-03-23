@@ -9,7 +9,7 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-    <link rel="stylesheet" href="/static/style-ahp.css?v=20260323-latex">
+    <link rel="stylesheet" href="/static/style-ahp.css?v=20260324-encoding-fix">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 </head>
@@ -93,7 +93,53 @@
             </div>
         </div>
 
-        <!-- ═══ EXPERT PANEL ═══ -->
+        <!-- â•â•â• EXPERT PANEL â•â•â• -->
+        <div class="assistant-config" aria-label="Cấu hình OpenRouter">
+            <section class="assistant-intake">
+                <div class="assistant-kicker">AI co-pilot cho bước bắt đầu</div>
+                <h2 class="assistant-title">Mô tả nhu cầu để AI gợi ý cấu hình AHP ban đầu</h2>
+                <p class="assistant-copy">
+                    Bạn chỉ cần mô tả ngắn bằng ngôn ngữ tự nhiên, ví dụ ngân sách, khu vực muốn ở, số phòng ngủ, điều ưu tiên nhất và điều không thể chấp nhận.
+                </p>
+                <div class="assistant-prompt-row" id="assistant-prompt-row">
+                    <button class="assistant-prompt" type="button" onclick="fillAiIntakePrompt('Mình mua để ở, khoảng 3.5 tỷ, cần 3 phòng ngủ, ưu tiên pháp lý rõ ràng và tiện đi làm Quận 7.')">Gia đình nhỏ · pháp lý rõ</button>
+                    <button class="assistant-prompt" type="button" onclick="fillAiIntakePrompt('Mình ở một mình, ngân sách dưới 3 tỷ, ưu tiên giá vừa sức, khu có tiện ích đủ dùng và đi lại thuận tiện.')">Ngân sách gọn · tiện đi lại</button>
+                    <button class="assistant-prompt" type="button" onclick="fillAiIntakePrompt('Mình cần căn hộ để ở lâu dài cho gia đình, muốn nội khu tốt, hạ tầng quanh nhà đầy đủ và môi trường sống ổn định.')">Ở lâu dài · chất lượng sống</button>
+                </div>
+                <label class="assistant-textarea-wrap" for="assistant-intake-input">
+                    <span>Nhu cầu của bạn</span>
+                    <textarea id="assistant-intake-input" placeholder="Ví dụ: Mình mua để ở, khoảng 3.5 tỷ, muốn 3PN, ưu tiên pháp lý rõ ràng, tiện ích nội khu ổn và đi làm Quận 7 không quá xa."></textarea>
+                </label>
+                <div class="assistant-actions">
+                    <button class="btn btn-primary" id="assistant-intake-run" type="button" onclick="runAiIntake()">
+                        Nhờ AI gợi ý cấu hình →
+                    </button>
+                    <button class="btn btn-outline" id="assistant-intake-apply" type="button" onclick="applyAiIntakeSuggestion()" disabled>
+                        Áp dụng vào ma trận
+                    </button>
+                </div>
+            </section>
+            <label class="assistant-toggle">
+                <input type="checkbox" id="llm-enabled" checked>
+                <span>Bật góc nhìn LLM</span>
+            </label>
+            <label class="assistant-model">
+                <span>Model OpenRouter</span>
+                <input id="llm-model" type="text" autocomplete="off" placeholder="Đang lấy model mặc định từ backend...">
+            </label>
+            <div class="assistant-result" id="assistant-intake-result">
+                <div class="assistant-result-empty">
+                    <div class="assistant-result-title">AI sẽ giúp bạn làm gì?</div>
+                    <p class="assistant-result-copy">
+                        AI sẽ đọc nhu cầu ở thực của bạn, gợi ý một preset phù hợp, đề xuất trọng số ban đầu cho 8 tiêu chí và để bạn chỉnh tay trước khi chạy AHP.
+                    </p>
+                </div>
+            </div>
+            <div class="assistant-note" id="llm-note">
+                Phân tích LLM là lớp hỗ trợ diễn giải thêm, không thay thế xếp hạng AHP.
+            </div>
+        </div>
+
         <div id="panel-expert">
             <div class="card">
                 <div class="card-head card-head-expert">
@@ -121,13 +167,13 @@
             </div>
         </div>
 
-        <!-- ═══ CUSTOM PANEL ═══ -->
+        <!-- â•â•â• CUSTOM PANEL â•â•â• -->
         <div id="panel-custom" style="display:none">
             <div class="card">
                 <div class="card-head">
                     <div>
                         <div class="card-title">Tự thiết lập mức ưu tiên</div>
-                        <div class="card-sub">So sánh từng cặp tiêu chí theo thang 1–9. Hệ thống sẽ tự tính trọng số và
+                        <div class="card-sub">So sánh từng cặp tiêu chí theo thang 1-9. Hệ thống sẽ tự tính trọng số và
                             báo nếu các lựa chọn của bạn chưa nhất quán.</div>
                     </div>
                     <div style="display:flex;gap:8px">
@@ -191,7 +237,7 @@
             </div>
         </div>
 
-        <!-- ═══ RESULTS ═══ -->
+        <!-- â•â•â• RESULTS â•â•â• -->
         <div class="results-wrap" id="results-wrap">
 
             <!-- Session info -->
@@ -209,6 +255,16 @@
             </div>
 
             <!-- 2 biểu đồ -->
+            <div class="card" id="llm-insight-section" style="display:none">
+                <div class="card-head">
+                    <div>
+                        <div class="card-title">Góc nhìn LLM</div>
+                        <div class="card-sub">Nhận xét hỗ trợ từ OpenRouter để diễn giải thêm cho nhóm căn hộ đang dẫn đầu.</div>
+                    </div>
+                </div>
+                <div class="card-body llm-body" id="llm-insight-body"></div>
+            </div>
+
             <div class="charts-grid">
                 <div class="chart-box">
                     <div class="chart-lbl">Trọng số AHP theo tiêu chí</div>
@@ -217,6 +273,17 @@
                 <div class="chart-box">
                     <div class="chart-lbl">Điểm AHP — Top 10 căn hộ</div>
                     <canvas id="chart-top10" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="charts-grid llm-charts-grid" id="llm-charts-grid" style="display:none">
+                <div class="chart-box">
+                    <div class="chart-lbl">Điểm hỗ trợ từ LLM cho Top căn hộ</div>
+                    <canvas id="chart-llm-top10" height="200"></canvas>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-lbl">Radar 8 tiêu chí của căn dẫn đầu theo LLM</div>
+                    <canvas id="chart-llm-radar" height="200"></canvas>
                 </div>
             </div>
 
@@ -230,7 +297,19 @@
                 </div>
                 <div class="card-body">
                     <!-- Top 10 grid 2 cột -->
-                    <div class="top10-grid" id="top10-grid">
+                                        <div class="compare-toolbar" id="compare-toolbar" style="display:none">
+                        <div class="compare-toolbar-copy" id="compare-toolbar-copy">
+                            Chọn 2-4 căn trong Top 10 để so sánh bằng LLM.
+                        </div>
+                        <div class="compare-toolbar-actions">
+                            <button class="btn btn-ghost btn-sm" id="compare-clear-btn" type="button" disabled>
+                                Bỏ chọn tất cả
+                            </button>
+                            <button class="btn btn-primary btn-sm" id="compare-run-btn" type="button" disabled>
+                                So sánh bằng LLM
+                            </button>
+                        </div>
+                    </div>                    <div class="top10-grid" id="top10-grid">
                         <div class="empty" style="grid-column:1/-1">Chưa có kết quả</div>
                     </div>
 
@@ -272,9 +351,7 @@
 
         </div><!-- /results-wrap -->
 
-    </div><!-- /layout -->
-
-    <!-- MODAL CHI TIẾT -->
+    </div><!-- /layout -->    <!-- MODAL CHI TIET -->
     <div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-ttl" aria-hidden="true">
         <div class="modal">
             <div class="modal-head">
@@ -282,6 +359,45 @@
                 <button class="modal-x" onclick="closeModal()">✕</button>
             </div>
             <div class="modal-body" id="modal-body"></div>
+        </div>
+        <div class="detail-chatbot-shell" id="detail-chatbot-shell" hidden>
+            <button class="detail-chatbot-launcher" id="detail-chatbot-launcher" type="button" aria-expanded="false">
+                <span class="detail-chatbot-launcher-icon">AI</span>
+                <span class="detail-chatbot-launcher-copy">
+                    <strong>Hỏi về căn này</strong>
+                    <span>Tư vấn nhanh theo dữ liệu hiện có</span>
+                </span>
+            </button>
+            <section class="detail-chatbot-panel" id="detail-chatbot-panel" aria-hidden="true">
+                <div class="detail-chatbot-panel-head">
+                    <div>
+                        <div class="detail-chatbot-panel-label">Trợ lý căn hộ</div>
+                        <div class="detail-chatbot-panel-title" id="detail-chatbot-title">Đang xem căn hộ</div>
+                    </div>
+                    <button class="detail-chatbot-close" id="detail-chatbot-close" type="button" aria-label="Đóng trợ lý căn hộ">✕</button>
+                </div>
+                <div class="detail-chatbot-intro" id="detail-chatbot-intro">
+                    Mình chỉ giải đáp các câu hỏi liên quan đến căn hộ này và những điểm cần kiểm tra khi đi xem nhà.
+                </div>
+                <div class="detail-chatbot-prompts" id="detail-chatbot-prompts"></div>
+                <div class="detail-chatbot-status" id="detail-chatbot-status"></div>
+                <div class="detail-chatbot-messages" id="detail-chatbot-messages"></div>
+                <form class="detail-chatbot-form" id="detail-chatbot-form">
+                    <textarea id="detail-chatbot-input" rows="3" maxlength="500"
+                        placeholder="Ví dụ: Căn này phù hợp để ở ở điểm nào?"></textarea>
+                    <button class="btn btn-primary detail-chatbot-submit" id="detail-chatbot-submit" type="submit">Gửi câu hỏi</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal-bg" id="compare-modal" role="dialog" aria-modal="true" aria-labelledby="compare-modal-ttl" aria-hidden="true">
+        <div class="modal compare-modal">
+            <div class="modal-head">
+                <div class="modal-ttl" id="compare-modal-ttl"></div>
+                <button class="modal-x" onclick="closeCompareModal()">✕</button>
+            </div>
+            <div class="modal-body compare-modal-body" id="compare-modal-body"></div>
         </div>
     </div>
 
@@ -341,9 +457,12 @@
             window.renderMathInScope?.(document);
         });
     </script>
-    <script src="/static/ahp.js?v=20260323-criteria-head"></script>
+    <script src="/static/ahp.js?v=20260324-encoding-fix"></script>
 
 </body>
 
 </html>
+
+
+
 
