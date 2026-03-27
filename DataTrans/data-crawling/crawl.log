@@ -476,3 +476,109 @@
 2026-03-23 22:58:44,353  INFO        💾 210 rows → D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
 2026-03-23 22:58:44,353  INFO        Tổng tích lũy: 210 (+60 mới)
 2026-03-23 22:58:47,858  INFO      Hoàn thành. +60 mới | Tổng: 210 | Output: D:\DSS_AHP\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:41:19,840  INFO        Chưa có file cũ — bắt đầu mới.
+2026-03-24 09:41:19,841  INFO      ═══ Trang 1/5 ═══
+2026-03-24 09:41:20,943  INFO        Trang 1: 15 links, has_next=True
+2026-03-24 09:41:20,946  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-24 09:41:23,439  INFO        ✔ [143512] 7.0tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:41:32,812  INFO        ✔ [150415] 14.0tỷ | 83.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=18
+2026-03-24 09:41:38,192  INFO        ✔ [108926] 4.75tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:41:44,616  INFO        ✔ [148333] 3.7tỷ | 65.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:41:49,232  INFO        ✔ [150400] 3.15tỷ | 63.0m² | 2PN/2WC | NT=Đầy Đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:41:54,236  INFO        ✔ [150646] 2.4tỷ | 47.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:03,405  INFO        ✔ [109014] 2.28tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:09,230  INFO        ✔ [144887] 6.85tỷ | 79.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:42:14,864  INFO        ✔ [150606] 4.75tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=4
+2026-03-24 09:42:21,002  INFO        ✔ [144523] 4.1tỷ | 66.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:31,320  INFO        ✔ [148683] 7.0tỷ | 77.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:36,201  INFO        ✔ [150604] 2.3tỷ | 37.0m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:42:41,729  INFO        ✔ [150525] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:42:46,381  INFO        ✔ [108938] 3.3tỷ | 51.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:54,723  INFO        ✔ [108942] 5.05tỷ | 120.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:42:58,315  INFO        💾 15 rows → D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:42:58,315  INFO        Tổng tích lũy: 15 (+15 mới)
+2026-03-24 09:43:01,242  INFO      ═══ Trang 2/5 ═══
+2026-03-24 09:43:01,719  INFO        Trang 2: 15 links, has_next=True
+2026-03-24 09:43:01,721  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-24 09:43:02,790  INFO        ✔ [108943] 3.55tỷ | 81.0m² | 3PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:10,543  INFO        ✔ [143899] 3.3tỷ | 55.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:43:15,429  INFO        ✔ [145668] 4.4tỷ | 86.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:22,204  INFO        ✔ [113594] 7.1tỷ | 75.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:27,837  INFO        ✔ [150255] 5.0tỷ | 74.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:33,935  INFO        ✔ [145220] 3.0tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:41,600  INFO        ✔ [150245] 13.0tỷ | 178.0m² | 4PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:50,485  INFO        ✔ [144459] 5.5tỷ | 55.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:43:55,304  INFO        ✔ [139073] 8.2tỷ | 96.0m² | 0PN/0WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=11
+2026-03-24 09:44:00,103  INFO        ✔ [145017] 5.7tỷ | 102.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:05,910  INFO        ✔ [109138] 3.5tỷ | 83.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:13,953  INFO        ✔ [121804] 3.2tỷ | 59.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=3
+2026-03-24 09:44:19,633  INFO        ✔ [148679] 7.5tỷ | 84.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:24,394  INFO        ✔ [108197] 2.3tỷ | 50.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:30,146  INFO        ✔ [150352] 12.7tỷ | 117.0m² | 4PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:33,102  INFO        💾 30 rows → D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:44:33,102  INFO        Tổng tích lũy: 30 (+30 mới)
+2026-03-24 09:44:36,466  INFO      ═══ Trang 3/5 ═══
+2026-03-24 09:44:37,016  INFO        Trang 3: 15 links, has_next=True
+2026-03-24 09:44:37,017  INFO        Mới: 14 | Bỏ qua (đã có): 1
+2026-03-24 09:44:42,869  INFO        ✔ [99357] 6.4tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:49,502  INFO        ✔ [85092] 6.9tỷ | 115.0m² | 3PN/3WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:44:53,205  INFO        ✔ [150127] 4.16tỷ | 81.0m² | 3PN/3WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:45:04,736  INFO        ✔ [130385] 5.4tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:45:11,883  INFO        ✔ [112808] 6.1tỷ | 81.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:45:16,307  INFO        ✔ [112804] 4.4tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:45:22,089  INFO        ✔ [85378] 5.3tỷ | 71.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:45:28,032  INFO        ✔ [85430] 6.3tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:45:33,752  INFO        ✔ [137801] 7.8tỷ | 128.0m² | 4PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:45:39,918  INFO        ✔ [133839] 6.7tỷ | 72.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:45:47,611  INFO        ✔ [137809] 5.5tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:45:55,816  INFO        ✔ [60529] 8.0tỷ | 117.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:46:03,719  INFO        ✔ [137817] 8.5tỷ | 92.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:46:10,310  INFO        ✔ [136536] 3.25tỷ | 52.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=1
+2026-03-24 09:46:14,789  INFO        💾 44 rows → D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:46:14,789  INFO        Tổng tích lũy: 44 (+44 mới)
+2026-03-24 09:46:18,029  INFO      ═══ Trang 4/5 ═══
+2026-03-24 09:46:18,498  INFO        Trang 4: 15 links, has_next=True
+2026-03-24 09:46:18,500  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-24 09:46:19,997  INFO        ✔ [145605] 4.0tỷ | 83.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:46:26,253  INFO        ✔ [124830] 3.1tỷ | 65.0m² | 2PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:46:45,284  WARNING   Retry 1/3 sau 1s — https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-18-pj-can-ho-riva-park/ban-can-ho-riva-park-nguyen-tat-thanh-quan-4-80m2-gia-chi-37-ty-pst2772.html — HTTPSConnectionPool(host='thuviennhadat.vn', port=443): Read timed out. (read timeout=15)
+2026-03-24 09:47:01,414  WARNING   Retry 2/3 sau 2s — https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-18-pj-can-ho-riva-park/ban-can-ho-riva-park-nguyen-tat-thanh-quan-4-80m2-gia-chi-37-ty-pst2772.html — HTTPSConnectionPool(host='thuviennhadat.vn', port=443): Read timed out. (read timeout=15)
+2026-03-24 09:47:04,257  WARNING   Retry 3/3 sau 4s — https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-18-pj-can-ho-riva-park/ban-can-ho-riva-park-nguyen-tat-thanh-quan-4-80m2-gia-chi-37-ty-pst2772.html — 500 Server Error: Internal Server Error for url: https://thuviennhadat.vn/ServerError?aspxerrorpath=/not-found
+2026-03-24 09:47:08,257  ERROR     Bỏ qua (hết retry): https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-18-pj-can-ho-riva-park/ban-can-ho-riva-park-nguyen-tat-thanh-quan-4-80m2-gia-chi-37-ty-pst2772.html
+2026-03-24 09:47:19,189  INFO        ✔ [93331] 7.2tỷ | 81.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:47:24,532  INFO        ✔ [149888] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:47:37,571  INFO        ✔ [19700] 4.3tỷ | 87.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:47:56,837  WARNING   Retry 1/3 sau 1s — https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-quan-7-can-3pn-dt-97m-co-so-hong-gia-9-ty-pst145653.html — HTTPSConnectionPool(host='thuviennhadat.vn', port=443): Read timed out. (read timeout=15)
+2026-03-24 09:48:12,976  WARNING   Retry 2/3 sau 2s — https://thuviennhadat.vn/ban-can-ho-chung-cu-phuong-tan-phu-pj-scenic-valley-2/ban-can-ho-scenic-valley-2-phu-my-hung-quan-7-can-3pn-dt-97m-co-so-hong-gia-9-ty-pst145653.html — HTTPSConnectionPool(host='thuviennhadat.vn', port=443): Read timed out. (read timeout=15)
+2026-03-24 09:48:21,217  INFO        ✔ [145653] 9.0tỷ | 97.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:48:34,046  INFO        ✔ [54533] 5.2tỷ | 115.0m² | 3PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:48:43,411  INFO        ✔ [13460] 5.2tỷ | 115.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-24 09:48:48,865  INFO        ✔ [149996] 4.16tỷ | 81.2m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:48:53,978  INFO        ✔ [60546] 4.8tỷ | 70.0m² | 2PN/1WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:49:03,172  INFO        ✔ [124818] 4.1tỷ | 73.0m² | 2PN/2WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:49:13,758  INFO        ✔ [56015] 7.5tỷ | 80.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:49:23,734  INFO        ✔ [146053] 3.1tỷ | 65.0m² | 1PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:49:28,420  INFO        ✔ [124837] 2.75tỷ | 60.0m² | 1PN/1WC | NT=Cơ bản | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:49:32,708  INFO        💾 58 rows → D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:49:32,708  INFO        Tổng tích lũy: 58 (+58 mới)
+2026-03-24 09:49:36,686  INFO      ═══ Trang 5/5 ═══
+2026-03-24 09:49:37,217  INFO        Trang 5: 15 links, has_next=True
+2026-03-24 09:49:37,219  INFO        Mới: 15 | Bỏ qua (đã có): 0
+2026-03-24 09:49:40,989  INFO        ✔ [149747] 3.7tỷ | 59.0m² | 2PN/2WC | NT=Không có | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:49:51,412  INFO        ✔ [149738] 3.2tỷ | 69.0m² | 0PN/0WC | NT=Không có | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:49:56,464  INFO        ✔ [149597] 7.0tỷ | 69.0m² | 2PN/2WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:50:00,792  INFO        ✔ [149592] 11.0tỷ | 124.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:50:05,439  INFO        ✔ [145650] 13.0tỷ | 133.0m² | 3PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:50:14,835  INFO        ✔ [144344] 3.78tỷ | 54.0m² | 1PN/1WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:50:20,279  INFO        ✔ [142717] 4.67tỷ | 56.0m² | 2PN/1WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:50:28,789  INFO        ✔ [122844] 5.6tỷ | 56.0m² | 1PN/1WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-24 09:50:35,524  INFO        ✔ [149753] 3.7tỷ | 59.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ/Sổ hồng | T=None
+2026-03-24 09:50:41,516  INFO        ✔ [122842] 9.5tỷ | 95.0m² | 3PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-24 09:50:54,341  INFO        ✔ [149726] 9.9tỷ | 75.0m² | 2PN/2WC | NT=Cơ bản | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:51:00,354  INFO        ✔ [136753] 9.0tỷ | 121.0m² | 3PN/3WC | NT=Đầy đủ | PL=Hợp đồng mua bán | T=None
+2026-03-24 09:51:06,412  INFO        ✔ [136865] 3.3tỷ | 73.0m² | 2PN/2WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:51:14,160  INFO        ✔ [149735] 3.9tỷ | 69.0m² | 0PN/0WC | NT=Đầy đủ | PL=Sổ đỏ / Sổ hồng | T=None
+2026-03-24 09:51:25,419  INFO        ✔ [122839] 8.6tỷ | 86.0m² | 2PN/2WC | NT=Cơ bản | PL=Đang chờ sổ | T=None
+2026-03-24 09:51:28,731  INFO        💾 73 rows → D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv
+2026-03-24 09:51:28,731  INFO        Tổng tích lũy: 73 (+73 mới)
+2026-03-24 09:51:31,435  INFO      Hoàn thành. +73 mới | Tổng: 73 | Output: D:\HHTRQD\DepartAHP-v2\ahp-for-department\DataTrans\data-crawling\raw\raw_data.csv

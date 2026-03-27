@@ -6,10 +6,12 @@ Docs: http://localhost:8000/docs
 
 from pathlib import Path
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from sqlalchemy import text
 
 from database import Base, engine, ensure_canho_schema, settings
 from routers import ahp, canho
@@ -39,17 +41,33 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory=str(PAGE_DIR)), name="static")
 app.mount("/media", StaticFiles(directory=str(MEDIA_DIR)), name="media")
+templates = Jinja2Templates(directory=str(PAGE_DIR))
+
+
+def get_apartment_count() -> int:
+    with engine.connect() as conn:
+        result = conn.execute(
+            text("SELECT COUNT(*) FROM can_ho WHERE trang_thai IS TRUE")
+        )
+        return int(result.scalar() or 0)
 
 
 @app.get("/", tags=["Frontend"])
-def serve_home():
-    return FileResponse(str(PAGE_DIR / "index.html"))
+def serve_home(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={"apartment_count": get_apartment_count()},
+    )
 
 
 @app.get("/home", tags=["Frontend"])
-def serve_index():
-    return FileResponse(str(PAGE_DIR / "index.html"))
-
+def serve_index(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={"apartment_count": get_apartment_count()},
+    )
 
 @app.get("/ahp", tags=["Frontend"])
 def serve_ahp():

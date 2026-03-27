@@ -1,13 +1,12 @@
-﻿from pathlib import Path
+from pathlib import Path
 import sys
 
 import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from ahp_contracts import CriterionScoreBreakdown, CompareApartmentAnalysisItem, CompareResponse
 from schema import CanHoOut, CriterionWeight, RankedCanHo
-from services import compare_openrouter_service
+from services import compare_openrouter_service, openrouter_client
 
 
 def make_ranked_apartment(rank: int, canho_id: int, ahp_score: float = 0.8):
@@ -61,7 +60,7 @@ def test_analyze_compared_apartments_timeout_returns_failed(monkeypatch):
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
 
-    monkeypatch.setattr(compare_openrouter_service.requests, "post", raise_timeout)
+    monkeypatch.setattr(openrouter_client.requests, "post", raise_timeout)
 
     analysis = compare_openrouter_service.analyze_compared_apartments(
         session_id=12,
@@ -80,7 +79,7 @@ def test_analyze_compared_apartments_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
     monkeypatch.setattr(compare_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
-        compare_openrouter_service.requests,
+        openrouter_client.requests,
         "post",
         lambda *args, **kwargs: FakeResponse(
             {

@@ -6,13 +6,15 @@ from __future__ import annotations
 import json
 from typing import Any
 
-import requests
-
 from ahp_contracts import CriterionScoreBreakdown, LlmAnalysis, LlmApartmentAnalysisItem
 from database import settings
 from schema import CriterionWeight, RankedCanHo
+from services.openrouter_client import (
+    extract_json_object,
+    extract_message_content,
+    post_with_fallback,
+)
 
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 CRITERION_IDS = tuple(f"C{index}" for index in range(1, 9))
 
 
@@ -38,28 +40,18 @@ def analyze_ranked_apartments(
     if not model:
         return _build_failed_analysis(model, top_k, "OPENROUTER_DEFAULT_MODEL chưa được cấu hình.")
 
-    try:
-        response = requests.post(
-            OPENROUTER_URL,
-            headers=_build_headers(),
-            json={
-                "model": model,
-                "temperature": 0.2,
-                "response_format": {"type": "json_object"},
-                "messages": _build_messages(top_candidates, weights),
-            },
-            timeout=settings.OPENROUTER_TIMEOUT_SECONDS,
-        )
-    except requests.RequestException as exc:
-        return _build_failed_analysis(model, top_k, _format_exception(exc))
-
-    if not response.ok:
-        return _build_failed_analysis(model, top_k, _extract_http_error(response))
+    model, response, error = post_with_fallback(
+        requested_model=requested_model,
+        messages=_build_messages(top_candidates, weights),
+        temperature=0.2,
+    )
+    if error or response is None:
+        return _build_failed_analysis(model, top_k, error or "Không thể kết nối OpenRouter.")
 
     try:
         payload = response.json()
-        content = _extract_message_content(payload)
-        parsed = _extract_json_object(content)
+        content = extract_message_content(payload)
+        parsed = extract_json_object(content)
         normalized = _normalize_payload(parsed, top_candidates)
     except (ValueError, KeyError, TypeError) as exc:
         return _build_failed_analysis(model, top_k, f"LLM trả JSON không hợp lệ: {exc}")
@@ -94,20 +86,6 @@ def restore_llm_analysis(raw_output: Any, model: str | None, status: str | None,
         error=error,
         apartments=[],
     )
-
-
-def _build_headers() -> dict[str, str]:
-    headers = {
-        "Authorization": f"Bearer {settings.OPENROUTER_API_KEY}",
-        "Content-Type": "application/json",
-    }
-
-    if settings.OPENROUTER_SITE_URL:
-        headers["HTTP-Referer"] = settings.OPENROUTER_SITE_URL
-    if settings.OPENROUTER_APP_NAME:
-        headers["X-Title"] = settings.OPENROUTER_APP_NAME
-
-    return headers
 
 
 def _build_messages(ranked: list[RankedCanHo], weights: list[CriterionWeight]) -> list[dict[str, str]]:
@@ -189,61 +167,6 @@ def _serialize_ranked_apartment(item: RankedCanHo) -> dict[str, Any]:
         "home_orientation": canho.huong_nha,
         "balcony_orientation": canho.huong_ban_cong,
     }
-
-
-def _extract_http_error(response: requests.Response) -> str:
-    try:
-        payload = response.json()
-    except ValueError:
-        return f"OpenRouter lỗi HTTP {response.status_code}"
-
-    if isinstance(payload, dict):
-        error = payload.get("error")
-        if isinstance(error, dict):
-            return error.get("message") or error.get("code") or f"OpenRouter lỗi HTTP {response.status_code}"
-        if isinstance(error, str):
-            return error
-
-    return f"OpenRouter lỗi HTTP {response.status_code}"
-
-
-def _extract_message_content(payload: dict[str, Any]) -> str:
-    choices = payload.get("choices")
-    if not isinstance(choices, list) or not choices:
-        raise ValueError("Không tìm thấy choices trong phản hồi OpenRouter")
-
-    message = choices[0].get("message") if isinstance(choices[0], dict) else None
-    if not isinstance(message, dict):
-        raise ValueError("Không tìm thấy message trong phản hồi OpenRouter")
-
-    content = message.get("content")
-    if isinstance(content, str):
-        return content
-
-    if isinstance(content, list):
-        text_parts = []
-        for part in content:
-            if isinstance(part, dict) and part.get("type") == "text":
-                text_parts.append(part.get("text", ""))
-        if text_parts:
-            return "\n".join(text_parts)
-
-    raise ValueError("Không đọc được nội dung phản hồi từ OpenRouter")
-
-
-def _extract_json_object(content: str) -> dict[str, Any]:
-    text = content.strip()
-    if text.startswith("```"):
-        text = text.strip("`")
-        if text.lower().startswith("json"):
-            text = text[4:].strip()
-
-    start = text.find("{")
-    end = text.rfind("}")
-    if start == -1 or end == -1 or end < start:
-        raise ValueError("Không tìm thấy JSON object trong phản hồi")
-
-    return json.loads(text[start : end + 1])
 
 
 def _normalize_payload(raw_payload: dict[str, Any], ranked: list[RankedCanHo]) -> dict[str, Any]:
@@ -367,9 +290,3 @@ def _build_skipped_analysis(model: str | None, top_k: int, reason: str) -> LlmAn
         error=reason,
         apartments=[],
     )
-
-
-def _format_exception(exc: requests.RequestException) -> str:
-    if isinstance(exc, requests.Timeout):
-        return "OpenRouter quá thời gian phản hồi."
-    return str(exc) or "Không thể kết nối OpenRouter."

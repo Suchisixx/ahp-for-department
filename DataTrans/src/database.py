@@ -7,19 +7,26 @@ from sqlalchemy import create_engine, inspect, text
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from pydantic_settings import BaseSettings
 
-ENV_FILE = Path(__file__).with_name(".env")
+ENV_FILE = Path(__file__).resolve().parent.parent.parent / ".env"
 
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://postgres:123@db:5432/DSS"
-    OPENROUTER_API_KEY: str = ""
+    OPENROUTER_API_KEY: str 
+    # OPENROUTER_DEFAULT_MODEL: str = "qwen/qwen3-next-80b-a3b-instruct:free"
     OPENROUTER_DEFAULT_MODEL: str = "openai/gpt-4o-mini"
+    OPENROUTER_FALLBACK_MODELS: str = (
+        "z-ai/glm-4.5-air:free,"
+        "stepfun/step-3.5-flash:free,"
+        "meta-llama/llama-3.3-70b-instruct:free,"
+        "nvidia/nemotron-3-nano-30b-a3b:free"
+    )
     OPENROUTER_TIMEOUT_SECONDS: int = 45
     OPENROUTER_SITE_URL: str = ""
     OPENROUTER_APP_NAME: str = "ApartmentBroker DSS"
 
     class Config:
-        env_file = str(ENV_FILE)
+      env_file = ".env"
 
 
 settings = Settings()

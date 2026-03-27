@@ -5,7 +5,7 @@ import requests
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from services import intake_openrouter_service
+from services import intake_openrouter_service, openrouter_client
 
 
 class FakeResponse:
@@ -25,7 +25,7 @@ def test_generate_ahp_intake_guidance_timeout_returns_failed(monkeypatch):
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
 
-    monkeypatch.setattr(intake_openrouter_service.requests, "post", raise_timeout)
+    monkeypatch.setattr(openrouter_client.requests, "post", raise_timeout)
 
     response = intake_openrouter_service.generate_ahp_intake_guidance(
         user_input="Mình mua để ở, ưu tiên pháp lý và cần 3 phòng ngủ.",
@@ -40,7 +40,7 @@ def test_generate_ahp_intake_guidance_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
-        intake_openrouter_service.requests,
+        openrouter_client.requests,
         "post",
         lambda *args, **kwargs: FakeResponse({"choices": [{"message": {"content": "not-a-json"}}]}),
     )
@@ -58,7 +58,7 @@ def test_generate_ahp_intake_guidance_normalizes_priority_scores(monkeypatch):
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
     monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
-        intake_openrouter_service.requests,
+        openrouter_client.requests,
         "post",
         lambda *args, **kwargs: FakeResponse(
             {
@@ -107,3 +107,49 @@ def test_generate_ahp_intake_guidance_normalizes_priority_scores(monkeypatch):
     assert len(response.suggested_weights) == 8
     assert round(sum(weight.weight for weight in response.suggested_weights), 4) == 1.0
     assert response.suggested_weights[3].weight > response.suggested_weights[2].weight
+
+
+def test_generate_ahp_intake_guidance_falls_back_to_second_model(monkeypatch):
+    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
+    monkeypatch.setattr(intake_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "qwen/qwen3-next-80b-a3b-instruct:free")
+    monkeypatch.setattr(
+        intake_openrouter_service.settings,
+        "OPENROUTER_FALLBACK_MODELS",
+        "z-ai/glm-4.5-air:free,stepfun/step-3.5-flash:free",
+    )
+
+    calls = []
+
+    def fake_post(*args, **kwargs):
+        calls.append(kwargs["json"]["model"])
+        if len(calls) == 1:
+            return FakeResponse(
+                {"error": {"message": "qwen/qwen3-next-80b-a3b-instruct:free is temporarily rate-limited upstream"}},
+                ok=False,
+                status_code=429,
+            )
+        return FakeResponse(
+            {
+                "choices": [
+                    {
+                        "message": {
+                            "content": '{"intent_profile":{"goal":"Tìm căn hộ để ở thực","budget":null,"preferred_area":null,"bedroom_need":null,"top_priorities":["Pháp lý"],"deal_breakers":[]},"recommended_preset":"legal","priority_scores":{"C1":5,"C2":5,"C3":5,"C4":7,"C5":5,"C6":5,"C7":5,"C8":5},"explanation":"Đã fallback sang model thứ hai."}'
+                        }
+                    }
+                ]
+            }
+        )
+
+    monkeypatch.setattr(openrouter_client.requests, "post", fake_post)
+
+    response = intake_openrouter_service.generate_ahp_intake_guidance(
+        user_input="Mình cần căn hộ pháp lý rõ để ở lâu dài.",
+        requested_model=None,
+    )
+
+    assert response.status == "success"
+    assert response.model == "z-ai/glm-4.5-air:free"
+    assert calls == [
+        "qwen/qwen3-next-80b-a3b-instruct:free",
+        "z-ai/glm-4.5-air:free",
+    ]

@@ -429,7 +429,7 @@ async function pingAPI() {
   const timer = setTimeout(() => controller.abort(), 5000);
 
   try {
-    const r = await fetch(API + "/health", { signal: controller.signal });
+    const r = await fetch(API + "/api-info", { signal: controller.signal });
     clearTimeout(timer);
     if (!r.ok) throw new Error("HTTP " + r.status);
 

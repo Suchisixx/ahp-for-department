@@ -7,7 +7,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from ahp_contracts import ApartmentChatMessage
 from schema import CanHoOut, CriterionWeight, RankedCanHo
-from services import apartment_chat_openrouter_service
+from services import apartment_chat_openrouter_service, openrouter_client
 
 
 def make_ranked_apartment(rank: int, canho_id: int, ahp_score: float = 0.8):
@@ -62,7 +62,7 @@ def test_chat_about_apartment_timeout_returns_failed(monkeypatch):
     def raise_timeout(*args, **kwargs):
         raise requests.Timeout("deadline")
 
-    monkeypatch.setattr(apartment_chat_openrouter_service.requests, "post", raise_timeout)
+    monkeypatch.setattr(openrouter_client.requests, "post", raise_timeout)
 
     response = apartment_chat_openrouter_service.chat_about_apartment(
         session_id=7,
@@ -83,7 +83,7 @@ def test_chat_about_apartment_invalid_json_returns_failed(monkeypatch):
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_API_KEY", "test-key")
     monkeypatch.setattr(apartment_chat_openrouter_service.settings, "OPENROUTER_DEFAULT_MODEL", "minimax/minimax-m2.5")
     monkeypatch.setattr(
-        apartment_chat_openrouter_service.requests,
+        openrouter_client.requests,
         "post",
         lambda *args, **kwargs: FakeResponse(
             {"choices": [{"message": {"content": "not-a-json"}}]}
@@ -143,7 +143,7 @@ def test_chat_about_apartment_trims_history_before_call(monkeypatch):
             }
         )
 
-    monkeypatch.setattr(apartment_chat_openrouter_service.requests, "post", fake_post)
+    monkeypatch.setattr(openrouter_client.requests, "post", fake_post)
 
     history = [
         ApartmentChatMessage(role="user" if index % 2 == 0 else "assistant", content=f"Tin nhan {index}")
