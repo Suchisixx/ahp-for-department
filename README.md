@@ -1,3 +1,5 @@
+<img width="1385" height="643" alt="image" src="https://github.com/user-attachments/assets/e3046443-728f-40ce-857a-cfeea2e74ea1" />
+
 # DepartAHP - Hệ thống hỗ trợ ra quyết định chọn căn hộ tại TP.HCM
 
 **DepartAHP** là một hệ thống **Decision Support System (DSS)** sử dụng phương pháp **AHP (Analytic Hierarchy Process)** kết hợp với **Data Engineering**, giúp người dùng đánh giá và xếp hạng các căn hộ, nhà phố, biệt thự tại TP.HCM dựa trên nhiều tiêu chí quan trọng.
