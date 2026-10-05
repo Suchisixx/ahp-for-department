@@ -95,12 +95,11 @@ Build và chạy toàn bộ hệ thống
 Bashdocker compose up --build
 
 Truy cập
-
-
+```
 Giao diện web: http://localhost:8000
 Tài liệu API (Swagger): http://localhost:8000/docs
 Health check: http://localhost:8000/health
-
+```
 Dừng hệ thống:
 Bashdocker compose down
 
@@ -111,6 +110,7 @@ Tạo và kích hoạt môi trường ảo
 Bashcd DataTrans
 python -m venv venv
 
+```
 # Windows PowerShell
 .\venv\Scripts\Activate.ps1
 
@@ -119,11 +119,11 @@ venv\Scripts\activate
 
 # Linux / macOS
 source venv/bin/activate
-
+```
 Cài đặt dependencies
-
+```
 Bashpip install -r requirements.txt
-
+```
 Chuẩn bị PostgreSQL
 
 Tạo database tên DSS (user: postgres, password: 123 hoặc tùy chỉnh)
@@ -164,4 +164,3 @@ Thêm tính năng lưu lịch sử xếp hạng cá nhân
 Tích hợp bản đồ (Google Maps / OpenStreetMap)
 Thêm bộ lọc nâng cao (giá, diện tích, số phòng ngủ, ...)
 
-text
