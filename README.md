@@ -27,6 +27,7 @@ Web Frontend (HTML-CSS-JS)
 ---
 
 ## Cấu trúc thư mục dự án
+```
 DepartAHP/
 ├── DataTrans/
 │   ├── data-crawling/          # Scripts thu thập dữ liệu thô
@@ -40,7 +41,7 @@ DepartAHP/
 ├── docker-compose.yml
 └── README.md
 
----
+```
 
 ## Công nghệ sử dụng
 
